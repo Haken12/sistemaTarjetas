@@ -28,6 +28,10 @@ namespace sistemaTarjetas
             fListaAyudantes.Show();
         }
 
-       
+        private void vendedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FListaVendedores fListaVendedores = new FListaVendedores();
+            fListaVendedores.Show();
+        }
     }
 }

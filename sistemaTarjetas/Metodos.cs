@@ -35,6 +35,7 @@ namespace sistemaTarjetas
         public decimal? comision;
         public decimal? deduccion;
         public DateTime? fechaIngreso;
+        public int? idAyudante;
     }
 
     public static class Metodos

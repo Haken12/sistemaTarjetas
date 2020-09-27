@@ -22,7 +22,10 @@ namespace sistemaTarjetas
             // TODO: esta línea de código carga datos en la tabla 'dsSistemaTarjetas.vVendedores' Puede moverla o quitarla según sea necesario.
             this.vVendedoresTableAdapter.Fill(this.dsSistemaTarjetas.vVendedores);
             // TODO: esta línea de código carga datos en la tabla 'dsSistemaTarjetas.vendedor' Puede moverla o quitarla según sea necesario.
-           
+            if (dgvListaVendedores.Rows.Count > 0) {
+                btnEliminar.Enabled = true;
+                btnModificar.Enabled = true;
+            }
 
         }
 
@@ -62,6 +65,32 @@ namespace sistemaTarjetas
                     btnModificar.Enabled = false;
                 }
             }
+        }
+
+        private void rbId_CheckedChanged(object sender, EventArgs e)
+        {
+            if (((RadioButton)sender).Checked == true) {
+                txtBuscarId.Enabled = true;
+                txtBuscarNombre.Enabled = false;
+            }
+        }
+
+        private void rbNombre_CheckedChanged(object sender, EventArgs e)
+        {
+            if (((RadioButton)sender).Checked == true) {
+                txtBuscarId.Enabled = false;
+                txtBuscarNombre.Enabled = true;
+            }
+        }
+
+        private void txtBuscarId_TextChanged(object sender, EventArgs e)
+        {
+            bsVendedores.Filter = "id_vendedor LIKE '" + txtBuscarId.Text + "'%";
+        }
+
+        private void txtBuscarNombre_TextChanged(object sender, EventArgs e)
+        {
+            bsVendedores.Filter = "nombre LIKE '" + txtBuscarNombre.Text + "'%";
         }
     }
 }

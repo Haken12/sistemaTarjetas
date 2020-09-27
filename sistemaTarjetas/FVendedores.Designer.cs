@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -48,6 +49,12 @@
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.queriesTableAdapter1 = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.QueriesTableAdapter();
+            this.bsAyudantes = new System.Windows.Forms.BindingSource(this.components);
+            this.dsSistemaTarjetas = new sistemaTarjetas.dsSistemaTarjetas();
+            this.seleccionAyudanteTableAdapter = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.seleccionAyudanteTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.bsAyudantes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsSistemaTarjetas)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -154,6 +161,7 @@
             this.mtxtCelular.PromptChar = '0';
             this.mtxtCelular.Size = new System.Drawing.Size(100, 20);
             this.mtxtCelular.TabIndex = 11;
+            this.mtxtCelular.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             // 
             // mtxtTelefon
             // 
@@ -164,6 +172,7 @@
             this.mtxtTelefon.PromptChar = '0';
             this.mtxtTelefon.Size = new System.Drawing.Size(100, 20);
             this.mtxtTelefon.TabIndex = 12;
+            this.mtxtTelefon.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             // 
             // mtxtCedula
             // 
@@ -174,6 +183,7 @@
             this.mtxtCedula.PromptChar = '0';
             this.mtxtCedula.Size = new System.Drawing.Size(100, 20);
             this.mtxtCedula.TabIndex = 13;
+            this.mtxtCedula.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             // 
             // mtxtDeduccion
             // 
@@ -184,6 +194,7 @@
             this.mtxtDeduccion.PromptChar = '0';
             this.mtxtDeduccion.Size = new System.Drawing.Size(100, 20);
             this.mtxtDeduccion.TabIndex = 14;
+            this.mtxtDeduccion.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             // 
             // mtxtComision
             // 
@@ -194,14 +205,18 @@
             this.mtxtComision.PromptChar = '0';
             this.mtxtComision.Size = new System.Drawing.Size(100, 20);
             this.mtxtComision.TabIndex = 16;
+            this.mtxtComision.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             // 
             // cbxAyudante
             // 
+            this.cbxAyudante.DataSource = this.bsAyudantes;
+            this.cbxAyudante.DisplayMember = "nombre";
             this.cbxAyudante.FormattingEnabled = true;
             this.cbxAyudante.Location = new System.Drawing.Point(399, 153);
             this.cbxAyudante.Name = "cbxAyudante";
             this.cbxAyudante.Size = new System.Drawing.Size(121, 21);
             this.cbxAyudante.TabIndex = 17;
+            this.cbxAyudante.ValueMember = "id_ayudante";
             // 
             // dtpFecha
             // 
@@ -213,21 +228,38 @@
             // 
             // btnGuardar
             // 
+            this.btnGuardar.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnGuardar.Location = new System.Drawing.Point(26, 225);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 32);
             this.btnGuardar.TabIndex = 19;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnCancelar
             // 
+            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancelar.Location = new System.Drawing.Point(160, 225);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 32);
             this.btnCancelar.TabIndex = 20;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            // 
+            // bsAyudantes
+            // 
+            this.bsAyudantes.DataMember = "seleccionAyudante";
+            this.bsAyudantes.DataSource = this.dsSistemaTarjetas;
+            // 
+            // dsSistemaTarjetas
+            // 
+            this.dsSistemaTarjetas.DataSetName = "dsSistemaTarjetas";
+            this.dsSistemaTarjetas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // seleccionAyudanteTableAdapter
+            // 
+            this.seleccionAyudanteTableAdapter.ClearBeforeFill = true;
             // 
             // FVendedores
             // 
@@ -256,6 +288,9 @@
             this.Controls.Add(this.label1);
             this.Name = "FVendedores";
             this.Text = "FVendedores";
+            this.Load += new System.EventHandler(this.FVendedores_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.bsAyudantes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsSistemaTarjetas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -283,5 +318,9 @@
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;
+        private dsSistemaTarjetasTableAdapters.QueriesTableAdapter queriesTableAdapter1;
+        private System.Windows.Forms.BindingSource bsAyudantes;
+        private dsSistemaTarjetas dsSistemaTarjetas;
+        private dsSistemaTarjetasTableAdapters.seleccionAyudanteTableAdapter seleccionAyudanteTableAdapter;
     }
 }
