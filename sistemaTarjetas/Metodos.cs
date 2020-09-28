@@ -12,6 +12,13 @@ namespace sistemaTarjetas
         Editar
     }
 
+    public struct Cliente {
+        public int codigo;
+        public string nombre;
+        public string cedula;
+        public string telefono;
+        public string direccion;
+    }
     public struct Ayudante {
         public int id;
         public string nombre;
@@ -36,6 +43,13 @@ namespace sistemaTarjetas
         public decimal? deduccion;
         public DateTime? fechaIngreso;
         public int? idAyudante;
+    }
+
+    public struct Zona {
+        public int id;
+        public string descripcion;
+        public int? idVendedor;
+        public string nombreVendedor;
     }
 
     public static class Metodos

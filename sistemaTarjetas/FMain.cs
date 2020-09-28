@@ -33,5 +33,17 @@ namespace sistemaTarjetas
             FListaVendedores fListaVendedores = new FListaVendedores();
             fListaVendedores.Show();
         }
+
+        private void zonasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FListaZona fListaZona = new FListaZona();
+            fListaZona.Show();
+        }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FListaClientes fListaClientes = new FListaClientes();
+            fListaClientes.Show();
+        }
     }
 }

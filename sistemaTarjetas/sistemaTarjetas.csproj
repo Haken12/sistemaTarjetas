@@ -57,17 +57,35 @@
     <Compile Include="FAyudantes.Designer.cs">
       <DependentUpon>FAyudantes.cs</DependentUpon>
     </Compile>
+    <Compile Include="FClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FClientes.Designer.cs">
+      <DependentUpon>FClientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="FListaAyudantes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FListaAyudantes.Designer.cs">
       <DependentUpon>FListaAyudantes.cs</DependentUpon>
     </Compile>
+    <Compile Include="FListaClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FListaClientes.Designer.cs">
+      <DependentUpon>FListaClientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="FListaVendedores.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FListaVendedores.Designer.cs">
       <DependentUpon>FListaVendedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FListaZona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FListaZona.Designer.cs">
+      <DependentUpon>FListaZona.cs</DependentUpon>
     </Compile>
     <Compile Include="FMain.cs">
       <SubType>Form</SubType>
@@ -81,23 +99,41 @@
     <Compile Include="FVendedores.Designer.cs">
       <DependentUpon>FVendedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="FZona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FZona.Designer.cs">
+      <DependentUpon>FZona.cs</DependentUpon>
+    </Compile>
     <Compile Include="Metodos.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FAyudantes.resx">
       <DependentUpon>FAyudantes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FClientes.resx">
+      <DependentUpon>FClientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FListaAyudantes.resx">
       <DependentUpon>FListaAyudantes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FListaClientes.resx">
+      <DependentUpon>FListaClientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FListaVendedores.resx">
       <DependentUpon>FListaVendedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FListaZona.resx">
+      <DependentUpon>FListaZona.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FMain.resx">
       <DependentUpon>FMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FVendedores.resx">
       <DependentUpon>FVendedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FZona.resx">
+      <DependentUpon>FZona.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -131,6 +167,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\DataSources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -84,7 +84,7 @@
             // ayudantesToolStripMenuItem
             // 
             this.ayudantesToolStripMenuItem.Name = "ayudantesToolStripMenuItem";
-            this.ayudantesToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.ayudantesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.ayudantesToolStripMenuItem.Text = "Ayudantes";
             this.ayudantesToolStripMenuItem.Click += new System.EventHandler(this.ayudantesToolStripMenuItem_Click);
             // 
@@ -98,19 +98,21 @@
             // zonasToolStripMenuItem
             // 
             this.zonasToolStripMenuItem.Name = "zonasToolStripMenuItem";
-            this.zonasToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.zonasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.zonasToolStripMenuItem.Text = "Zonas";
+            this.zonasToolStripMenuItem.Click += new System.EventHandler(this.zonasToolStripMenuItem_Click);
             // 
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.clientesToolStripMenuItem.Text = "Clientes";
+            this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
             // controlDeTarjetasToolStripMenuItem
             // 
             this.controlDeTarjetasToolStripMenuItem.Name = "controlDeTarjetasToolStripMenuItem";
-            this.controlDeTarjetasToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.controlDeTarjetasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.controlDeTarjetasToolStripMenuItem.Text = "Control de Tarjetas";
             // 
             // pnlLateral
