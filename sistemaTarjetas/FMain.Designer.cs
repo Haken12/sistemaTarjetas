@@ -114,6 +114,7 @@
             this.controlDeTarjetasToolStripMenuItem.Name = "controlDeTarjetasToolStripMenuItem";
             this.controlDeTarjetasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.controlDeTarjetasToolStripMenuItem.Text = "Control de Tarjetas";
+            this.controlDeTarjetasToolStripMenuItem.Click += new System.EventHandler(this.controlDeTarjetasToolStripMenuItem_Click);
             // 
             // pnlLateral
             // 

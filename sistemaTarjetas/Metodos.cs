@@ -30,7 +30,18 @@ namespace sistemaTarjetas
         public decimal? deduccion;
         public DateTime? fechaIngreso;
     }
+    public struct Tarjeta {
+        public int? codigo;
+        public int? codigoCliente;
+        public DateTime? fehcaCreacion;
+        public int? idVendedor;
+        public int? idZona;
+        public string tipoPago;
+        public string nombreCliente;
+        public string descripcionZona;
+        public string nombreVendedor;
 
+    }
     public struct Vendedor
     {
         public int id;

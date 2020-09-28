@@ -45,5 +45,11 @@ namespace sistemaTarjetas
             FListaClientes fListaClientes = new FListaClientes();
             fListaClientes.Show();
         }
+
+        private void controlDeTarjetasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FListaTarjetas fListaTarjetas = new FListaTarjetas();
+            fListaTarjetas.Show();
+        }
     }
 }
