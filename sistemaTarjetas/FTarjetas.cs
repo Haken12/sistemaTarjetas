@@ -86,5 +86,10 @@ namespace sistemaTarjetas
                     break;
             }
         }
+
+        private void cbxVendedor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            bsZona.Filter = "id_vendedor =" + cbxVendedor.Text;
+        }
     }
 }

@@ -46,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dsSistemaTarjetas.cs">
+      <DependentUpon>dsSistemaTarjetas.xsd</DependentUpon>
+    </Compile>
     <Compile Include="dsSistemaTarjetas.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -75,6 +78,12 @@
     <Compile Include="FListaClientes.Designer.cs">
       <DependentUpon>FListaClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="FListaProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FListaProductos.Designer.cs">
+      <DependentUpon>FListaProductos.cs</DependentUpon>
+    </Compile>
     <Compile Include="FListaTarjetas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +107,12 @@
     </Compile>
     <Compile Include="FMain.Designer.cs">
       <DependentUpon>FMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FProducto.Designer.cs">
+      <DependentUpon>FProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="FTarjetas.cs">
       <SubType>Form</SubType>
@@ -132,6 +147,9 @@
     <EmbeddedResource Include="FListaClientes.resx">
       <DependentUpon>FListaClientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FListaProductos.resx">
+      <DependentUpon>FListaProductos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FListaTarjetas.resx">
       <DependentUpon>FListaTarjetas.cs</DependentUpon>
     </EmbeddedResource>
@@ -143,6 +161,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FMain.resx">
       <DependentUpon>FMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FProducto.resx">
+      <DependentUpon>FProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FTarjetas.resx">
       <DependentUpon>FTarjetas.cs</DependentUpon>

@@ -386,6 +386,26 @@ SELECT id_vendedor, nombre, cedula, direccion, telefono, celular, fecha_ingreso,
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vProductosTableAdapter" GeneratorDataComponentClassName="vProductosTableAdapter" Name="vProductos" UserDataComponentName="vProductosTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="cadenaConexion (Settings)" DbObjectName="sistemaTarjetas.dbo.vProductos" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Codigo, Descripcion, Costo, Precio, Existencias FROM dbo.vProductos</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Codigo" DataSetColumn="Codigo" />
+              <Mapping SourceColumn="Descripcion" DataSetColumn="Descripcion" />
+              <Mapping SourceColumn="Costo" DataSetColumn="Costo" />
+              <Mapping SourceColumn="Precio" DataSetColumn="Precio" />
+              <Mapping SourceColumn="Existencias" DataSetColumn="Existencias" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources>
           <DbSource ConnectionRef="cadenaConexion (Settings)" DbObjectName="sistemaTarjetas.dbo.actualizar_ayudante" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="actualizar_ayudante" MethodsParameterType="CLR" Modifier="Public" Name="actualizar_ayudante" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="actualizar_ayudante">
@@ -604,7 +624,7 @@ SELECT id_vendedor, nombre, cedula, direccion, telefono, celular, fecha_ingreso,
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="cadenaConexion (Settings)" DbObjectName="sistemaTarjetas.dbo.eliminar_cliente" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="eliminar_cliente" MethodsParameterType="CLR" Modifier="Public" Name="eliminar_cliente" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy21" UserSourceName="eliminar_cliente">
+          <DbSource ConnectionRef="cadenaConexion (Settings)" DbObjectName="sistemaTarjetas.dbo.eliminar_cliente" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="eliminar_cliente" MethodsParameterType="CLR" Modifier="Public" Name="eliminar_cliente" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy14" UserSourceName="eliminar_cliente">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.eliminar_cliente</CommandText>
@@ -615,7 +635,7 @@ SELECT id_vendedor, nombre, cedula, direccion, telefono, celular, fecha_ingreso,
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="cadenaConexion (Settings)" DbObjectName="sistemaTarjetas.dbo.unico_cliente" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="unico_cliente" MethodsParameterType="CLR" Modifier="Public" Name="unico_cliente" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy31" UserSourceName="unico_cliente">
+          <DbSource ConnectionRef="cadenaConexion (Settings)" DbObjectName="sistemaTarjetas.dbo.unico_cliente" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="unico_cliente" MethodsParameterType="CLR" Modifier="Public" Name="unico_cliente" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy15" UserSourceName="unico_cliente">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.unico_cliente</CommandText>
@@ -630,7 +650,7 @@ SELECT id_vendedor, nombre, cedula, direccion, telefono, celular, fecha_ingreso,
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="cadenaConexion (Settings)" DbObjectName="sistemaTarjetas.dbo.unica_tarjeta" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="unica_tarjeta" MethodsParameterType="CLR" Modifier="Public" Name="unica_tarjeta" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy14" UserSourceName="unica_tarjeta">
+          <DbSource ConnectionRef="cadenaConexion (Settings)" DbObjectName="sistemaTarjetas.dbo.unica_tarjeta" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="unica_tarjeta" MethodsParameterType="CLR" Modifier="Public" Name="unica_tarjeta" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy16" UserSourceName="unica_tarjeta">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.unica_tarjeta</CommandText>
@@ -646,7 +666,7 @@ SELECT id_vendedor, nombre, cedula, direccion, telefono, celular, fecha_ingreso,
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="cadenaConexion (Settings)" DbObjectName="sistemaTarjetas.dbo.actualizar_tarjeta" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="actualizar_tarjeta" MethodsParameterType="CLR" Modifier="Public" Name="actualizar_tarjeta" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy15" UserSourceName="actualizar_tarjeta">
+          <DbSource ConnectionRef="cadenaConexion (Settings)" DbObjectName="sistemaTarjetas.dbo.actualizar_tarjeta" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="actualizar_tarjeta" MethodsParameterType="CLR" Modifier="Public" Name="actualizar_tarjeta" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy17" UserSourceName="actualizar_tarjeta">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.actualizar_tarjeta</CommandText>
@@ -662,7 +682,7 @@ SELECT id_vendedor, nombre, cedula, direccion, telefono, celular, fecha_ingreso,
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="cadenaConexion (Settings)" DbObjectName="sistemaTarjetas.dbo.crear_tarjeta" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="crear_tarjeta" MethodsParameterType="CLR" Modifier="Public" Name="crear_tarjeta" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy16" UserSourceName="crear_tarjeta">
+          <DbSource ConnectionRef="cadenaConexion (Settings)" DbObjectName="sistemaTarjetas.dbo.crear_tarjeta" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="crear_tarjeta" MethodsParameterType="CLR" Modifier="Public" Name="crear_tarjeta" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy18" UserSourceName="crear_tarjeta">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.crear_tarjeta</CommandText>
@@ -677,13 +697,42 @@ SELECT id_vendedor, nombre, cedula, direccion, telefono, celular, fecha_ingreso,
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="cadenaConexion (Settings)" DbObjectName="sistemaTarjetas.dbo.eliminar_tarjeta" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="eliminar_tarjeta" MethodsParameterType="CLR" Modifier="Public" Name="eliminar_tarjeta" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy22" UserSourceName="eliminar_tarjeta">
+          <DbSource ConnectionRef="cadenaConexion (Settings)" DbObjectName="sistemaTarjetas.dbo.eliminar_tarjeta" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="eliminar_tarjeta" MethodsParameterType="CLR" Modifier="Public" Name="eliminar_tarjeta" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy19" UserSourceName="eliminar_tarjeta">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.eliminar_tarjeta</CommandText>
                 <Parameters>
                   <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
                   <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@codigo_tarjeta" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                </Parameters>
+              </DbCommand>
+            </SelectCommand>
+          </DbSource>
+          <DbSource ConnectionRef="cadenaConexion (Settings)" DbObjectName="sistemaTarjetas.dbo.unico_producto" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="unico_producto" MethodsParameterType="CLR" Modifier="Public" Name="unico_producto" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy20" UserSourceName="unico_producto">
+            <SelectCommand>
+              <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                <CommandText>dbo.unico_producto</CommandText>
+                <Parameters>
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@codigo" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="InputOutput" ParameterName="@descripcion" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="money" DbType="Currency" Direction="InputOutput" ParameterName="@costo" Precision="19" ProviderType="Money" Scale="4" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="money" DbType="Currency" Direction="InputOutput" ParameterName="@precio" Precision="19" ProviderType="Money" Scale="4" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="InputOutput" ParameterName="@existencias" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                </Parameters>
+              </DbCommand>
+            </SelectCommand>
+          </DbSource>
+          <DbSource ConnectionRef="cadenaConexion (Settings)" DbObjectName="sistemaTarjetas.dbo.crear_producto" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="crear_producto" MethodsParameterType="CLR" Modifier="Public" Name="crear_producto" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy21" UserSourceName="crear_producto">
+            <SelectCommand>
+              <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                <CommandText>dbo.crear_producto</CommandText>
+                <Parameters>
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@descripcion" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@costo" Precision="19" ProviderType="Money" Scale="4" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@precio" Precision="19" ProviderType="Money" Scale="4" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@existencias" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
                 </Parameters>
               </DbCommand>
             </SelectCommand>
@@ -941,7 +990,7 @@ SELECT id_vendedor, nombre, cedula, direccion, telefono, celular, fecha_ingreso,
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vTarjetas" msprop:Generator_TableClassName="vTarjetasDataTable" msprop:Generator_TableVarName="tablevTarjetas" msprop:Generator_TablePropName="vTarjetas" msprop:Generator_RowDeletingName="vTarjetasRowDeleting" msprop:Generator_RowChangingName="vTarjetasRowChanging" msprop:Generator_RowEvHandlerName="vTarjetasRowChangeEventHandler" msprop:Generator_RowDeletedName="vTarjetasRowDeleted" msprop:Generator_UserTableName="vTarjetas" msprop:Generator_RowChangedName="vTarjetasRowChanged" msprop:Generator_RowEvArgName="vTarjetasRowChangeEvent" msprop:Generator_RowClassName="vTarjetasRow">
+        <xs:element name="vTarjetas" msprop:Generator_TableClassName="vTarjetasDataTable" msprop:Generator_TableVarName="tablevTarjetas" msprop:Generator_RowChangedName="vTarjetasRowChanged" msprop:Generator_TablePropName="vTarjetas" msprop:Generator_RowDeletingName="vTarjetasRowDeleting" msprop:Generator_RowChangingName="vTarjetasRowChanging" msprop:Generator_RowEvHandlerName="vTarjetasRowChangeEventHandler" msprop:Generator_RowDeletedName="vTarjetasRowDeleted" msprop:Generator_RowClassName="vTarjetasRow" msprop:Generator_UserTableName="vTarjetas" msprop:Generator_RowEvArgName="vTarjetasRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Codigo" msprop:Generator_ColumnVarNameInTable="columnCodigo" msprop:Generator_ColumnPropNameInRow="Codigo" msprop:Generator_ColumnPropNameInTable="CodigoColumn" msprop:Generator_UserColumnName="Codigo" type="xs:int" />
@@ -977,6 +1026,23 @@ SELECT id_vendedor, nombre, cedula, direccion, telefono, celular, fecha_ingreso,
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="vProductos" msprop:Generator_TableClassName="vProductosDataTable" msprop:Generator_TableVarName="tablevProductos" msprop:Generator_TablePropName="vProductos" msprop:Generator_RowDeletingName="vProductosRowDeleting" msprop:Generator_RowChangingName="vProductosRowChanging" msprop:Generator_RowEvHandlerName="vProductosRowChangeEventHandler" msprop:Generator_RowDeletedName="vProductosRowDeleted" msprop:Generator_UserTableName="vProductos" msprop:Generator_RowChangedName="vProductosRowChanged" msprop:Generator_RowEvArgName="vProductosRowChangeEvent" msprop:Generator_RowClassName="vProductosRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Codigo" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnCodigo" msprop:Generator_ColumnPropNameInRow="Codigo" msprop:Generator_ColumnPropNameInTable="CodigoColumn" msprop:Generator_UserColumnName="Codigo" type="xs:int" />
+              <xs:element name="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" msprop:Generator_UserColumnName="Descripcion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Costo" msprop:Generator_ColumnVarNameInTable="columnCosto" msprop:Generator_ColumnPropNameInRow="Costo" msprop:Generator_ColumnPropNameInTable="CostoColumn" msprop:Generator_UserColumnName="Costo" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Precio" msprop:Generator_ColumnVarNameInTable="columnPrecio" msprop:Generator_ColumnPropNameInRow="Precio" msprop:Generator_ColumnPropNameInTable="PrecioColumn" msprop:Generator_UserColumnName="Precio" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Existencias" msprop:Generator_ColumnVarNameInTable="columnExistencias" msprop:Generator_ColumnPropNameInRow="Existencias" msprop:Generator_ColumnPropNameInTable="ExistenciasColumn" msprop:Generator_UserColumnName="Existencias" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -1006,6 +1072,10 @@ SELECT id_vendedor, nombre, cedula, direccion, telefono, celular, fecha_ingreso,
     </xs:unique>
     <xs:unique name="vTarjetas_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:vTarjetas" />
+      <xs:field xpath="mstns:Codigo" />
+    </xs:unique>
+    <xs:unique name="vProductos_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:vProductos" />
       <xs:field xpath="mstns:Codigo" />
     </xs:unique>
   </xs:element>

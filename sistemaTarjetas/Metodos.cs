@@ -55,7 +55,14 @@ namespace sistemaTarjetas
         public DateTime? fechaIngreso;
         public int? idAyudante;
     }
+    public struct Producto {
+        public int codigo;
+        public string descripcion;
+        public decimal? precio;
+        public decimal? costo;
+        public int? existencias;
 
+    }
     public struct Zona {
         public int id;
         public string descripcion;

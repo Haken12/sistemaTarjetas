@@ -35,24 +35,24 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.cbxCliente = new System.Windows.Forms.ComboBox();
+            this.bsCliente = new System.Windows.Forms.BindingSource(this.components);
+            this.dsSistemaTarjetas = new sistemaTarjetas.dsSistemaTarjetas();
             this.cbxZona = new System.Windows.Forms.ComboBox();
+            this.bsZona = new System.Windows.Forms.BindingSource(this.components);
             this.cbxFormaPago = new System.Windows.Forms.ComboBox();
             this.cbxVendedor = new System.Windows.Forms.ComboBox();
+            this.bsVendedor = new System.Windows.Forms.BindingSource(this.components);
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.bsCliente = new System.Windows.Forms.BindingSource(this.components);
-            this.bsVendedor = new System.Windows.Forms.BindingSource(this.components);
-            this.bsZona = new System.Windows.Forms.BindingSource(this.components);
-            this.dsSistemaTarjetas = new sistemaTarjetas.dsSistemaTarjetas();
             this.vClientesTableAdapter = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.vClientesTableAdapter();
             this.vZonaTableAdapter = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.vZonaTableAdapter();
             this.vVendedoresTableAdapter = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.vVendedoresTableAdapter();
             this.queriesTableAdapter1 = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.QueriesTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.bsCliente)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsVendedor)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsZona)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSistemaTarjetas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsZona)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsVendedor)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -111,6 +111,16 @@
             this.cbxCliente.TabIndex = 5;
             this.cbxCliente.ValueMember = "Codigo";
             // 
+            // bsCliente
+            // 
+            this.bsCliente.DataMember = "vClientes";
+            this.bsCliente.DataSource = this.dsSistemaTarjetas;
+            // 
+            // dsSistemaTarjetas
+            // 
+            this.dsSistemaTarjetas.DataSetName = "dsSistemaTarjetas";
+            this.dsSistemaTarjetas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // cbxZona
             // 
             this.cbxZona.DataSource = this.bsZona;
@@ -121,6 +131,11 @@
             this.cbxZona.Size = new System.Drawing.Size(172, 21);
             this.cbxZona.TabIndex = 6;
             this.cbxZona.ValueMember = "Id";
+            // 
+            // bsZona
+            // 
+            this.bsZona.DataMember = "vZona";
+            this.bsZona.DataSource = this.dsSistemaTarjetas;
             // 
             // cbxFormaPago
             // 
@@ -144,6 +159,12 @@
             this.cbxVendedor.Size = new System.Drawing.Size(172, 21);
             this.cbxVendedor.TabIndex = 8;
             this.cbxVendedor.ValueMember = "Id";
+            this.cbxVendedor.SelectedIndexChanged += new System.EventHandler(this.cbxVendedor_SelectedIndexChanged);
+            // 
+            // bsVendedor
+            // 
+            this.bsVendedor.DataMember = "vVendedores";
+            this.bsVendedor.DataSource = this.dsSistemaTarjetas;
             // 
             // dtpFecha
             // 
@@ -173,26 +194,6 @@
             this.btnCancelar.TabIndex = 11;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
-            // 
-            // bsCliente
-            // 
-            this.bsCliente.DataMember = "vClientes";
-            this.bsCliente.DataSource = this.dsSistemaTarjetas;
-            // 
-            // bsVendedor
-            // 
-            this.bsVendedor.DataMember = "vVendedores";
-            this.bsVendedor.DataSource = this.dsSistemaTarjetas;
-            // 
-            // bsZona
-            // 
-            this.bsZona.DataMember = "vZona";
-            this.bsZona.DataSource = this.dsSistemaTarjetas;
-            // 
-            // dsSistemaTarjetas
-            // 
-            this.dsSistemaTarjetas.DataSetName = "dsSistemaTarjetas";
-            this.dsSistemaTarjetas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // vClientesTableAdapter
             // 
@@ -227,9 +228,9 @@
             this.Text = "Insertar/Editar Tarjeta";
             this.Load += new System.EventHandler(this.FTarjetas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bsCliente)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsVendedor)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsZona)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSistemaTarjetas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsZona)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsVendedor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
