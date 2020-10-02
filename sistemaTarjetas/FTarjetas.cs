@@ -89,7 +89,7 @@ namespace sistemaTarjetas
 
         private void cbxVendedor_SelectedIndexChanged(object sender, EventArgs e)
         {
-            bsZona.Filter = "id_vendedor =" + cbxVendedor.Text;
+            if (cbxVendedor.SelectedIndex != -1) { bsZona.Filter = "id_vendedor =" + cbxVendedor.Text; }
         }
     }
 }

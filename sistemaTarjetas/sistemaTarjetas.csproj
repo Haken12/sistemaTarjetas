@@ -66,6 +66,24 @@
     <Compile Include="FClientes.Designer.cs">
       <DependentUpon>FClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="FDespachoVendedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FDespachoVendedor.Designer.cs">
+      <DependentUpon>FDespachoVendedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FDevolverInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FDevolverInventario.Designer.cs">
+      <DependentUpon>FDevolverInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FInventarioVendedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FInventarioVendedores.Designer.cs">
+      <DependentUpon>FInventarioVendedores.cs</DependentUpon>
+    </Compile>
     <Compile Include="FListaAyudantes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +158,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FClientes.resx">
       <DependentUpon>FClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FDespachoVendedor.resx">
+      <DependentUpon>FDespachoVendedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FDevolverInventario.resx">
+      <DependentUpon>FDevolverInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FInventarioVendedores.resx">
+      <DependentUpon>FInventarioVendedores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FListaAyudantes.resx">
       <DependentUpon>FListaAyudantes.cs</DependentUpon>

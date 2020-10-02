@@ -203,6 +203,7 @@
             this.txtComision.PromptChar = '0';
             this.txtComision.Size = new System.Drawing.Size(100, 20);
             this.txtComision.TabIndex = 18;
+            this.txtComision.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             this.txtComision.ValidatingType = typeof(int);
             // 
             // txtDeduccion
@@ -214,12 +215,15 @@
             this.txtDeduccion.PromptChar = '0';
             this.txtDeduccion.Size = new System.Drawing.Size(100, 20);
             this.txtDeduccion.TabIndex = 19;
+            this.txtDeduccion.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             this.txtDeduccion.ValidatingType = typeof(int);
             // 
             // FAyudantes
             // 
+            this.AcceptButton = this.btnGuardar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(583, 274);
             this.Controls.Add(this.txtDeduccion);
             this.Controls.Add(this.txtComision);

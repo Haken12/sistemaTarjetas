@@ -37,9 +37,10 @@
             this.zonasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.controlDeTarjetasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pnlLateral = new System.Windows.Forms.Panel();
             this.inventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inventarioDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inventarioDeVendedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pnlLateral = new System.Windows.Forms.Panel();
             this.panelTop.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -119,18 +120,11 @@
             this.controlDeTarjetasToolStripMenuItem.Text = "Control de Tarjetas";
             this.controlDeTarjetasToolStripMenuItem.Click += new System.EventHandler(this.controlDeTarjetasToolStripMenuItem_Click);
             // 
-            // pnlLateral
-            // 
-            this.pnlLateral.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlLateral.Location = new System.Drawing.Point(0, 60);
-            this.pnlLateral.Name = "pnlLateral";
-            this.pnlLateral.Size = new System.Drawing.Size(95, 368);
-            this.pnlLateral.TabIndex = 2;
-            // 
             // inventarioToolStripMenuItem
             // 
             this.inventarioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.inventarioDeProductosToolStripMenuItem});
+            this.inventarioDeProductosToolStripMenuItem,
+            this.inventarioDeVendedoresToolStripMenuItem});
             this.inventarioToolStripMenuItem.Name = "inventarioToolStripMenuItem";
             this.inventarioToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
             this.inventarioToolStripMenuItem.Text = "Inventario";
@@ -138,9 +132,24 @@
             // inventarioDeProductosToolStripMenuItem
             // 
             this.inventarioDeProductosToolStripMenuItem.Name = "inventarioDeProductosToolStripMenuItem";
-            this.inventarioDeProductosToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.inventarioDeProductosToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
             this.inventarioDeProductosToolStripMenuItem.Text = "Inventario de Productos";
             this.inventarioDeProductosToolStripMenuItem.Click += new System.EventHandler(this.inventarioDeProductosToolStripMenuItem_Click);
+            // 
+            // inventarioDeVendedoresToolStripMenuItem
+            // 
+            this.inventarioDeVendedoresToolStripMenuItem.Name = "inventarioDeVendedoresToolStripMenuItem";
+            this.inventarioDeVendedoresToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.inventarioDeVendedoresToolStripMenuItem.Text = "Inventario de Vendedores";
+            this.inventarioDeVendedoresToolStripMenuItem.Click += new System.EventHandler(this.inventarioDeVendedoresToolStripMenuItem_Click);
+            // 
+            // pnlLateral
+            // 
+            this.pnlLateral.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlLateral.Location = new System.Drawing.Point(0, 60);
+            this.pnlLateral.Name = "pnlLateral";
+            this.pnlLateral.Size = new System.Drawing.Size(95, 368);
+            this.pnlLateral.TabIndex = 2;
             // 
             // FMain
             // 
@@ -177,6 +186,7 @@
         private System.Windows.Forms.ToolStripMenuItem controlDeTarjetasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inventarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inventarioDeProductosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inventarioDeVendedoresToolStripMenuItem;
     }
 }
 

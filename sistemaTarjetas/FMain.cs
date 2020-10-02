@@ -57,5 +57,16 @@ namespace sistemaTarjetas
             FListaProductos fListaProductos = new FListaProductos();
             fListaProductos.Show();
         }
+
+        private void inventarioDeVendedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FInventarioVendedores fInventarioVendedores = new FInventarioVendedores();
+            fInventarioVendedores.Show();
+        }
+
+        private void despacharAVendedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
