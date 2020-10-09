@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rbCliente = new System.Windows.Forms.RadioButton();
+            this.rbCodigo = new System.Windows.Forms.RadioButton();
             this.txtCliente = new System.Windows.Forms.TextBox();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -48,8 +50,6 @@
             this.dsSistemaTarjetas = new sistemaTarjetas.dsSistemaTarjetas();
             this.vTarjetasTableAdapter = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.vTarjetasTableAdapter();
             this.queriesTableAdapter1 = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.QueriesTableAdapter();
-            this.rbCodigo = new System.Windows.Forms.RadioButton();
-            this.rbCliente = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTarjetas)).BeginInit();
@@ -69,6 +69,30 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar";
+            // 
+            // rbCliente
+            // 
+            this.rbCliente.AutoSize = true;
+            this.rbCliente.Location = new System.Drawing.Point(6, 59);
+            this.rbCliente.Name = "rbCliente";
+            this.rbCliente.Size = new System.Drawing.Size(76, 17);
+            this.rbCliente.TabIndex = 5;
+            this.rbCliente.TabStop = true;
+            this.rbCliente.Text = "Por Cliente";
+            this.rbCliente.UseVisualStyleBackColor = true;
+            this.rbCliente.CheckedChanged += new System.EventHandler(this.rbCliente_CheckedChanged);
+            // 
+            // rbCodigo
+            // 
+            this.rbCodigo.AutoSize = true;
+            this.rbCodigo.Location = new System.Drawing.Point(6, 25);
+            this.rbCodigo.Name = "rbCodigo";
+            this.rbCodigo.Size = new System.Drawing.Size(77, 17);
+            this.rbCodigo.TabIndex = 4;
+            this.rbCodigo.TabStop = true;
+            this.rbCodigo.Text = "Por Codigo";
+            this.rbCodigo.UseVisualStyleBackColor = true;
+            this.rbCodigo.CheckedChanged += new System.EventHandler(this.rbCodigo_CheckedChanged);
             // 
             // txtCliente
             // 
@@ -120,6 +144,7 @@
             this.btnDetalles.TabIndex = 2;
             this.btnDetalles.Text = "Detalles";
             this.btnDetalles.UseVisualStyleBackColor = true;
+            this.btnDetalles.Click += new System.EventHandler(this.btnDetalles_Click);
             // 
             // btnModificar
             // 
@@ -223,30 +248,6 @@
             // vTarjetasTableAdapter
             // 
             this.vTarjetasTableAdapter.ClearBeforeFill = true;
-            // 
-            // rbCodigo
-            // 
-            this.rbCodigo.AutoSize = true;
-            this.rbCodigo.Location = new System.Drawing.Point(6, 25);
-            this.rbCodigo.Name = "rbCodigo";
-            this.rbCodigo.Size = new System.Drawing.Size(77, 17);
-            this.rbCodigo.TabIndex = 4;
-            this.rbCodigo.TabStop = true;
-            this.rbCodigo.Text = "Por Codigo";
-            this.rbCodigo.UseVisualStyleBackColor = true;
-            this.rbCodigo.CheckedChanged += new System.EventHandler(this.rbCodigo_CheckedChanged);
-            // 
-            // rbCliente
-            // 
-            this.rbCliente.AutoSize = true;
-            this.rbCliente.Location = new System.Drawing.Point(6, 59);
-            this.rbCliente.Name = "rbCliente";
-            this.rbCliente.Size = new System.Drawing.Size(76, 17);
-            this.rbCliente.TabIndex = 5;
-            this.rbCliente.TabStop = true;
-            this.rbCliente.Text = "Por Cliente";
-            this.rbCliente.UseVisualStyleBackColor = true;
-            this.rbCliente.CheckedChanged += new System.EventHandler(this.rbCliente_CheckedChanged);
             // 
             // FListaTarjetas
             // 

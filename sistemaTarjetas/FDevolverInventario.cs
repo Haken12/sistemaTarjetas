@@ -39,6 +39,7 @@ namespace sistemaTarjetas
             if ((dgvVendedor.Rows.Count > 0) && (nudCantidad.Value > 0)) 
             { 
                 DataGridViewRow rw = (DataGridViewRow)dgvVendedor.Rows[0].Clone();
+                rw.Cells.Remove(rw.Cells[3]);
                 rw.Cells[0].Value = dgvVendedor.SelectedCells[0].Value;
                 rw.Cells[1].Value = dgvVendedor.SelectedCells[1].Value;
                 rw.Cells[2].Value = nudCantidad.Value;

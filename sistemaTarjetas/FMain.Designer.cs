@@ -161,6 +161,7 @@
             this.Controls.Add(this.panelTop);
             this.Controls.Add(this.statusStrip1);
             this.Name = "FMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pantalla Principal";
             this.Load += new System.EventHandler(this.FMain_Load);
             this.panelTop.ResumeLayout(false);

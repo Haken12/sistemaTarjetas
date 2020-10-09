@@ -96,5 +96,12 @@ namespace sistemaTarjetas
                 txtCodigo.Enabled = false;
             }
         }
+
+        private void btnDetalles_Click(object sender, EventArgs e)
+        {
+            FDetallesTarjeta fDetalles = new FDetallesTarjeta();
+            fDetalles.tarjeta.codigo = Convert.ToInt32(dgvTarjetas.SelectedRows[0].Cells[0].Value);
+            fDetalles.Show();
+        }
     }
 }
