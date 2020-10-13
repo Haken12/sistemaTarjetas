@@ -12,7 +12,7 @@ namespace sistemaTarjetas
 
         void crearAyudante() {
 
-            decimal com = Convert.ToDecimal(txtComision.Text);
+            decimal com = Convert.ToDecimal(cbxComision.Text );
             decimal ded = Convert.ToDecimal(txtDeduccion.Text);
             queriesTableAdapter1.crear_ayudante(
                   txtNombre.Text,
@@ -27,7 +27,7 @@ namespace sistemaTarjetas
         }
 
         void actualizarAyudante() {
-            decimal com = Convert.ToDecimal(txtComision.Text);
+            decimal com = Convert.ToDecimal(cbxComision.Text);
             decimal ded = Convert.ToDecimal(txtDeduccion.Text);
             queriesTableAdapter1.actualizar_ayudante(
                 ayudante.id,
@@ -69,7 +69,7 @@ namespace sistemaTarjetas
                 txtDireccion.Text = ayudante.direccion;
                 mtxtTelefono.Text = ayudante.telefono;
                 mtxtCelular.Text = ayudante.celular;
-                txtComision.Text = ayudante.comision.ToString();
+                cbxComision.SelectedText = ayudante.comision.ToString();
                 txtDeduccion.Text = ayudante.deduccion.ToString();
                 dtpFechaIngreso.Value = ayudante.fechaIngreso.Value;
 

@@ -44,7 +44,6 @@
             this.mtxtTelefon = new System.Windows.Forms.MaskedTextBox();
             this.mtxtCedula = new System.Windows.Forms.MaskedTextBox();
             this.mtxtDeduccion = new System.Windows.Forms.MaskedTextBox();
-            this.mtxtComision = new System.Windows.Forms.MaskedTextBox();
             this.cbxAyudante = new System.Windows.Forms.ComboBox();
             this.bsAyudantes = new System.Windows.Forms.BindingSource(this.components);
             this.dsSistemaTarjetas = new sistemaTarjetas.dsSistemaTarjetas();
@@ -53,6 +52,8 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.queriesTableAdapter1 = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.QueriesTableAdapter();
             this.seleccionAyudanteTableAdapter = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.seleccionAyudanteTableAdapter();
+            this.cbxComision = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bsAyudantes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSistemaTarjetas)).BeginInit();
             this.SuspendLayout();
@@ -197,17 +198,6 @@
             this.mtxtDeduccion.TabIndex = 6;
             this.mtxtDeduccion.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             // 
-            // mtxtComision
-            // 
-            this.mtxtComision.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
-            this.mtxtComision.Location = new System.Drawing.Point(399, 116);
-            this.mtxtComision.Mask = "000.00";
-            this.mtxtComision.Name = "mtxtComision";
-            this.mtxtComision.PromptChar = '0';
-            this.mtxtComision.Size = new System.Drawing.Size(100, 20);
-            this.mtxtComision.TabIndex = 5;
-            this.mtxtComision.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
-            // 
             // cbxAyudante
             // 
             this.cbxAyudante.DataSource = this.bsAyudantes;
@@ -262,16 +252,38 @@
             // 
             this.seleccionAyudanteTableAdapter.ClearBeforeFill = true;
             // 
+            // cbxComision
+            // 
+            this.cbxComision.FormattingEnabled = true;
+            this.cbxComision.Items.AddRange(new object[] {
+            "4",
+            "6"});
+            this.cbxComision.Location = new System.Drawing.Point(399, 116);
+            this.cbxComision.Name = "cbxComision";
+            this.cbxComision.Size = new System.Drawing.Size(46, 21);
+            this.cbxComision.TabIndex = 11;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(451, 117);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(20, 17);
+            this.label10.TabIndex = 12;
+            this.label10.Text = "%";
+            // 
             // FVendedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(604, 274);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.cbxComision);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.cbxAyudante);
-            this.Controls.Add(this.mtxtComision);
             this.Controls.Add(this.mtxtDeduccion);
             this.Controls.Add(this.mtxtCedula);
             this.Controls.Add(this.mtxtTelefon);
@@ -314,7 +326,6 @@
         private System.Windows.Forms.MaskedTextBox mtxtTelefon;
         private System.Windows.Forms.MaskedTextBox mtxtCedula;
         private System.Windows.Forms.MaskedTextBox mtxtDeduccion;
-        private System.Windows.Forms.MaskedTextBox mtxtComision;
         private System.Windows.Forms.ComboBox cbxAyudante;
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.Button btnGuardar;
@@ -323,5 +334,7 @@
         private System.Windows.Forms.BindingSource bsAyudantes;
         private dsSistemaTarjetas dsSistemaTarjetas;
         private dsSistemaTarjetasTableAdapters.seleccionAyudanteTableAdapter seleccionAyudanteTableAdapter;
+        private System.Windows.Forms.ComboBox cbxComision;
+        private System.Windows.Forms.Label label10;
     }
 }

@@ -45,8 +45,9 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.queriesTableAdapter1 = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.QueriesTableAdapter();
-            this.txtComision = new System.Windows.Forms.MaskedTextBox();
             this.txtDeduccion = new System.Windows.Forms.MaskedTextBox();
+            this.cbxComision = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -194,18 +195,6 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
-            // txtComision
-            // 
-            this.txtComision.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
-            this.txtComision.Location = new System.Drawing.Point(93, 121);
-            this.txtComision.Mask = "000.00";
-            this.txtComision.Name = "txtComision";
-            this.txtComision.PromptChar = '0';
-            this.txtComision.Size = new System.Drawing.Size(100, 20);
-            this.txtComision.TabIndex = 4;
-            this.txtComision.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
-            this.txtComision.ValidatingType = typeof(int);
-            // 
             // txtDeduccion
             // 
             this.txtDeduccion.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
@@ -218,6 +207,27 @@
             this.txtDeduccion.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             this.txtDeduccion.ValidatingType = typeof(int);
             // 
+            // cbxComision
+            // 
+            this.cbxComision.FormattingEnabled = true;
+            this.cbxComision.Items.AddRange(new object[] {
+            "4",
+            "6"});
+            this.cbxComision.Location = new System.Drawing.Point(93, 120);
+            this.cbxComision.Name = "cbxComision";
+            this.cbxComision.Size = new System.Drawing.Size(48, 21);
+            this.cbxComision.TabIndex = 10;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(147, 123);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(20, 17);
+            this.label9.TabIndex = 11;
+            this.label9.Text = "%";
+            // 
             // FAyudantes
             // 
             this.AcceptButton = this.btnGuardar;
@@ -225,8 +235,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(583, 274);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.cbxComision);
             this.Controls.Add(this.txtDeduccion);
-            this.Controls.Add(this.txtComision);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.dtpFechaIngreso);
@@ -270,7 +281,8 @@
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;
         private dsSistemaTarjetasTableAdapters.QueriesTableAdapter queriesTableAdapter1;
-        private System.Windows.Forms.MaskedTextBox txtComision;
         private System.Windows.Forms.MaskedTextBox txtDeduccion;
+        private System.Windows.Forms.ComboBox cbxComision;
+        private System.Windows.Forms.Label label9;
     }
 }

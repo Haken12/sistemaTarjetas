@@ -43,7 +43,7 @@ namespace sistemaTarjetas
                 mtxtCedula.Text = vendedor.cedula;
                 mtxtTelefon.Text = vendedor.telefono;
                 mtxtCelular.Text = vendedor.celular;
-                mtxtComision.Text = vendedor.comision.ToString();
+                cbxComision.SelectedText = vendedor.comision.ToString();
                 mtxtDeduccion.Text = vendedor.deduccion.ToString();
                 dtpFecha.Value = vendedor.fechaIngreso.Value;
                 cbxAyudante.SelectedValue = vendedor.idAyudante;
@@ -54,7 +54,7 @@ namespace sistemaTarjetas
         }
 
         private void crear() {
-            decimal com = Convert.ToDecimal(mtxtComision.Text);
+            decimal com = Convert.ToDecimal(cbxComision.Text);
             decimal ded = Convert.ToDecimal(mtxtDeduccion.Text);
 
             queriesTableAdapter1.crear_vendedor_ca(
@@ -70,7 +70,7 @@ namespace sistemaTarjetas
         }
 
         private void actualizar() {
-            decimal com = Convert.ToDecimal(mtxtComision.Text);
+            decimal com = Convert.ToDecimal(cbxComision.Text);
             decimal ded = Convert.ToDecimal(mtxtDeduccion.Text);
             queriesTableAdapter1.actualizar_vendedor(
                 vendedor.id,
