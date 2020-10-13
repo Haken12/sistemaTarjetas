@@ -86,7 +86,14 @@ namespace sistemaTarjetas
 
         private void txtId_TextChanged(object sender, EventArgs e)
         {
-            bsZonas.Filter = "id_zona LIKE '" + txtId.Text + "%'";
+            if (txtId.Text.Length > 0)
+            {
+                bsZonas.Filter = "id_zona =" + txtId.Text;
+            }
+            else
+            {
+                bsZonas.Filter = "";
+            }
         }
 
         private void txtNombre_TextChanged(object sender, EventArgs e)

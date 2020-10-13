@@ -88,7 +88,14 @@ namespace sistemaTarjetas
 
         private void txtBuscarId_TextChanged(object sender, EventArgs e)
         {
-            bsAyudantes.Filter = "id_ayudante LIKE '" + txtBuscarId.Text + "%'";
+            if (txtBuscarId.Text.Length > 0)
+            {
+                bsAyudantes.Filter = "id_ayudante =" + txtBuscarId.Text;
+            }
+            else
+            {
+                bsAyudantes.Filter = "";
+            }
         }
 
         private void txtBuscarNombre_TextChanged(object sender, EventArgs e)

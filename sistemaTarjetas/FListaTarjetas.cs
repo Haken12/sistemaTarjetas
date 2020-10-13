@@ -76,7 +76,7 @@ namespace sistemaTarjetas
 
         private void txtCliente_TextChanged(object sender, EventArgs e)
         {
-            bsTarjetas.Filter = "Cliente LIKE '" + txtCodigo.Text + "%'";
+            bsTarjetas.Filter = "Cliente LIKE '" + txtCliente.Text + "%'";
         }
 
         private void rbCodigo_CheckedChanged(object sender, EventArgs e)
