@@ -85,7 +85,8 @@ namespace sistemaTarjetas
 
         private void txtNombre_TextChanged(object sender, EventArgs e)
         {
-            bsClientes.Filter = "nombre LIKE '" + txtNombre.Text + "@'";
+            bsClientes.Filter = "Nombre LIKE '" + txtNombre.Text + "%'";
+            
         }
 
         private void rbCodigo_CheckedChanged(object sender, EventArgs e)
@@ -111,6 +112,13 @@ namespace sistemaTarjetas
                 txtNombre.Clear();
                 bsClientes.Filter = "";
             }
+        }
+
+        private void txtCodigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar)) return;
+            if (e.KeyChar == (char)8) return;
+            e.Handled = true;
         }
     }
 }

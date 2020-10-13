@@ -30,19 +30,19 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtBuscarNombre = new System.Windows.Forms.TextBox();
+            this.txtBuscarId = new System.Windows.Forms.TextBox();
+            this.rbNombre = new System.Windows.Forms.RadioButton();
+            this.rbId = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnNuevo = new System.Windows.Forms.Button();
             this.dgvListaVendedores = new System.Windows.Forms.DataGridView();
             this.bsVendedores = new System.Windows.Forms.BindingSource(this.components);
             this.dsSistemaTarjetas = new sistemaTarjetas.dsSistemaTarjetas();
             this.vVendedoresTableAdapter = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.vVendedoresTableAdapter();
-            this.btnNuevo = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
             this.queriesTableAdapter1 = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.QueriesTableAdapter();
-            this.rbId = new System.Windows.Forms.RadioButton();
-            this.rbNombre = new System.Windows.Forms.RadioButton();
-            this.txtBuscarId = new System.Windows.Forms.TextBox();
-            this.txtBuscarNombre = new System.Windows.Forms.TextBox();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ayudante = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,6 +53,7 @@
             this.Comision = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Deduccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ingreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idayudanteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaVendedores)).BeginInit();
@@ -73,6 +74,49 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar";
             // 
+            // txtBuscarNombre
+            // 
+            this.txtBuscarNombre.Enabled = false;
+            this.txtBuscarNombre.Location = new System.Drawing.Point(112, 72);
+            this.txtBuscarNombre.Name = "txtBuscarNombre";
+            this.txtBuscarNombre.Size = new System.Drawing.Size(169, 20);
+            this.txtBuscarNombre.TabIndex = 3;
+            this.txtBuscarNombre.TextChanged += new System.EventHandler(this.txtBuscarNombre_TextChanged);
+            // 
+            // txtBuscarId
+            // 
+            this.txtBuscarId.Enabled = false;
+            this.txtBuscarId.Location = new System.Drawing.Point(112, 33);
+            this.txtBuscarId.Name = "txtBuscarId";
+            this.txtBuscarId.Size = new System.Drawing.Size(56, 20);
+            this.txtBuscarId.TabIndex = 2;
+            this.txtBuscarId.TextChanged += new System.EventHandler(this.txtBuscarId_TextChanged);
+            this.txtBuscarId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscarId_KeyPress);
+            // 
+            // rbNombre
+            // 
+            this.rbNombre.AutoSize = true;
+            this.rbNombre.Location = new System.Drawing.Point(25, 72);
+            this.rbNombre.Name = "rbNombre";
+            this.rbNombre.Size = new System.Drawing.Size(81, 17);
+            this.rbNombre.TabIndex = 1;
+            this.rbNombre.TabStop = true;
+            this.rbNombre.Text = "Por Nombre";
+            this.rbNombre.UseVisualStyleBackColor = true;
+            this.rbNombre.CheckedChanged += new System.EventHandler(this.rbNombre_CheckedChanged);
+            // 
+            // rbId
+            // 
+            this.rbId.AutoSize = true;
+            this.rbId.Location = new System.Drawing.Point(25, 36);
+            this.rbId.Name = "rbId";
+            this.rbId.Size = new System.Drawing.Size(53, 17);
+            this.rbId.TabIndex = 0;
+            this.rbId.TabStop = true;
+            this.rbId.Text = "Por Id";
+            this.rbId.UseVisualStyleBackColor = true;
+            this.rbId.CheckedChanged += new System.EventHandler(this.rbId_CheckedChanged);
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnEliminar);
@@ -84,6 +128,38 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Acciones";
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Enabled = false;
+            this.btnEliminar.Location = new System.Drawing.Point(118, 60);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.TabIndex = 2;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.Enabled = false;
+            this.btnModificar.Location = new System.Drawing.Point(19, 60);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(75, 23);
+            this.btnModificar.TabIndex = 1;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Location = new System.Drawing.Point(19, 19);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(75, 23);
+            this.btnNuevo.TabIndex = 0;
+            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // dgvListaVendedores
             // 
@@ -101,14 +177,15 @@
             this.Celular,
             this.Comision,
             this.Deduccion,
-            this.Ingreso});
+            this.Ingreso,
+            this.idayudanteDataGridViewTextBoxColumn});
             this.dgvListaVendedores.DataSource = this.bsVendedores;
             this.dgvListaVendedores.Location = new System.Drawing.Point(12, 133);
             this.dgvListaVendedores.MultiSelect = false;
             this.dgvListaVendedores.Name = "dgvListaVendedores";
             this.dgvListaVendedores.ReadOnly = true;
             this.dgvListaVendedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListaVendedores.Size = new System.Drawing.Size(762, 282);
+            this.dgvListaVendedores.Size = new System.Drawing.Size(776, 282);
             this.dgvListaVendedores.TabIndex = 2;
             // 
             // bsVendedores
@@ -124,80 +201,6 @@
             // vVendedoresTableAdapter
             // 
             this.vVendedoresTableAdapter.ClearBeforeFill = true;
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.Location = new System.Drawing.Point(19, 19);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(75, 23);
-            this.btnNuevo.TabIndex = 0;
-            this.btnNuevo.Text = "Nuevo";
-            this.btnNuevo.UseVisualStyleBackColor = true;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.Enabled = false;
-            this.btnModificar.Location = new System.Drawing.Point(19, 60);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(75, 23);
-            this.btnModificar.TabIndex = 1;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = true;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Enabled = false;
-            this.btnEliminar.Location = new System.Drawing.Point(118, 60);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
-            this.btnEliminar.TabIndex = 2;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // rbId
-            // 
-            this.rbId.AutoSize = true;
-            this.rbId.Location = new System.Drawing.Point(25, 36);
-            this.rbId.Name = "rbId";
-            this.rbId.Size = new System.Drawing.Size(53, 17);
-            this.rbId.TabIndex = 0;
-            this.rbId.TabStop = true;
-            this.rbId.Text = "Por Id";
-            this.rbId.UseVisualStyleBackColor = true;
-            this.rbId.CheckedChanged += new System.EventHandler(this.rbId_CheckedChanged);
-            // 
-            // rbNombre
-            // 
-            this.rbNombre.AutoSize = true;
-            this.rbNombre.Location = new System.Drawing.Point(25, 72);
-            this.rbNombre.Name = "rbNombre";
-            this.rbNombre.Size = new System.Drawing.Size(81, 17);
-            this.rbNombre.TabIndex = 1;
-            this.rbNombre.TabStop = true;
-            this.rbNombre.Text = "Por Nombre";
-            this.rbNombre.UseVisualStyleBackColor = true;
-            this.rbNombre.CheckedChanged += new System.EventHandler(this.rbNombre_CheckedChanged);
-            // 
-            // txtBuscarId
-            // 
-            this.txtBuscarId.Enabled = false;
-            this.txtBuscarId.Location = new System.Drawing.Point(112, 33);
-            this.txtBuscarId.Name = "txtBuscarId";
-            this.txtBuscarId.Size = new System.Drawing.Size(56, 20);
-            this.txtBuscarId.TabIndex = 2;
-            this.txtBuscarId.TextChanged += new System.EventHandler(this.txtBuscarId_TextChanged);
-            // 
-            // txtBuscarNombre
-            // 
-            this.txtBuscarNombre.Enabled = false;
-            this.txtBuscarNombre.Location = new System.Drawing.Point(112, 72);
-            this.txtBuscarNombre.Name = "txtBuscarNombre";
-            this.txtBuscarNombre.Size = new System.Drawing.Size(169, 20);
-            this.txtBuscarNombre.TabIndex = 3;
-            this.txtBuscarNombre.TextChanged += new System.EventHandler(this.txtBuscarNombre_TextChanged);
             // 
             // Id
             // 
@@ -271,6 +274,13 @@
             this.Ingreso.Name = "Ingreso";
             this.Ingreso.ReadOnly = true;
             // 
+            // idayudanteDataGridViewTextBoxColumn
+            // 
+            this.idayudanteDataGridViewTextBoxColumn.DataPropertyName = "id_ayudante";
+            this.idayudanteDataGridViewTextBoxColumn.HeaderText = "id_ayudante";
+            this.idayudanteDataGridViewTextBoxColumn.Name = "idayudanteDataGridViewTextBoxColumn";
+            this.idayudanteDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // FListaVendedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -318,5 +328,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Comision;
         private System.Windows.Forms.DataGridViewTextBoxColumn Deduccion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ingreso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idayudanteDataGridViewTextBoxColumn;
     }
 }

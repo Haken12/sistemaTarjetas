@@ -30,6 +30,7 @@ namespace sistemaTarjetas
             {
                 case Modo.Insertar:
                     cbxFormaPago.SelectedIndex = 0;
+                   
                     break;
                 case Modo.Editar:
                     queriesTableAdapter1.unica_tarjeta(
@@ -50,6 +51,7 @@ namespace sistemaTarjetas
                 default:
                     break;
             }
+            bsZona.Filter = "id_vendedor =" + cbxVendedor.SelectedValue;
         }
 
         private void crear() {
@@ -89,7 +91,7 @@ namespace sistemaTarjetas
 
         private void cbxVendedor_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbxVendedor.SelectedIndex != -1) { bsZona.Filter = "id_vendedor =" + cbxVendedor.Text; }
+            if (cbxVendedor.SelectedIndex != -1) { bsZona.Filter = "id_vendedor =" + cbxVendedor.SelectedValue; }
         }
     }
 }

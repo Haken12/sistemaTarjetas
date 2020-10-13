@@ -50,6 +50,16 @@ namespace sistemaTarjetas
                 Convert.ToDecimal(mtxtPrecio.Text),
                 0);
         }
+
+        private void actualizar() 
+        {
+            queriesTableAdapter1.actualizar_producto(
+                producto.codigo,
+                txtDescripcion.Text,
+                Convert.ToDecimal(mtxtCosto.Text),
+                Convert.ToDecimal(mtxtPrecio.Text)
+                );
+        }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             switch (modo)
@@ -58,6 +68,7 @@ namespace sistemaTarjetas
                     crear();
                     break;
                 case Modo.Editar:
+                    actualizar();
                     break;
                 default:
                     break;

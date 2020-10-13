@@ -17,6 +17,14 @@ namespace sistemaTarjetas
             InitializeComponent();
         }
 
+        public  void SoloNumero(object sender, KeyPressEventArgs e)
+
+        {
+            if (Char.IsDigit(e.KeyChar)) return;
+            if (e.KeyChar == (char)8) return;
+            e.Handled = true;
+        }
+
         private void FListaAyudantes_Load(object sender, EventArgs e)
         {
             this.ayudanteTableAdapter.Fill(this.dsSistemaTarjetas.ayudante);

@@ -30,14 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtBuscarNombre = new System.Windows.Forms.TextBox();
-            this.rbNombre = new System.Windows.Forms.RadioButton();
-            this.rbId = new System.Windows.Forms.RadioButton();
             this.txtBuscarId = new System.Windows.Forms.TextBox();
+            this.rbId = new System.Windows.Forms.RadioButton();
+            this.rbNombre = new System.Windows.Forms.RadioButton();
+            this.txtBuscarNombre = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnNuevo = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnNuevo = new System.Windows.Forms.Button();
             this.dgvListaAyudantes = new System.Windows.Forms.DataGridView();
             this.idayudanteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,26 +72,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar";
             // 
-            // txtBuscarNombre
+            // txtBuscarId
             // 
-            this.txtBuscarNombre.Enabled = false;
-            this.txtBuscarNombre.Location = new System.Drawing.Point(106, 79);
-            this.txtBuscarNombre.Name = "txtBuscarNombre";
-            this.txtBuscarNombre.Size = new System.Drawing.Size(153, 20);
-            this.txtBuscarNombre.TabIndex = 1;
-            this.txtBuscarNombre.TextChanged += new System.EventHandler(this.txtBuscarNombre_TextChanged);
-            // 
-            // rbNombre
-            // 
-            this.rbNombre.AutoSize = true;
-            this.rbNombre.Location = new System.Drawing.Point(19, 80);
-            this.rbNombre.Name = "rbNombre";
-            this.rbNombre.Size = new System.Drawing.Size(81, 17);
-            this.rbNombre.TabIndex = 2;
-            this.rbNombre.TabStop = true;
-            this.rbNombre.Text = "Por Nombre";
-            this.rbNombre.UseVisualStyleBackColor = true;
-            this.rbNombre.CheckedChanged += new System.EventHandler(this.rbNombre_CheckedChanged);
+            this.txtBuscarId.Enabled = false;
+            this.txtBuscarId.Location = new System.Drawing.Point(106, 31);
+            this.txtBuscarId.Name = "txtBuscarId";
+            this.txtBuscarId.Size = new System.Drawing.Size(68, 20);
+            this.txtBuscarId.TabIndex = 4;
+            this.txtBuscarId.TextChanged += new System.EventHandler(this.txtBuscarId_TextChanged);
+            this.txtBuscarId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumero);
             // 
             // rbId
             // 
@@ -105,14 +94,26 @@
             this.rbId.UseVisualStyleBackColor = true;
             this.rbId.CheckedChanged += new System.EventHandler(this.rbId_CheckedChanged);
             // 
-            // txtBuscarId
+            // rbNombre
             // 
-            this.txtBuscarId.Enabled = false;
-            this.txtBuscarId.Location = new System.Drawing.Point(106, 31);
-            this.txtBuscarId.Name = "txtBuscarId";
-            this.txtBuscarId.Size = new System.Drawing.Size(68, 20);
-            this.txtBuscarId.TabIndex = 4;
-            this.txtBuscarId.TextChanged += new System.EventHandler(this.txtBuscarId_TextChanged);
+            this.rbNombre.AutoSize = true;
+            this.rbNombre.Location = new System.Drawing.Point(19, 80);
+            this.rbNombre.Name = "rbNombre";
+            this.rbNombre.Size = new System.Drawing.Size(81, 17);
+            this.rbNombre.TabIndex = 2;
+            this.rbNombre.TabStop = true;
+            this.rbNombre.Text = "Por Nombre";
+            this.rbNombre.UseVisualStyleBackColor = true;
+            this.rbNombre.CheckedChanged += new System.EventHandler(this.rbNombre_CheckedChanged);
+            // 
+            // txtBuscarNombre
+            // 
+            this.txtBuscarNombre.Enabled = false;
+            this.txtBuscarNombre.Location = new System.Drawing.Point(106, 79);
+            this.txtBuscarNombre.Name = "txtBuscarNombre";
+            this.txtBuscarNombre.Size = new System.Drawing.Size(153, 20);
+            this.txtBuscarNombre.TabIndex = 1;
+            this.txtBuscarNombre.TextChanged += new System.EventHandler(this.txtBuscarNombre_TextChanged);
             // 
             // groupBox2
             // 
@@ -126,15 +127,16 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Operaciones";
             // 
-            // btnNuevo
+            // btnEliminar
             // 
-            this.btnNuevo.Location = new System.Drawing.Point(19, 31);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(75, 23);
-            this.btnNuevo.TabIndex = 0;
-            this.btnNuevo.Text = "Nuevo";
-            this.btnNuevo.UseVisualStyleBackColor = true;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            this.btnEliminar.Enabled = false;
+            this.btnEliminar.Location = new System.Drawing.Point(126, 31);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.TabIndex = 2;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnModificar
             // 
@@ -147,16 +149,15 @@
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
-            // btnEliminar
+            // btnNuevo
             // 
-            this.btnEliminar.Enabled = false;
-            this.btnEliminar.Location = new System.Drawing.Point(126, 31);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
-            this.btnEliminar.TabIndex = 2;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            this.btnNuevo.Location = new System.Drawing.Point(19, 31);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(75, 23);
+            this.btnNuevo.TabIndex = 0;
+            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // dgvListaAyudantes
             // 

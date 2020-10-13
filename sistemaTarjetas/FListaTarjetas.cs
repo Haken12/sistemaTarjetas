@@ -114,5 +114,12 @@ namespace sistemaTarjetas
             fDetalles.tarjeta.codigo = Convert.ToInt32(dgvTarjetas.SelectedRows[0].Cells[0].Value);
             fDetalles.Show();
         }
+
+        private void txtCodigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar)) return;
+            if (e.KeyChar == (char)8) return;
+            e.Handled = true;
+        }
     }
 }

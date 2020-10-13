@@ -91,7 +91,7 @@ namespace sistemaTarjetas
         {
             if (txtBuscarId.Text.Length > 0)
             {
-                bsVendedores.Filter = "id_vendedor =" + txtBuscarId.Text;
+                bsVendedores.Filter = "Id=" + txtBuscarId.Text;
             }
             else
             {
@@ -101,7 +101,14 @@ namespace sistemaTarjetas
 
         private void txtBuscarNombre_TextChanged(object sender, EventArgs e)
         {
-            bsVendedores.Filter = "nombre LIKE '" + txtBuscarNombre.Text + "'%";
+            bsVendedores.Filter = "Nombre LIKE '" + txtBuscarNombre.Text + "%'";
+        }
+
+        private void txtBuscarId_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar)) return;
+            if (e.KeyChar == (char)8) return;
+            e.Handled = true;
         }
     }
 }

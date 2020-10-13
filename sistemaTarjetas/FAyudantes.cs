@@ -76,8 +76,8 @@ namespace sistemaTarjetas
                
             }
             else if (modo == Modo.Insertar) {
-           
-              
+
+                cbxComision.SelectedIndex = 0;
             }
         }
 

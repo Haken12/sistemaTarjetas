@@ -50,6 +50,7 @@ namespace sistemaTarjetas
             }
             else {
                 cbxAyudante.SelectedValue = 1;
+                cbxComision.SelectedIndex = 0;
             }
         }
 
