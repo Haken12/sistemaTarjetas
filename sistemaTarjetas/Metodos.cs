@@ -82,5 +82,13 @@ namespace sistemaTarjetas
             else 
             { return false; }
         }
+
+        public static void SoloNumero(object sender, KeyPressEventArgs e) 
+        
+        {
+            if (Char.IsDigit(e.KeyChar)) return;
+            if (e.KeyChar == (char)8) return;
+            e.Handled = true;
+        }
     }
 }

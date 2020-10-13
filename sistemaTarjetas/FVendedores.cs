@@ -100,5 +100,10 @@ namespace sistemaTarjetas
                     break;
             }
         }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

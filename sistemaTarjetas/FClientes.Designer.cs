@@ -82,14 +82,14 @@
             this.txtNombre.Location = new System.Drawing.Point(76, 27);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(187, 20);
-            this.txtNombre.TabIndex = 5;
+            this.txtNombre.TabIndex = 0;
             // 
             // txtDireccion
             // 
             this.txtDireccion.Location = new System.Drawing.Point(76, 63);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(187, 20);
-            this.txtDireccion.TabIndex = 6;
+            this.txtDireccion.TabIndex = 2;
             // 
             // mtxtCedula
             // 
@@ -98,7 +98,7 @@
             this.mtxtCedula.Name = "mtxtCedula";
             this.mtxtCedula.PromptChar = '0';
             this.mtxtCedula.Size = new System.Drawing.Size(91, 20);
-            this.mtxtCedula.TabIndex = 7;
+            this.mtxtCedula.TabIndex = 1;
             this.mtxtCedula.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             // 
             // mtxtTelefono
@@ -108,7 +108,7 @@
             this.mtxtTelefono.Name = "mtxtTelefono";
             this.mtxtTelefono.PromptChar = '0';
             this.mtxtTelefono.Size = new System.Drawing.Size(91, 20);
-            this.mtxtTelefono.TabIndex = 8;
+            this.mtxtTelefono.TabIndex = 3;
             this.mtxtTelefono.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             // 
             // button1
@@ -117,7 +117,7 @@
             this.button1.Location = new System.Drawing.Point(15, 116);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 36);
-            this.button1.TabIndex = 9;
+            this.button1.TabIndex = 4;
             this.button1.Text = "Guardar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -128,7 +128,7 @@
             this.button2.Location = new System.Drawing.Point(119, 116);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 36);
-            this.button2.TabIndex = 10;
+            this.button2.TabIndex = 5;
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = true;
             // 

@@ -71,7 +71,14 @@ namespace sistemaTarjetas
 
         private void txtCodigo_TextChanged(object sender, EventArgs e)
         {
-            bsTarjetas.Filter = "Codigo LIKE '" + txtCodigo.Text + "%'";
+            if (!(txtCodigo.Text.Length == 0))
+            {
+                bsTarjetas.Filter = "Codigo =" + txtCodigo.Text;
+            }
+            else
+            {
+                bsTarjetas.Filter = "";
+            }
         }
 
         private void txtCliente_TextChanged(object sender, EventArgs e)
@@ -85,6 +92,8 @@ namespace sistemaTarjetas
             {
                 txtCodigo.Enabled = true;
                 txtCliente.Enabled = false;
+                bsTarjetas.Filter = "";
+                txtCodigo.Clear();
             }
         }
 
@@ -94,6 +103,8 @@ namespace sistemaTarjetas
             {
                 txtCliente.Enabled = true;
                 txtCodigo.Enabled = false;
+                txtCodigo.Clear();
+                bsTarjetas.Filter = ""; 
             }
         }
 

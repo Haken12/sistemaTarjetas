@@ -74,7 +74,9 @@ namespace sistemaTarjetas
         {
             if (((RadioButton)sender).Checked == true)
             { txtBuscarId.Enabled = true;
+                txtBuscarId.Clear();
               txtBuscarNombre.Enabled = false;
+                bsAyudantes.Filter = "";
             }
         }
 
@@ -82,7 +84,10 @@ namespace sistemaTarjetas
         {
             if (((RadioButton)sender).Checked == true)
             { txtBuscarNombre.Enabled = true;
+                txtBuscarNombre.Clear();
                 txtBuscarId.Enabled = false;
+                bsAyudantes.Filter = "";
+
             }
         }
 

@@ -126,14 +126,14 @@
             this.txtNombre.Location = new System.Drawing.Point(93, 28);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(203, 20);
-            this.txtNombre.TabIndex = 8;
+            this.txtNombre.TabIndex = 0;
             // 
             // txtDireccion
             // 
             this.txtDireccion.Location = new System.Drawing.Point(93, 79);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(203, 20);
-            this.txtDireccion.TabIndex = 9;
+            this.txtDireccion.TabIndex = 2;
             // 
             // mtxtCedula
             // 
@@ -142,7 +142,7 @@
             this.mtxtCedula.Name = "mtxtCedula";
             this.mtxtCedula.PromptChar = '0';
             this.mtxtCedula.Size = new System.Drawing.Size(100, 20);
-            this.mtxtCedula.TabIndex = 12;
+            this.mtxtCedula.TabIndex = 1;
             this.mtxtCedula.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             // 
             // mtxtTelefono
@@ -152,7 +152,7 @@
             this.mtxtTelefono.Name = "mtxtTelefono";
             this.mtxtTelefono.PromptChar = '0';
             this.mtxtTelefono.Size = new System.Drawing.Size(100, 20);
-            this.mtxtTelefono.TabIndex = 13;
+            this.mtxtTelefono.TabIndex = 5;
             this.mtxtTelefono.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             // 
             // mtxtCelular
@@ -162,7 +162,7 @@
             this.mtxtCelular.Name = "mtxtCelular";
             this.mtxtCelular.PromptChar = '0';
             this.mtxtCelular.Size = new System.Drawing.Size(100, 20);
-            this.mtxtCelular.TabIndex = 14;
+            this.mtxtCelular.TabIndex = 3;
             this.mtxtCelular.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             // 
             // dtpFechaIngreso
@@ -171,7 +171,7 @@
             this.dtpFechaIngreso.Location = new System.Drawing.Point(441, 160);
             this.dtpFechaIngreso.Name = "dtpFechaIngreso";
             this.dtpFechaIngreso.Size = new System.Drawing.Size(115, 20);
-            this.dtpFechaIngreso.TabIndex = 15;
+            this.dtpFechaIngreso.TabIndex = 7;
             // 
             // btnGuardar
             // 
@@ -179,7 +179,7 @@
             this.btnGuardar.Location = new System.Drawing.Point(43, 223);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 32);
-            this.btnGuardar.TabIndex = 16;
+            this.btnGuardar.TabIndex = 8;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -190,7 +190,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(160, 223);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 32);
-            this.btnCancelar.TabIndex = 17;
+            this.btnCancelar.TabIndex = 9;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
@@ -202,7 +202,7 @@
             this.txtComision.Name = "txtComision";
             this.txtComision.PromptChar = '0';
             this.txtComision.Size = new System.Drawing.Size(100, 20);
-            this.txtComision.TabIndex = 18;
+            this.txtComision.TabIndex = 4;
             this.txtComision.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             this.txtComision.ValidatingType = typeof(int);
             // 
@@ -210,11 +210,11 @@
             // 
             this.txtDeduccion.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             this.txtDeduccion.Location = new System.Drawing.Point(93, 163);
-            this.txtDeduccion.Mask = "000.00";
+            this.txtDeduccion.Mask = "00000.00";
             this.txtDeduccion.Name = "txtDeduccion";
             this.txtDeduccion.PromptChar = '0';
             this.txtDeduccion.Size = new System.Drawing.Size(100, 20);
-            this.txtDeduccion.TabIndex = 19;
+            this.txtDeduccion.TabIndex = 6;
             this.txtDeduccion.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             this.txtDeduccion.ValidatingType = typeof(int);
             // 

@@ -72,6 +72,7 @@ namespace sistemaTarjetas
             if (((RadioButton)sender).Checked == true) {
                 txtId.Enabled = true;
                 txtNombre.Enabled = false;
+                txtId.Clear();
             }
         }
 
@@ -81,6 +82,7 @@ namespace sistemaTarjetas
             {
                 txtNombre.Enabled = true;
                 txtId.Enabled = false;
+                txtNombre.Clear();
             }
         }
 
@@ -88,7 +90,7 @@ namespace sistemaTarjetas
         {
             if (txtId.Text.Length > 0)
             {
-                bsZonas.Filter = "id_zona =" + txtId.Text;
+                bsZonas.Filter = "Id=" + txtId.Text;
             }
             else
             {
@@ -98,7 +100,15 @@ namespace sistemaTarjetas
 
         private void txtNombre_TextChanged(object sender, EventArgs e)
         {
-            bsZonas.Filter = "descripcion LIKE '" + txtNombre.Text + "%'";
+            bsZonas.Filter = "Descripcion LIKE '" + txtNombre.Text + "%'";
+        }
+
+        private void txtId_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) || !(e.KeyChar == (char)8) ) 
+            {
+                e.Handled = true;
+            }
         }
     }
 }

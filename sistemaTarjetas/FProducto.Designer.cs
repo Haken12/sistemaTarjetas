@@ -83,7 +83,7 @@
             this.txtDescripcion.Location = new System.Drawing.Point(168, 59);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(212, 20);
-            this.txtDescripcion.TabIndex = 3;
+            this.txtDescripcion.TabIndex = 0;
             this.txtDescripcion.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // mtxtCosto
@@ -96,7 +96,7 @@
             this.mtxtCosto.Name = "mtxtCosto";
             this.mtxtCosto.PromptChar = '0';
             this.mtxtCosto.Size = new System.Drawing.Size(100, 20);
-            this.mtxtCosto.TabIndex = 4;
+            this.mtxtCosto.TabIndex = 1;
             this.mtxtCosto.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             // 
             // mtxtPrecio
@@ -109,7 +109,7 @@
             this.mtxtPrecio.Name = "mtxtPrecio";
             this.mtxtPrecio.PromptChar = '0';
             this.mtxtPrecio.Size = new System.Drawing.Size(100, 20);
-            this.mtxtPrecio.TabIndex = 5;
+            this.mtxtPrecio.TabIndex = 2;
             this.mtxtPrecio.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             // 
             // btnGuardar
@@ -124,7 +124,7 @@
             this.btnGuardar.Location = new System.Drawing.Point(47, 204);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 42);
-            this.btnGuardar.TabIndex = 6;
+            this.btnGuardar.TabIndex = 3;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -141,7 +141,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(158, 204);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(84, 42);
-            this.btnCancelar.TabIndex = 7;
+            this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             // 
@@ -163,7 +163,7 @@
             this.Font = new System.Drawing.Font("Meiryo UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FProducto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Load += new System.EventHandler(this.FProducto_Load);

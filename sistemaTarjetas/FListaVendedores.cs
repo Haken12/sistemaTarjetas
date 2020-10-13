@@ -72,6 +72,8 @@ namespace sistemaTarjetas
             if (((RadioButton)sender).Checked == true) {
                 txtBuscarId.Enabled = true;
                 txtBuscarNombre.Enabled = false;
+                txtBuscarId.Clear();
+                bsVendedores.Filter = "";
             }
         }
 
@@ -80,6 +82,8 @@ namespace sistemaTarjetas
             if (((RadioButton)sender).Checked == true) {
                 txtBuscarId.Enabled = false;
                 txtBuscarNombre.Enabled = true;
+                txtBuscarNombre.Clear();
+                bsVendedores.Filter = "";
             }
         }
 

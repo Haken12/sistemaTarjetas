@@ -40,7 +40,7 @@
             this.button1.Location = new System.Drawing.Point(23, 123);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(57, 34);
-            this.button1.TabIndex = 0;
+            this.button1.TabIndex = 1;
             this.button1.Text = "Aceptar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -51,7 +51,7 @@
             this.button2.Location = new System.Drawing.Point(118, 123);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(59, 34);
-            this.button2.TabIndex = 1;
+            this.button2.TabIndex = 2;
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = true;
             // 
@@ -70,7 +70,7 @@
             this.txtMonto.Location = new System.Drawing.Point(58, 71);
             this.txtMonto.Name = "txtMonto";
             this.txtMonto.Size = new System.Drawing.Size(100, 20);
-            this.txtMonto.TabIndex = 3;
+            this.txtMonto.TabIndex = 0;
             this.txtMonto.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMonto_KeyDown);
             this.txtMonto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMonto_KeyPress);
             // 

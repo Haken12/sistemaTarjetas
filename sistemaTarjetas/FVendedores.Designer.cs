@@ -46,12 +46,12 @@
             this.mtxtDeduccion = new System.Windows.Forms.MaskedTextBox();
             this.mtxtComision = new System.Windows.Forms.MaskedTextBox();
             this.cbxAyudante = new System.Windows.Forms.ComboBox();
+            this.bsAyudantes = new System.Windows.Forms.BindingSource(this.components);
+            this.dsSistemaTarjetas = new sistemaTarjetas.dsSistemaTarjetas();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.queriesTableAdapter1 = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.QueriesTableAdapter();
-            this.bsAyudantes = new System.Windows.Forms.BindingSource(this.components);
-            this.dsSistemaTarjetas = new sistemaTarjetas.dsSistemaTarjetas();
             this.seleccionAyudanteTableAdapter = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.seleccionAyudanteTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.bsAyudantes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSistemaTarjetas)).BeginInit();
@@ -143,14 +143,15 @@
             this.txtNombre.Location = new System.Drawing.Point(117, 29);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(200, 20);
-            this.txtNombre.TabIndex = 9;
+            this.txtNombre.TabIndex = 0;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // txtDireccion
             // 
             this.txtDireccion.Location = new System.Drawing.Point(399, 29);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(189, 20);
-            this.txtDireccion.TabIndex = 10;
+            this.txtDireccion.TabIndex = 1;
             // 
             // mtxtCelular
             // 
@@ -160,7 +161,7 @@
             this.mtxtCelular.Name = "mtxtCelular";
             this.mtxtCelular.PromptChar = '0';
             this.mtxtCelular.Size = new System.Drawing.Size(100, 20);
-            this.mtxtCelular.TabIndex = 11;
+            this.mtxtCelular.TabIndex = 4;
             this.mtxtCelular.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             // 
             // mtxtTelefon
@@ -171,7 +172,7 @@
             this.mtxtTelefon.Name = "mtxtTelefon";
             this.mtxtTelefon.PromptChar = '0';
             this.mtxtTelefon.Size = new System.Drawing.Size(100, 20);
-            this.mtxtTelefon.TabIndex = 12;
+            this.mtxtTelefon.TabIndex = 3;
             this.mtxtTelefon.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             // 
             // mtxtCedula
@@ -182,18 +183,18 @@
             this.mtxtCedula.Name = "mtxtCedula";
             this.mtxtCedula.PromptChar = '0';
             this.mtxtCedula.Size = new System.Drawing.Size(100, 20);
-            this.mtxtCedula.TabIndex = 13;
+            this.mtxtCedula.TabIndex = 2;
             this.mtxtCedula.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             // 
             // mtxtDeduccion
             // 
             this.mtxtDeduccion.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             this.mtxtDeduccion.Location = new System.Drawing.Point(117, 139);
-            this.mtxtDeduccion.Mask = "000.00";
+            this.mtxtDeduccion.Mask = "00000.00";
             this.mtxtDeduccion.Name = "mtxtDeduccion";
             this.mtxtDeduccion.PromptChar = '0';
             this.mtxtDeduccion.Size = new System.Drawing.Size(100, 20);
-            this.mtxtDeduccion.TabIndex = 14;
+            this.mtxtDeduccion.TabIndex = 6;
             this.mtxtDeduccion.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             // 
             // mtxtComision
@@ -204,7 +205,7 @@
             this.mtxtComision.Name = "mtxtComision";
             this.mtxtComision.PromptChar = '0';
             this.mtxtComision.Size = new System.Drawing.Size(100, 20);
-            this.mtxtComision.TabIndex = 16;
+            this.mtxtComision.TabIndex = 5;
             this.mtxtComision.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             // 
             // cbxAyudante
@@ -215,37 +216,8 @@
             this.cbxAyudante.Location = new System.Drawing.Point(399, 153);
             this.cbxAyudante.Name = "cbxAyudante";
             this.cbxAyudante.Size = new System.Drawing.Size(121, 21);
-            this.cbxAyudante.TabIndex = 17;
+            this.cbxAyudante.TabIndex = 7;
             this.cbxAyudante.ValueMember = "id_ayudante";
-            // 
-            // dtpFecha
-            // 
-            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(117, 169);
-            this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(118, 20);
-            this.dtpFecha.TabIndex = 18;
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnGuardar.Location = new System.Drawing.Point(26, 225);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 32);
-            this.btnGuardar.TabIndex = 19;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancelar.Location = new System.Drawing.Point(160, 225);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 32);
-            this.btnCancelar.TabIndex = 20;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
             // 
             // bsAyudantes
             // 
@@ -256,6 +228,35 @@
             // 
             this.dsSistemaTarjetas.DataSetName = "dsSistemaTarjetas";
             this.dsSistemaTarjetas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dtpFecha
+            // 
+            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFecha.Location = new System.Drawing.Point(117, 169);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(118, 20);
+            this.dtpFecha.TabIndex = 8;
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnGuardar.Location = new System.Drawing.Point(26, 225);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(75, 32);
+            this.btnGuardar.TabIndex = 9;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancelar.Location = new System.Drawing.Point(160, 225);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 32);
+            this.btnCancelar.TabIndex = 10;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
             // 
             // seleccionAyudanteTableAdapter
             // 

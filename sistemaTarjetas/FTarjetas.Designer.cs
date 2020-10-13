@@ -108,7 +108,7 @@
             this.cbxCliente.Location = new System.Drawing.Point(79, 17);
             this.cbxCliente.Name = "cbxCliente";
             this.cbxCliente.Size = new System.Drawing.Size(172, 21);
-            this.cbxCliente.TabIndex = 5;
+            this.cbxCliente.TabIndex = 0;
             this.cbxCliente.ValueMember = "Codigo";
             // 
             // bsCliente
@@ -129,7 +129,7 @@
             this.cbxZona.Location = new System.Drawing.Point(79, 75);
             this.cbxZona.Name = "cbxZona";
             this.cbxZona.Size = new System.Drawing.Size(172, 21);
-            this.cbxZona.TabIndex = 6;
+            this.cbxZona.TabIndex = 4;
             this.cbxZona.ValueMember = "Id";
             // 
             // bsZona
@@ -147,7 +147,7 @@
             this.cbxFormaPago.Location = new System.Drawing.Point(354, 17);
             this.cbxFormaPago.Name = "cbxFormaPago";
             this.cbxFormaPago.Size = new System.Drawing.Size(121, 21);
-            this.cbxFormaPago.TabIndex = 7;
+            this.cbxFormaPago.TabIndex = 1;
             // 
             // cbxVendedor
             // 
@@ -157,7 +157,7 @@
             this.cbxVendedor.Location = new System.Drawing.Point(79, 44);
             this.cbxVendedor.Name = "cbxVendedor";
             this.cbxVendedor.Size = new System.Drawing.Size(172, 21);
-            this.cbxVendedor.TabIndex = 8;
+            this.cbxVendedor.TabIndex = 2;
             this.cbxVendedor.ValueMember = "Id";
             this.cbxVendedor.SelectedIndexChanged += new System.EventHandler(this.cbxVendedor_SelectedIndexChanged);
             // 
@@ -172,7 +172,7 @@
             this.dtpFecha.Location = new System.Drawing.Point(354, 47);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(91, 20);
-            this.dtpFecha.TabIndex = 9;
+            this.dtpFecha.TabIndex = 3;
             // 
             // btnGuardar
             // 
@@ -180,7 +180,7 @@
             this.btnGuardar.Location = new System.Drawing.Point(15, 122);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 34);
-            this.btnGuardar.TabIndex = 10;
+            this.btnGuardar.TabIndex = 5;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -191,7 +191,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(116, 122);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 34);
-            this.btnCancelar.TabIndex = 11;
+            this.btnCancelar.TabIndex = 6;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 

@@ -25,6 +25,7 @@ namespace sistemaTarjetas
             {
                 btnModificar.Enabled = true;
                 btnEliminar.Enabled = true;
+
             }
 
         }
@@ -67,6 +68,48 @@ namespace sistemaTarjetas
                     btnEliminar.Enabled = false;
                     btnModificar.Enabled = false;
                 }
+            }
+        }
+
+        private void txtCodigo_TextChanged(object sender, EventArgs e)
+        {
+            if (txtCodigo.Text.Length > 0)
+            {
+                bsClientes.Filter = "codigo =" + txtCodigo.Text;
+            }
+            else 
+            {
+                bsClientes.Filter = "";
+            }
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            bsClientes.Filter = "nombre LIKE '" + txtNombre.Text + "@'";
+        }
+
+        private void rbCodigo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (((RadioButton)sender).Checked) 
+            {
+                txtNombre.Clear();
+                txtNombre.Enabled = false;
+                txtCodigo.Enabled = true;
+                txtCodigo.Clear();
+                bsClientes.Filter = "";
+               
+            }
+        }
+
+        private void rbNombre_CheckedChanged(object sender, EventArgs e)
+        {
+            if (((RadioButton)sender).Checked)
+            {
+                txtCodigo.Clear();
+                txtCodigo.Enabled = false;
+                txtNombre.Enabled = true;
+                txtNombre.Clear();
+                bsClientes.Filter = "";
             }
         }
     }
