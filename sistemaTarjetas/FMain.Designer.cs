@@ -39,7 +39,13 @@
             this.btnVendedores = new System.Windows.Forms.Button();
             this.pnlInventario = new System.Windows.Forms.Panel();
             this.btnInventario = new System.Windows.Forms.Button();
+            this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ventanasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelTop.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.pnlLateral.SuspendLayout();
             this.pnlVendedores.SuspendLayout();
             this.SuspendLayout();
@@ -58,11 +64,17 @@
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTop.Location = new System.Drawing.Point(0, 0);
             this.panelTop.Name = "panelTop";
-            this.panelTop.Size = new System.Drawing.Size(800, 60);
+            this.panelTop.Size = new System.Drawing.Size(800, 29);
             this.panelTop.TabIndex = 1;
             // 
             // menuStrip1
             // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.archivoToolStripMenuItem,
+            this.registrosToolStripMenuItem,
+            this.consultasToolStripMenuItem,
+            this.ventanasToolStripMenuItem,
+            this.ayudaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -76,18 +88,19 @@
             this.pnlLateral.Controls.Add(this.pnlInventario);
             this.pnlLateral.Controls.Add(this.btnInventario);
             this.pnlLateral.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlLateral.Location = new System.Drawing.Point(0, 60);
+            this.pnlLateral.Location = new System.Drawing.Point(0, 29);
             this.pnlLateral.Name = "pnlLateral";
-            this.pnlLateral.Size = new System.Drawing.Size(123, 368);
+            this.pnlLateral.Size = new System.Drawing.Size(123, 399);
             this.pnlLateral.TabIndex = 2;
             // 
             // pnlVendedores
             // 
+            this.pnlVendedores.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.pnlVendedores.Controls.Add(this.btnZona);
             this.pnlVendedores.Controls.Add(this.btnVendedor);
             this.pnlVendedores.Controls.Add(this.btnAyudantes);
             this.pnlVendedores.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlVendedores.Location = new System.Drawing.Point(0, 127);
+            this.pnlVendedores.Location = new System.Drawing.Point(0, 46);
             this.pnlVendedores.Name = "pnlVendedores";
             this.pnlVendedores.Size = new System.Drawing.Size(123, 81);
             this.pnlVendedores.TabIndex = 3;
@@ -147,7 +160,7 @@
             this.btnVendedores.FlatAppearance.BorderSize = 0;
             this.btnVendedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVendedores.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnVendedores.Location = new System.Drawing.Point(0, 104);
+            this.btnVendedores.Location = new System.Drawing.Point(0, 23);
             this.btnVendedores.Name = "btnVendedores";
             this.btnVendedores.Size = new System.Drawing.Size(123, 23);
             this.btnVendedores.TabIndex = 2;
@@ -158,24 +171,60 @@
             // 
             // pnlInventario
             // 
+            this.pnlInventario.AutoSize = true;
+            this.pnlInventario.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.pnlInventario.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlInventario.Location = new System.Drawing.Point(0, 23);
             this.pnlInventario.Name = "pnlInventario";
-            this.pnlInventario.Size = new System.Drawing.Size(123, 81);
+            this.pnlInventario.Size = new System.Drawing.Size(123, 0);
             this.pnlInventario.TabIndex = 1;
             this.pnlInventario.Visible = false;
             // 
             // btnInventario
             // 
+            this.btnInventario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.btnInventario.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnInventario.FlatAppearance.BorderSize = 0;
+            this.btnInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInventario.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnInventario.Location = new System.Drawing.Point(0, 0);
             this.btnInventario.Name = "btnInventario";
             this.btnInventario.Size = new System.Drawing.Size(123, 23);
             this.btnInventario.TabIndex = 0;
             this.btnInventario.Text = "Inventario";
             this.btnInventario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInventario.UseVisualStyleBackColor = true;
+            this.btnInventario.UseVisualStyleBackColor = false;
             this.btnInventario.Click += new System.EventHandler(this.btnInventario_Click);
+            // 
+            // archivoToolStripMenuItem
+            // 
+            this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.archivoToolStripMenuItem.Text = "Archivo";
+            // 
+            // registrosToolStripMenuItem
+            // 
+            this.registrosToolStripMenuItem.Name = "registrosToolStripMenuItem";
+            this.registrosToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.registrosToolStripMenuItem.Text = "Registros";
+            // 
+            // consultasToolStripMenuItem
+            // 
+            this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
+            this.consultasToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+            this.consultasToolStripMenuItem.Text = "Consultas";
+            // 
+            // ventanasToolStripMenuItem
+            // 
+            this.ventanasToolStripMenuItem.Name = "ventanasToolStripMenuItem";
+            this.ventanasToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.ventanasToolStripMenuItem.Text = "Ventanas";
+            // 
+            // ayudaToolStripMenuItem
+            // 
+            this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.ayudaToolStripMenuItem.Text = "Ayuda";
             // 
             // FMain
             // 
@@ -192,7 +241,10 @@
             this.Load += new System.EventHandler(this.FMain_Load);
             this.panelTop.ResumeLayout(false);
             this.panelTop.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.pnlLateral.ResumeLayout(false);
+            this.pnlLateral.PerformLayout();
             this.pnlVendedores.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -212,6 +264,11 @@
         private System.Windows.Forms.Button btnVendedor;
         private System.Windows.Forms.Button btnAyudantes;
         private System.Windows.Forms.Button btnVendedores;
+        private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registrosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ventanasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
     }
 }
 

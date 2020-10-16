@@ -72,6 +72,12 @@
     <Compile Include="FRegAyudantes.Designer.cs">
       <DependentUpon>FRegAyudantes.cs</DependentUpon>
     </Compile>
+    <Compile Include="FRegZonas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRegZonas.Designer.cs">
+      <DependentUpon>FRegZonas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Metodos.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -83,6 +89,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FRegAyudantes.resx">
       <DependentUpon>FRegAyudantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRegZonas.resx">
+      <DependentUpon>FRegZonas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
