@@ -22,51 +22,36 @@ namespace sistemaTarjetas
 
         }
 
-        private void ayudantesToolStripMenuItem_Click(object sender, EventArgs e)
+      
+
+        private void btnVendedores_Click(object sender, EventArgs e)
         {
-            FListaAyudantes fListaAyudantes = new FListaAyudantes();
-            fListaAyudantes.Show();
+            if (pnlVendedores.Visible == true) 
+            {
+                pnlVendedores.Visible = false;
+            }
+            else { pnlVendedores.Visible = true; }
         }
 
-        private void vendedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnInventario_Click(object sender, EventArgs e)
         {
-            FListaVendedores fListaVendedores = new FListaVendedores();
-            fListaVendedores.Show();
+            if (pnlInventario.Visible == true)
+            {
+                pnlInventario.Visible = false;
+            }
+            else { pnlInventario.Visible = true; }
         }
 
-        private void zonasToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnAyudantes_Click(object sender, EventArgs e)
         {
-            FListaZona fListaZona = new FListaZona();
-            fListaZona.Show();
+            FRegAyudantes fRegAyudantes = new FRegAyudantes();
+            fRegAyudantes.ShowDialog();
         }
 
-        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnVendedor_Click(object sender, EventArgs e)
         {
-            FListaClientes fListaClientes = new FListaClientes();
-            fListaClientes.Show();
-        }
-
-        private void controlDeTarjetasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FListaTarjetas fListaTarjetas = new FListaTarjetas();
-            fListaTarjetas.Show();
-        }
-
-        private void inventarioDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FListaProductos fListaProductos = new FListaProductos();
-            fListaProductos.Show();
-        }
-
-        private void inventarioDeVendedoresToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FInventarioVendedores fInventarioVendedores = new FInventarioVendedores();
-            fInventarioVendedores.Show();
-        }
-
-        private void despacharAVendedorToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
+            FRegVendedores fRegVendedores = new FRegVendedores();
+            fRegVendedores.ShowDialog();
         }
     }
 }

@@ -54,179 +54,35 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsSistemaTarjetas.xsd</DependentUpon>
     </Compile>
-    <Compile Include="FAyudantes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FAyudantes.Designer.cs">
-      <DependentUpon>FAyudantes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FClientes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FClientes.Designer.cs">
-      <DependentUpon>FClientes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FDespachoVendedor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FDespachoVendedor.Designer.cs">
-      <DependentUpon>FDespachoVendedor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FDetallesTarjeta.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FDetallesTarjeta.Designer.cs">
-      <DependentUpon>FDetallesTarjeta.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FDevolverInventario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FDevolverInventario.Designer.cs">
-      <DependentUpon>FDevolverInventario.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FInventarioVendedores.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FInventarioVendedores.Designer.cs">
-      <DependentUpon>FInventarioVendedores.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FListaAyudantes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FListaAyudantes.Designer.cs">
-      <DependentUpon>FListaAyudantes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FListaClientes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FListaClientes.Designer.cs">
-      <DependentUpon>FListaClientes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FListaProductos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FListaProductos.Designer.cs">
-      <DependentUpon>FListaProductos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FListaTarjetas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FListaTarjetas.Designer.cs">
-      <DependentUpon>FListaTarjetas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FListaVendedores.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FListaVendedores.Designer.cs">
-      <DependentUpon>FListaVendedores.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FListaZona.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FListaZona.Designer.cs">
-      <DependentUpon>FListaZona.cs</DependentUpon>
-    </Compile>
     <Compile Include="FMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FMain.Designer.cs">
       <DependentUpon>FMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="FMonto.cs">
+    <Compile Include="FRegVendedores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FMonto.Designer.cs">
-      <DependentUpon>FMonto.cs</DependentUpon>
+    <Compile Include="FRegVendedores.Designer.cs">
+      <DependentUpon>FRegVendedores.cs</DependentUpon>
     </Compile>
-    <Compile Include="FProducto.cs">
+    <Compile Include="FRegAyudantes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FProducto.Designer.cs">
-      <DependentUpon>FProducto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FTarjetas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FTarjetas.Designer.cs">
-      <DependentUpon>FTarjetas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FVendedores.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FVendedores.Designer.cs">
-      <DependentUpon>FVendedores.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FVenta.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FVenta.Designer.cs">
-      <DependentUpon>FVenta.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FZona.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FZona.Designer.cs">
-      <DependentUpon>FZona.cs</DependentUpon>
+    <Compile Include="FRegAyudantes.Designer.cs">
+      <DependentUpon>FRegAyudantes.cs</DependentUpon>
     </Compile>
     <Compile Include="Metodos.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FAyudantes.resx">
-      <DependentUpon>FAyudantes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FClientes.resx">
-      <DependentUpon>FClientes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FDespachoVendedor.resx">
-      <DependentUpon>FDespachoVendedor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FDetallesTarjeta.resx">
-      <DependentUpon>FDetallesTarjeta.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FDevolverInventario.resx">
-      <DependentUpon>FDevolverInventario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FInventarioVendedores.resx">
-      <DependentUpon>FInventarioVendedores.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FListaAyudantes.resx">
-      <DependentUpon>FListaAyudantes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FListaClientes.resx">
-      <DependentUpon>FListaClientes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FListaProductos.resx">
-      <DependentUpon>FListaProductos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FListaTarjetas.resx">
-      <DependentUpon>FListaTarjetas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FListaVendedores.resx">
-      <DependentUpon>FListaVendedores.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FListaZona.resx">
-      <DependentUpon>FListaZona.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FMain.resx">
       <DependentUpon>FMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FMonto.resx">
-      <DependentUpon>FMonto.cs</DependentUpon>
+    <EmbeddedResource Include="FRegVendedores.resx">
+      <DependentUpon>FRegVendedores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FProducto.resx">
-      <DependentUpon>FProducto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FTarjetas.resx">
-      <DependentUpon>FTarjetas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FVendedores.resx">
-      <DependentUpon>FVendedores.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FVenta.resx">
-      <DependentUpon>FVenta.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FZona.resx">
-      <DependentUpon>FZona.cs</DependentUpon>
+    <EmbeddedResource Include="FRegAyudantes.resx">
+      <DependentUpon>FRegAyudantes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

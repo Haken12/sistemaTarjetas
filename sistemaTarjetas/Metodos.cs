@@ -26,8 +26,8 @@ namespace sistemaTarjetas
         public string direccion;
         public string telefono;
         public string celular;
-        public decimal? comision;
-        public decimal? deduccion;
+        public int? comision;
+        public int? deduccion;
         public DateTime? fechaIngreso;
     }
     public struct Tarjeta {
@@ -50,8 +50,8 @@ namespace sistemaTarjetas
         public string direccion;
         public string telefono;
         public string celular;
-        public decimal? comision;
-        public decimal? deduccion;
+        public int? comision;
+        public int? deduccion;
         public DateTime? fechaIngreso;
         public int? idAyudante;
     }
