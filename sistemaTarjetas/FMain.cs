@@ -53,5 +53,22 @@ namespace sistemaTarjetas
             FRegVendedores fRegVendedores = new FRegVendedores();
             fRegVendedores.ShowDialog();
         }
+
+        private void btnControlTarjetas_Click(object sender, EventArgs e)
+        {
+            FControlTarjetas fControlTarjetas = new FControlTarjetas();
+            fControlTarjetas.ShowDialog();
+        }
+
+        private void btnZona_Click(object sender, EventArgs e)
+        {
+            FRegZonas fRegZonas = new FRegZonas();
+            fRegZonas.ShowDialog();
+        }
+
+        private void pnlLateral_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

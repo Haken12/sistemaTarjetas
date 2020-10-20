@@ -110,6 +110,7 @@ namespace sistemaTarjetas
         {
             if (verificar())
             {
+                if (String.IsNullOrEmpty(txtDeduccion.Text.Trim())) txtDeduccion.Text = "0";
                 switch (modo)
                 {
                     case Modo.Insertar:

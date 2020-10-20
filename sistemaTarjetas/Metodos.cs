@@ -32,15 +32,14 @@ namespace sistemaTarjetas
     }
     public struct Tarjeta {
         public int? codigo;
-        public int? codigoCliente;
+        public string nombre;
+        public string cedula;
+        public string referencia;
+        public string telefono;
+        public string tipoPago;
         public DateTime? fehcaCreacion;
         public int? idVendedor;
-        public int? idZona;
-        public string tipoPago;
-        public string nombreCliente;
-        public string descripcionZona;
-        public string nombreVendedor;
-
+        public int? idZona;       
     }
     public struct Vendedor
     {

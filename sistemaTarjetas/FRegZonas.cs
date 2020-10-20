@@ -62,7 +62,7 @@ namespace sistemaTarjetas
             cbxVendedor.Enabled = true;
             btnCancelar.Enabled = true;
             btnGuardar.Enabled = true;
-            btnNueva.Enabled = false;
+            btnModificar.Enabled = false;
             modo = Modo.Insertar;
             cbxVendedor.Focus();
         }
@@ -89,13 +89,19 @@ namespace sistemaTarjetas
 
         private void txtIdZona_TextChanged(object sender, EventArgs e)
         {
-            if ((txtIdZona.Text.Length == 0) | querys.zona_existe(Convert.ToInt32(txtIdZona.Text)) == 0)
+            if ((txtIdZona.Text.Length == 0))
+            {
+                txtDescripcion.Clear();
+                btnModificar.Enabled = false;
+            }
+            else if (querys.zona_existe(Convert.ToInt32(txtIdZona.Text)) == 0)
             {
                 txtDescripcion.Clear();
                 btnModificar.Enabled = false;
             }
             else
             {
+                btnBuscar.Enabled = false;
                 querys.unica_zona(Convert.ToInt32(txtIdZona.Text),
                     ref zona.descripcion,
                     ref zona.idVendedor,
@@ -141,13 +147,20 @@ namespace sistemaTarjetas
                         btnNueva.Enabled = true;
                         txtIdZona.Enabled = true;
                         txtIdZona.Focus();
+                        txtDescripcion.Enabled = false;
+                        cbxVendedor.Enabled = false;
                         break;
                     case Modo.Editar:
                         actualizar();
                         btnCancelar.Enabled = false;
                         btnGuardar.Enabled = false;
                         btnModificar.Enabled = true;
+                        btnBuscar.Enabled = true;
+
+                        txtIdZona.Enabled = true;
                         txtIdZona.Focus();
+                        txtDescripcion.Enabled = false;
+                        cbxVendedor.Enabled = false;
                         break;
                     default:
                         break;
