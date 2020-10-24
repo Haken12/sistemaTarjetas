@@ -131,6 +131,92 @@ namespace sistemaTarjetas
                 Convert.ToInt32(txtCredito.Text),
                 Convert.ToInt32(txtBalance.Text));
         }
+
+        //Asentar
+        private void venta() 
+        {
+            FNuevaVenta fNuevaVenta = new FNuevaVenta();
+            fNuevaVenta.codTarjeta = Convert.ToInt32(txtCodigo.Text);
+            fNuevaVenta.idVendedor = (int)cbxVendedor.SelectedValue;
+            fNuevaVenta.fecha = dtpFecha.Value;
+            fNuevaVenta.valTarjeta = Convert.ToInt32(txtValor.Text);
+            if (fNuevaVenta.ShowDialog() == DialogResult.OK)
+            { 
+                v_detalles_tarjetaTableAdapter.Fill(dsSistemaTarjetas.v_detalles_tarjeta, Convert.ToInt32(txtCodigo.Text));
+                calcularBalance();
+            }
+
+        }
+
+        private void cobro() {
+            int balance = Convert.ToInt32(txtBalance.Text);
+            int monto = Convert.ToInt32(txtValor.Text);
+            if (monto <= balance) 
+            {
+                querys.nuevo_cobro_tarjeta(tarjeta.codigo, dtpFecha.Value, monto, 0);
+                v_detalles_tarjetaTableAdapter.Fill(dsSistemaTarjetas.v_detalles_tarjeta, tarjeta.codigo);
+                calcularBalance();
+            }
+            else
+            {
+                MessageBox.Show("Valor excede la deuda", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void descuento() {
+            int balance = Convert.ToInt32(txtBalance.Text);
+            int monto = Convert.ToInt32(txtValor.Text);
+            if (monto <= balance)
+            {
+                querys.nuevo_descuento_tarjeta(tarjeta.codigo, dtpFecha.Value, monto, 0);
+                v_detalles_tarjetaTableAdapter.Fill(dsSistemaTarjetas.v_detalles_tarjeta, tarjeta.codigo);
+                calcularBalance();
+            }
+            else
+            {
+                MessageBox.Show("Valor excede la deuda", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void devolucion() { }
+
+
+
+        //
+        private void asentar()
+        {
+            switch (cbxTipo.SelectedIndex)
+            {
+                case 0:
+                    break;
+                case 1:
+                    cobro();
+                    break;
+                case 2:
+                    descuento();
+                    break;
+                case 3:
+                    devolucion();
+                    break;
+
+            }
+        }
+
+        private void calcularBalance()
+        {
+            int creditos = 0;
+            int debitos = 0;
+            int balance = 0;
+            foreach (DataRow row in dsSistemaTarjetas.v_detalles_tarjeta)
+            {
+                creditos += (int)row[4];
+                debitos += (int)row[3];
+                balance = creditos - debitos;
+                txtCredito.Text = creditos.ToString();
+                txtDebito.Text = debitos.ToString();
+                txtBalance.Text = balance.ToString();
+            }
+        }
         private void btnNueva_Click(object sender, EventArgs e)
         {
             if (!txtNombre.Enabled) mToggle();
@@ -180,6 +266,7 @@ namespace sistemaTarjetas
             txtCedula.Clear();
             txtReferencia.Clear();
             txtTelefono.Clear();
+            dsSistemaTarjetas.v_detalles_tarjeta.Rows.Clear();
             if (txtValor.Enabled) opToggle();
             
             if (txtCodigo.Text.Length > 0 /*& querys.tarjeta_existe(Convert.ToInt32(txtCodigo.Text)) != 0*/) 
@@ -202,13 +289,20 @@ namespace sistemaTarjetas
                     dtpFecha.Value = tarjeta.fehcaCreacion.Value;
                     cbxVendedor.SelectedValue = tarjeta.idVendedor;
                     cbxZona.SelectedValue = tarjeta.idZona;
-
                     btnModificar.Enabled = true;
                     if (!txtValor.Enabled) opToggle();
                     cbxTipo.SelectedIndex = 0;
                     tarjeta.nombre = null;
+                    v_detalles_tarjetaTableAdapter.Fill(dsSistemaTarjetas.v_detalles_tarjeta, Convert.ToInt32(txtCodigo.Text));
+                    txtCredito.Text = "0";
+                    txtDebito.Text = "0";
+                    txtBalance.Text = "0";
+                    if (dgvDetalles.Rows.Count > 0) 
+                    {
+                        calcularBalance();
+                    }
                 }
-                
+
             }
         }
 
@@ -263,6 +357,11 @@ namespace sistemaTarjetas
                     txtCodigo.Focus();
                     break;
             }
+        }
+
+        private void btnAsentar_Click(object sender, EventArgs e)
+        {
+            asentar();
         }
     }
 }

@@ -70,5 +70,11 @@ namespace sistemaTarjetas
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FDespachoVendedores fDespacho = new FDespachoVendedores();
+            fDespacho.ShowDialog();
+        }
     }
 }
