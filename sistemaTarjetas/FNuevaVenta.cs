@@ -90,7 +90,7 @@ namespace sistemaTarjetas
             {
                 totalImporte += (int)rw[4];
             }
-
+            txtTotal.Text = totalImporte.ToString();
             int valTarjeta = Convert.ToInt32(lblValorT.Text);
             txtDiferencia.Text = (valTarjeta - totalImporte).ToString();
             if (!btnAceptar.Enabled) 

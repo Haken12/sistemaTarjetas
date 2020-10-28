@@ -153,8 +153,8 @@ namespace sistemaTarjetas
             int monto = Convert.ToInt32(txtValor.Text);
             if (monto <= balance) 
             {
-                querys.nuevo_cobro_tarjeta(tarjeta.codigo, dtpFecha.Value, monto, 0);
-                v_detalles_tarjetaTableAdapter.Fill(dsSistemaTarjetas.v_detalles_tarjeta, tarjeta.codigo);
+                querys.nuevo_cobro_tarjeta(Convert.ToInt32(txtCodigo.Text), dtpFecha.Value, monto, 0);
+                v_detalles_tarjetaTableAdapter.Fill(dsSistemaTarjetas.v_detalles_tarjeta, Convert.ToInt32(txtCodigo.Text));
                 calcularBalance();
             }
             else
@@ -178,7 +178,22 @@ namespace sistemaTarjetas
             }
         }
 
-        private void devolucion() { }
+        private void devolucion() 
+        {
+            if (dgvDetalles.SelectedCells[2].Value.ToString() != "Venta")
+            {
+                MessageBox.Show("Debe seleccionar una venta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else 
+            {
+                FDevolucionTarjeta fDevolucion = new FDevolucionTarjeta();
+                fDevolucion.numeroVenta = (int)dgvDetalles.SelectedCells[5].Value;                
+                fDevolucion.fecha = dtpFecha.Value;
+                fDevolucion.numeroTarjeta = Convert.ToInt32(txtCodigo.Text);
+                
+                if (fDevolucion.ShowDialog() == DialogResult.OK) v_detalles_tarjetaTableAdapter.Fill(dsSistemaTarjetas.v_detalles_tarjeta, tarjeta.codigo);
+            }
+        }
 
 
 
@@ -188,6 +203,7 @@ namespace sistemaTarjetas
             switch (cbxTipo.SelectedIndex)
             {
                 case 0:
+                    venta();
                     break;
                 case 1:
                     cobro();
@@ -271,6 +287,7 @@ namespace sistemaTarjetas
             
             if (txtCodigo.Text.Length > 0 /*& querys.tarjeta_existe(Convert.ToInt32(txtCodigo.Text)) != 0*/) 
             {
+                int? c = querys.tarjeta_existe(Convert.ToInt32(txtCodigo.Text));
                 querys.unica_tarjeta(Convert.ToInt32(txtCodigo.Text),
                     ref tarjeta.nombre,
                     ref tarjeta.referencia,
@@ -280,7 +297,7 @@ namespace sistemaTarjetas
                     ref tarjeta.idVendedor,
                     ref tarjeta.idZona,
                     ref tarjeta.tipoPago);
-                if (tarjeta.nombre != null) 
+                if (c != 0) 
                 {
                     txtNombre.Text = tarjeta.nombre;
                     txtReferencia.Text = tarjeta.referencia;
@@ -292,7 +309,7 @@ namespace sistemaTarjetas
                     btnModificar.Enabled = true;
                     if (!txtValor.Enabled) opToggle();
                     cbxTipo.SelectedIndex = 0;
-                    tarjeta.nombre = null;
+                   
                     v_detalles_tarjetaTableAdapter.Fill(dsSistemaTarjetas.v_detalles_tarjeta, Convert.ToInt32(txtCodigo.Text));
                     txtCredito.Text = "0";
                     txtDebito.Text = "0";
@@ -354,6 +371,8 @@ namespace sistemaTarjetas
                     cbxZona.SelectedValue = tarjeta.idZona;
                     txtCodigo.Enabled = true;
                     btnBuscar.Enabled = true;
+                    btnGuardar.Enabled = false;
+                    btnCancelar.Enabled = false;
                     txtCodigo.Focus();
                     break;
             }

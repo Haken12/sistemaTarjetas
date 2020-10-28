@@ -76,5 +76,10 @@ namespace sistemaTarjetas
             FDespachoVendedores fDespacho = new FDespachoVendedores();
             fDespacho.ShowDialog();
         }
+
+        private void verToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

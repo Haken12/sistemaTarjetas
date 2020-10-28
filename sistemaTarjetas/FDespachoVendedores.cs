@@ -155,6 +155,8 @@ namespace sistemaTarjetas
         {
             txtNombre.Clear();
             dsSistemaTarjetas.despacho.Rows.Clear();
+            txtCodigo.Enabled = false;
+            txtCodigo.Clear();
             if (txtVendedor.TextLength > 0)
             {
                 int numero = Convert.ToInt32(txtVendedor.Text);

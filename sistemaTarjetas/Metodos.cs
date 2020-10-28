@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.SqlServer.Server;
+using System.Data.Sql;
+using System.Data.SqlClient;
 namespace sistemaTarjetas
 {
     public enum Modo
@@ -88,6 +91,10 @@ namespace sistemaTarjetas
             if (Char.IsDigit(e.KeyChar)) return;
             if (e.KeyChar == (char)8) return;
             e.Handled = true;
+        }
+
+        public static void t() {
+           
         }
     }
 }

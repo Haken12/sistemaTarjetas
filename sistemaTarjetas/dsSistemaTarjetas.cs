@@ -4,6 +4,10 @@
 
     partial class dsSistemaTarjetas
     {
+        partial class devolverDataTable
+        {
+        }
+
         partial class vProductosDataTable
         {
         }
