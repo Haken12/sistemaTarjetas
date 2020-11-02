@@ -87,6 +87,12 @@
     <Compile Include="FDevolucionTarjeta.Designer.cs">
       <DependentUpon>FDevolucionTarjeta.cs</DependentUpon>
     </Compile>
+    <Compile Include="FDevolucionVendedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FDevolucionVendedor.Designer.cs">
+      <DependentUpon>FDevolucionVendedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="FMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +134,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FDevolucionTarjeta.resx">
       <DependentUpon>FDevolucionTarjeta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FDevolucionVendedor.resx">
+      <DependentUpon>FDevolucionVendedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FMain.resx">
       <DependentUpon>FMain.cs</DependentUpon>

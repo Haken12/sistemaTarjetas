@@ -81,5 +81,11 @@ namespace sistemaTarjetas
         {
            
         }
+
+        private void btnDevolucion_Click(object sender, EventArgs e)
+        {
+            FDevolucionVendedor fDevolucion = new FDevolucionVendedor();
+            fDevolucion.ShowDialog();
+        }
     }
 }

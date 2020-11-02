@@ -104,6 +104,7 @@ namespace sistemaTarjetas
         }
 
         private void crear() {
+            int? codigo = -1;
             querys.crear_tarjeta(
                 txtNombre.Text,
                 txtReferencia.Text,
@@ -112,7 +113,8 @@ namespace sistemaTarjetas
                 dtpFecha.Value,
                 (int)cbxVendedor.SelectedValue,
                 (int)cbxZona.SelectedValue,
-                cbxFormaPago.Text);
+                cbxFormaPago.Text,ref codigo);
+            txtCodigo.Text = codigo.ToString();
         }
 
         private void actualizar() {
@@ -168,8 +170,8 @@ namespace sistemaTarjetas
             int monto = Convert.ToInt32(txtValor.Text);
             if (monto <= balance)
             {
-                querys.nuevo_descuento_tarjeta(tarjeta.codigo, dtpFecha.Value, monto, 0);
-                v_detalles_tarjetaTableAdapter.Fill(dsSistemaTarjetas.v_detalles_tarjeta, tarjeta.codigo);
+                querys.nuevo_descuento_tarjeta(Convert.ToInt32(txtCodigo.Text), dtpFecha.Value, monto, 0);
+                v_detalles_tarjetaTableAdapter.Fill(dsSistemaTarjetas.v_detalles_tarjeta, Convert.ToInt32(txtCodigo.Text));
                 calcularBalance();
             }
             else
@@ -245,6 +247,7 @@ namespace sistemaTarjetas
             // foreach (Control ctr in pnlOp.Controls) ctr.Enabled = false;
             if (txtValor.Enabled) opToggle();
             this.modo = Modo.Insertar;
+            dsSistemaTarjetas.v_detalles_tarjeta.Clear();
             txtNombre.Focus();
             
         }

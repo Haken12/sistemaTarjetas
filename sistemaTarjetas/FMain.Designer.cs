@@ -34,6 +34,7 @@
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ventanasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlLateral = new System.Windows.Forms.Panel();
@@ -48,7 +49,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.btnArticulos = new System.Windows.Forms.Button();
             this.btnInventario = new System.Windows.Forms.Button();
-            this.verToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnDevolucion = new System.Windows.Forms.Button();
             this.panelTop.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.pnlLateral.SuspendLayout();
@@ -107,6 +108,13 @@
             this.consultasToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.consultasToolStripMenuItem.Text = "Consultas";
             // 
+            // verToolStripMenuItem
+            // 
+            this.verToolStripMenuItem.Name = "verToolStripMenuItem";
+            this.verToolStripMenuItem.Size = new System.Drawing.Size(91, 22);
+            this.verToolStripMenuItem.Text = "Ver";
+            this.verToolStripMenuItem.Click += new System.EventHandler(this.verToolStripMenuItem_Click);
+            // 
             // ventanasToolStripMenuItem
             // 
             this.ventanasToolStripMenuItem.Name = "ventanasToolStripMenuItem";
@@ -135,6 +143,7 @@
             // pnlVendedores
             // 
             this.pnlVendedores.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.pnlVendedores.Controls.Add(this.btnDevolucion);
             this.pnlVendedores.Controls.Add(this.button1);
             this.pnlVendedores.Controls.Add(this.btnControlTarjetas);
             this.pnlVendedores.Controls.Add(this.btnZona);
@@ -301,12 +310,21 @@
             this.btnInventario.UseVisualStyleBackColor = false;
             this.btnInventario.Click += new System.EventHandler(this.btnInventario_Click);
             // 
-            // verToolStripMenuItem
+            // btnDevolucion
             // 
-            this.verToolStripMenuItem.Name = "verToolStripMenuItem";
-            this.verToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.verToolStripMenuItem.Text = "Ver";
-            this.verToolStripMenuItem.Click += new System.EventHandler(this.verToolStripMenuItem_Click);
+            this.btnDevolucion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnDevolucion.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDevolucion.FlatAppearance.BorderSize = 0;
+            this.btnDevolucion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDevolucion.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnDevolucion.Location = new System.Drawing.Point(0, 115);
+            this.btnDevolucion.Name = "btnDevolucion";
+            this.btnDevolucion.Size = new System.Drawing.Size(175, 23);
+            this.btnDevolucion.TabIndex = 5;
+            this.btnDevolucion.Text = "   Devolucion de Vendedores";
+            this.btnDevolucion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDevolucion.UseVisualStyleBackColor = false;
+            this.btnDevolucion.Click += new System.EventHandler(this.btnDevolucion_Click);
             // 
             // FMain
             // 
@@ -356,6 +374,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnArticulos;
         private System.Windows.Forms.ToolStripMenuItem verToolStripMenuItem;
+        private System.Windows.Forms.Button btnDevolucion;
     }
 }
 
