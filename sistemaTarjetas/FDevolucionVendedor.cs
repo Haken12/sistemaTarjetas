@@ -74,7 +74,7 @@ namespace sistemaTarjetas
                 if (fila != null) 
                 {
                     txtDescripcion.Text = (string)fila[1];
-                    txtPrecio.Text = (string)fila[2];
+                    txtPrecio.Text = ((int)fila[2]).ToString();
                     txtCantidad.Maximum = (int)fila[3];
                     txtCantidad.Focus();
                 }

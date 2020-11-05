@@ -75,7 +75,8 @@ namespace sistemaTarjetas
                 Convert.ToInt32(txtComision.Value),
                 Convert.ToInt32(txtDeduccion.Text),
                 dtpFecha.Value,
-                Convert.ToInt32(txtAyudante.SelectedValue));
+                Convert.ToInt32(txtAyudante.SelectedValue)
+                ,ref vendedor.id);
 
 
         }

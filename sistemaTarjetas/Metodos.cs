@@ -23,7 +23,7 @@ namespace sistemaTarjetas
         public string direccion;
     }
     public struct Ayudante {
-        public int id;
+        public int? id;
         public string nombre;
         public string cedula;
         public string direccion;
@@ -46,7 +46,7 @@ namespace sistemaTarjetas
     }
     public struct Vendedor
     {
-        public int id;
+        public int? id;
         public string nombre;
         public string cedula;
         public string direccion;
@@ -66,7 +66,7 @@ namespace sistemaTarjetas
 
     }
     public struct Zona {
-        public int id;
+        public int? id;
         public string descripcion;
         public int? idVendedor;
         public string nombreVendedor;

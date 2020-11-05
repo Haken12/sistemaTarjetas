@@ -46,7 +46,7 @@ namespace sistemaTarjetas
 
         private void crear() 
         {
-            querys.crear_zona(Convert.ToInt32(cbxVendedor.SelectedValue), txtDescripcion.Text);
+            querys.crear_zona(Convert.ToInt32(cbxVendedor.SelectedValue), txtDescripcion.Text, ref zona.id);
         }
         private void actualizar() 
         {

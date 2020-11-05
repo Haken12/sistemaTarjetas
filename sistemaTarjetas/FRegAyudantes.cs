@@ -73,11 +73,35 @@ namespace sistemaTarjetas
                 txtTelefono.Text,
                 Convert.ToInt32(txtComision.Value),
                 Convert.ToInt32(txtDeduccion.Text),
-                dtpFecha.Value);
+                dtpFecha.Value,
+                ref ayudante.id);
+            
 
 
         }
-
+        private void cargar() 
+        {
+            querys.unico_ayudante(
+                         Convert.ToInt32(txtId.Text),
+                         ref ayudante.nombre,
+                         ref ayudante.cedula,
+                         ref ayudante.direccion,
+                         ref ayudante.telefono,
+                         ref ayudante.celular,
+                         ref ayudante.comision,
+                         ref ayudante.deduccion,
+                         ref ayudante.fechaIngreso
+                         );
+            btnModificar.Enabled = true;
+            txtNombre.Text = ayudante.nombre;
+            txtCedula.Text = ayudante.cedula;
+            txtDireccion.Text = ayudante.direccion;
+            txtTelefono.Text = ayudante.telefono;
+            txtCelular.Text = ayudante.celular;
+            txtComision.Value = Convert.ToDecimal(ayudante.comision);
+            txtDeduccion.Text = ayudante.deduccion.ToString();
+            dtpFecha.Value = ayudante.fechaIngreso.Value;
+        }
         private void actualizar()
         {
             querys.actualizar_ayudante(
@@ -91,7 +115,10 @@ namespace sistemaTarjetas
                 Convert.ToInt32(txtDeduccion.Text),
                 dtpFecha.Value);
         }
-
+        private void asignar() 
+        {
+           
+        }
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             txtId.Clear();
@@ -99,7 +126,7 @@ namespace sistemaTarjetas
             despejar();
 
             txtId.Enabled = false;
-            btnNuevo.Enabled = false;
+            btnBuscar.Enabled = false;
             btnModificar.Enabled = false;
             btnCancelar.Enabled = true;
             btnGuardar.Enabled = true;
@@ -111,20 +138,28 @@ namespace sistemaTarjetas
             if (verificar())
             {
                 if (String.IsNullOrEmpty(txtDeduccion.Text.Trim())) txtDeduccion.Text = "0";
+              
                 switch (modo)
                 {
                     case Modo.Insertar:
                         crear();
-                        despejar();
-                        txtNombre.Focus();
+                        txtId.Enabled = true;
+                        txtId.Text = ayudante.id.ToString();
+                        btnBuscar.Enabled = true;
+                        btnGuardar.Enabled = false;
+                        btnCancelar.Enabled = false;
+                        btnNuevo.Enabled = true;
+                        this.modo = Modo.Editar;
+                        txtId.Focus();
                         break;
                     case Modo.Editar:
                         actualizar();
                         desactivar();
                         btnGuardar.Enabled = false;
-                        btnCancelar.Enabled = false;
-                        txtId.Focus();
+                        btnCancelar.Enabled = false;                        
                         btnModificar.Enabled = true;
+                        btnBuscar.Enabled = true;
+                        txtId.Focus();
                         break;
                     default:
                         break;
@@ -143,35 +178,17 @@ namespace sistemaTarjetas
 
         private void txtId_TextChanged(object sender, EventArgs e)
         {
+            despejar();
             if (txtId.Text.Length > 0)
             {
                 if (querys.ayudante_existe(Convert.ToInt32(txtId.Text)) == 1)
                 {
-                    querys.unico_ayudante(
-                         Convert.ToInt32(txtId.Text),
-                         ref ayudante.nombre,
-                         ref ayudante.cedula,
-                         ref ayudante.direccion,
-                         ref ayudante.telefono,
-                         ref ayudante.celular,
-                         ref ayudante.comision,
-                         ref ayudante.deduccion,
-                         ref ayudante.fechaIngreso
-                         );
-                    btnModificar.Enabled = true;
-                    txtNombre.Text = ayudante.nombre;
-                    txtCedula.Text = ayudante.cedula;
-                    txtDireccion.Text = ayudante.direccion;
-                    txtTelefono.Text = ayudante.telefono;
-                    txtCelular.Text = ayudante.celular;
-                    txtComision.Value = Convert.ToDecimal(ayudante.comision);
-                    txtDeduccion.Text = ayudante.deduccion.ToString();
-                    dtpFecha.Value = ayudante.fechaIngreso.Value;
+                    cargar();
                 }
                 else
                 {
                     btnModificar.Enabled = false;
-                    despejar();
+                   
                     return;
                 }
 
@@ -191,7 +208,6 @@ namespace sistemaTarjetas
             txtId.Enabled = false;
             btnBuscar.Enabled = false;            
             btnModificar.Enabled = false;
-            btnNuevo.Enabled = false;
             modo = Modo.Editar;
             btnGuardar.Enabled = true;
             btnCancelar.Enabled = true;
@@ -201,46 +217,42 @@ namespace sistemaTarjetas
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-         /*   if (txtId.Text.Length > 0)
-            {             
-                querys.unico_ayudante(
-                     Convert.ToInt32(txtId.Text),
-                     ref ayudante.nombre,
-                     ref ayudante.cedula,
-                     ref ayudante.direccion,
-                     ref ayudante.telefono,
-                     ref ayudante.celular,
-                     ref ayudante.comision,
-                     ref ayudante.deduccion,
-                     ref ayudante.fechaIngreso
-                     );
+          
+            using (FBuscarAyudante fBuscar = new FBuscarAyudante()) 
+            {
+                if (fBuscar.ShowDialog() == DialogResult.OK)
+                {
+                    ayudante.id = fBuscar.Id;
+                    txtId.Text = ayudante.id.ToString();
+                    cargar();
 
-                if (ayudante.nombre == null) return;
-
-                txtNombre.Text = ayudante.nombre;
-                txtCedula.Text = ayudante.cedula;
-                txtDireccion.Text = ayudante.direccion;
-                txtTelefono.Text = ayudante.telefono;
-                txtCelular.Text = ayudante.celular;
-                txtComision.Value = Convert.ToDecimal(ayudante.comision);
-                txtDeduccion.Text = ayudante.deduccion.ToString();
-                dtpFecha.Value = ayudante.fechaIngreso.Value;
-
-            }*/
+                }
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            btnGuardar.Enabled = false;            
-            btnCancelar.Enabled = false;
-            btnNuevo.Enabled = true;
-            txtId.Enabled = true;
-            btnBuscar.Enabled = true;
-            txtId.Clear();
-            despejar();
-            desactivar();
-            txtId.Focus();
-
+            if (modo == Modo.Editar)
+            {
+                cargar();
+                desactivar();
+                btnCancelar.Enabled = false;
+                btnGuardar.Enabled = false;
+                btnModificar.Enabled = true;
+                txtId.Focus();
+            }
+            else
+            {
+                btnGuardar.Enabled = false;
+                btnCancelar.Enabled = false;
+                btnNuevo.Enabled = true;
+                txtId.Enabled = true;
+                btnBuscar.Enabled = true;
+                txtId.Clear();
+                despejar();
+                desactivar();
+                txtId.Focus();
+            }
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -259,6 +271,13 @@ namespace sistemaTarjetas
             {
                 txtDeduccion.Text = "0";
             }
+        }
+
+        private void txtDeduccion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar)) return;
+            if (Char.IsControl(e.KeyChar)) return;
+            e.Handled = true;
         }
     }   
 }
