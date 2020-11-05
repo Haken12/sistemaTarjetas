@@ -77,7 +77,7 @@ namespace sistemaTarjetas
                 dtpFecha.Value,
                 Convert.ToInt32(txtAyudante.SelectedValue)
                 ,ref vendedor.id);
-
+            txtId.Text = vendedor.id.ToString();
 
         }
 
@@ -103,7 +103,7 @@ namespace sistemaTarjetas
             despejar();
 
             txtId.Enabled = false;
-            btnNuevo.Enabled = false;
+           
             btnModificar.Enabled = false;
             btnCancelar.Enabled = true;
             btnGuardar.Enabled = true;
@@ -120,8 +120,13 @@ namespace sistemaTarjetas
                 {
                     case Modo.Insertar:
                         crear();
-                        despejar();
-                        txtNombre.Focus();
+                        desactivar();
+                        btnModificar.Enabled = true;
+                        txtId.Enabled = true;
+                        btnGuardar.Enabled = false;
+                        btnCancelar.Enabled = false;
+                        txtId.Focus();
+
                         break;
                     case Modo.Editar:
                         actualizar();
@@ -145,14 +150,9 @@ namespace sistemaTarjetas
             if (e.KeyChar == (char)8) return;
             e.Handled = true;
         }
-
-        private void txtId_TextChanged(object sender, EventArgs e)
+        private void cargar() 
         {
-            if (txtId.Text.Length > 0)
-            {
-                if (querys.vendedor_existe(Convert.ToInt32(txtId.Text)) == 1)
-                {
-                    querys.unico_vendedor(
+            querys.unico_vendedor(
                          Convert.ToInt32(txtId.Text),
                          ref vendedor.nombre,
                          ref vendedor.cedula,
@@ -164,31 +164,35 @@ namespace sistemaTarjetas
                          ref vendedor.fechaIngreso,
                          ref vendedor.idAyudante
                          );
-                    btnModificar.Enabled = true;
-                    txtNombre.Text = vendedor.nombre;
-                    txtCedula.Text = vendedor.cedula;
-                    txtDireccion.Text = vendedor.direccion;
-                    txtTelefono.Text = vendedor.telefono;
-                    txtCelular.Text = vendedor.celular;
-                    txtComision.Value = Convert.ToDecimal(vendedor.comision);
-                    txtDeduccion.Text = vendedor.deduccion.ToString();
-                    dtpFecha.Value = vendedor.fechaIngreso.Value;
-                    txtAyudante.SelectedValue = vendedor.idAyudante;
+            txtNombre.Text = vendedor.nombre;
+            txtCedula.Text = vendedor.cedula;
+            txtDireccion.Text = vendedor.direccion;
+            txtTelefono.Text = vendedor.telefono;
+            txtCelular.Text = vendedor.celular;
+            txtComision.Value = Convert.ToDecimal(vendedor.comision);
+            txtDeduccion.Text = vendedor.deduccion.ToString();
+            dtpFecha.Value = vendedor.fechaIngreso.Value;
+            txtAyudante.SelectedValue = vendedor.idAyudante;
+        }
+        private void txtId_TextChanged(object sender, EventArgs e)
+        {
+            despejar();
+            if (txtId.Text.Length > 0)
+            {
+                if (querys.vendedor_existe(Convert.ToInt32(txtId.Text)) == 1)
+                {
+                    cargar();   
+                    btnModificar.Enabled = true;                    
                 }
                 else
                 {
-                    btnModificar.Enabled = false;
-                    despejar();
+                    btnModificar.Enabled = false;                   
                     return;
                 }
-
-
-
             }
             else
             {
-                btnModificar.Enabled = false;
-                despejar();
+                btnModificar.Enabled = false;               
                 return;
             }
         }
@@ -208,44 +212,43 @@ namespace sistemaTarjetas
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-         /*   if (txtId.Text.Length > 0)
-            {             
-                querys.unico_ayudante(
-                     Convert.ToInt32(txtId.Text),
-                     ref ayudante.nombre,
-                     ref ayudante.cedula,
-                     ref ayudante.direccion,
-                     ref ayudante.telefono,
-                     ref ayudante.celular,
-                     ref ayudante.comision,
-                     ref ayudante.deduccion,
-                     ref ayudante.fechaIngreso
-                     );
+            using (FBuscarVendedor fBuscar = new FBuscarVendedor())
+            {
+                if (fBuscar.ShowDialog() == DialogResult.OK) 
+                {
+                    int id = fBuscar.Id;
+                    txtId.Text = id.ToString();
+                    vendedor.id = id;
+                    despejar();
+                    cargar();
+                    btnModificar.Enabled = true;
+                }
 
-                if (ayudante.nombre == null) return;
-
-                txtNombre.Text = ayudante.nombre;
-                txtCedula.Text = ayudante.cedula;
-                txtDireccion.Text = ayudante.direccion;
-                txtTelefono.Text = ayudante.telefono;
-                txtCelular.Text = ayudante.celular;
-                txtComision.Value = Convert.ToDecimal(ayudante.comision);
-                txtDeduccion.Text = ayudante.deduccion.ToString();
-                dtpFecha.Value = ayudante.fechaIngreso.Value;
-
-            }*/
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            switch (this.modo)
+            {
+                case Modo.Insertar:
+                    despejar();                 
+                    desactivar();
+                    break;
+                case Modo.Editar:
+                    despejar();
+                    cargar();
+                    desactivar();
+                    break;
+                default:
+                    break;
+            }
             btnGuardar.Enabled = false;            
             btnCancelar.Enabled = false;
             btnNuevo.Enabled = true;
             txtId.Enabled = true;
             btnBuscar.Enabled = true;
             txtId.Clear();
-            despejar();
-            desactivar();
             txtId.Focus();
 
         }

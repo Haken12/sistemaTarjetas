@@ -217,54 +217,62 @@
             // 
             // btnNuevo
             // 
+            this.btnNuevo.Image = global::sistemaTarjetas.Recursos._03__3_;
             this.btnNuevo.Location = new System.Drawing.Point(27, 239);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(75, 23);
+            this.btnNuevo.Size = new System.Drawing.Size(75, 31);
             this.btnNuevo.TabIndex = 10;
             this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnNuevo.UseVisualStyleBackColor = true;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnModificar
             // 
             this.btnModificar.Enabled = false;
+            this.btnModificar.Image = global::sistemaTarjetas.Recursos._18;
             this.btnModificar.Location = new System.Drawing.Point(122, 239);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(75, 23);
+            this.btnModificar.Size = new System.Drawing.Size(87, 31);
             this.btnModificar.TabIndex = 11;
             this.btnModificar.Text = "Modificar";
+            this.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnSalir
             // 
+            this.btnSalir.Image = global::sistemaTarjetas.Recursos._18__3_;
             this.btnSalir.Location = new System.Drawing.Point(472, 239);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.Size = new System.Drawing.Size(75, 31);
             this.btnSalir.TabIndex = 14;
             this.btnSalir.Text = "Salir";
+            this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Enabled = false;
+            this.btnBuscar.Image = global::sistemaTarjetas.Recursos._49;
             this.btnBuscar.Location = new System.Drawing.Point(203, 16);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(37, 23);
+            this.btnBuscar.Size = new System.Drawing.Size(37, 39);
             this.btnBuscar.TabIndex = 20;
-            this.btnBuscar.Text = "B";
+            this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnGuardar
             // 
             this.btnGuardar.Enabled = false;
+            this.btnGuardar.Image = global::sistemaTarjetas.Recursos._46__2_;
             this.btnGuardar.Location = new System.Drawing.Point(215, 239);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardar.Size = new System.Drawing.Size(75, 31);
             this.btnGuardar.TabIndex = 12;
             this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
@@ -312,11 +320,13 @@
             // btnCancelar
             // 
             this.btnCancelar.Enabled = false;
+            this.btnCancelar.Image = global::sistemaTarjetas.Recursos._50__3_;
             this.btnCancelar.Location = new System.Drawing.Point(302, 239);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(75, 31);
             this.btnCancelar.TabIndex = 13;
             this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
