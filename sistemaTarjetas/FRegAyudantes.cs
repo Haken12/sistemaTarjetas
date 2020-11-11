@@ -124,7 +124,7 @@ namespace sistemaTarjetas
             txtId.Clear();
             activar();
             despejar();
-
+            btnEliminar.Enabled = false;
             txtId.Enabled = false;
             btnBuscar.Enabled = false;
             btnModificar.Enabled = false;
@@ -150,6 +150,7 @@ namespace sistemaTarjetas
                         btnCancelar.Enabled = false;
                         btnNuevo.Enabled = true;
                         this.modo = Modo.Editar;
+                        btnEliminar.Enabled = true;
                         txtId.Focus();
                         break;
                     case Modo.Editar:
@@ -159,11 +160,13 @@ namespace sistemaTarjetas
                         btnCancelar.Enabled = false;                        
                         btnModificar.Enabled = true;
                         btnBuscar.Enabled = true;
+                        btnEliminar.Enabled = true;
                         txtId.Focus();
                         break;
                     default:
                         break;
                 }
+                
 
             }
 
@@ -181,9 +184,10 @@ namespace sistemaTarjetas
             despejar();
             if (txtId.Text.Length > 0)
             {
-                if (querys.ayudante_existe(Convert.ToInt32(txtId.Text)) == 1)
+                if (querys.ayudante_existe(Convert.ToInt32(txtId.Text)) == 1 & txtId.Text != "1")
                 {
                     cargar();
+                    btnEliminar.Enabled = true;
                 }
                 else
                 {
@@ -239,6 +243,7 @@ namespace sistemaTarjetas
                 btnCancelar.Enabled = false;
                 btnGuardar.Enabled = false;
                 btnModificar.Enabled = true;
+
                 txtId.Focus();
             }
             else
@@ -278,6 +283,44 @@ namespace sistemaTarjetas
             if (Char.IsDigit(e.KeyChar)) return;
             if (Char.IsControl(e.KeyChar)) return;
             e.Handled = true;
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(txtId.Text);
+            int? resultado = querys.ayudante_asignado(id);
+            if (resultado == 0) {
+                querys.eliminar_ayudante(id, 1);
+                despejar();
+                desactivar();
+                btnModificar.Enabled = false;
+                btnNuevo.Enabled = true;
+                btnGuardar.Enabled = false;
+                btnCancelar.Enabled = false;
+                btnEliminar.Enabled = false;
+                txtId.Enabled = true;
+                txtId.Focus();
+            }
+            else
+            {
+                using (FReasignarAyudante fReasignar = new FReasignarAyudante())
+                {
+                    if (fReasignar.ShowDialog() == DialogResult.OK)
+                    {
+                        int nuevoId = fReasignar.seleccion;
+                        querys.eliminar_ayudante(id, nuevoId);
+                        despejar();
+                        desactivar();
+                        btnModificar.Enabled = false;
+                        btnNuevo.Enabled = true;
+                        btnGuardar.Enabled = false;
+                        btnCancelar.Enabled = false;
+                        btnEliminar.Enabled = false;
+                        txtId.Enabled = true;
+                        txtId.Focus();
+                    }
+                }
+            }
         }
     }   
 }

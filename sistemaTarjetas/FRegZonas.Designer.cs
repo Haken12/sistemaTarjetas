@@ -45,6 +45,7 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.v_vendedorTableAdapter = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.v_vendedorTableAdapter();
             this.querys = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.Querys();
+            this.btnEliminar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bsVendedores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSistemaTarjetas)).BeginInit();
             this.SuspendLayout();
@@ -175,7 +176,7 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(11, 202);
+            this.btnSalir.Location = new System.Drawing.Point(267, 205);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 29);
             this.btnSalir.TabIndex = 7;
@@ -187,11 +188,23 @@
             // 
             this.v_vendedorTableAdapter.ClearBeforeFill = true;
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Enabled = false;
+            this.btnEliminar.Location = new System.Drawing.Point(11, 205);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 29);
+            this.btnEliminar.TabIndex = 8;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
             // FRegZonas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(360, 246);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnNueva);
@@ -234,5 +247,6 @@
         private dsSistemaTarjetas dsSistemaTarjetas;
         private dsSistemaTarjetasTableAdapters.v_vendedorTableAdapter v_vendedorTableAdapter;
         private dsSistemaTarjetasTableAdapters.Querys querys;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }

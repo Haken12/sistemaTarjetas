@@ -30,17 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvBuscar = new System.Windows.Forms.DataGridView();
-            this.bsBuscar = new System.Windows.Forms.BindingSource(this.components);
-            this.dsSistemaTarjetas = new sistemaTarjetas.dsSistemaTarjetas();
-            this.v_ayudanteTableAdapter = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.v_ayudanteTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cedulaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsBuscar = new System.Windows.Forms.BindingSource(this.components);
+            this.dsSistemaTarjetas = new sistemaTarjetas.dsSistemaTarjetas();
+            this.v_ayudanteTableAdapter = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.v_ayudanteTableAdapter();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rbId = new System.Windows.Forms.RadioButton();
-            this.txtId = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.rbNombre = new System.Windows.Forms.RadioButton();
+            this.rbId = new System.Windows.Forms.RadioButton();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnOk = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBuscar)).BeginInit();
@@ -72,20 +72,6 @@
             this.dgvBuscar.TabIndex = 0;
             this.dgvBuscar.SelectionChanged += new System.EventHandler(this.dgvBuscar_SelectionChanged);
             // 
-            // bsBuscar
-            // 
-            this.bsBuscar.DataMember = "v_ayudante";
-            this.bsBuscar.DataSource = this.dsSistemaTarjetas;
-            // 
-            // dsSistemaTarjetas
-            // 
-            this.dsSistemaTarjetas.DataSetName = "dsSistemaTarjetas";
-            this.dsSistemaTarjetas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // v_ayudanteTableAdapter
-            // 
-            this.v_ayudanteTableAdapter.ClearBeforeFill = true;
-            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -109,6 +95,20 @@
             this.cedulaDataGridViewTextBoxColumn.Name = "cedulaDataGridViewTextBoxColumn";
             this.cedulaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // bsBuscar
+            // 
+            this.bsBuscar.DataMember = "v_ayudante";
+            this.bsBuscar.DataSource = this.dsSistemaTarjetas;
+            // 
+            // dsSistemaTarjetas
+            // 
+            this.dsSistemaTarjetas.DataSetName = "dsSistemaTarjetas";
+            this.dsSistemaTarjetas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // v_ayudanteTableAdapter
+            // 
+            this.v_ayudanteTableAdapter.ClearBeforeFill = true;
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.txtNombre);
@@ -122,27 +122,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar por";
             // 
-            // rbId
-            // 
-            this.rbId.AutoSize = true;
-            this.rbId.Location = new System.Drawing.Point(6, 19);
-            this.rbId.Name = "rbId";
-            this.rbId.Size = new System.Drawing.Size(37, 17);
-            this.rbId.TabIndex = 0;
-            this.rbId.TabStop = true;
-            this.rbId.Text = "Id:";
-            this.rbId.UseVisualStyleBackColor = true;
-            this.rbId.CheckedChanged += new System.EventHandler(this.rbId_CheckedChanged);
-            // 
-            // txtId
-            // 
-            this.txtId.Enabled = false;
-            this.txtId.Location = new System.Drawing.Point(97, 18);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(65, 20);
-            this.txtId.TabIndex = 2;
-            this.txtId.TextChanged += new System.EventHandler(this.txtId_TextChanged);
-            // 
             // txtNombre
             // 
             this.txtNombre.Enabled = false;
@@ -152,6 +131,16 @@
             this.txtNombre.TabIndex = 3;
             this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
+            // 
+            // txtId
+            // 
+            this.txtId.Enabled = false;
+            this.txtId.Location = new System.Drawing.Point(97, 18);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(65, 20);
+            this.txtId.TabIndex = 2;
+            this.txtId.TextChanged += new System.EventHandler(this.txtId_TextChanged);
+            this.txtId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtId_KeyPress);
             // 
             // rbNombre
             // 
@@ -164,6 +153,18 @@
             this.rbNombre.Text = "Nombre:";
             this.rbNombre.UseVisualStyleBackColor = true;
             this.rbNombre.CheckedChanged += new System.EventHandler(this.rbNombre_CheckedChanged);
+            // 
+            // rbId
+            // 
+            this.rbId.AutoSize = true;
+            this.rbId.Location = new System.Drawing.Point(6, 19);
+            this.rbId.Name = "rbId";
+            this.rbId.Size = new System.Drawing.Size(37, 17);
+            this.rbId.TabIndex = 0;
+            this.rbId.TabStop = true;
+            this.rbId.Text = "Id:";
+            this.rbId.UseVisualStyleBackColor = true;
+            this.rbId.CheckedChanged += new System.EventHandler(this.rbId_CheckedChanged);
             // 
             // btnCancelar
             // 

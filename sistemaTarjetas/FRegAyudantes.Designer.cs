@@ -43,16 +43,17 @@
             this.txtCelular = new System.Windows.Forms.MaskedTextBox();
             this.txtTelefono = new System.Windows.Forms.MaskedTextBox();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
-            this.btnNuevo = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.btnGuardar = new System.Windows.Forms.Button();
             this.querys = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.Querys();
             this.label9 = new System.Windows.Forms.Label();
             this.txtComision = new System.Windows.Forms.NumericUpDown();
             this.txtCedula = new System.Windows.Forms.MaskedTextBox();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnNuevo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.txtComision)).BeginInit();
             this.SuspendLayout();
             // 
@@ -207,66 +208,6 @@
             this.dtpFecha.Enter += new System.EventHandler(this.entrar);
             this.dtpFecha.Leave += new System.EventHandler(this.salir);
             // 
-            // btnNuevo
-            // 
-            this.btnNuevo.Image = global::sistemaTarjetas.Recursos._03__3_;
-            this.btnNuevo.Location = new System.Drawing.Point(27, 196);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(75, 23);
-            this.btnNuevo.TabIndex = 9;
-            this.btnNuevo.Text = "Nuevo";
-            this.btnNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnNuevo.UseVisualStyleBackColor = true;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.Enabled = false;
-            this.btnModificar.Image = global::sistemaTarjetas.Recursos._18;
-            this.btnModificar.Location = new System.Drawing.Point(122, 196);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(75, 23);
-            this.btnModificar.TabIndex = 10;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnModificar.UseVisualStyleBackColor = true;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.Image = global::sistemaTarjetas.Recursos._18__3_;
-            this.btnSalir.Location = new System.Drawing.Point(472, 196);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 23);
-            this.btnSalir.TabIndex = 13;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Image = global::sistemaTarjetas.Recursos._49;
-            this.btnBuscar.Location = new System.Drawing.Point(203, 13);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(37, 29);
-            this.btnBuscar.TabIndex = 1;
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Enabled = false;
-            this.btnGuardar.Image = global::sistemaTarjetas.Recursos._46__2_;
-            this.btnGuardar.Location = new System.Drawing.Point(215, 196);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
-            this.btnGuardar.TabIndex = 11;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -280,11 +221,6 @@
             // 
             this.txtComision.Enabled = false;
             this.txtComision.Location = new System.Drawing.Point(97, 148);
-            this.txtComision.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             this.txtComision.Name = "txtComision";
             this.txtComision.Size = new System.Drawing.Size(48, 20);
             this.txtComision.TabIndex = 5;
@@ -308,11 +244,24 @@
             this.txtCedula.Enter += new System.EventHandler(this.entrar);
             this.txtCedula.Leave += new System.EventHandler(this.salir);
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Enabled = false;
+            this.btnEliminar.Image = global::sistemaTarjetas.Recursos.Remove_16x16;
+            this.btnEliminar.Location = new System.Drawing.Point(178, 196);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.TabIndex = 23;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
             // btnCancelar
             // 
             this.btnCancelar.Enabled = false;
             this.btnCancelar.Image = global::sistemaTarjetas.Recursos._50__3_;
-            this.btnCancelar.Location = new System.Drawing.Point(302, 196);
+            this.btnCancelar.Location = new System.Drawing.Point(366, 196);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 12;
@@ -321,11 +270,72 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Enabled = false;
+            this.btnGuardar.Image = global::sistemaTarjetas.Recursos._46__2_;
+            this.btnGuardar.Location = new System.Drawing.Point(285, 196);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardar.TabIndex = 11;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Image = global::sistemaTarjetas.Recursos._49;
+            this.btnBuscar.Location = new System.Drawing.Point(203, 13);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(37, 29);
+            this.btnBuscar.TabIndex = 1;
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Image = global::sistemaTarjetas.Recursos._18__3_;
+            this.btnSalir.Location = new System.Drawing.Point(472, 196);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.TabIndex = 13;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.Enabled = false;
+            this.btnModificar.Image = global::sistemaTarjetas.Recursos._18;
+            this.btnModificar.Location = new System.Drawing.Point(97, 196);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(75, 23);
+            this.btnModificar.TabIndex = 10;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Image = global::sistemaTarjetas.Recursos._03__3_;
+            this.btnNuevo.Location = new System.Drawing.Point(16, 196);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(75, 23);
+            this.btnNuevo.TabIndex = 9;
+            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
             // FRegAyudantes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(561, 243);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.txtCedula);
             this.Controls.Add(this.txtComision);
@@ -387,5 +397,6 @@
         private System.Windows.Forms.NumericUpDown txtComision;
         private System.Windows.Forms.MaskedTextBox txtCedula;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }

@@ -4,6 +4,14 @@
 
     partial class dsSistemaTarjetas
     {
+        partial class v_zonaSDataTable
+        {
+        }
+
+        partial class articulos_devolverDataTable
+        {
+        }
+
         partial class devolverDataTable
         {
         }

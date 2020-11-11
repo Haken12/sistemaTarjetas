@@ -22,6 +22,7 @@ namespace sistemaTarjetas
         public int? numVenta = 0;
         private int existencias = 0;
         public DateTime fecha;
+        private int? numeroVenta;
         public int codTarjeta = 0;
 
         private void FNuevaVenta_Load(object sender, EventArgs e)
@@ -123,8 +124,7 @@ namespace sistemaTarjetas
 
         private void guardar() 
         {
-            querys.nueva_venta(fecha, codTarjeta, totalImporte, ref numVenta);
-            querys.nueva_venta_tarjeta(codTarjeta, fecha, totalImporte, numVenta);
+            querys.nueva_venta_tarjeta(codTarjeta, fecha, totalImporte, 0, ref numeroVenta);
             int c = 0;
             foreach (DataRow fila in dsSistemaTarjetas.venta.Rows)
             {
@@ -132,8 +132,9 @@ namespace sistemaTarjetas
                 int precio = (int)fila[2];
                 int cantidad = (int)fila[3];
                 int importe = (int)fila[4];
+                querys.nuevo_detalle_venta_tarjeta(numeroVenta, codTarjeta, codigo, precio, cantidad, importe);
                 c++;
-                querys.nuevo_detalle_venta(numVenta, c, codigo, precio, cantidad, importe);
+                
             }
             this.DialogResult = DialogResult.OK;
         }

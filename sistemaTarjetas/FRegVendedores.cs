@@ -101,7 +101,7 @@ namespace sistemaTarjetas
             txtId.Clear();
             activar();
             despejar();
-
+            btnEliminar.Enabled = false;
             txtId.Enabled = false;
            
             btnModificar.Enabled = false;
@@ -125,6 +125,7 @@ namespace sistemaTarjetas
                         txtId.Enabled = true;
                         btnGuardar.Enabled = false;
                         btnCancelar.Enabled = false;
+                        btnEliminar.Enabled = true;
                         txtId.Focus();
 
                         break;
@@ -135,6 +136,7 @@ namespace sistemaTarjetas
                         btnCancelar.Enabled = false;
                         txtId.Focus();
                         btnModificar.Enabled = true;
+                        btnEliminar.Enabled = true;
                         break;
                     default:
                         break;
@@ -179,9 +181,10 @@ namespace sistemaTarjetas
             despejar();
             if (txtId.Text.Length > 0)
             {
-                if (querys.vendedor_existe(Convert.ToInt32(txtId.Text)) == 1)
+                if (querys.vendedor_existe(Convert.ToInt32(txtId.Text)) == 1 & txtId.Text !="1")
                 {
-                    cargar();   
+                    cargar();
+                    btnEliminar.Enabled = true;
                     btnModificar.Enabled = true;                    
                 }
                 else
@@ -200,6 +203,7 @@ namespace sistemaTarjetas
         private void btnModificar_Click(object sender, EventArgs e)
         {
             txtId.Enabled = false;
+            
             btnBuscar.Enabled = false;            
             btnModificar.Enabled = false;
             btnNuevo.Enabled = false;
@@ -238,6 +242,7 @@ namespace sistemaTarjetas
                 case Modo.Editar:
                     despejar();
                     cargar();
+                    btnEliminar.Enabled = true;
                     desactivar();
                     break;
                 default:
@@ -271,6 +276,41 @@ namespace sistemaTarjetas
             if (txtDeduccion.Text.Length == 0) 
             {
                 txtDeduccion.Text = "0";
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(txtId.Text);
+            int? resultado = querys.vendedor_asignado(id);
+            if (resultado == 0)
+            {
+                querys.eliminar_vendedor(id);
+                desactivar();
+                txtId.Clear();
+                btnGuardar.Enabled = false;
+                btnCancelar.Enabled = false;
+                btnModificar.Enabled = false;
+                btnNuevo.Enabled = true;
+                txtId.Enabled = true;
+                btnBuscar.Enabled = true;
+                txtId.Focus();
+            }
+            else
+            {
+                if (MessageBox.Show("El vendedor seleccionado esta asignado en una o varias tarjetas, desea proceder?","Alerta",MessageBoxButtons.YesNo,MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    querys.eliminar_vendedor(id);
+                    desactivar();
+                    txtId.Clear();
+                    btnGuardar.Enabled = false;
+                    btnCancelar.Enabled = false;
+                    btnModificar.Enabled = false;
+                    btnNuevo.Enabled = true;
+                    txtId.Enabled = true;
+                    btnBuscar.Enabled = true;
+                    txtId.Focus();
+                }
             }
         }
     }   

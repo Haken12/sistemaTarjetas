@@ -47,6 +47,7 @@ namespace sistemaTarjetas
         private void crear() 
         {
             querys.crear_zona(Convert.ToInt32(cbxVendedor.SelectedValue), txtDescripcion.Text, ref zona.id);
+            txtIdZona.Text = zona.id.ToString();
         }
         private void actualizar() 
         {
@@ -58,6 +59,7 @@ namespace sistemaTarjetas
         {
             txtIdZona.Clear();
             txtIdZona.Enabled = false;
+            btnEliminar.Enabled = false;
             txtDescripcion.Enabled = true;
             cbxVendedor.Enabled = true;
             btnCancelar.Enabled = true;
@@ -89,7 +91,7 @@ namespace sistemaTarjetas
 
         private void txtIdZona_TextChanged(object sender, EventArgs e)
         {
-            if ((txtIdZona.Text.Length == 0))
+            if ((txtIdZona.Text.Length == 0) | txtIdZona.Text == "1")
             {
                 txtDescripcion.Clear();
                 btnModificar.Enabled = false;
@@ -102,6 +104,7 @@ namespace sistemaTarjetas
             else
             {
                 btnBuscar.Enabled = false;
+                btnEliminar.Enabled = true;
                 querys.unica_zona(Convert.ToInt32(txtIdZona.Text),
                     ref zona.descripcion,
                     ref zona.idVendedor,
@@ -125,6 +128,7 @@ namespace sistemaTarjetas
             txtIdZona.Clear();
             txtIdZona.Enabled = true;
             txtIdZona.Focus();
+            if (this.modo == Modo.Editar) btnEliminar.Enabled = true;
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -140,8 +144,7 @@ namespace sistemaTarjetas
                 {
                     case Modo.Insertar:
                         crear();
-                        txtDescripcion.Clear();
-                        txtIdZona.Clear();
+                        
                         btnGuardar.Enabled = false;
                         btnCancelar.Enabled = false;
                         btnNueva.Enabled = true;
@@ -156,7 +159,7 @@ namespace sistemaTarjetas
                         btnGuardar.Enabled = false;
                         btnModificar.Enabled = true;
                         btnBuscar.Enabled = true;
-
+                        
                         txtIdZona.Enabled = true;
                         txtIdZona.Focus();
                         txtDescripcion.Enabled = false;
@@ -164,6 +167,59 @@ namespace sistemaTarjetas
                         break;
                     default:
                         break;
+                }
+                btnEliminar.Enabled = true;
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(txtIdZona.Text);
+            int? asignado = querys.zona_asignada(id);
+            if (asignado == 0)
+            {
+                querys.eliminar_zona(id, 1);
+                txtDescripcion.Clear();
+                txtIdZona.Clear();
+                btnCancelar.Enabled = false;
+                btnGuardar.Enabled = false;
+                btnModificar.Enabled = false;
+                btnNueva.Enabled = true;
+                txtIdZona.Enabled = true;
+                btnBuscar.Enabled = true;
+                txtIdZona.Focus();
+            }
+            else
+            {
+                int vendedor = (int)cbxVendedor.SelectedValue;
+                int? cantidad = querys.cantidad_zonas(vendedor);
+                if (cantidad > 1)
+                {
+                    using (FReasignarZona fReasignar = new FReasignarZona())
+                    {
+                        fReasignar.zona = id;
+                        fReasignar.vendedor = vendedor;
+                       
+                        if (fReasignar.ShowDialog() == DialogResult.OK)
+                        {
+                            int nuevo = fReasignar.seleccion;
+                            querys.eliminar_zona(id, nuevo);
+                            querys.eliminar_zona(id, 1);
+                            txtDescripcion.Clear();
+                            txtIdZona.Clear();
+                            btnCancelar.Enabled = false;
+                            btnGuardar.Enabled = false;
+                            btnModificar.Enabled = false;
+                            btnNueva.Enabled = true;
+                            txtIdZona.Enabled = true;
+                            btnBuscar.Enabled = true;
+                            txtIdZona.Focus();
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("La zona seleccionada esta asignada a una tarjeta y no se puede eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
         }

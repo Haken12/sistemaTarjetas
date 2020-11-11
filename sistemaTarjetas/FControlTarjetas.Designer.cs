@@ -55,6 +55,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvDetalles = new System.Windows.Forms.DataGridView();
+            this.noDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.debitoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.creditoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.referenciaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsDetalles = new System.Windows.Forms.BindingSource(this.components);
             this.pnlOp = new System.Windows.Forms.Panel();
             this.btnAsentar = new System.Windows.Forms.Button();
             this.txtValor = new System.Windows.Forms.TextBox();
@@ -74,22 +81,15 @@
             this.querys = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.Querys();
             this.v_vendedorTableAdapter = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.v_vendedorTableAdapter();
             this.v_zonaTableAdapter = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.v_zonaTableAdapter();
-            this.bsDetalles = new System.Windows.Forms.BindingSource(this.components);
             this.v_detalles_tarjetaTableAdapter = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.v_detalles_tarjetaTableAdapter();
-            this.noDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.debitoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.creditoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.referenciaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsZonas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSistemaTarjetas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsVendedores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalles)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsDetalles)).BeginInit();
             this.pnlOp.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bsDetalles)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -389,6 +389,53 @@
             this.dgvDetalles.Size = new System.Drawing.Size(776, 298);
             this.dgvDetalles.TabIndex = 1;
             // 
+            // noDataGridViewTextBoxColumn
+            // 
+            this.noDataGridViewTextBoxColumn.DataPropertyName = "No.";
+            this.noDataGridViewTextBoxColumn.HeaderText = "No.";
+            this.noDataGridViewTextBoxColumn.Name = "noDataGridViewTextBoxColumn";
+            this.noDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fechaDataGridViewTextBoxColumn
+            // 
+            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
+            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
+            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
+            this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tipoDataGridViewTextBoxColumn
+            // 
+            this.tipoDataGridViewTextBoxColumn.DataPropertyName = "Tipo";
+            this.tipoDataGridViewTextBoxColumn.HeaderText = "Tipo";
+            this.tipoDataGridViewTextBoxColumn.Name = "tipoDataGridViewTextBoxColumn";
+            this.tipoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // debitoDataGridViewTextBoxColumn
+            // 
+            this.debitoDataGridViewTextBoxColumn.DataPropertyName = "Debito";
+            this.debitoDataGridViewTextBoxColumn.HeaderText = "Debito";
+            this.debitoDataGridViewTextBoxColumn.Name = "debitoDataGridViewTextBoxColumn";
+            this.debitoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // creditoDataGridViewTextBoxColumn
+            // 
+            this.creditoDataGridViewTextBoxColumn.DataPropertyName = "Credito";
+            this.creditoDataGridViewTextBoxColumn.HeaderText = "Credito";
+            this.creditoDataGridViewTextBoxColumn.Name = "creditoDataGridViewTextBoxColumn";
+            this.creditoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // referenciaDataGridViewTextBoxColumn
+            // 
+            this.referenciaDataGridViewTextBoxColumn.DataPropertyName = "Referencia";
+            this.referenciaDataGridViewTextBoxColumn.HeaderText = "Referencia";
+            this.referenciaDataGridViewTextBoxColumn.Name = "referenciaDataGridViewTextBoxColumn";
+            this.referenciaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // bsDetalles
+            // 
+            this.bsDetalles.DataMember = "v_detalles_tarjeta";
+            this.bsDetalles.DataSource = this.dsSistemaTarjetas;
+            // 
             // pnlOp
             // 
             this.pnlOp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -423,6 +470,7 @@
             this.txtValor.Size = new System.Drawing.Size(100, 20);
             this.txtValor.TabIndex = 5;
             this.txtValor.Enter += new System.EventHandler(this.entrar);
+            this.txtValor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtValor_KeyDown);
             this.txtValor.Leave += new System.EventHandler(this.salir);
             // 
             // dtpFecha
@@ -485,6 +533,7 @@
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(75, 23);
             this.btnImprimir.TabIndex = 3;
+            this.btnImprimir.TabStop = false;
             this.btnImprimir.Text = "Imprimir";
             this.btnImprimir.UseVisualStyleBackColor = true;
             // 
@@ -510,6 +559,7 @@
             this.txtBalance.ReadOnly = true;
             this.txtBalance.Size = new System.Drawing.Size(88, 20);
             this.txtBalance.TabIndex = 5;
+            this.txtBalance.TabStop = false;
             // 
             // txtCredito
             // 
@@ -519,6 +569,7 @@
             this.txtCredito.ReadOnly = true;
             this.txtCredito.Size = new System.Drawing.Size(84, 20);
             this.txtCredito.TabIndex = 4;
+            this.txtCredito.TabStop = false;
             // 
             // txtDebito
             // 
@@ -528,6 +579,7 @@
             this.txtDebito.ReadOnly = true;
             this.txtDebito.Size = new System.Drawing.Size(89, 20);
             this.txtDebito.TabIndex = 3;
+            this.txtDebito.TabStop = false;
             // 
             // label14
             // 
@@ -564,56 +616,9 @@
             // 
             this.v_zonaTableAdapter.ClearBeforeFill = true;
             // 
-            // bsDetalles
-            // 
-            this.bsDetalles.DataMember = "v_detalles_tarjeta";
-            this.bsDetalles.DataSource = this.dsSistemaTarjetas;
-            // 
             // v_detalles_tarjetaTableAdapter
             // 
             this.v_detalles_tarjetaTableAdapter.ClearBeforeFill = true;
-            // 
-            // noDataGridViewTextBoxColumn
-            // 
-            this.noDataGridViewTextBoxColumn.DataPropertyName = "No.";
-            this.noDataGridViewTextBoxColumn.HeaderText = "No.";
-            this.noDataGridViewTextBoxColumn.Name = "noDataGridViewTextBoxColumn";
-            this.noDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fechaDataGridViewTextBoxColumn
-            // 
-            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
-            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
-            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
-            this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tipoDataGridViewTextBoxColumn
-            // 
-            this.tipoDataGridViewTextBoxColumn.DataPropertyName = "Tipo";
-            this.tipoDataGridViewTextBoxColumn.HeaderText = "Tipo";
-            this.tipoDataGridViewTextBoxColumn.Name = "tipoDataGridViewTextBoxColumn";
-            this.tipoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // debitoDataGridViewTextBoxColumn
-            // 
-            this.debitoDataGridViewTextBoxColumn.DataPropertyName = "Debito";
-            this.debitoDataGridViewTextBoxColumn.HeaderText = "Debito";
-            this.debitoDataGridViewTextBoxColumn.Name = "debitoDataGridViewTextBoxColumn";
-            this.debitoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // creditoDataGridViewTextBoxColumn
-            // 
-            this.creditoDataGridViewTextBoxColumn.DataPropertyName = "Credito";
-            this.creditoDataGridViewTextBoxColumn.HeaderText = "Credito";
-            this.creditoDataGridViewTextBoxColumn.Name = "creditoDataGridViewTextBoxColumn";
-            this.creditoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // referenciaDataGridViewTextBoxColumn
-            // 
-            this.referenciaDataGridViewTextBoxColumn.DataPropertyName = "Referencia";
-            this.referenciaDataGridViewTextBoxColumn.HeaderText = "Referencia";
-            this.referenciaDataGridViewTextBoxColumn.Name = "referenciaDataGridViewTextBoxColumn";
-            this.referenciaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // FControlTarjetas
             // 
@@ -634,11 +639,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dsSistemaTarjetas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsVendedores)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalles)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsDetalles)).EndInit();
             this.pnlOp.ResumeLayout(false);
             this.pnlOp.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bsDetalles)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -87,5 +87,10 @@ namespace sistemaTarjetas
             FDevolucionVendedor fDevolucion = new FDevolucionVendedor();
             fDevolucion.ShowDialog();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -85,7 +85,10 @@ namespace sistemaTarjetas
             fila[4] = Convert.ToInt32(txtImporte.Text);
 
             DataRow fila2 = dsSistemaTarjetas.despacho.Rows.Find(Convert.ToInt32(txtCodigo.Text));
-            if (fila2 == null) dsSistemaTarjetas.despacho.Rows.Add(fila);
+            if (fila2 == null) { 
+                dsSistemaTarjetas.despacho.Rows.Add(fila);
+                lblArticulos.Text = (Convert.ToInt32(lblArticulos.Text) + 1).ToString();
+                }
             else 
             {
                 int actuales = (int)fila2[3];

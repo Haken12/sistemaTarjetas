@@ -24,7 +24,7 @@ namespace sistemaTarjetas
         public DateTime fecha;
         private void FDevolucionTarjeta_Load(object sender, EventArgs e)
         {
-            articulos_devolverTableAdapter.Fill(dsSistemaTarjetas.articulos_devolver, numeroVenta);
+            articulos_devolverTableAdapter.Fill(dsSistemaTarjetas.articulos_devolver,numeroVenta);
         }
 
         private void agregar() 
@@ -55,11 +55,12 @@ namespace sistemaTarjetas
             }
             else 
             {
+                
                 int actual = (int)fila[3];
-                int actualVenta = (int)dsSistemaTarjetas.articulos_devolver.FindByNumero(numero)[3];
+                int actualVenta = (int)dsSistemaTarjetas.articulos_devolver.Rows.Find(numero)[3];
                 fila[3] = actual + cantidad;
                 fila[4] = (actual + cantidad) * precio;
-                dsSistemaTarjetas.articulos_devolver.FindByNumero(numero)[3] = actualVenta - cantidad;
+                dsSistemaTarjetas.articulos_devolver.Rows.Find(numero)[3] = actualVenta - cantidad;
             }
 
         }
@@ -73,7 +74,7 @@ namespace sistemaTarjetas
 
             int cantidad = Convert.ToInt32(txtCantidad.Text);
             int numero = (int)(dgvDevolver.SelectedCells[0].Value);
-            DataRow filaA = dsSistemaTarjetas.articulos_devolver.FindByNumero(numero);
+            DataRow filaA = dsSistemaTarjetas.articulos_devolver.Rows.Find(numero);
             DataRow filaB = dsSistemaTarjetas.devolver.FindByNumero(numero);
             int cantidadA = (int)filaA[3];
             int cantidadB = (int)filaB[3];
@@ -98,9 +99,12 @@ namespace sistemaTarjetas
 
         private void aceptar() {
             valorT = 0;
-            querys.nueva_devolucion(fecha, numeroTarjeta, valorT, ref numeroRef);
-            
-            
+            foreach (DataRow rw in dsSistemaTarjetas.devolver.Rows)
+            {
+                valorT += (int)rw[4];
+            }
+            int? numDevolucion = 0;
+            querys.nueva_devolucion_tarjeta(numeroTarjeta, fecha, valorT, numeroVenta, ref numDevolucion);
             int c = 1;
             foreach (DataRow row in dsSistemaTarjetas.devolver.Rows) 
             {
@@ -108,11 +112,11 @@ namespace sistemaTarjetas
                 int codigo = (int)row[1];
                 int cantidad = (int)row[3];
                 int valor = (int)row[4];
-                querys.nuevo_detalle_devolucion(numeroRef,codigo,c,numeroVenta,numero,cantidad,valor);
+                querys.nuevo_detalle_devolucion_tarjeta(
+                    this.numeroTarjeta, numDevolucion, this.numeroVenta, numero, codigo, valor / cantidad, cantidad, valor);
                 c++;
-                valorT += valor;
+                
             }
-            querys.nueva_devolucion_tarjeta(numeroTarjeta, fecha, valorT, numeroRef);
             this.DialogResult = DialogResult.OK;
         }
         private void btnGuardar_Click(object sender, EventArgs e)

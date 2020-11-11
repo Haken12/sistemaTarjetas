@@ -59,6 +59,7 @@
             this.dsSistemaTarjetas = new sistemaTarjetas.dsSistemaTarjetas();
             this.querys = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.Querys();
             this.v_ayudanteTableAdapter = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.v_ayudanteTableAdapter();
+            this.btnEliminar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.txtComision)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsAyudantes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSistemaTarjetas)).BeginInit();
@@ -231,7 +232,7 @@
             // 
             this.btnModificar.Enabled = false;
             this.btnModificar.Image = global::sistemaTarjetas.Recursos._18;
-            this.btnModificar.Location = new System.Drawing.Point(122, 239);
+            this.btnModificar.Location = new System.Drawing.Point(110, 239);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(87, 31);
             this.btnModificar.TabIndex = 11;
@@ -267,7 +268,7 @@
             // 
             this.btnGuardar.Enabled = false;
             this.btnGuardar.Image = global::sistemaTarjetas.Recursos._46__2_;
-            this.btnGuardar.Location = new System.Drawing.Point(215, 239);
+            this.btnGuardar.Location = new System.Drawing.Point(302, 239);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 31);
             this.btnGuardar.TabIndex = 12;
@@ -289,11 +290,6 @@
             // 
             this.txtComision.Enabled = false;
             this.txtComision.Location = new System.Drawing.Point(97, 148);
-            this.txtComision.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             this.txtComision.Name = "txtComision";
             this.txtComision.Size = new System.Drawing.Size(48, 20);
             this.txtComision.TabIndex = 5;
@@ -321,7 +317,7 @@
             // 
             this.btnCancelar.Enabled = false;
             this.btnCancelar.Image = global::sistemaTarjetas.Recursos._50__3_;
-            this.btnCancelar.Location = new System.Drawing.Point(302, 239);
+            this.btnCancelar.Location = new System.Drawing.Point(377, 239);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 31);
             this.btnCancelar.TabIndex = 13;
@@ -365,11 +361,25 @@
             // 
             this.v_ayudanteTableAdapter.ClearBeforeFill = true;
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Enabled = false;
+            this.btnEliminar.Image = global::sistemaTarjetas.Recursos.Remove_16x16;
+            this.btnEliminar.Location = new System.Drawing.Point(203, 239);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 31);
+            this.btnEliminar.TabIndex = 24;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
             // FRegVendedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(561, 274);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.txtAyudante);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.btnCancelar);
@@ -440,5 +450,6 @@
         private System.Windows.Forms.BindingSource bsAyudantes;
         private dsSistemaTarjetas dsSistemaTarjetas;
         private dsSistemaTarjetasTableAdapters.v_ayudanteTableAdapter v_ayudanteTableAdapter;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }

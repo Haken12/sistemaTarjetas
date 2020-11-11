@@ -85,6 +85,7 @@ namespace sistemaTarjetas
             {
                 this.Id = (int)dgvBuscar.SelectedCells[0].Value;
             }
+            else this.DialogResult = DialogResult.None;
         }
     }
 }

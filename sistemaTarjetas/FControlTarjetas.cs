@@ -189,7 +189,7 @@ namespace sistemaTarjetas
             else 
             {
                 FDevolucionTarjeta fDevolucion = new FDevolucionTarjeta();
-                fDevolucion.numeroVenta = (int)dgvDetalles.SelectedCells[5].Value;                
+                fDevolucion.numeroVenta = (int)dgvDetalles.SelectedCells[0].Value;                
                 fDevolucion.fecha = dtpFecha.Value;
                 fDevolucion.numeroTarjeta = Convert.ToInt32(txtCodigo.Text);
                 
@@ -260,9 +260,18 @@ namespace sistemaTarjetas
                 {
                     case Modo.Insertar:
                         crear();
-                        despejar();
-                        txtNombre.Focus();
-
+                        txtNombre.Enabled = false;
+                        txtReferencia.Enabled = false;
+                        txtCodigo.Enabled = true;
+                        txtTelefono.Enabled = false;
+                        cbxVendedor.Enabled = false;
+                        cbxZona.Enabled = false;
+                        cbxFormaPago.Enabled = false;
+                        dtpFecha.Enabled = false;
+                        
+                        txtValor.Enabled = true;
+                        btnAsentar.Enabled = true;
+                        cbxTipo.Focus();
                         break;
 
                     case Modo.Editar:
@@ -384,6 +393,11 @@ namespace sistemaTarjetas
         private void btnAsentar_Click(object sender, EventArgs e)
         {
             asentar();
+        }
+
+        private void txtValor_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) asentar();
         }
     }
 }

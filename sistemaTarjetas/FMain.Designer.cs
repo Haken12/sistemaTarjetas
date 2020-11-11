@@ -39,6 +39,7 @@
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlLateral = new System.Windows.Forms.Panel();
             this.pnlVendedores = new System.Windows.Forms.Panel();
+            this.btnDevolucion = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnControlTarjetas = new System.Windows.Forms.Button();
             this.btnZona = new System.Windows.Forms.Button();
@@ -49,7 +50,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.btnArticulos = new System.Windows.Forms.Button();
             this.btnInventario = new System.Windows.Forms.Button();
-            this.btnDevolucion = new System.Windows.Forms.Button();
             this.panelTop.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.pnlLateral.SuspendLayout();
@@ -155,6 +155,22 @@
             this.pnlVendedores.Size = new System.Drawing.Size(175, 140);
             this.pnlVendedores.TabIndex = 3;
             this.pnlVendedores.Visible = false;
+            // 
+            // btnDevolucion
+            // 
+            this.btnDevolucion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnDevolucion.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDevolucion.FlatAppearance.BorderSize = 0;
+            this.btnDevolucion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDevolucion.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnDevolucion.Location = new System.Drawing.Point(0, 115);
+            this.btnDevolucion.Name = "btnDevolucion";
+            this.btnDevolucion.Size = new System.Drawing.Size(175, 23);
+            this.btnDevolucion.TabIndex = 5;
+            this.btnDevolucion.Text = "   Devolucion de Vendedores";
+            this.btnDevolucion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDevolucion.UseVisualStyleBackColor = false;
+            this.btnDevolucion.Click += new System.EventHandler(this.btnDevolucion_Click);
             // 
             // button1
             // 
@@ -309,22 +325,6 @@
             this.btnInventario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInventario.UseVisualStyleBackColor = false;
             this.btnInventario.Click += new System.EventHandler(this.btnInventario_Click);
-            // 
-            // btnDevolucion
-            // 
-            this.btnDevolucion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnDevolucion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDevolucion.FlatAppearance.BorderSize = 0;
-            this.btnDevolucion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDevolucion.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnDevolucion.Location = new System.Drawing.Point(0, 115);
-            this.btnDevolucion.Name = "btnDevolucion";
-            this.btnDevolucion.Size = new System.Drawing.Size(175, 23);
-            this.btnDevolucion.TabIndex = 5;
-            this.btnDevolucion.Text = "   Devolucion de Vendedores";
-            this.btnDevolucion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDevolucion.UseVisualStyleBackColor = false;
-            this.btnDevolucion.Click += new System.EventHandler(this.btnDevolucion_Click);
             // 
             // FMain
             // 

@@ -81,6 +81,12 @@
     <Compile Include="FBuscarVendedor.Designer.cs">
       <DependentUpon>FBuscarVendedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="FBuscarZona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FBuscarZona.Designer.cs">
+      <DependentUpon>FBuscarZona.cs</DependentUpon>
+    </Compile>
     <Compile Include="FControlTarjetas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +123,18 @@
     <Compile Include="FNuevaVenta.Designer.cs">
       <DependentUpon>FNuevaVenta.cs</DependentUpon>
     </Compile>
+    <Compile Include="FReasignarAyudante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FReasignarAyudante.Designer.cs">
+      <DependentUpon>FReasignarAyudante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FReasignarZona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FReasignarZona.Designer.cs">
+      <DependentUpon>FReasignarZona.cs</DependentUpon>
+    </Compile>
     <Compile Include="FRegVendedores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,6 +167,9 @@
     <EmbeddedResource Include="FBuscarVendedor.resx">
       <DependentUpon>FBuscarVendedor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FBuscarZona.resx">
+      <DependentUpon>FBuscarZona.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FControlTarjetas.resx">
       <DependentUpon>FControlTarjetas.cs</DependentUpon>
     </EmbeddedResource>
@@ -166,6 +187,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FNuevaVenta.resx">
       <DependentUpon>FNuevaVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FReasignarAyudante.resx">
+      <DependentUpon>FReasignarAyudante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FReasignarZona.resx">
+      <DependentUpon>FReasignarZona.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FRegVendedores.resx">
       <DependentUpon>FRegVendedores.cs</DependentUpon>
@@ -239,6 +266,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="BD\script.sql" />
+    <None Include="Resources\Remove_16x16.png" />
+    <None Include="Resources\Remove_24x24.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -78,12 +78,20 @@ namespace sistemaTarjetas
             {
                 this.Id = (int)dgvBuscar.SelectedCells[0].Value;
             }
+            else this.DialogResult = DialogResult.None;
 
         }
 
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (Char.IsLetter(e.KeyChar)) return;
+            if (Char.IsControl(e.KeyChar)) return;
+            e.Handled = true;
+        }
+
+        private void txtId_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar)) return;
             if (Char.IsControl(e.KeyChar)) return;
             e.Handled = true;
         }
