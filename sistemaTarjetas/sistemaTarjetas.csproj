@@ -69,6 +69,24 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsSistemaTarjetas.xsd</DependentUpon>
     </Compile>
+    <Compile Include="FAjustarInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FAjustarInventario.Designer.cs">
+      <DependentUpon>FAjustarInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FArticulos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FArticulos.Designer.cs">
+      <DependentUpon>FArticulos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FBuscarArticulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FBuscarArticulo.Designer.cs">
+      <DependentUpon>FBuscarArticulo.cs</DependentUpon>
+    </Compile>
     <Compile Include="FBuscarAyudante.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +153,12 @@
     <Compile Include="FReasignarZona.Designer.cs">
       <DependentUpon>FReasignarZona.cs</DependentUpon>
     </Compile>
+    <Compile Include="FRegistroArticulos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRegistroArticulos.Designer.cs">
+      <DependentUpon>FRegistroArticulos.cs</DependentUpon>
+    </Compile>
     <Compile Include="FRegVendedores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +177,12 @@
     <Compile Include="FRegZonas.Designer.cs">
       <DependentUpon>FRegZonas.cs</DependentUpon>
     </Compile>
+    <Compile Include="FSeleccionarArticulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FSeleccionarArticulo.Designer.cs">
+      <DependentUpon>FSeleccionarArticulo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Metodos.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -161,6 +191,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Recursos.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FAjustarInventario.resx">
+      <DependentUpon>FAjustarInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FArticulos.resx">
+      <DependentUpon>FArticulos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FBuscarArticulo.resx">
+      <DependentUpon>FBuscarArticulo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FBuscarAyudante.resx">
       <DependentUpon>FBuscarAyudante.cs</DependentUpon>
     </EmbeddedResource>
@@ -194,6 +233,9 @@
     <EmbeddedResource Include="FReasignarZona.resx">
       <DependentUpon>FReasignarZona.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FRegistroArticulos.resx">
+      <DependentUpon>FRegistroArticulos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FRegVendedores.resx">
       <DependentUpon>FRegVendedores.cs</DependentUpon>
     </EmbeddedResource>
@@ -202,6 +244,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FRegZonas.resx">
       <DependentUpon>FRegZonas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FSeleccionarArticulo.resx">
+      <DependentUpon>FSeleccionarArticulo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

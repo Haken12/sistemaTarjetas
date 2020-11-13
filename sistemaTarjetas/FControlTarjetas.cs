@@ -69,10 +69,10 @@ namespace sistemaTarjetas
         }
         private void opToggle() 
         {
-            foreach (Control ctr in pnlOp.Controls) 
-            {
-                ctr.Enabled = ctr.Enabled ? false : true;            
-            }
+            txtValor.Enabled = txtValor.Enabled ? false : true;
+            cbxTipo.Enabled = cbxTipo.Enabled ? false : true;
+            dtpFecha.Enabled = dtpFecha.Enabled ? false : true;
+            btnAsentar.Enabled = btnAsentar.Enabled ? false : true;
         }
         private void despejar() 
         {
@@ -241,6 +241,7 @@ namespace sistemaTarjetas
             despejar();
             txtCodigo.Enabled = false;
             btnBuscar.Enabled = false;
+            btnNueva.Enabled = false;
             btnModificar.Enabled = false;
             btnGuardar.Enabled = true;
             btnCancelar.Enabled = true;
@@ -321,7 +322,7 @@ namespace sistemaTarjetas
                     btnModificar.Enabled = true;
                     if (!txtValor.Enabled) opToggle();
                     cbxTipo.SelectedIndex = 0;
-                   
+                    
                     v_detalles_tarjetaTableAdapter.Fill(dsSistemaTarjetas.v_detalles_tarjeta, Convert.ToInt32(txtCodigo.Text));
                     txtCredito.Text = "0";
                     txtDebito.Text = "0";
@@ -340,6 +341,7 @@ namespace sistemaTarjetas
             this.modo = Modo.Editar;
             txtCodigo.Enabled = false;
             btnBuscar.Enabled = false;
+            btnNueva.Enabled = false;
             btnGuardar.Enabled = true;
             btnCancelar.Enabled = true;
 

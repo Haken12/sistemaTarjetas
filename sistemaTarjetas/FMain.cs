@@ -92,5 +92,28 @@ namespace sistemaTarjetas
         {
 
         }
+
+        private void btnArticulos_Click(object sender, EventArgs e)
+        {
+            FRegistroArticulos fArticulos = new FRegistroArticulos();
+            fArticulos.ShowDialog();
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void btnAjusteInventario_Click(object sender, EventArgs e)
+        {
+            FAjustarInventario fAjustar = new FAjustarInventario();
+            fAjustar.ShowDialog();
+        }
+
+        private void articulosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FArticulos fArticulos = new FArticulos();
+            fArticulos.ShowDialog();
+        }
     }
 }

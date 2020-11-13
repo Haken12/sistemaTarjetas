@@ -29,14 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FDespachoVendedores));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtNumero = new System.Windows.Forms.TextBox();
             this.txtVendedor = new System.Windows.Forms.TextBox();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvDespacho = new System.Windows.Forms.DataGridView();
@@ -52,7 +51,6 @@
             this.txtInventario = new System.Windows.Forms.TextBox();
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.txtPrecio = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -66,7 +64,6 @@
             this.txtObservacion = new System.Windows.Forms.TextBox();
             this.lblArticulos = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.btnNuevo = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -74,6 +71,10 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.querys = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.Querys();
+            this.btnBuscarArticulo = new System.Windows.Forms.Button();
+            this.btnBuscarVendedor = new System.Windows.Forms.Button();
+            this.btnBuscarDespacho = new System.Windows.Forms.Button();
+            this.btnNuevo = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDespacho)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsDespacho)).BeginInit();
@@ -109,19 +110,19 @@
             // 
             // txtNumero
             // 
-            this.txtNumero.Enabled = false;
             this.txtNumero.Location = new System.Drawing.Point(62, 16);
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(100, 20);
-            this.txtNumero.TabIndex = 3;
+            this.txtNumero.TabIndex = 0;
             this.txtNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.soloNumero);
             // 
             // txtVendedor
             // 
+            this.txtVendedor.Enabled = false;
             this.txtVendedor.Location = new System.Drawing.Point(62, 47);
             this.txtVendedor.Name = "txtVendedor";
             this.txtVendedor.Size = new System.Drawing.Size(100, 20);
-            this.txtVendedor.TabIndex = 4;
+            this.txtVendedor.TabIndex = 1;
             this.txtVendedor.TabStop = false;
             this.txtVendedor.TextChanged += new System.EventHandler(this.txtVendedor_TextChanged);
             this.txtVendedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.soloNumero);
@@ -135,34 +136,14 @@
             this.dtpFecha.Size = new System.Drawing.Size(104, 20);
             this.dtpFecha.TabIndex = 5;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(168, 14);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(25, 23);
-            this.button1.TabIndex = 6;
-            this.button1.TabStop = false;
-            this.button1.Text = "B";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(168, 45);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(25, 23);
-            this.button2.TabIndex = 7;
-            this.button2.TabStop = false;
-            this.button2.Text = "B";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // txtNombre
             // 
-            this.txtNombre.Enabled = false;
             this.txtNombre.Location = new System.Drawing.Point(199, 47);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.ReadOnly = true;
             this.txtNombre.Size = new System.Drawing.Size(488, 20);
             this.txtNombre.TabIndex = 8;
+            this.txtNombre.TabStop = false;
             // 
             // groupBox1
             // 
@@ -172,7 +153,7 @@
             this.groupBox1.Controls.Add(this.txtInventario);
             this.groupBox1.Controls.Add(this.txtCantidad);
             this.groupBox1.Controls.Add(this.txtPrecio);
-            this.groupBox1.Controls.Add(this.button3);
+            this.groupBox1.Controls.Add(this.btnBuscarArticulo);
             this.groupBox1.Controls.Add(this.txtCodigo);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label8);
@@ -259,27 +240,33 @@
             // 
             // txtImporte
             // 
+            this.txtImporte.Enabled = false;
             this.txtImporte.Location = new System.Drawing.Point(602, 32);
             this.txtImporte.Name = "txtImporte";
             this.txtImporte.ReadOnly = true;
             this.txtImporte.Size = new System.Drawing.Size(73, 20);
             this.txtImporte.TabIndex = 13;
+            this.txtImporte.TabStop = false;
             // 
             // txtDescripcion
             // 
+            this.txtDescripcion.Enabled = false;
             this.txtDescripcion.Location = new System.Drawing.Point(114, 32);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.ReadOnly = true;
             this.txtDescripcion.Size = new System.Drawing.Size(236, 20);
             this.txtDescripcion.TabIndex = 12;
+            this.txtDescripcion.TabStop = false;
             // 
             // txtInventario
             // 
+            this.txtInventario.Enabled = false;
             this.txtInventario.Location = new System.Drawing.Point(356, 32);
             this.txtInventario.Name = "txtInventario";
             this.txtInventario.ReadOnly = true;
             this.txtInventario.Size = new System.Drawing.Size(82, 20);
             this.txtInventario.TabIndex = 11;
+            this.txtInventario.TabStop = false;
             // 
             // txtCantidad
             // 
@@ -287,7 +274,7 @@
             this.txtCantidad.Location = new System.Drawing.Point(444, 32);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(73, 20);
-            this.txtCantidad.TabIndex = 1;
+            this.txtCantidad.TabIndex = 3;
             this.txtCantidad.TextChanged += new System.EventHandler(this.txtCantidad_TextChanged);
             this.txtCantidad.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCantidad_KeyDown);
             this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
@@ -300,18 +287,9 @@
             this.txtPrecio.ReadOnly = true;
             this.txtPrecio.Size = new System.Drawing.Size(73, 20);
             this.txtPrecio.TabIndex = 9;
+            this.txtPrecio.TabStop = false;
             this.txtPrecio.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCantidad_KeyDown);
             this.txtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(83, 29);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(25, 23);
-            this.button3.TabIndex = 8;
-            this.button3.TabStop = false;
-            this.button3.Text = "B";
-            this.button3.UseVisualStyleBackColor = true;
             // 
             // txtCodigo
             // 
@@ -319,7 +297,7 @@
             this.txtCodigo.Location = new System.Drawing.Point(9, 32);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(73, 20);
-            this.txtCodigo.TabIndex = 0;
+            this.txtCodigo.TabIndex = 2;
             this.txtCodigo.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged);
             this.txtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.soloNumero);
             // 
@@ -402,6 +380,8 @@
             this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(100, 20);
             this.txtTotal.TabIndex = 12;
+            this.txtTotal.TabStop = false;
+            this.txtTotal.Text = "0";
             // 
             // txtObservacion
             // 
@@ -429,16 +409,6 @@
             this.label14.Size = new System.Drawing.Size(113, 13);
             this.label14.TabIndex = 16;
             this.label14.Text = "Articulo(s) Agregado(s)";
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.Location = new System.Drawing.Point(19, 540);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(75, 23);
-            this.btnNuevo.TabIndex = 17;
-            this.btnNuevo.Text = "Nuevo";
-            this.btnNuevo.UseVisualStyleBackColor = true;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnModificar
             // 
@@ -502,6 +472,49 @@
             this.btnImprimir.Text = "Imprimir";
             this.btnImprimir.UseVisualStyleBackColor = true;
             // 
+            // btnBuscarArticulo
+            // 
+            this.btnBuscarArticulo.Image = global::sistemaTarjetas.Recursos._49;
+            this.btnBuscarArticulo.Location = new System.Drawing.Point(83, 29);
+            this.btnBuscarArticulo.Name = "btnBuscarArticulo";
+            this.btnBuscarArticulo.Size = new System.Drawing.Size(25, 23);
+            this.btnBuscarArticulo.TabIndex = 8;
+            this.btnBuscarArticulo.TabStop = false;
+            this.btnBuscarArticulo.UseVisualStyleBackColor = true;
+            this.btnBuscarArticulo.Click += new System.EventHandler(this.btnBuscarArticulo_Click);
+            // 
+            // btnBuscarVendedor
+            // 
+            this.btnBuscarVendedor.Enabled = false;
+            this.btnBuscarVendedor.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscarVendedor.Image")));
+            this.btnBuscarVendedor.Location = new System.Drawing.Point(168, 45);
+            this.btnBuscarVendedor.Name = "btnBuscarVendedor";
+            this.btnBuscarVendedor.Size = new System.Drawing.Size(25, 23);
+            this.btnBuscarVendedor.TabIndex = 7;
+            this.btnBuscarVendedor.TabStop = false;
+            this.btnBuscarVendedor.UseVisualStyleBackColor = true;
+            this.btnBuscarVendedor.Click += new System.EventHandler(this.btnBuscarVendedor_Click);
+            // 
+            // btnBuscarDespacho
+            // 
+            this.btnBuscarDespacho.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscarDespacho.Image")));
+            this.btnBuscarDespacho.Location = new System.Drawing.Point(168, 14);
+            this.btnBuscarDespacho.Name = "btnBuscarDespacho";
+            this.btnBuscarDespacho.Size = new System.Drawing.Size(25, 23);
+            this.btnBuscarDespacho.TabIndex = 6;
+            this.btnBuscarDespacho.TabStop = false;
+            this.btnBuscarDespacho.UseVisualStyleBackColor = true;
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Location = new System.Drawing.Point(19, 540);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(75, 23);
+            this.btnNuevo.TabIndex = 17;
+            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
             // FDespachoVendedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -522,8 +535,8 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtNombre);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnBuscarVendedor);
+            this.Controls.Add(this.btnBuscarDespacho);
             this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.txtVendedor);
             this.Controls.Add(this.txtNumero);
@@ -550,8 +563,8 @@
         private System.Windows.Forms.TextBox txtNumero;
         private System.Windows.Forms.TextBox txtVendedor;
         private System.Windows.Forms.DateTimePicker dtpFecha;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnBuscarDespacho;
+        private System.Windows.Forms.Button btnBuscarVendedor;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label9;
@@ -565,7 +578,7 @@
         private System.Windows.Forms.TextBox txtInventario;
         private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.TextBox txtPrecio;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnBuscarArticulo;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.DataGridView dgvDespacho;
         private System.Windows.Forms.Label label10;
@@ -574,7 +587,6 @@
         private System.Windows.Forms.TextBox txtObservacion;
         private System.Windows.Forms.Label lblArticulos;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnCancelar;
@@ -589,5 +601,6 @@
         private System.Windows.Forms.BindingSource bsDespacho;
         private dsSistemaTarjetas dsSistemaTarjetas;
         private dsSistemaTarjetasTableAdapters.Querys querys;
+        private System.Windows.Forms.Button btnNuevo;
     }
 }

@@ -57,9 +57,10 @@
             this.lblValorT = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.txtDiferencia = new System.Windows.Forms.TextBox();
-            this.bsArticulos = new System.Windows.Forms.BindingSource(this.components);
             this.v_inventario_vendedorTableAdapter = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.v_inventario_vendedorTableAdapter();
             this.querys = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.Querys();
+            this.button1 = new System.Windows.Forms.Button();
+            this.bsArticulos = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVenta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsVenta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSistemaTarjetas)).BeginInit();
@@ -133,7 +134,7 @@
             // 
             this.txtCodigo.Location = new System.Drawing.Point(12, 76);
             this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(100, 20);
+            this.txtCodigo.Size = new System.Drawing.Size(77, 20);
             this.txtCodigo.TabIndex = 7;
             this.txtCodigo.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged);
             this.txtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigo_KeyPress);
@@ -263,6 +264,7 @@
             // 
             // btnCancelar
             // 
+            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancelar.Enabled = false;
             this.btnCancelar.Location = new System.Drawing.Point(139, 322);
             this.btnCancelar.Name = "btnCancelar";
@@ -330,11 +332,22 @@
             // 
             this.v_inventario_vendedorTableAdapter.ClearBeforeFill = true;
             // 
+            // button1
+            // 
+            this.button1.Image = global::sistemaTarjetas.Recursos._49;
+            this.button1.Location = new System.Drawing.Point(90, 73);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(24, 24);
+            this.button1.TabIndex = 22;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FNuevaVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(580, 368);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.txtDiferencia);
             this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.lblValorT);
@@ -401,5 +414,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidadDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn importeDataGridViewTextBoxColumn;
         private dsSistemaTarjetasTableAdapters.Querys querys;
+        private System.Windows.Forms.Button button1;
     }
 }

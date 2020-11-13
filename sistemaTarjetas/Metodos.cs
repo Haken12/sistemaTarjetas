@@ -15,6 +15,14 @@ namespace sistemaTarjetas
         Editar
     }
 
+    public struct Articulo
+    {
+      public  int? codigo;
+        public string descripcion;
+        public int? costo;
+        public int? precio;
+        public string unidad;
+    }
     public struct Cliente {
         public int codigo;
         public string nombre;

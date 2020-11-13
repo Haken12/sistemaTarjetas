@@ -117,41 +117,29 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="bsDespacho.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="bsBuscar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
   <metadata name="dsSistemaTarjetas.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>135, 17</value>
-  </metadata>
-  <metadata name="dsSistemaTarjetas.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>135, 17</value>
-  </metadata>
-  <metadata name="querys.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>282, 17</value>
+    <value>117, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnBuscarVendedor.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="button2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29m
-        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAFySURBVDhPfZKxa8JAGMXvf3LqVjq3c8nW6QYpOJQM
-        BUFRqJBJKA43OQVq6WTJUIqIDuJw0KUOhTi0IDi5iTrU13uXKJHmEnjJx/cev/u+JEIpJVJ55hkZIRVr
-        9qwPIFei0+lQjV6vhziOTS65WLNHjxknoN1ue2EYYrPZYPKzh9KAVMD9C2yPHjNOQBAE0Ww2w+T7F+/z
-        4wDojhIIPWacgGazie12a0+uvybiBIcp6DHjBFSrVazXawvIqtYHHt5gPWacAN/3o+l0itF8h+dPQC8S
-        hR/A4GsHesw4AZVKxWu1WlgulxjFySoUa/boMSOVFnkS5XKZanDP8XiM1WplxTrd3f4XeRMQKKSUB3mm
-        joyQijV70FpbSEmqYRZkAa7d2L95nFifkFp/YWUgx2noFwKug4H1RUkOL81nIYDv5wChXwi4qvePvoGY
-        f0OfQM7vwmLAhf90ckAepHCCs9vuPz8L4SqFABMw+UTmlhUIMqr/AXrAwnefnVLbAAAAAElFTkSuQmCC
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAHsSURBVDhPpZPNK2VxGMd/JWwsJAsbTZHBJemSEK47
+        iUFe0lgMOV6vJIuhZCG5nSZZyMJmmtXsZ3P/i7uaTmZKibLw0jFKEbl5Ob6e7++e8yPZWXzv7znP8/k+
+        5znPPUcBUO9R2jzd9lIhubZFjgi+GDPH2jMrXt3Am4wq/F7nGfNm2t1Hewz4uQTJpSUxc6yR8Vnt1T+3
+        o81U7G6uC97WN5wvDWL/80f8KVJajJljjQxZekyDm6H6UGq02fU2ZuFOtGK7NDMpsvBrRVESJ/SjyDRk
+        yNJjGlx+Cdup+T5cLPRjpyonKSrGj0WlNd0WD8ychgxZekyD895K5351BCf9Vdivy7ewOae0XpmlliBD
+        lh7T4LSjBPg+gcNIIU+90NdmuXucNZ+B9gRLPIp+AJa/4n9nKc+3zcyLfAbaEzQ4aCxwUlOfcD3cgIuB
+        arMw/1+IY75PUVKzyJClxzTYq82zz7rL8TAZTb84sm1j5uPMtCvZerEoSYYsPaaBbD20G851rweq8bg2
+        pc3345EExloUJbElSnrjEZAhS49p8K88W4lie+FcXPVUAFYTEEzDiRhLjjUyZOkxDZySDIXBGiVn7G9Z
+        lnvcWICrrjJITosxc6yR8dnnBjKyeqGQxLbICV5lP2aONcOaCd7zOT8BlCBVgmWnjJIAAAAASUVORK5C
+        YII=
 </value>
   </data>
-  <data name="btnBuscarDespacho.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29m
-        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAFySURBVDhPfZKxa8JAGMXvf3LqVjq3c8nW6QYpOJQM
-        BUFRqJBJKA43OQVq6WTJUIqIDuJw0KUOhTi0IDi5iTrU13uXKJHmEnjJx/cev/u+JEIpJVJ55hkZIRVr
-        9qwPIFei0+lQjV6vhziOTS65WLNHjxknoN1ue2EYYrPZYPKzh9KAVMD9C2yPHjNOQBAE0Ww2w+T7F+/z
-        4wDojhIIPWacgGazie12a0+uvybiBIcp6DHjBFSrVazXawvIqtYHHt5gPWacAN/3o+l0itF8h+dPQC8S
-        hR/A4GsHesw4AZVKxWu1WlgulxjFySoUa/boMSOVFnkS5XKZanDP8XiM1WplxTrd3f4XeRMQKKSUB3mm
-        joyQijV70FpbSEmqYRZkAa7d2L95nFifkFp/YWUgx2noFwKug4H1RUkOL81nIYDv5wChXwi4qvePvoGY
-        f0OfQM7vwmLAhf90ckAepHCCs9vuPz8L4SqFABMw+UTmlhUIMqr/AXrAwnefnVLbAAAAAElFTkSuQmCC
-</value>
-  </data>
+  <metadata name="v_inventario_vendedorTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>266, 17</value>
+  </metadata>
 </root>

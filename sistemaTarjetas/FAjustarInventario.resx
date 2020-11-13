@@ -117,41 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="bsDespacho.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="bsArticulos.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
   <metadata name="dsSistemaTarjetas.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>135, 17</value>
+    <value>217, 17</value>
   </metadata>
   <metadata name="dsSistemaTarjetas.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>135, 17</value>
+    <value>217, 17</value>
   </metadata>
   <metadata name="querys.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>282, 17</value>
+    <value>129, 17</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnBuscarVendedor.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29m
-        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAFySURBVDhPfZKxa8JAGMXvf3LqVjq3c8nW6QYpOJQM
-        BUFRqJBJKA43OQVq6WTJUIqIDuJw0KUOhTi0IDi5iTrU13uXKJHmEnjJx/cev/u+JEIpJVJ55hkZIRVr
-        9qwPIFei0+lQjV6vhziOTS65WLNHjxknoN1ue2EYYrPZYPKzh9KAVMD9C2yPHjNOQBAE0Ww2w+T7F+/z
-        4wDojhIIPWacgGazie12a0+uvybiBIcp6DHjBFSrVazXawvIqtYHHt5gPWacAN/3o+l0itF8h+dPQC8S
-        hR/A4GsHesw4AZVKxWu1WlgulxjFySoUa/boMSOVFnkS5XKZanDP8XiM1WplxTrd3f4XeRMQKKSUB3mm
-        joyQijV70FpbSEmqYRZkAa7d2L95nFifkFp/YWUgx2noFwKug4H1RUkOL81nIYDv5wChXwi4qvePvoGY
-        f0OfQM7vwmLAhf90ckAepHCCs9vuPz8L4SqFABMw+UTmlhUIMqr/AXrAwnefnVLbAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="btnBuscarDespacho.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29m
-        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAFySURBVDhPfZKxa8JAGMXvf3LqVjq3c8nW6QYpOJQM
-        BUFRqJBJKA43OQVq6WTJUIqIDuJw0KUOhTi0IDi5iTrU13uXKJHmEnjJx/cev/u+JEIpJVJ55hkZIRVr
-        9qwPIFei0+lQjV6vhziOTS65WLNHjxknoN1ue2EYYrPZYPKzh9KAVMD9C2yPHjNOQBAE0Ww2w+T7F+/z
-        4wDojhIIPWacgGazie12a0+uvybiBIcp6DHjBFSrVazXawvIqtYHHt5gPWacAN/3o+l0itF8h+dPQC8S
-        hR/A4GsHesw4AZVKxWu1WlgulxjFySoUa/boMSOVFnkS5XKZanDP8XiM1WplxTrd3f4XeRMQKKSUB3mm
-        joyQijV70FpbSEmqYRZkAa7d2L95nFifkFp/YWUgx2noFwKug4H1RUkOL81nIYDv5wChXwi4qvePvoGY
-        f0OfQM7vwmLAhf90ckAepHCCs9vuPz8L4SqFABMw+UTmlhUIMqr/AXrAwnefnVLbAAAAAElFTkSuQmCC
-</value>
-  </data>
+  <metadata name="v_articulosTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>366, 17</value>
+  </metadata>
 </root>

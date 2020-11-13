@@ -47,9 +47,12 @@
             this.btnAyudantes = new System.Windows.Forms.Button();
             this.btnVendedores = new System.Windows.Forms.Button();
             this.pnlInventario = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnCompras = new System.Windows.Forms.Button();
+            this.btnAjusteInventario = new System.Windows.Forms.Button();
             this.btnArticulos = new System.Windows.Forms.Button();
             this.btnInventario = new System.Windows.Forms.Button();
+            this.articulosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.articulosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.panelTop.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.pnlLateral.SuspendLayout();
@@ -71,11 +74,12 @@
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTop.Location = new System.Drawing.Point(0, 0);
             this.panelTop.Name = "panelTop";
-            this.panelTop.Size = new System.Drawing.Size(800, 29);
+            this.panelTop.Size = new System.Drawing.Size(800, 27);
             this.panelTop.TabIndex = 1;
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.White;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.archivoToolStripMenuItem,
             this.registrosToolStripMenuItem,
@@ -84,9 +88,11 @@
             this.ayudaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // archivoToolStripMenuItem
             // 
@@ -96,6 +102,8 @@
             // 
             // registrosToolStripMenuItem
             // 
+            this.registrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.articulosToolStripMenuItem});
             this.registrosToolStripMenuItem.Name = "registrosToolStripMenuItem";
             this.registrosToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.registrosToolStripMenuItem.Text = "Registros";
@@ -110,8 +118,10 @@
             // 
             // verToolStripMenuItem
             // 
+            this.verToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.articulosToolStripMenuItem1});
             this.verToolStripMenuItem.Name = "verToolStripMenuItem";
-            this.verToolStripMenuItem.Size = new System.Drawing.Size(91, 22);
+            this.verToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.verToolStripMenuItem.Text = "Ver";
             this.verToolStripMenuItem.Click += new System.EventHandler(this.verToolStripMenuItem_Click);
             // 
@@ -134,9 +144,9 @@
             this.pnlLateral.Controls.Add(this.pnlInventario);
             this.pnlLateral.Controls.Add(this.btnInventario);
             this.pnlLateral.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlLateral.Location = new System.Drawing.Point(0, 29);
+            this.pnlLateral.Location = new System.Drawing.Point(0, 27);
             this.pnlLateral.Name = "pnlLateral";
-            this.pnlLateral.Size = new System.Drawing.Size(175, 399);
+            this.pnlLateral.Size = new System.Drawing.Size(175, 401);
             this.pnlLateral.TabIndex = 2;
             this.pnlLateral.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlLateral_Paint);
             // 
@@ -150,7 +160,7 @@
             this.pnlVendedores.Controls.Add(this.btnVendedor);
             this.pnlVendedores.Controls.Add(this.btnAyudantes);
             this.pnlVendedores.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlVendedores.Location = new System.Drawing.Point(0, 115);
+            this.pnlVendedores.Location = new System.Drawing.Point(0, 161);
             this.pnlVendedores.Name = "pnlVendedores";
             this.pnlVendedores.Size = new System.Drawing.Size(175, 140);
             this.pnlVendedores.TabIndex = 3;
@@ -259,7 +269,7 @@
             this.btnVendedores.FlatAppearance.BorderSize = 0;
             this.btnVendedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVendedores.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnVendedores.Location = new System.Drawing.Point(0, 92);
+            this.btnVendedores.Location = new System.Drawing.Point(0, 138);
             this.btnVendedores.Name = "btnVendedores";
             this.btnVendedores.Size = new System.Drawing.Size(175, 23);
             this.btnVendedores.TabIndex = 2;
@@ -271,29 +281,46 @@
             // pnlInventario
             // 
             this.pnlInventario.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.pnlInventario.Controls.Add(this.button2);
+            this.pnlInventario.Controls.Add(this.btnCompras);
+            this.pnlInventario.Controls.Add(this.btnAjusteInventario);
             this.pnlInventario.Controls.Add(this.btnArticulos);
             this.pnlInventario.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlInventario.Location = new System.Drawing.Point(0, 23);
             this.pnlInventario.Name = "pnlInventario";
-            this.pnlInventario.Size = new System.Drawing.Size(175, 69);
+            this.pnlInventario.Size = new System.Drawing.Size(175, 115);
             this.pnlInventario.TabIndex = 1;
             this.pnlInventario.Visible = false;
             // 
-            // button2
+            // btnCompras
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.SystemColors.Control;
-            this.button2.Location = new System.Drawing.Point(0, 23);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(175, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "   Ajuste de Inventario";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnCompras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnCompras.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCompras.FlatAppearance.BorderSize = 0;
+            this.btnCompras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCompras.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnCompras.Location = new System.Drawing.Point(0, 46);
+            this.btnCompras.Name = "btnCompras";
+            this.btnCompras.Size = new System.Drawing.Size(175, 28);
+            this.btnCompras.TabIndex = 3;
+            this.btnCompras.Text = "   Compras";
+            this.btnCompras.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCompras.UseVisualStyleBackColor = false;
+            // 
+            // btnAjusteInventario
+            // 
+            this.btnAjusteInventario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnAjusteInventario.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAjusteInventario.FlatAppearance.BorderSize = 0;
+            this.btnAjusteInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAjusteInventario.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnAjusteInventario.Location = new System.Drawing.Point(0, 23);
+            this.btnAjusteInventario.Name = "btnAjusteInventario";
+            this.btnAjusteInventario.Size = new System.Drawing.Size(175, 23);
+            this.btnAjusteInventario.TabIndex = 2;
+            this.btnAjusteInventario.Text = "   Ajuste de Inventario";
+            this.btnAjusteInventario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAjusteInventario.UseVisualStyleBackColor = false;
+            this.btnAjusteInventario.Click += new System.EventHandler(this.btnAjusteInventario_Click);
             // 
             // btnArticulos
             // 
@@ -309,6 +336,7 @@
             this.btnArticulos.Text = "   Articulos";
             this.btnArticulos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnArticulos.UseVisualStyleBackColor = false;
+            this.btnArticulos.Click += new System.EventHandler(this.btnArticulos_Click);
             // 
             // btnInventario
             // 
@@ -325,6 +353,19 @@
             this.btnInventario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInventario.UseVisualStyleBackColor = false;
             this.btnInventario.Click += new System.EventHandler(this.btnInventario_Click);
+            // 
+            // articulosToolStripMenuItem
+            // 
+            this.articulosToolStripMenuItem.Name = "articulosToolStripMenuItem";
+            this.articulosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.articulosToolStripMenuItem.Text = "Articulos";
+            // 
+            // articulosToolStripMenuItem1
+            // 
+            this.articulosToolStripMenuItem1.Name = "articulosToolStripMenuItem1";
+            this.articulosToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.articulosToolStripMenuItem1.Text = "Articulos";
+            this.articulosToolStripMenuItem1.Click += new System.EventHandler(this.articulosToolStripMenuItem1_Click);
             // 
             // FMain
             // 
@@ -371,10 +412,13 @@
         private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
         private System.Windows.Forms.Button btnControlTarjetas;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnAjusteInventario;
         private System.Windows.Forms.Button btnArticulos;
         private System.Windows.Forms.ToolStripMenuItem verToolStripMenuItem;
         private System.Windows.Forms.Button btnDevolucion;
+        private System.Windows.Forms.Button btnCompras;
+        private System.Windows.Forms.ToolStripMenuItem articulosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem articulosToolStripMenuItem1;
     }
 }
 

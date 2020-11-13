@@ -148,10 +148,17 @@ namespace sistemaTarjetas
 
             txtNumero.Clear();
             txtNumero.Enabled = false;
+            txtVendedor.Clear();
+            txtNombre.Clear();
             txtVendedor.Enabled = true;
             dtpFecha.Enabled = true;
+            dtpFecha.Value = DateTime.Today;
             dsSistemaTarjetas.despacho.Rows.Clear();
             txtVendedor.Focus();
+            btnGuardar.Enabled = true;
+            btnBuscarVendedor.Enabled = true;
+            btnCancelar.Enabled = true;
+            btnNuevo.Enabled = false;
         }
 
         private void txtVendedor_TextChanged(object sender, EventArgs e)
@@ -165,12 +172,13 @@ namespace sistemaTarjetas
                 int numero = Convert.ToInt32(txtVendedor.Text);
                 if (querys.vendedor_existe(numero) != 0) 
                 {
-                    
+                    btnBuscarDespacho.Enabled = false;   
                     txtNombre.Text = querys.nombreVendedor(numero).ToString();
                     txtCodigo.Enabled = true;
                     txtCantidad.Enabled = true;
                     dtpFecha.Enabled = true;
                     txtObservacion.Enabled = true;
+                    
                 }
             }
         }
@@ -203,13 +211,44 @@ namespace sistemaTarjetas
                 btnGuardar.Enabled = false;
                 btnCancelar.Enabled = false;
                 dtpFecha.Enabled = false;
-                txtCantidad.Enabled = false;
+              
                 dsSistemaTarjetas.despacho.Rows.Clear();
                 txtVendedor.Clear();
-                txtVendedor.Focus();
+               
                 txtObservacion.Clear();
                 txtTotal.Clear();
                 lblArticulos.Text = "0";
+                txtNumero.Enabled = true;
+                btnNuevo.Enabled = true;
+                txtVendedor.Enabled = false;
+                txtCodigo.Enabled = false;
+                txtCantidad.Enabled = false;
+                txtCodigo.Focus();
+                
+            }
+        }
+
+        private void btnBuscarArticulo_Click(object sender, EventArgs e)
+        {
+            using (FBuscarArticulo fBuscar = new FBuscarArticulo())
+            {
+                if (fBuscar.ShowDialog() == DialogResult.OK)
+                {
+                    int res = fBuscar.articulo;
+                    txtCodigo.Text = res.ToString();
+                }
+            }
+        }
+
+        private void btnBuscarVendedor_Click(object sender, EventArgs e)
+        {
+            using (FBuscarVendedor fBuscar = new FBuscarVendedor())
+            {
+                if (fBuscar.ShowDialog() == DialogResult.OK)
+                {
+                    int vendedor = fBuscar.Id;
+                    txtVendedor.Text = vendedor.ToString();
+                }
             }
         }
     }
