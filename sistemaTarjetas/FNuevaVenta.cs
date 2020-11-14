@@ -74,7 +74,7 @@ namespace sistemaTarjetas
                 }
             }
             extT += Convert.ToInt32(txtCantidad.Text);
-            MessageBox.Show(existencias.ToString() + " " + extT.ToString());
+         
             if (extT > existencias) 
             {
                 MessageBox.Show("Excede el numero de existencias", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -100,6 +100,7 @@ namespace sistemaTarjetas
                 btnAceptar.Enabled = true;
                 btnCancelar.Enabled = true;
             }
+            txtCodigo.Clear();
             txtCodigo.Focus();
            
         }
@@ -154,6 +155,14 @@ namespace sistemaTarjetas
                     int articulo = fSeleccionar.articulo;
                     txtCodigo.Text = articulo.ToString();
                 }
+            }
+        }
+
+        private void txtCodigo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter & (txtDescripcion.Text != ""))
+            {
+                txtCantidad.Focus();
             }
         }
     }

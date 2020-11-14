@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using regrexTest;
 
 namespace sistemaTarjetas
 {
@@ -30,6 +31,7 @@ namespace sistemaTarjetas
             }
             txtCodigo.Focus();
             this.v_zonaTableAdapter.Fill(this.dsSistemaTarjetas.v_zona);
+            txtCodigo.Focus();
             
         }
 
@@ -90,7 +92,7 @@ namespace sistemaTarjetas
 
         private void entrar(object sender, EventArgs e) 
         {
-            ((Control)sender).BackColor = Color.Yellow;
+            ((Control)sender).BackColor = Color.LightBlue;
         }
 
         private void salir(object sender, EventArgs e)
@@ -100,6 +102,7 @@ namespace sistemaTarjetas
 
         private bool verificar() 
         {
+            if (!regrexTest.Comprobar.esCedula(txtCedula.Text)) return false;
             return true;
         }
 
@@ -146,6 +149,8 @@ namespace sistemaTarjetas
             { 
                 v_detalles_tarjetaTableAdapter.Fill(dsSistemaTarjetas.v_detalles_tarjeta, Convert.ToInt32(txtCodigo.Text));
                 calcularBalance();
+                txtValor.Clear();
+                txtValor.Focus();
             }
 
         }
@@ -158,6 +163,11 @@ namespace sistemaTarjetas
                 querys.nuevo_cobro_tarjeta(Convert.ToInt32(txtCodigo.Text), dtpFecha.Value, monto, 0);
                 v_detalles_tarjetaTableAdapter.Fill(dsSistemaTarjetas.v_detalles_tarjeta, Convert.ToInt32(txtCodigo.Text));
                 calcularBalance();
+                txtValor.Clear();
+                txtCodigo.Clear();
+                txtCodigo.Focus();
+                
+
             }
             else
             {
@@ -173,6 +183,9 @@ namespace sistemaTarjetas
                 querys.nuevo_descuento_tarjeta(Convert.ToInt32(txtCodigo.Text), dtpFecha.Value, monto, 0);
                 v_detalles_tarjetaTableAdapter.Fill(dsSistemaTarjetas.v_detalles_tarjeta, Convert.ToInt32(txtCodigo.Text));
                 calcularBalance();
+                txtValor.Clear();
+                txtValor.Focus();
+
             }
             else
             {
@@ -194,6 +207,9 @@ namespace sistemaTarjetas
                 fDevolucion.numeroTarjeta = Convert.ToInt32(txtCodigo.Text);
                 
                 if (fDevolucion.ShowDialog() == DialogResult.OK) v_detalles_tarjetaTableAdapter.Fill(dsSistemaTarjetas.v_detalles_tarjeta, tarjeta.codigo);
+                txtValor.Clear();
+                txtValor.Focus();
+
             }
         }
 
@@ -400,6 +416,49 @@ namespace sistemaTarjetas
         private void txtValor_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter) asentar();
+        }
+
+        private void dgvDetalles_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete)
+            {
+                if (dgvDetalles.SelectedRows.Count > 0)
+                {
+                    if (Metodos.Confirmar())
+                    {
+                        int codigo = Convert.ToInt32(txtCodigo.Text);
+                        int numero = (int)dgvDetalles.SelectedCells[0].Value;
+                        switch ((string)dgvDetalles.SelectedCells[2].Value)
+                        {                            
+                            case "Venta":
+                                querys.eliminar_venta_tarjeta(codigo,numero);                                
+                                break;
+                            case "Cobro":
+                                querys.eliminar_cobro(codigo, numero);
+                                break;
+                            case "Devolucion":
+                                querys.eliminar_devolucion_tarjeta(codigo, numero);
+                                break;
+                            case "Descuento":
+                                querys.eliminar_descuento(codigo, numero);
+                                break;
+                            default:
+                                break;
+                        }
+                        v_detalles_tarjetaTableAdapter.Fill(dsSistemaTarjetas.v_detalles_tarjeta,codigo);
+                        calcularBalance();
+
+                    }
+                }
+            }
+        }
+
+        private void txtCodigo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter &(txtNombre.Text != ""))
+            {
+                txtValor.Focus();
+            }
         }
     }
 }

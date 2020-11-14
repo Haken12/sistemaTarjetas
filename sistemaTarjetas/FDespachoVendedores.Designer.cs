@@ -51,6 +51,7 @@
             this.txtInventario = new System.Windows.Forms.TextBox();
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.txtPrecio = new System.Windows.Forms.TextBox();
+            this.btnBuscarArticulo = new System.Windows.Forms.Button();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -71,7 +72,6 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.querys = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.Querys();
-            this.btnBuscarArticulo = new System.Windows.Forms.Button();
             this.btnBuscarVendedor = new System.Windows.Forms.Button();
             this.btnBuscarDespacho = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
@@ -291,6 +291,17 @@
             this.txtPrecio.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCantidad_KeyDown);
             this.txtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
             // 
+            // btnBuscarArticulo
+            // 
+            this.btnBuscarArticulo.Image = global::sistemaTarjetas.Recursos._49;
+            this.btnBuscarArticulo.Location = new System.Drawing.Point(83, 29);
+            this.btnBuscarArticulo.Name = "btnBuscarArticulo";
+            this.btnBuscarArticulo.Size = new System.Drawing.Size(25, 23);
+            this.btnBuscarArticulo.TabIndex = 8;
+            this.btnBuscarArticulo.TabStop = false;
+            this.btnBuscarArticulo.UseVisualStyleBackColor = true;
+            this.btnBuscarArticulo.Click += new System.EventHandler(this.btnBuscarArticulo_Click);
+            // 
             // txtCodigo
             // 
             this.txtCodigo.Enabled = false;
@@ -299,6 +310,7 @@
             this.txtCodigo.Size = new System.Drawing.Size(73, 20);
             this.txtCodigo.TabIndex = 2;
             this.txtCodigo.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged);
+            this.txtCodigo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCodigo_KeyDown);
             this.txtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.soloNumero);
             // 
             // label9
@@ -472,17 +484,6 @@
             this.btnImprimir.Text = "Imprimir";
             this.btnImprimir.UseVisualStyleBackColor = true;
             // 
-            // btnBuscarArticulo
-            // 
-            this.btnBuscarArticulo.Image = global::sistemaTarjetas.Recursos._49;
-            this.btnBuscarArticulo.Location = new System.Drawing.Point(83, 29);
-            this.btnBuscarArticulo.Name = "btnBuscarArticulo";
-            this.btnBuscarArticulo.Size = new System.Drawing.Size(25, 23);
-            this.btnBuscarArticulo.TabIndex = 8;
-            this.btnBuscarArticulo.TabStop = false;
-            this.btnBuscarArticulo.UseVisualStyleBackColor = true;
-            this.btnBuscarArticulo.Click += new System.EventHandler(this.btnBuscarArticulo_Click);
-            // 
             // btnBuscarVendedor
             // 
             this.btnBuscarVendedor.Enabled = false;
@@ -544,7 +545,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FDespachoVendedores";
-            this.Text = "FDespachoVendedores";
+            this.Text = "Despacho a Vendedores";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDespacho)).EndInit();

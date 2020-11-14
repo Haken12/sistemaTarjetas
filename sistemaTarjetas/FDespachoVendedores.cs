@@ -154,11 +154,12 @@ namespace sistemaTarjetas
             dtpFecha.Enabled = true;
             dtpFecha.Value = DateTime.Today;
             dsSistemaTarjetas.despacho.Rows.Clear();
-            txtVendedor.Focus();
+            
             btnGuardar.Enabled = true;
             btnBuscarVendedor.Enabled = true;
             btnCancelar.Enabled = true;
             btnNuevo.Enabled = false;
+            txtVendedor.Focus();
         }
 
         private void txtVendedor_TextChanged(object sender, EventArgs e)
@@ -178,7 +179,7 @@ namespace sistemaTarjetas
                     txtCantidad.Enabled = true;
                     dtpFecha.Enabled = true;
                     txtObservacion.Enabled = true;
-                    
+                    txtCodigo.Focus();
                 }
             }
         }
@@ -249,6 +250,14 @@ namespace sistemaTarjetas
                     int vendedor = fBuscar.Id;
                     txtVendedor.Text = vendedor.ToString();
                 }
+            }
+        }
+
+        private void txtCodigo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter & (txtDescripcion.Text !="")) 
+            {
+                txtCantidad.Focus();
             }
         }
     }

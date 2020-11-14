@@ -47,20 +47,31 @@ namespace sistemaTarjetas
 
         private void aplicar()
         {
-            int codigo = Convert.ToInt32(txtCodigo.Text);
-            int cantidad = Convert.ToInt32(txtCantidad.Text);
-            if (rbReemplazar.Checked)
+            if (txtCantidad.TextLength > 0 & (txtArticulo.Text != ""))
             {
-                querys.ajustar_producto_a(codigo, cantidad);
-            }
-            else if (rbSumar.Checked)
-            {
-                querys.ajustar_producto_b(codigo, cantidad);
-            }
+                int codigo = Convert.ToInt32(txtCodigo.Text);
+                int cantidad = Convert.ToInt32(txtCantidad.Text);
+                if (rbReemplazar.Checked)
+                {
+                    querys.ajustar_producto_a(codigo, cantidad);
+                }
+                else if (rbSumar.Checked)
+                {
+                    querys.ajustar_producto_b(codigo, cantidad);
+                }
 
-            int posicion = bsArticulos.Position;
-            v_articulosTableAdapter.Fill(dsSistemaTarjetas.v_articulos);
-            bsArticulos.Position = posicion;
+                int posicion = bsArticulos.Position;
+                v_articulosTableAdapter.Fill(dsSistemaTarjetas.v_articulos);
+                bsArticulos.Position = posicion;
+                txtActual.Clear();
+                txtArticulo.Clear();
+                txtMedida.Clear();
+                txtPrecio.Clear();
+                txtCosto.Clear();
+                txtCantidad.Text = "0";
+                txtCodigo.Clear();
+                txtCodigo.Focus();
+            }
         }
         private void btnAplicar_Click(object sender, EventArgs e)
         {

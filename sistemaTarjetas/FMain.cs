@@ -115,5 +115,10 @@ namespace sistemaTarjetas
             FArticulos fArticulos = new FArticulos();
             fArticulos.ShowDialog();
         }
+
+        private void btnCompras_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -48,6 +48,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ExpresionesRegulares">
+      <HintPath>..\..\regrexTest\regrexTest\ExpresionesRegulares.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -74,6 +77,12 @@
     </Compile>
     <Compile Include="FAjustarInventario.Designer.cs">
       <DependentUpon>FAjustarInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FAjusteInventarioVendedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FAjusteInventarioVendedor.Designer.cs">
+      <DependentUpon>FAjusteInventarioVendedor.cs</DependentUpon>
     </Compile>
     <Compile Include="FArticulos.cs">
       <SubType>Form</SubType>
@@ -105,11 +114,23 @@
     <Compile Include="FBuscarZona.Designer.cs">
       <DependentUpon>FBuscarZona.cs</DependentUpon>
     </Compile>
+    <Compile Include="FCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FCompras.Designer.cs">
+      <DependentUpon>FCompras.cs</DependentUpon>
+    </Compile>
     <Compile Include="FControlTarjetas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FControlTarjetas.Designer.cs">
       <DependentUpon>FControlTarjetas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FCuadreVendedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FCuadreVendedor.Designer.cs">
+      <DependentUpon>FCuadreVendedor.cs</DependentUpon>
     </Compile>
     <Compile Include="FDespachoVendedores.cs">
       <SubType>Form</SubType>
@@ -194,6 +215,9 @@
     <EmbeddedResource Include="FAjustarInventario.resx">
       <DependentUpon>FAjustarInventario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FAjusteInventarioVendedor.resx">
+      <DependentUpon>FAjusteInventarioVendedor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FArticulos.resx">
       <DependentUpon>FArticulos.cs</DependentUpon>
     </EmbeddedResource>
@@ -209,8 +233,14 @@
     <EmbeddedResource Include="FBuscarZona.resx">
       <DependentUpon>FBuscarZona.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FCompras.resx">
+      <DependentUpon>FCompras.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FControlTarjetas.resx">
       <DependentUpon>FControlTarjetas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FCuadreVendedor.resx">
+      <DependentUpon>FCuadreVendedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FDespachoVendedores.resx">
       <DependentUpon>FDespachoVendedores.cs</DependentUpon>
