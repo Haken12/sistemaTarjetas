@@ -192,7 +192,7 @@ namespace sistemaTarjetas
                 else
                 {
                     btnModificar.Enabled = false;
-                   
+                    btnEliminar.Enabled = false;
                     return;
                 }
 
@@ -202,6 +202,7 @@ namespace sistemaTarjetas
             else
             {
                 btnModificar.Enabled = false;
+                btnEliminar.Enabled = false;
                 despejar();
                 return;
             }

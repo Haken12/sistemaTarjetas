@@ -32,5 +32,10 @@ namespace sistemaTarjetas
         {
             this.seleccion = (int)cbxZona.SelectedValue;
         }
+
+        private void cbxZona_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
     }
 }

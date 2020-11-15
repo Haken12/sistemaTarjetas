@@ -18,13 +18,13 @@ namespace sistemaTarjetas
         }
         public int? numeroRef;
         public int numeroVenta;
-       
+        public int valorMaximo;
         public int numeroTarjeta;
         public int valorT =0;
         public DateTime fecha;
         private void FDevolucionTarjeta_Load(object sender, EventArgs e)
         {
-            articulos_devolverTableAdapter.Fill(dsSistemaTarjetas.articulos_devolver,numeroVenta);
+            articulos_devolverTableAdapter.Fill(dsSistemaTarjetas.articulos_devolver,numeroVenta,numeroTarjeta);
         }
 
         private void agregar() 
@@ -32,7 +32,7 @@ namespace sistemaTarjetas
             int numero = (int)dgvActuales.SelectedRows[0].Cells[0].Value;
             int cantidad = Convert.ToInt32(txtCantidad.Text);
             int cantidadAct = (int)dgvActuales.SelectedRows[0].Cells[3].Value;
-            int precio = (int)dgvActuales.SelectedRows[0].Cells[4].Value;
+            int precio = Convert.ToInt32(txtPrecio.Text);
             if (cantidad > cantidadAct) 
             {
                 MessageBox.Show("Cantidad supera existencias");
@@ -94,6 +94,16 @@ namespace sistemaTarjetas
 
         private bool verificar() {
             if (dsSistemaTarjetas.devolver.Rows.Count == 0) return false;
+            valorT = 0;
+            foreach (DataRow rw in dsSistemaTarjetas.devolver.Rows)
+            {
+                valorT += (int)rw[4];
+            }
+            if (valorMaximo < valorT)
+            {
+                MessageBox.Show("El valor de los articulos excede a la de la deuda");
+                return false;
+            }
             return true;
         }
 
@@ -129,6 +139,14 @@ namespace sistemaTarjetas
             if (Metodos.Confirmar()) 
             {
                 this.DialogResult = DialogResult.Cancel;
+            }
+        }
+
+        private void dgvActuales_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvActuales.SelectedRows.Count > 0)
+            {
+                txtPrecio.Text = ((int)dgvActuales.SelectedCells[4].Value).ToString();
             }
         }
     }

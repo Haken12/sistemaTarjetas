@@ -33,16 +33,16 @@
             this.cbxBuscar = new System.Windows.Forms.ComboBox();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.dgvArticulos = new System.Windows.Forms.DataGridView();
-            this.bsBuscar = new System.Windows.Forms.BindingSource(this.components);
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.dsSistemaTarjetas = new sistemaTarjetas.dsSistemaTarjetas();
-            this.v_articulosTableAdapter = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.v_articulosTableAdapter();
             this.codigoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.costoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.existenciasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsBuscar = new System.Windows.Forms.BindingSource(this.components);
+            this.dsSistemaTarjetas = new sistemaTarjetas.dsSistemaTarjetas();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.v_articulosTableAdapter = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.v_articulosTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsBuscar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSistemaTarjetas)).BeginInit();
@@ -68,6 +68,7 @@
             this.cbxBuscar.Name = "cbxBuscar";
             this.cbxBuscar.Size = new System.Drawing.Size(121, 25);
             this.cbxBuscar.TabIndex = 1;
+            this.cbxBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbxBuscar_KeyPress);
             // 
             // txtBuscar
             // 
@@ -103,32 +104,6 @@
             this.dgvArticulos.Size = new System.Drawing.Size(651, 309);
             this.dgvArticulos.TabIndex = 3;
             this.dgvArticulos.TabStop = false;
-            // 
-            // bsBuscar
-            // 
-            this.bsBuscar.DataMember = "v_articulos";
-            this.bsBuscar.DataSource = this.dsSistemaTarjetas;
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.Image = global::sistemaTarjetas.Recursos._18__3_;
-            this.btnSalir.Location = new System.Drawing.Point(585, 360);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 27);
-            this.btnSalir.TabIndex = 4;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
-            // dsSistemaTarjetas
-            // 
-            this.dsSistemaTarjetas.DataSetName = "dsSistemaTarjetas";
-            this.dsSistemaTarjetas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // v_articulosTableAdapter
-            // 
-            this.v_articulosTableAdapter.ClearBeforeFill = true;
             // 
             // codigoDataGridViewTextBoxColumn
             // 
@@ -170,6 +145,32 @@
             this.existenciasDataGridViewTextBoxColumn.DataPropertyName = "Existencias";
             this.existenciasDataGridViewTextBoxColumn.HeaderText = "Existencias";
             this.existenciasDataGridViewTextBoxColumn.Name = "existenciasDataGridViewTextBoxColumn";
+            // 
+            // bsBuscar
+            // 
+            this.bsBuscar.DataMember = "v_articulos";
+            this.bsBuscar.DataSource = this.dsSistemaTarjetas;
+            // 
+            // dsSistemaTarjetas
+            // 
+            this.dsSistemaTarjetas.DataSetName = "dsSistemaTarjetas";
+            this.dsSistemaTarjetas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Image = global::sistemaTarjetas.Recursos._18__3_;
+            this.btnSalir.Location = new System.Drawing.Point(585, 360);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 27);
+            this.btnSalir.TabIndex = 4;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // v_articulosTableAdapter
+            // 
+            this.v_articulosTableAdapter.ClearBeforeFill = true;
             // 
             // FArticulos
             // 

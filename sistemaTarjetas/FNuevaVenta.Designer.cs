@@ -177,6 +177,7 @@
             this.txtDescripcion.ReadOnly = true;
             this.txtDescripcion.Size = new System.Drawing.Size(225, 20);
             this.txtDescripcion.TabIndex = 11;
+            this.txtDescripcion.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FNuevaVenta_KeyDown);
             // 
             // dgvVenta
             // 
@@ -347,7 +348,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(580, 368);
+            this.ClientSize = new System.Drawing.Size(580, 377);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtDiferencia);
             this.Controls.Add(this.txtTotal);
@@ -373,6 +374,8 @@
             this.Name = "FNuevaVenta";
             this.Text = "Nueva Venta";
             this.Load += new System.EventHandler(this.FNuevaVenta_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FNuevaVenta_KeyDown);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FNuevaVenta_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVenta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsVenta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSistemaTarjetas)).EndInit();

@@ -189,12 +189,14 @@ namespace sistemaTarjetas
                 }
                 else
                 {
-                    btnModificar.Enabled = false;                   
+                    btnModificar.Enabled = false;
+                    btnEliminar.Enabled = false;
                     return;
                 }
             }
             else
             {
+                btnEliminar.Enabled = false;
                 btnModificar.Enabled = false;               
                 return;
             }
@@ -312,6 +314,11 @@ namespace sistemaTarjetas
                     txtId.Focus();
                 }
             }
+        }
+
+        private void txtAyudante_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
         }
     }   
 }

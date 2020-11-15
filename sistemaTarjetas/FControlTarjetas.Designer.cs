@@ -156,6 +156,7 @@
             this.cbxZona.TabIndex = 7;
             this.cbxZona.ValueMember = "Id";
             this.cbxZona.Enter += new System.EventHandler(this.entrar);
+            this.cbxZona.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbxTipo_KeyPress);
             this.cbxZona.Leave += new System.EventHandler(this.salir);
             // 
             // bsZonas
@@ -181,6 +182,7 @@
             this.cbxVendedor.ValueMember = "Id";
             this.cbxVendedor.SelectedIndexChanged += new System.EventHandler(this.cbxVendedor_SelectedIndexChanged);
             this.cbxVendedor.Enter += new System.EventHandler(this.entrar);
+            this.cbxVendedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbxTipo_KeyPress);
             this.cbxVendedor.Leave += new System.EventHandler(this.salir);
             // 
             // bsVendedores
@@ -203,6 +205,7 @@
             this.cbxFormaPago.Size = new System.Drawing.Size(82, 21);
             this.cbxFormaPago.TabIndex = 5;
             this.cbxFormaPago.Enter += new System.EventHandler(this.entrar);
+            this.cbxFormaPago.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbxTipo_KeyPress);
             this.cbxFormaPago.Leave += new System.EventHandler(this.salir);
             // 
             // btnNueva
@@ -500,6 +503,7 @@
             this.cbxTipo.Size = new System.Drawing.Size(96, 21);
             this.cbxTipo.TabIndex = 3;
             this.cbxTipo.Enter += new System.EventHandler(this.entrar);
+            this.cbxTipo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbxTipo_KeyPress);
             this.cbxTipo.Leave += new System.EventHandler(this.salir);
             // 
             // label11

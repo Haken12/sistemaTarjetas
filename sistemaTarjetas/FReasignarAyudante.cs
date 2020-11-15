@@ -34,5 +34,10 @@ namespace sistemaTarjetas
         {
 
         }
+
+        private void cbxAyudantes_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
     }
 }

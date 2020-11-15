@@ -47,13 +47,15 @@
             this.btnQuitar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.articulos_devolverTableAdapter = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.articulos_devolverTableAdapter();
             this.querys = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.Querys();
+            this.txtPrecio = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.articulos_devolverTableAdapter = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.articulos_devolverTableAdapter();
             this.numeroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvActuales)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsActual)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSistemaTarjetas)).BeginInit();
@@ -74,7 +76,7 @@
             this.codigoDataGridViewTextBoxColumn,
             this.descripcionDataGridViewTextBoxColumn,
             this.cantidadDataGridViewTextBoxColumn,
-            this.Precio});
+            this.precioDataGridViewTextBoxColumn});
             this.dgvActuales.DataSource = this.bsActual;
             this.dgvActuales.Location = new System.Drawing.Point(12, 34);
             this.dgvActuales.MultiSelect = false;
@@ -84,6 +86,7 @@
             this.dgvActuales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvActuales.Size = new System.Drawing.Size(313, 232);
             this.dgvActuales.TabIndex = 0;
+            this.dgvActuales.SelectionChanged += new System.EventHandler(this.dgvActuales_SelectionChanged);
             // 
             // bsActual
             // 
@@ -183,7 +186,7 @@
             // 
             // txtCantidad
             // 
-            this.txtCantidad.Location = new System.Drawing.Point(341, 68);
+            this.txtCantidad.Location = new System.Drawing.Point(341, 132);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(60, 20);
             this.txtCantidad.TabIndex = 4;
@@ -192,7 +195,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(347, 52);
+            this.label3.Location = new System.Drawing.Point(347, 116);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 13);
             this.label3.TabIndex = 5;
@@ -200,7 +203,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(334, 94);
+            this.btnAgregar.Location = new System.Drawing.Point(338, 168);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
             this.btnAgregar.TabIndex = 6;
@@ -210,7 +213,7 @@
             // 
             // btnQuitar
             // 
-            this.btnQuitar.Location = new System.Drawing.Point(334, 136);
+            this.btnQuitar.Location = new System.Drawing.Point(338, 210);
             this.btnQuitar.Name = "btnQuitar";
             this.btnQuitar.Size = new System.Drawing.Size(75, 23);
             this.btnQuitar.TabIndex = 7;
@@ -238,6 +241,23 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // txtPrecio
+            // 
+            this.txtPrecio.Location = new System.Drawing.Point(341, 77);
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Size = new System.Drawing.Size(60, 20);
+            this.txtPrecio.TabIndex = 10;
+            this.txtPrecio.Text = "0";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(347, 61);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(37, 13);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Precio";
+            // 
             // articulos_devolverTableAdapter
             // 
             this.articulos_devolverTableAdapter.ClearBeforeFill = true;
@@ -248,7 +268,6 @@
             this.numeroDataGridViewTextBoxColumn.HeaderText = "Numero";
             this.numeroDataGridViewTextBoxColumn.Name = "numeroDataGridViewTextBoxColumn";
             this.numeroDataGridViewTextBoxColumn.ReadOnly = true;
-            this.numeroDataGridViewTextBoxColumn.Width = 50;
             // 
             // codigoDataGridViewTextBoxColumn
             // 
@@ -256,7 +275,6 @@
             this.codigoDataGridViewTextBoxColumn.HeaderText = "Codigo";
             this.codigoDataGridViewTextBoxColumn.Name = "codigoDataGridViewTextBoxColumn";
             this.codigoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.codigoDataGridViewTextBoxColumn.Width = 50;
             // 
             // descripcionDataGridViewTextBoxColumn
             // 
@@ -264,7 +282,6 @@
             this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
             this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
             this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.descripcionDataGridViewTextBoxColumn.Width = 150;
             // 
             // cantidadDataGridViewTextBoxColumn
             // 
@@ -272,20 +289,21 @@
             this.cantidadDataGridViewTextBoxColumn.HeaderText = "Cantidad";
             this.cantidadDataGridViewTextBoxColumn.Name = "cantidadDataGridViewTextBoxColumn";
             this.cantidadDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cantidadDataGridViewTextBoxColumn.Width = 60;
             // 
-            // Precio
+            // precioDataGridViewTextBoxColumn
             // 
-            this.Precio.DataPropertyName = "Precio";
-            this.Precio.HeaderText = "Precio";
-            this.Precio.Name = "Precio";
-            this.Precio.ReadOnly = true;
+            this.precioDataGridViewTextBoxColumn.DataPropertyName = "Precio";
+            this.precioDataGridViewTextBoxColumn.HeaderText = "Precio";
+            this.precioDataGridViewTextBoxColumn.Name = "precioDataGridViewTextBoxColumn";
+            this.precioDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // FDevolucionTarjeta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(743, 299);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnQuitar);
@@ -318,7 +336,6 @@
         private System.Windows.Forms.BindingSource bsActual;
         private dsSistemaTarjetas dsSistemaTarjetas;
         private System.Windows.Forms.BindingSource bsDevolucion;
-        private dsSistemaTarjetasTableAdapters.articulos_devolverTableAdapter articulos_devolverTableAdapter;
         private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnAgregar;
@@ -331,10 +348,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidadDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
+        private System.Windows.Forms.TextBox txtPrecio;
+        private System.Windows.Forms.Label label4;
+        private dsSistemaTarjetasTableAdapters.articulos_devolverTableAdapter articulos_devolverTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn numeroDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidadDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precioDataGridViewTextBoxColumn;
     }
 }

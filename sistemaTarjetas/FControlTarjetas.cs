@@ -22,6 +22,7 @@ namespace sistemaTarjetas
         Tarjeta tarjeta;
 
         private void iniciar() {
+            txtCodigo.Focus();
             this.v_vendedorTableAdapter.Fill(this.dsSistemaTarjetas.v_vendedor);
             cbxFormaPago.SelectedIndex = 0;
             if (cbxVendedor.Items.Count != 0)
@@ -31,7 +32,7 @@ namespace sistemaTarjetas
             }
             txtCodigo.Focus();
             this.v_zonaTableAdapter.Fill(this.dsSistemaTarjetas.v_zona);
-            txtCodigo.Focus();
+            
             
         }
 
@@ -164,8 +165,9 @@ namespace sistemaTarjetas
                 v_detalles_tarjetaTableAdapter.Fill(dsSistemaTarjetas.v_detalles_tarjeta, Convert.ToInt32(txtCodigo.Text));
                 calcularBalance();
                 txtValor.Clear();
-                txtCodigo.Clear();
+                
                 txtCodigo.Focus();
+                txtCodigo.SelectAll();
                 
 
             }
@@ -204,9 +206,11 @@ namespace sistemaTarjetas
                 FDevolucionTarjeta fDevolucion = new FDevolucionTarjeta();
                 fDevolucion.numeroVenta = (int)dgvDetalles.SelectedCells[0].Value;                
                 fDevolucion.fecha = dtpFecha.Value;
+                fDevolucion.valorMaximo = Convert.ToInt32(txtBalance.Text);
                 fDevolucion.numeroTarjeta = Convert.ToInt32(txtCodigo.Text);
                 
-                if (fDevolucion.ShowDialog() == DialogResult.OK) v_detalles_tarjetaTableAdapter.Fill(dsSistemaTarjetas.v_detalles_tarjeta, tarjeta.codigo);
+                if (fDevolucion.ShowDialog() == DialogResult.OK) v_detalles_tarjetaTableAdapter.Fill(dsSistemaTarjetas.v_detalles_tarjeta, Convert.ToInt32(txtCodigo.Text));
+                calcularBalance();
                 txtValor.Clear();
                 txtValor.Focus();
 
@@ -218,21 +222,24 @@ namespace sistemaTarjetas
         //
         private void asentar()
         {
-            switch (cbxTipo.SelectedIndex)
+            if (txtValor.Text != "")
             {
-                case 0:
-                    venta();
-                    break;
-                case 1:
-                    cobro();
-                    break;
-                case 2:
-                    descuento();
-                    break;
-                case 3:
-                    devolucion();
-                    break;
+                switch (cbxTipo.SelectedIndex)
+                {
+                    case 0:
+                        venta();
+                        break;
+                    case 1:
+                        cobro();
+                        break;
+                    case 2:
+                        descuento();
+                        break;
+                    case 3:
+                        devolucion();
+                        break;
 
+                }
             }
         }
 
@@ -459,6 +466,11 @@ namespace sistemaTarjetas
             {
                 txtValor.Focus();
             }
+        }
+
+        private void cbxTipo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
         }
     }
 }

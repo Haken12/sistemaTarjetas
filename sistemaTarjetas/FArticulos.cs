@@ -58,5 +58,10 @@ namespace sistemaTarjetas
             this.v_articulosTableAdapter.Fill(this.dsSistemaTarjetas.v_articulos);
 
         }
+
+        private void cbxBuscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
     }
 }

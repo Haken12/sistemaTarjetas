@@ -34,8 +34,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.cbxAyudantes = new System.Windows.Forms.ComboBox();
             this.dsSistemaTarjetas = new sistemaTarjetas.dsSistemaTarjetas();
+            this.cbxAyudantes = new System.Windows.Forms.ComboBox();
             this.v_ayudanteTableAdapter = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.v_ayudanteTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSistemaTarjetas)).BeginInit();
@@ -88,6 +88,11 @@
             this.bindingSource1.DataMember = "v_ayudante";
             this.bindingSource1.DataSource = this.dsSistemaTarjetas;
             // 
+            // dsSistemaTarjetas
+            // 
+            this.dsSistemaTarjetas.DataSetName = "dsSistemaTarjetas";
+            this.dsSistemaTarjetas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // cbxAyudantes
             // 
             this.cbxAyudantes.DataSource = this.bindingSource1;
@@ -98,11 +103,7 @@
             this.cbxAyudantes.Size = new System.Drawing.Size(290, 21);
             this.cbxAyudantes.TabIndex = 4;
             this.cbxAyudantes.ValueMember = "Id";
-            // 
-            // dsSistemaTarjetas
-            // 
-            this.dsSistemaTarjetas.DataSetName = "dsSistemaTarjetas";
-            this.dsSistemaTarjetas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.cbxAyudantes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbxAyudantes_KeyPress);
             // 
             // v_ayudanteTableAdapter
             // 

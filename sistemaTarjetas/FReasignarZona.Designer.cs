@@ -31,10 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.cbxZona = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.bsZs = new System.Windows.Forms.BindingSource(this.components);
             this.dsSistemaTarjetas = new sistemaTarjetas.dsSistemaTarjetas();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.v_zonaSTableAdapter = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.v_zonaSTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.bsZs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSistemaTarjetas)).BeginInit();
@@ -60,6 +60,17 @@
             this.cbxZona.Size = new System.Drawing.Size(234, 21);
             this.cbxZona.TabIndex = 1;
             this.cbxZona.ValueMember = "Id";
+            this.cbxZona.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbxZona_KeyPress);
+            // 
+            // bsZs
+            // 
+            this.bsZs.DataMember = "v_zonaS";
+            this.bsZs.DataSource = this.dsSistemaTarjetas;
+            // 
+            // dsSistemaTarjetas
+            // 
+            this.dsSistemaTarjetas.DataSetName = "dsSistemaTarjetas";
+            this.dsSistemaTarjetas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // button1
             // 
@@ -81,16 +92,6 @@
             this.button2.TabIndex = 3;
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = true;
-            // 
-            // bsZs
-            // 
-            this.bsZs.DataMember = "v_zonaS";
-            this.bsZs.DataSource = this.dsSistemaTarjetas;
-            // 
-            // dsSistemaTarjetas
-            // 
-            this.dsSistemaTarjetas.DataSetName = "dsSistemaTarjetas";
-            this.dsSistemaTarjetas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // v_zonaSTableAdapter
             // 

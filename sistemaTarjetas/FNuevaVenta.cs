@@ -45,6 +45,7 @@ namespace sistemaTarjetas
             txtImporte.Clear();
             txtCantidad.Clear();
             txtPrecio.Clear();
+            
             existencias = 0;
             if (txtCodigo.TextLength > 0) 
             {
@@ -59,6 +60,10 @@ namespace sistemaTarjetas
                     existencias = (int)fila[3];
                     txtPrecio.Enabled = true;
                     txtCantidad.Enabled = true;
+                }
+                else
+                {
+                    
                 }
             }
         }
@@ -77,7 +82,7 @@ namespace sistemaTarjetas
          
             if (extT > existencias) 
             {
-                MessageBox.Show("Excede el numero de existencias", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show($"Excede el numero de existencias({existencias}) ", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
             DataRow fila = dsSistemaTarjetas.venta.NewRow();
@@ -126,19 +131,22 @@ namespace sistemaTarjetas
 
         private void guardar() 
         {
-            querys.nueva_venta_tarjeta(codTarjeta, fecha, totalImporte, 0, ref numeroVenta);
-            int c = 0;
-            foreach (DataRow fila in dsSistemaTarjetas.venta.Rows)
+            if (dgvVenta.Rows.Count > 0)
             {
-                int codigo = (int)fila[0];
-                int precio = (int)fila[2];
-                int cantidad = (int)fila[3];
-                int importe = (int)fila[4];
-                querys.nuevo_detalle_venta_tarjeta(numeroVenta, codTarjeta, codigo, precio, cantidad, importe);
-                c++;
-                
+                querys.nueva_venta_tarjeta(codTarjeta, fecha, totalImporte, 0, ref numeroVenta);
+                int c = 0;
+                foreach (DataRow fila in dsSistemaTarjetas.venta.Rows)
+                {
+                    int codigo = (int)fila[0];
+                    int precio = (int)fila[2];
+                    int cantidad = (int)fila[3];
+                    int importe = (int)fila[4];
+                    querys.nuevo_detalle_venta_tarjeta(numeroVenta, codTarjeta, codigo, precio, cantidad, importe);
+                    c++;
+
+                }
+                this.DialogResult = DialogResult.OK;
             }
-            this.DialogResult = DialogResult.OK;
         }
         private void btnAceptar_Click(object sender, EventArgs e)
         {
@@ -160,10 +168,35 @@ namespace sistemaTarjetas
 
         private void txtCodigo_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter & (txtDescripcion.Text != ""))
+            if (e.KeyCode == Keys.G & e.Control)
             {
-                txtCantidad.Focus();
+                guardar();
             }
+            else
+            if (txtCodigo.Text.Length > 0)
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    if (txtDescripcion.Text != "")
+                    {
+                        txtCantidad.Focus();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Articulo no disponible en inventario", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+        }
+
+        private void FNuevaVenta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+           
+        }
+
+        private void FNuevaVenta_KeyDown(object sender, KeyEventArgs e)
+        {
+          
         }
     }
 }

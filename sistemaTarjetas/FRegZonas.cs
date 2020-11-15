@@ -100,6 +100,7 @@ namespace sistemaTarjetas
             {
                 txtDescripcion.Clear();
                 btnModificar.Enabled = false;
+                btnEliminar.Enabled = false;
             }
             else
             {
@@ -222,6 +223,11 @@ namespace sistemaTarjetas
                     MessageBox.Show("La zona seleccionada esta asignada a una tarjeta y no se puede eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
+        }
+
+        private void cbxVendedor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
         }
     }
 }

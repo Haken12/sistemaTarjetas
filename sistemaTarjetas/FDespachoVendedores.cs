@@ -123,6 +123,7 @@ namespace sistemaTarjetas
                 btnGuardar.Enabled = true;
                 btnCancelar.Enabled = true;
             }
+            txtCodigo.Clear();
             txtCodigo.Focus();
 
         }
@@ -179,7 +180,7 @@ namespace sistemaTarjetas
                     txtCantidad.Enabled = true;
                     dtpFecha.Enabled = true;
                     txtObservacion.Enabled = true;
-                    txtCodigo.Focus();
+                    
                 }
             }
         }
@@ -259,6 +260,14 @@ namespace sistemaTarjetas
             {
                 txtCantidad.Focus();
             }
+        }
+
+        private void txtVendedor_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter & (txtNombre.Text != ""))
+            {
+                txtCodigo.Focus();
+            } 
         }
     }
 }

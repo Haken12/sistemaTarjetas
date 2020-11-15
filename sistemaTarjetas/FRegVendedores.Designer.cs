@@ -346,6 +346,7 @@
             this.txtAyudante.Size = new System.Drawing.Size(193, 21);
             this.txtAyudante.TabIndex = 9;
             this.txtAyudante.ValueMember = "Id";
+            this.txtAyudante.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAyudante_KeyPress);
             // 
             // bsAyudantes
             // 
