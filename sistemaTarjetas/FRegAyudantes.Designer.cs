@@ -150,6 +150,7 @@
             this.txtDeduccion.Text = "0";
             this.txtDeduccion.TextChanged += new System.EventHandler(this.txtDeduccion_TextChanged);
             this.txtDeduccion.Enter += new System.EventHandler(this.entrar);
+            this.txtDeduccion.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDeduccion_KeyDown);
             this.txtDeduccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDeduccion_KeyPress);
             this.txtDeduccion.Leave += new System.EventHandler(this.salir);
             // 
@@ -161,6 +162,7 @@
             this.txtDireccion.Size = new System.Drawing.Size(280, 20);
             this.txtDireccion.TabIndex = 3;
             this.txtDireccion.Enter += new System.EventHandler(this.entrar);
+            this.txtDireccion.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDireccion_KeyDown);
             this.txtDireccion.Leave += new System.EventHandler(this.salir);
             // 
             // txtNombre
@@ -171,6 +173,7 @@
             this.txtNombre.Size = new System.Drawing.Size(280, 20);
             this.txtNombre.TabIndex = 1;
             this.txtNombre.Enter += new System.EventHandler(this.entrar);
+            this.txtNombre.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNombre_KeyDown);
             this.txtNombre.Leave += new System.EventHandler(this.salir);
             // 
             // txtCelular
@@ -183,6 +186,7 @@
             this.txtCelular.TabIndex = 7;
             this.txtCelular.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             this.txtCelular.Enter += new System.EventHandler(this.entrar);
+            this.txtCelular.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCelular_KeyDown);
             this.txtCelular.Leave += new System.EventHandler(this.salir);
             // 
             // txtTelefono
@@ -195,6 +199,7 @@
             this.txtTelefono.TabIndex = 4;
             this.txtTelefono.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             this.txtTelefono.Enter += new System.EventHandler(this.entrar);
+            this.txtTelefono.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTelefono_KeyDown);
             this.txtTelefono.Leave += new System.EventHandler(this.salir);
             // 
             // dtpFecha
@@ -230,6 +235,7 @@
             0,
             0});
             this.txtComision.Enter += new System.EventHandler(this.entrar);
+            this.txtComision.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtComision_KeyDown);
             this.txtComision.Leave += new System.EventHandler(this.salir);
             // 
             // txtCedula
@@ -242,6 +248,7 @@
             this.txtCedula.TabIndex = 2;
             this.txtCedula.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             this.txtCedula.Enter += new System.EventHandler(this.entrar);
+            this.txtCedula.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCedula_KeyDown);
             this.txtCedula.Leave += new System.EventHandler(this.salir);
             // 
             // btnEliminar
@@ -335,6 +342,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(561, 243);
+            this.ControlBox = false;
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.txtCedula);

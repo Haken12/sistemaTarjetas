@@ -64,6 +64,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dsDespachos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsDespachos.xsd</DependentUpon>
+    </Compile>
     <Compile Include="dsSistemaTarjetas.cs">
       <DependentUpon>dsSistemaTarjetas.xsd</DependentUpon>
     </Compile>
@@ -132,17 +137,17 @@
     <Compile Include="FCuadreVendedor.Designer.cs">
       <DependentUpon>FCuadreVendedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="FDespachoVendedores.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FDespachoVendedores.Designer.cs">
-      <DependentUpon>FDespachoVendedores.cs</DependentUpon>
-    </Compile>
     <Compile Include="FDevolucionTarjeta.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FDevolucionTarjeta.Designer.cs">
       <DependentUpon>FDevolucionTarjeta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FDespachoVendedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FDespachoVendedor.Designer.cs">
+      <DependentUpon>FDespachoVendedor.cs</DependentUpon>
     </Compile>
     <Compile Include="FDevolucionVendedor.cs">
       <SubType>Form</SubType>
@@ -242,11 +247,11 @@
     <EmbeddedResource Include="FCuadreVendedor.resx">
       <DependentUpon>FCuadreVendedor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FDespachoVendedores.resx">
-      <DependentUpon>FDespachoVendedores.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FDevolucionTarjeta.resx">
       <DependentUpon>FDevolucionTarjeta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FDespachoVendedor.resx">
+      <DependentUpon>FDespachoVendedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FDevolucionVendedor.resx">
       <DependentUpon>FDevolucionVendedor.cs</DependentUpon>
@@ -291,6 +296,17 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Recursos.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="dsDespachos.xsc">
+      <DependentUpon>dsDespachos.xsd</DependentUpon>
+    </None>
+    <None Include="dsDespachos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsDespachos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsDespachos.xss">
+      <DependentUpon>dsDespachos.xsd</DependentUpon>
+    </None>
     <None Include="dsSistemaTarjetas.xsc">
       <DependentUpon>dsSistemaTarjetas.xsd</DependentUpon>
     </None>

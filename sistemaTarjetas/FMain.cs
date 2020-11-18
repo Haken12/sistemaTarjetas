@@ -121,5 +121,13 @@ namespace sistemaTarjetas
             FCompras fCompras = new FCompras();
             fCompras.ShowDialog();
         }
+
+        private void FMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!Metodos.Confirmar())
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }

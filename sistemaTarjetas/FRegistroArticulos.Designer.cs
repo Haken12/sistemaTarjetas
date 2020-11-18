@@ -43,8 +43,8 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
-            this.querys = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.Querys();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.querys = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.Querys();
             this.SuspendLayout();
             // 
             // label1
@@ -63,7 +63,9 @@
             this.txtCodigo.Size = new System.Drawing.Size(100, 20);
             this.txtCodigo.TabIndex = 1;
             this.txtCodigo.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged);
+            this.txtCodigo.Enter += new System.EventHandler(this.entrar);
             this.txtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.solorNumeros);
+            this.txtCodigo.Leave += new System.EventHandler(this.salir);
             // 
             // txtDescripcion
             // 
@@ -72,6 +74,9 @@
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(226, 20);
             this.txtDescripcion.TabIndex = 3;
+            this.txtDescripcion.Enter += new System.EventHandler(this.entrar);
+            this.txtDescripcion.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDescripcion_KeyDown);
+            this.txtDescripcion.Leave += new System.EventHandler(this.salir);
             // 
             // label2
             // 
@@ -89,15 +94,19 @@
             this.txtUnidad.Name = "txtUnidad";
             this.txtUnidad.Size = new System.Drawing.Size(100, 20);
             this.txtUnidad.TabIndex = 5;
+            this.txtUnidad.Enter += new System.EventHandler(this.entrar);
+            this.txtUnidad.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUnidad_KeyDown);
+            this.txtUnidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUnidad_KeyPress);
+            this.txtUnidad.Leave += new System.EventHandler(this.salir);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(316, 52);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 13);
+            this.label3.Size = new System.Drawing.Size(42, 13);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Unidad";
+            this.label3.Text = "Medida";
             // 
             // txtCosto
             // 
@@ -106,7 +115,10 @@
             this.txtCosto.Name = "txtCosto";
             this.txtCosto.Size = new System.Drawing.Size(100, 20);
             this.txtCosto.TabIndex = 7;
+            this.txtCosto.Enter += new System.EventHandler(this.entrar);
+            this.txtCosto.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCosto_KeyDown);
             this.txtCosto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.solorNumeros);
+            this.txtCosto.Leave += new System.EventHandler(this.salir);
             // 
             // label4
             // 
@@ -124,7 +136,10 @@
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(100, 20);
             this.txtPrecio.TabIndex = 9;
+            this.txtPrecio.Enter += new System.EventHandler(this.entrar);
+            this.txtPrecio.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPrecio_KeyDown);
             this.txtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.solorNumeros);
+            this.txtPrecio.Leave += new System.EventHandler(this.salir);
             // 
             // label5
             // 
@@ -172,6 +187,7 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnSalir
             // 
@@ -229,6 +245,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.KeyPreview = true;
             this.Name = "FRegistroArticulos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Registro de Articulos";

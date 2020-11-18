@@ -472,5 +472,13 @@ namespace sistemaTarjetas
         {
             e.Handled = true;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (!Metodos.Confirmar())
+            {
+                this.DialogResult = DialogResult.None;
+            }
+        }
     }
 }

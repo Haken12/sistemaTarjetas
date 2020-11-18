@@ -17,7 +17,7 @@ namespace sistemaTarjetas
             InitializeComponent();
         }
 
-        Modo modo;
+        Modo modo = Modo.Ver;
         Zona zona;
         private void FRegZonas_Load(object sender, EventArgs e)
         {
@@ -30,8 +30,25 @@ namespace sistemaTarjetas
         private bool verificar() 
         
         {
-            if (cbxVendedor.SelectedIndex == -1) return false;
-            return true;
+            bool any = false;
+
+            if (cbxVendedor.SelectedIndex == -1)
+            {
+                epVendedor.SetError(cbxVendedor, "Debe eligir un vendedor");
+                any = true;
+            }
+            else epVendedor.SetError(cbxVendedor, "");
+
+            if (txtDescripcion.Text.Length == 0)
+            {
+                epDescripcion.SetError(txtDescripcion, "No puede quedar en blanco");
+                txtDescripcion.Focus();
+                any = true;
+            }
+              else epDescripcion.SetError(txtDescripcion, "");
+           
+            if (!any) return true; 
+            else return false;
         }
 
         private void entrar(object sender, EventArgs e)
@@ -44,42 +61,109 @@ namespace sistemaTarjetas
             ((Control)sender).BackColor = Color.White;
         }
 
+        private void activar()
+        {
+            txtDescripcion.Enabled = true;
+            cbxVendedor.Enabled = true;
+        }
+
+        private void desactivar()
+        {
+            txtDescripcion.Enabled = false;
+            cbxVendedor.Enabled = false;
+        }
+
+        private void limpiar()
+        {
+            txtDescripcion.Clear();
+        }
+
+        private void cargar()
+        {
+            querys.unica_zona(zona.id, ref zona.descripcion, ref zona.idVendedor, ref zona.nombreVendedor);
+            txtDescripcion.Text = zona.descripcion;
+            cbxVendedor.SelectedValue = zona.idVendedor;           
+        }
+
+        private void asignar() 
+        {
+            zona.id = Convert.ToInt32(txtIdZona.Text);
+            zona.descripcion = txtDescripcion.Text;
+            zona.idVendedor = (int)cbxVendedor.SelectedValue;
+            zona.nombreVendedor = cbxVendedor.Text;
+        }
+
         private void crear() 
         {
             querys.crear_zona(Convert.ToInt32(cbxVendedor.SelectedValue), txtDescripcion.Text, ref zona.id);
             txtIdZona.Text = zona.id.ToString();
         }
+
         private void actualizar() 
         {
             querys.actualizar_zona(Convert.ToInt32(txtIdZona.Text),
                 Convert.ToInt32(cbxVendedor.SelectedValue),
                 txtDescripcion.Text);
         }
+
+        private void guardar()
+        {
+            if (verificar())
+            {
+                switch (modo)
+                {
+                    case Modo.Insertar:
+                        crear();
+                        break;
+                    case Modo.Editar:
+                        actualizar();                      
+                        break;
+                    default:
+                        break;
+                }
+                btnNueva.Enabled = true;
+                btnModificar.Enabled = true;
+                btnCancelar.Enabled = false;
+                btnGuardar.Enabled = false;
+                btnBuscar.Enabled = true;
+                txtIdZona.Enabled = true;
+                btnEliminar.Enabled = true;
+                asignar();
+                desactivar();
+                modo = Modo.Ver;
+                txtIdZona.Focus();
+                txtIdZona.SelectAll();
+            }
+        }
         private void button4_Click(object sender, EventArgs e)
         {
+            modo = Modo.Insertar;
             txtIdZona.Clear();
             txtIdZona.Enabled = false;
+            btnBuscar.Enabled = false;
+            activar();
+            limpiar();
             btnEliminar.Enabled = false;
-            txtDescripcion.Enabled = true;
-            cbxVendedor.Enabled = true;
+            btnNueva.Enabled = false;
             btnCancelar.Enabled = true;
             btnGuardar.Enabled = true;
-            btnModificar.Enabled = false;
-            modo = Modo.Insertar;
+            btnModificar.Enabled = false;         
             cbxVendedor.Focus();
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            cbxVendedor.Enabled = true;
+            modo = Modo.Editar;
+            activar();
+            asignar();
+            btnNueva.Enabled = false;
+            btnEliminar.Enabled = false;
+            btnModificar.Enabled = false;
             btnBuscar.Enabled = false;
-            txtDescripcion.Enabled = true;
             txtIdZona.Enabled = false;
             btnCancelar.Enabled = true;
-            btnGuardar.Enabled = true;
-            modo = Modo.Editar;
+            btnGuardar.Enabled = true;         
             cbxVendedor.Focus();
-            btnModificar.Enabled = false;
         }
 
         private void txtIdZona_KeyPress(object sender, KeyPressEventArgs e)
@@ -91,45 +175,52 @@ namespace sistemaTarjetas
 
         private void txtIdZona_TextChanged(object sender, EventArgs e)
         {
-            if ((txtIdZona.Text.Length == 0) | txtIdZona.Text == "1")
+            if (modo == Modo.Ver)
             {
-                txtDescripcion.Clear();
-                btnModificar.Enabled = false;
-            }
-            else if (querys.zona_existe(Convert.ToInt32(txtIdZona.Text)) == 0)
-            {
-                txtDescripcion.Clear();
+                limpiar();
                 btnModificar.Enabled = false;
                 btnEliminar.Enabled = false;
-            }
-            else
-            {
-                btnBuscar.Enabled = false;
-                btnEliminar.Enabled = true;
-                querys.unica_zona(Convert.ToInt32(txtIdZona.Text),
-                    ref zona.descripcion,
-                    ref zona.idVendedor,
-                    ref zona.nombreVendedor);
+                if (txtIdZona.TextLength > 0)
+                {
+                    zona.id = Convert.ToInt32(txtIdZona.Text);
+                    if (querys.zona_existe(zona.id) != 0)
+                    {
+                        cargar();
+                        btnModificar.Enabled = true;
+                        btnEliminar.Enabled = true;
+                    }
 
-                cbxVendedor.SelectedValue = zona.idVendedor;
-                txtDescripcion.Text = zona.descripcion;
-                btnModificar.Enabled = true;
-            }
+                }
+            }            
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            switch (modo)
+            {
+                case Modo.Insertar:
+                    limpiar();
+                    desactivar();
+                    break;                    
+                case Modo.Editar:
+                    cargar();
+                    desactivar();
+                    btnEliminar.Enabled = true;
+                    btnModificar.Enabled = true;
+                    break;
+                case Modo.Ver:
+                    break;
+                default:
+                    break;
+            }
+            txtIdZona.Enabled = true;
             btnNueva.Enabled = true;
             btnGuardar.Enabled = false;
             btnCancelar.Enabled = false;
-            txtDescripcion.Clear();
-            cbxVendedor.SelectedIndex = 0;
-            txtDescripcion.Enabled = false;
-            cbxVendedor.Enabled = false;
-            txtIdZona.Clear();
-            txtIdZona.Enabled = true;
             txtIdZona.Focus();
-            if (this.modo == Modo.Editar) btnEliminar.Enabled = true;
+            txtIdZona.SelectAll();
+            modo = Modo.Ver;
+            
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -139,38 +230,7 @@ namespace sistemaTarjetas
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (verificar()) 
-            {
-                switch (modo)
-                {
-                    case Modo.Insertar:
-                        crear();
-                        
-                        btnGuardar.Enabled = false;
-                        btnCancelar.Enabled = false;
-                        btnNueva.Enabled = true;
-                        txtIdZona.Enabled = true;
-                        txtIdZona.Focus();
-                        txtDescripcion.Enabled = false;
-                        cbxVendedor.Enabled = false;
-                        break;
-                    case Modo.Editar:
-                        actualizar();
-                        btnCancelar.Enabled = false;
-                        btnGuardar.Enabled = false;
-                        btnModificar.Enabled = true;
-                        btnBuscar.Enabled = true;
-                        
-                        txtIdZona.Enabled = true;
-                        txtIdZona.Focus();
-                        txtDescripcion.Enabled = false;
-                        cbxVendedor.Enabled = false;
-                        break;
-                    default:
-                        break;
-                }
-                btnEliminar.Enabled = true;
-            }
+            guardar();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -228,6 +288,34 @@ namespace sistemaTarjetas
         private void cbxVendedor_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            using (FBuscarZona fBuscar = new FBuscarZona())
+            {
+                if (fBuscar.ShowDialog() == DialogResult.OK)
+                {
+                    zona.id = fBuscar.Id;
+
+                }
+            }
+        }
+
+        private void cbxVendedor_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (cbxVendedor.SelectedIndex != -1 & e.KeyCode == Keys.Enter)
+            {
+                txtDescripcion.Focus();
+            }
+        }
+
+        private void txtDescripcion_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (txtDescripcion.TextLength >0  & e.KeyCode == Keys.Enter)
+            {
+                guardar();
+            }
         }
     }
 }

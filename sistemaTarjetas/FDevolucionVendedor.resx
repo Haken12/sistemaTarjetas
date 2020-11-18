@@ -133,6 +133,9 @@
   <metadata name="bsDevolver.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>501, 17</value>
   </metadata>
+  <metadata name="dsSistemaTarjetas.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>352, 17</value>
+  </metadata>
   <data name="btnBuscarProducto.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29m
@@ -145,15 +148,6 @@
         f0OfQM7vwmLAhf90ckAepHCCs9vuPz8L4SqFABMw+UTmlhUIMqr/AXrAwnefnVLbAAAAAElFTkSuQmCC
 </value>
   </data>
-  <metadata name="bsDevolver.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>501, 17</value>
-  </metadata>
-  <metadata name="dsSistemaTarjetas.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>352, 17</value>
-  </metadata>
-  <metadata name="dsSistemaTarjetas.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>352, 17</value>
-  </metadata>
   <metadata name="v_inventario_vendedorTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>105, 17</value>
   </metadata>
@@ -163,4 +157,16 @@
   <metadata name="querys.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="btnBuscarDevolucion.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29m
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAFySURBVDhPfZKxa8JAGMXvf3LqVjq3c8nW6QYpOJQM
+        BUFRqJBJKA43OQVq6WTJUIqIDuJw0KUOhTi0IDi5iTrU13uXKJHmEnjJx/cev/u+JEIpJVJ55hkZIRVr
+        9qwPIFei0+lQjV6vhziOTS65WLNHjxknoN1ue2EYYrPZYPKzh9KAVMD9C2yPHjNOQBAE0Ww2w+T7F+/z
+        4wDojhIIPWacgGazie12a0+uvybiBIcp6DHjBFSrVazXawvIqtYHHt5gPWacAN/3o+l0itF8h+dPQC8S
+        hR/A4GsHesw4AZVKxWu1WlgulxjFySoUa/boMSOVFnkS5XKZanDP8XiM1WplxTrd3f4XeRMQKKSUB3mm
+        joyQijV70FpbSEmqYRZkAa7d2L95nFifkFp/YWUgx2noFwKug4H1RUkOL81nIYDv5wChXwi4qvePvoGY
+        f0OfQM7vwmLAhf90ckAepHCCs9vuPz8L4SqFABMw+UTmlhUIMqr/AXrAwnefnVLbAAAAAElFTkSuQmCC
+</value>
+  </data>
 </root>

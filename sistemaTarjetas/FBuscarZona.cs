@@ -22,7 +22,7 @@ namespace sistemaTarjetas
         {
             // TODO: esta línea de código carga datos en la tabla 'dsSistemaTarjetas.v_zona' Puede moverla o quitarla según sea necesario.
             this.v_zonaTableAdapter.Fill(this.dsSistemaTarjetas.v_zona);
-
+            rbDescripcion.Checked = true;
         }
 
         private void rbId_CheckedChanged(object sender, EventArgs e)

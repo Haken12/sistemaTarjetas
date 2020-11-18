@@ -24,7 +24,14 @@ namespace sistemaTarjetas
             txtPrecio.Clear();
             txtUnidad.Clear();
         }
-
+        public void entrar(object sender, EventArgs e)
+        {
+            ((Control)sender).BackColor = Color.LightBlue;
+        }
+        public void salir(object sender, EventArgs e)
+        {
+            ((Control)sender).BackColor = Color.White;
+        }
         private void activar()
         {
             foreach (Control ctr in this.Controls.OfType<TextBox>())
@@ -35,7 +42,7 @@ namespace sistemaTarjetas
                 }
             }
         }
-     
+
         private bool verficar()
         {
             if (this.modo == Modo.Insertar)
@@ -48,7 +55,26 @@ namespace sistemaTarjetas
                         return false;
                     }
                 }
-            }                
+            }
+            if (txtDescripcion.Text == "")
+            {
+                MessageBox.Show("El campo 'Descripcion' no puede estar vacio");
+                txtDescripcion.Focus();
+                return false;
+            }
+            if (txtPrecio.Text == "") {
+                txtPrecio.Text = "0"; 
+               
+            }
+            if (txtCosto.Text == "") { 
+                txtCosto.Text = "0";
+               
+            }
+            if (txtUnidad.Text == "")
+            {
+                txtUnidad.Text = "UNIDAD";
+               
+            }
             return true;
         }
         private void cargar()
@@ -61,7 +87,7 @@ namespace sistemaTarjetas
         private void asignar()
         {
             articulo.descripcion = txtDescripcion.Text;
-            articulo.costo = Convert.ToInt32(txtCodigo.Text);
+            articulo.costo = Convert.ToInt32(txtCosto.Text);
             articulo.precio = Convert.ToInt32(txtPrecio.Text);
             articulo.unidad = (txtUnidad.Text);
         }
@@ -98,7 +124,7 @@ namespace sistemaTarjetas
         {
             btnBuscar.Enabled = false;
             txtCodigo.Clear();
-            txtCosto.Enabled = false;
+            txtCodigo.Enabled = false;
             limpiar();
             activar();            
             btnGuardar.Enabled = true;
@@ -115,6 +141,7 @@ namespace sistemaTarjetas
             btnModificar.Enabled = false;
             btnNuevo.Enabled = false;
             activar();
+            cargar();
             txtCodigo.Enabled = false;
             btnGuardar.Enabled = true;
             btnCancelar.Enabled = true;
@@ -128,12 +155,7 @@ namespace sistemaTarjetas
             querys.crear_articulo(ref codigo, articulo.descripcion, articulo.precio, articulo.costo, articulo.unidad);
             txtCodigo.Text = codigo.ToString();
         }
-
-        private void actualizar()
-        {
-            querys.actualizar_articulo(articulo.codigo, articulo.descripcion, articulo.precio, articulo.costo, articulo.unidad);
-        }
-        private void btnGuardar_Click(object sender, EventArgs e)
+        private void guardar()
         {
             if (verficar())
             {
@@ -143,7 +165,7 @@ namespace sistemaTarjetas
                         asignar();
                         crear();
                         activar();
-                       
+
                         break;
                     case Modo.Editar:
                         asignar();
@@ -154,6 +176,7 @@ namespace sistemaTarjetas
                         break;
                 }
                 txtCodigo.Enabled = true;
+                this.modo = Modo.Ver;
                 txtCodigo.Focus();
                 btnNuevo.Enabled = true;
                 btnModificar.Enabled = true;
@@ -161,6 +184,14 @@ namespace sistemaTarjetas
                 btnGuardar.Enabled = false;
                 btnCancelar.Enabled = false;
             }
+        }
+        private void actualizar()
+        {
+            querys.actualizar_articulo(articulo.codigo, articulo.descripcion, articulo.precio, articulo.costo, articulo.unidad);
+        }
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            guardar();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -187,6 +218,72 @@ namespace sistemaTarjetas
             if (Char.IsDigit(e.KeyChar)) return;
             if (Char.IsControl(e.KeyChar)) return;
             e.Handled = true;
+        }
+
+        private void txtDescripcion_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (((TextBox)sender).TextLength > 0 & e.KeyCode == Keys.Enter)
+            {
+                txtUnidad.Focus();
+            }
+        }
+
+        private void txtUnidad_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (((TextBox)sender).TextLength > 0 & e.KeyCode == Keys.Enter)
+            {
+                txtCosto.Focus();
+            }
+        }
+
+        
+        private void txtPrecio_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (((TextBox)sender).TextLength > 0 & e.KeyCode == Keys.Enter)
+            {
+                guardar();
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            switch (modo)
+            {
+                case Modo.Insertar:
+                    limpiar();                 
+                    break;
+                case Modo.Editar:
+                    cargar();
+                    btnModificar.Enabled = true;
+                    break;
+                case Modo.Ver:
+                    break;
+                default:
+                    break;
+            }
+            activar();
+            this.modo = Modo.Ver;
+            btnBuscar.Enabled = true;
+            btnGuardar.Enabled = false;
+            btnCancelar.Enabled = false;
+            btnNuevo.Enabled = true;
+            txtCodigo.Enabled = true;
+            txtCodigo.Focus();
+        }
+
+        private void txtUnidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar)) return;
+            if (Char.IsControl(e.KeyChar)) return;
+            e.Handled = true;
+        }
+
+        private void txtCosto_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (((TextBox)sender).TextLength > 0 & e.KeyCode == Keys.Enter)
+            {
+                txtPrecio.Focus();
+            }
         }
     }
 }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace sistemaTarjetas
 {
-    public partial class FDevolucionVendedor : Form
+    public partial class FDespachoVendedor : Form
     {
-        public FDevolucionVendedor()
+        public FDespachoVendedor()
         {
             InitializeComponent();
         }

@@ -19,12 +19,12 @@ namespace sistemaTarjetas
             InitializeComponent();
         }
 
-        Modo modo;
+        Modo modo = Modo.Ver;
         Ayudante ayudante;
 
         private void entrar(object sender, EventArgs e)
         {
-            ((Control)sender).BackColor = Color.Yellow;
+            ((Control)sender).BackColor = Color.LightBlue;
         }
         private void salir(object sender, EventArgs e)
         {
@@ -34,7 +34,7 @@ namespace sistemaTarjetas
         {
             txtNombre.Clear();
             txtTelefono.Clear();
-            txtDeduccion.Clear();
+            txtDeduccion.Text = "0";
             txtDireccion.Clear();
             txtCelular.Clear();
             txtCedula.Clear();
@@ -75,14 +75,15 @@ namespace sistemaTarjetas
                 Convert.ToInt32(txtDeduccion.Text),
                 dtpFecha.Value,
                 ref ayudante.id);
-            
 
+            txtId.Text = ayudante.id.ToString();
 
         }
         private void cargar() 
         {
+            ayudante.id = Convert.ToInt32(txtId.Text);
             querys.unico_ayudante(
-                         Convert.ToInt32(txtId.Text),
+                         ayudante.id,
                          ref ayudante.nombre,
                          ref ayudante.cedula,
                          ref ayudante.direccion,
@@ -117,59 +118,68 @@ namespace sistemaTarjetas
         }
         private void asignar() 
         {
-           
+            ayudante.id = Convert.ToInt32(txtId.Text);
+            ayudante.nombre = txtNombre.Text;
+            ayudante.cedula = txtCedula.Text;
+            ayudante.direccion = txtDireccion.Text;
+            ayudante.celular = txtCelular.Text;
+            ayudante.telefono = txtTelefono.Text;
+            ayudante.fechaIngreso = dtpFecha.Value;
+            ayudante.comision = Convert.ToInt32(txtComision.Value);
+            ayudante.deduccion = Convert.ToInt32(txtDeduccion.Text);
         }
+
         private void btnNuevo_Click(object sender, EventArgs e)
         {
+            modo = Modo.Insertar;
             txtId.Clear();
             activar();
             despejar();
             btnEliminar.Enabled = false;
             txtId.Enabled = false;
             btnBuscar.Enabled = false;
+            btnEliminar.Enabled = false;
             btnModificar.Enabled = false;
             btnCancelar.Enabled = true;
             btnGuardar.Enabled = true;
-            modo = Modo.Insertar;
+            btnNuevo.Enabled = false;
             txtNombre.Focus();
         }
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
+
+        private void guardar() {
             if (verificar())
             {
                 if (String.IsNullOrEmpty(txtDeduccion.Text.Trim())) txtDeduccion.Text = "0";
-              
+                
                 switch (modo)
                 {
                     case Modo.Insertar:
                         crear();
-                        txtId.Enabled = true;
-                        txtId.Text = ayudante.id.ToString();
-                        btnBuscar.Enabled = true;
-                        btnGuardar.Enabled = false;
-                        btnCancelar.Enabled = false;
-                        btnNuevo.Enabled = true;
-                        this.modo = Modo.Editar;
-                        btnEliminar.Enabled = true;
-                        txtId.Focus();
+                        btnNuevo.Enabled = true;                    
+                        btnEliminar.Enabled = true;            
                         break;
                     case Modo.Editar:
-                        actualizar();
-                        desactivar();
-                        btnGuardar.Enabled = false;
-                        btnCancelar.Enabled = false;                        
-                        btnModificar.Enabled = true;
-                        btnBuscar.Enabled = true;
-                        btnEliminar.Enabled = true;
-                        txtId.Focus();
+                        actualizar();               
                         break;
                     default:
                         break;
-                }
-                
-
+                }               
+                asignar();
+                modo = Modo.Ver;
+                btnGuardar.Enabled = false;
+                btnCancelar.Enabled = false;
+                btnModificar.Enabled = true;
+                btnBuscar.Enabled = true;
+                btnEliminar.Enabled = true;
+                desactivar();
+               
+                txtId.Focus();
             }
+        }
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
 
+            guardar();
         }
 
         private void txtId_KeyPress(object sender, KeyPressEventArgs e)
@@ -181,41 +191,46 @@ namespace sistemaTarjetas
 
         private void txtId_TextChanged(object sender, EventArgs e)
         {
-            despejar();
-            if (txtId.Text.Length > 0)
+            if (modo == Modo.Ver)
             {
-                if (querys.ayudante_existe(Convert.ToInt32(txtId.Text)) == 1 & txtId.Text != "1")
+                despejar();
+                if (txtId.Text.Length > 0)
                 {
-                    cargar();
-                    btnEliminar.Enabled = true;
+                    if (querys.ayudante_existe(Convert.ToInt32(txtId.Text)) == 1 & txtId.Text != "1")
+                    {
+                        cargar();
+                        btnEliminar.Enabled = true;
+                    }
+                    else
+                    {
+                        btnModificar.Enabled = false;
+                        btnEliminar.Enabled = false;
+                       
+                        return;
+                    }
                 }
                 else
                 {
                     btnModificar.Enabled = false;
                     btnEliminar.Enabled = false;
+                    despejar();
                     return;
                 }
-
-
-
-            }
-            else
-            {
-                btnModificar.Enabled = false;
-                btnEliminar.Enabled = false;
-                despejar();
-                return;
             }
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
+            modo = Modo.Editar;
             txtId.Enabled = false;
             btnBuscar.Enabled = false;            
             btnModificar.Enabled = false;
-            modo = Modo.Editar;
+            
+            btnNuevo.Enabled = false;
+            btnEliminar.Enabled = false;
             btnGuardar.Enabled = true;
             btnCancelar.Enabled = true;
+            asignar();
             activar();
             txtNombre.Focus();
         }
@@ -240,25 +255,21 @@ namespace sistemaTarjetas
             if (modo == Modo.Editar)
             {
                 cargar();
-                desactivar();
-                btnCancelar.Enabled = false;
-                btnGuardar.Enabled = false;
-                btnModificar.Enabled = true;
-
-                txtId.Focus();
+                btnEliminar.Enabled = true;
             }
-            else
-            {
-                btnGuardar.Enabled = false;
-                btnCancelar.Enabled = false;
-                btnNuevo.Enabled = true;
-                txtId.Enabled = true;
-                btnBuscar.Enabled = true;
-                txtId.Clear();
-                despejar();
-                desactivar();
-                txtId.Focus();
+            else if (this.modo == Modo.Insertar)
+            {                
+                despejar();            
             }
+            desactivar();
+            btnNuevo.Enabled = true;
+            txtId.Enabled = true;
+            btnBuscar.Enabled = true;
+            btnCancelar.Enabled = false;
+            btnGuardar.Enabled = false;
+            btnModificar.Enabled = false;
+            modo = Modo.Ver;
+            txtId.Focus();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -321,6 +332,63 @@ namespace sistemaTarjetas
                         txtId.Focus();
                     }
                 }
+            }
+        }
+
+        private void txtNombre_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (txtNombre.Text.Length > 0 & e.KeyCode == Keys.Enter)
+            {
+                txtCedula.Focus();
+            }
+        }
+
+        private void txtCedula_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (txtCedula.MaskCompleted & e.KeyCode == Keys.Enter)
+            {
+                txtDireccion.Focus();
+            }
+
+        }
+
+        private void txtDireccion_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (txtDireccion.Text.Length > 0 & e.KeyCode == Keys.Enter)
+            {
+                txtTelefono.Focus();
+            }
+        }
+
+        private void txtTelefono_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (txtTelefono.MaskCompleted & e.KeyCode == Keys.Enter)
+            {
+                txtComision.Focus();
+            }
+        }
+
+        private void txtComision_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (txtComision.Value > 0 & e.KeyCode == Keys.Enter)
+            {
+                txtDeduccion.Focus();
+            }
+        }
+
+        private void txtDeduccion_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (txtDeduccion.Text.Length > 0 & e.KeyCode == Keys.Enter)
+            {
+                txtCelular.Focus();
+            }
+        }
+
+        private void txtCelular_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (txtCelular.MaskCompleted & e.KeyCode == Keys.Enter)
+            {
+                guardar();
             }
         }
     }   

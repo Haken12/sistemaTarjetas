@@ -63,13 +63,11 @@ namespace sistemaTarjetas
                 int posicion = bsArticulos.Position;
                 v_articulosTableAdapter.Fill(dsSistemaTarjetas.v_articulos);
                 bsArticulos.Position = posicion;
-                txtActual.Clear();
-                txtArticulo.Clear();
-                txtMedida.Clear();
-                txtPrecio.Clear();
-                txtCosto.Clear();
-                txtCantidad.Text = "0";
+
                 txtCodigo.Clear();
+                
+                txtCantidad.Text = "0";
+                
                 txtCodigo.Focus();
             }
         }

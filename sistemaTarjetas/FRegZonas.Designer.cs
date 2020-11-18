@@ -46,8 +46,12 @@
             this.v_vendedorTableAdapter = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.v_vendedorTableAdapter();
             this.querys = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.Querys();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.epDescripcion = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epVendedor = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.bsVendedores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSistemaTarjetas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epDescripcion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epVendedor)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -96,6 +100,7 @@
             this.txtDescripcion.Size = new System.Drawing.Size(223, 24);
             this.txtDescripcion.TabIndex = 2;
             this.txtDescripcion.Enter += new System.EventHandler(this.entrar);
+            this.txtDescripcion.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDescripcion_KeyDown);
             this.txtDescripcion.Leave += new System.EventHandler(this.salir);
             // 
             // cbxVendedor
@@ -110,6 +115,7 @@
             this.cbxVendedor.TabIndex = 1;
             this.cbxVendedor.ValueMember = "Id";
             this.cbxVendedor.Enter += new System.EventHandler(this.entrar);
+            this.cbxVendedor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbxVendedor_KeyDown);
             this.cbxVendedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbxVendedor_KeyPress);
             this.cbxVendedor.Leave += new System.EventHandler(this.salir);
             // 
@@ -131,6 +137,7 @@
             this.btnBuscar.Size = new System.Drawing.Size(32, 26);
             this.btnBuscar.TabIndex = 6;
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnGuardar
             // 
@@ -212,11 +219,20 @@
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
+            // epDescripcion
+            // 
+            this.epDescripcion.ContainerControl = this;
+            // 
+            // epVendedor
+            // 
+            this.epVendedor.ContainerControl = this;
+            // 
             // FRegZonas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(360, 246);
+            this.ControlBox = false;
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnModificar);
@@ -237,6 +253,8 @@
             this.Load += new System.EventHandler(this.FRegZonas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bsVendedores)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSistemaTarjetas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epDescripcion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epVendedor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -261,5 +279,7 @@
         private dsSistemaTarjetasTableAdapters.v_vendedorTableAdapter v_vendedorTableAdapter;
         private dsSistemaTarjetasTableAdapters.Querys querys;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.ErrorProvider epDescripcion;
+        private System.Windows.Forms.ErrorProvider epVendedor;
     }
 }

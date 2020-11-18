@@ -7,12 +7,15 @@ using System.Windows.Forms;
 using Microsoft.SqlServer.Server;
 using System.Data.Sql;
 using System.Data.SqlClient;
+using System.Drawing;
+
 namespace sistemaTarjetas
 {
     public enum Modo
     { 
         Insertar,
-        Editar
+        Editar,
+        Ver
     }
 
     public struct Articulo
@@ -79,9 +82,20 @@ namespace sistemaTarjetas
         public int? idVendedor;
         public string nombreVendedor;
     }
-
+    public struct Despacho
+    {
+        public  int? numero;
+        public int? idVendedor;
+        public string observacion;
+        public string nombreVendedor;
+        public int? cantidadArticulos;
+        public int? total;
+        public DateTime? fecha;
+    }
     public static class Metodos
     {
+        
+
         public static bool Confirmar()
         {
             DialogResult dr;

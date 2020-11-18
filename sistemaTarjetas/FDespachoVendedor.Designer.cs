@@ -1,6 +1,6 @@
 ﻿namespace sistemaTarjetas
 {
-    partial class FDevolucionVendedor
+    partial class FDespachoVendedor
     {
         /// <summary>
         /// Required designer variable.

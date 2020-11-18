@@ -82,6 +82,7 @@
             this.v_vendedorTableAdapter = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.v_vendedorTableAdapter();
             this.v_zonaTableAdapter = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.v_zonaTableAdapter();
             this.v_detalles_tarjetaTableAdapter = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.v_detalles_tarjetaTableAdapter();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsZonas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSistemaTarjetas)).BeginInit();
@@ -626,11 +627,24 @@
             // 
             this.v_detalles_tarjetaTableAdapter.ClearBeforeFill = true;
             // 
+            // button1
+            // 
+            this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.button1.Location = new System.Drawing.Point(690, 555);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Salir";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FControlTarjetas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 558);
+            this.ClientSize = new System.Drawing.Size(804, 584);
+            this.ControlBox = false;
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.pnlOp);
@@ -709,5 +723,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn referenciaDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource bsDetalles;
         private dsSistemaTarjetasTableAdapters.v_detalles_tarjetaTableAdapter v_detalles_tarjetaTableAdapter;
+        private System.Windows.Forms.Button button1;
     }
 }
