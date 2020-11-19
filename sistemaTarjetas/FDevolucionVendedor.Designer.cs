@@ -125,9 +125,7 @@
             this.txtCodigoVendedor.Name = "txtCodigoVendedor";
             this.txtCodigoVendedor.Size = new System.Drawing.Size(73, 20);
             this.txtCodigoVendedor.TabIndex = 0;
-            this.txtCodigoVendedor.TextChanged += new System.EventHandler(this.txtCodigoVendedor_TextChanged);
-            this.txtCodigoVendedor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCodigoVendedor_KeyDown);
-            this.txtCodigoVendedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumero_KeyPress);
+            
             // 
             // btnBuscarVendedor
             // 
@@ -192,7 +190,7 @@
             this.groupBox2.Size = new System.Drawing.Size(543, 295);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+           
             // 
             // dgvArticulos
             // 
@@ -276,8 +274,6 @@
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(50, 20);
             this.txtCantidad.TabIndex = 2;
-            this.txtCantidad.ValueChanged += new System.EventHandler(this.txtCantidad_ValueChanged);
-            this.txtCantidad.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCantidad_KeyDown);
             // 
             // btnBuscarProducto
             // 
@@ -304,7 +300,6 @@
             this.txtPrecio.ReadOnly = true;
             this.txtPrecio.Size = new System.Drawing.Size(66, 20);
             this.txtPrecio.TabIndex = 8;
-            this.txtPrecio.TextChanged += new System.EventHandler(this.txtPrecio_TextChanged);
             // 
             // txtImporte
             // 
@@ -321,9 +316,6 @@
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(75, 20);
             this.txtCodigo.TabIndex = 1;
-            this.txtCodigo.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged);
-            this.txtCodigo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCodigo_KeyDown);
-            this.txtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumero_KeyPress);
             // 
             // label7
             // 
@@ -360,7 +352,6 @@
             this.label4.Size = new System.Drawing.Size(63, 13);
             this.label4.TabIndex = 1;
             this.label4.Text = "Descripción";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label2
             // 
@@ -403,7 +394,6 @@
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(517, 64);
             this.flowLayoutPanel2.TabIndex = 6;
-            this.flowLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel2_Paint_1);
             // 
             // btnNuevo
             // 
@@ -413,7 +403,6 @@
             this.btnNuevo.TabIndex = 0;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
-            this.btnNuevo.Click += new System.EventHandler(this.button3_Click);
             // 
             // btnModificar
             // 
@@ -473,7 +462,6 @@
             this.btnSalir.TabIndex = 6;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // label9
             // 
@@ -490,8 +478,6 @@
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(100, 20);
             this.txtNumero.TabIndex = 8;
-            this.txtNumero.TextChanged += new System.EventHandler(this.txtNumero_TextChanged);
-            this.txtNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumero_KeyPress);
             // 
             // v_inventario_vendedorTableAdapter
             // 
@@ -528,7 +514,6 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "FDevolucionVendedor";
             this.Text = "Devolucion de mercancia al almacen";
-            this.Load += new System.EventHandler(this.FDevolucionVendedor_Load);
             this.groupBox1.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();

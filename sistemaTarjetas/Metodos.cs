@@ -82,7 +82,7 @@ namespace sistemaTarjetas
         public int? idVendedor;
         public string nombreVendedor;
     }
-    public struct Despacho
+   /* public struct Despacho
     {
         public  int? numero;
         public int? idVendedor;
@@ -91,7 +91,7 @@ namespace sistemaTarjetas
         public int? cantidadArticulos;
         public int? total;
         public DateTime? fecha;
-    }
+    }*/
     public static class Metodos
     {
         
