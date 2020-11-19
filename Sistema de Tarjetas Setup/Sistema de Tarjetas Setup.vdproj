@@ -15,6 +15,12 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_24F608EF68E745D58E0B81C3B5D5A817"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_37B03680C6685659D3CE7CACCA06FB76"
         "OwnerKey" = "8:_5AA9D3797D9740D7B08FF4412BBB7E00"
         "MsmSig" = "8:_UNDEFINED"
@@ -29,12 +35,6 @@
         {
         "MsmKey" = "8:_D3353A14F4DC402F00E7597535B00A97"
         "OwnerKey" = "8:_5AA9D3797D9740D7B08FF4412BBB7E00"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_E7A249DFC0DA4485B7F7A703111FF4EE"
-        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -80,6 +80,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
         "Release"
@@ -104,6 +112,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
     }
@@ -134,6 +150,26 @@
         }
         "File"
         {
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_24F608EF68E745D58E0B81C3B5D5A817"
+            {
+            "SourcePath" = "8:..\\..\\..\\..\\Documents\\script.sql"
+            "TargetName" = "8:script.sql"
+            "Tag" = "8:"
+            "Folder" = "8:_134549640E064A8A85BA77CDA681F5CC"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_37B03680C6685659D3CE7CACCA06FB76"
             {
             "AssemblyRegister" = "3:1"
@@ -194,26 +230,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E7A249DFC0DA4485B7F7A703111FF4EE"
-            {
-            "SourcePath" = "8:..\\..\\..\\..\\Documents\\script.sql"
-            "TargetName" = "8:script.sql"
-            "Tag" = "8:"
-            "Folder" = "8:_134549640E064A8A85BA77CDA681F5CC"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
         }
@@ -284,14 +300,14 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Sistema de Tarjetas Setup"
         "ProductCode" = "8:{B993A197-FD30-422F-AC02-EFDA490705ED}"
-        "PackageCode" = "8:{142A10AE-2963-476B-9772-ADCA36ED24A8}"
+        "PackageCode" = "8:{27D5433A-3F9D-4970-9AAC-D9FD346D7182}"
         "UpgradeCode" = "8:{2817EEDE-06CF-4EC9-A704-FB7E920D36CD}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.0.0"
+        "ProductVersion" = "8:1.0.1"
         "Manufacturer" = "8:Default Company Name"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -819,7 +835,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_5AA9D3797D9740D7B08FF4412BBB7E00"
             {
-            "SourcePath" = "8:"
+            "SourcePath" = "8:..\\sistemaTarjetas\\obj\\Release\\sistemaTarjetas.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_B83268DFED38468986A63C71CA611C54"

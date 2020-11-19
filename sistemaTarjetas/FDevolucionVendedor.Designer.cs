@@ -40,13 +40,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtExistencias = new System.Windows.Forms.TextBox();
             this.dgvArticulos = new System.Windows.Forms.DataGridView();
-            this.numeroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsDevolver = new System.Windows.Forms.BindingSource(this.components);
             this.dsSistemaTarjetas = new sistemaTarjetas.dsSistemaTarjetas();
             this.txtCantidad = new System.Windows.Forms.NumericUpDown();
@@ -72,10 +68,19 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.txtNumero = new System.Windows.Forms.TextBox();
-            this.v_inventario_vendedorTableAdapter = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.v_inventario_vendedorTableAdapter();
-            this.detalles_devolucionesTableAdapter = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.detalles_devolucionesTableAdapter();
             this.querys = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.Querys();
             this.btnBuscarDevolucion = new System.Windows.Forms.Button();
+            this.queries = new sistemaTarjetas.dsDespachosTableAdapters.queries();
+            this.bsInventario = new System.Windows.Forms.BindingSource(this.components);
+            this.dsDespachos = new sistemaTarjetas.dsDespachos();
+            this.v_inventario_vendedorTableAdapter = new sistemaTarjetas.dsDespachosTableAdapters.v_inventario_vendedorTableAdapter();
+            this.detalles_devolucionesTableAdapter = new sistemaTarjetas.dsDespachosTableAdapters.detalles_devolucionesTableAdapter();
+            this.numeroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -84,6 +89,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dsSistemaTarjetas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidad)).BeginInit();
             this.flowLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bsInventario)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsDespachos)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -125,7 +132,7 @@
             this.txtCodigoVendedor.Name = "txtCodigoVendedor";
             this.txtCodigoVendedor.Size = new System.Drawing.Size(73, 20);
             this.txtCodigoVendedor.TabIndex = 0;
-            
+            this.txtCodigoVendedor.TextChanged += new System.EventHandler(this.txtCodigoVendedor_TextChanged);
             // 
             // btnBuscarVendedor
             // 
@@ -136,6 +143,7 @@
             this.btnBuscarVendedor.Size = new System.Drawing.Size(34, 23);
             this.btnBuscarVendedor.TabIndex = 2;
             this.btnBuscarVendedor.UseVisualStyleBackColor = true;
+            this.btnBuscarVendedor.Click += new System.EventHandler(this.btnBuscarVendedor_Click);
             // 
             // lblNombre
             // 
@@ -153,6 +161,7 @@
             this.txtNombre.ReadOnly = true;
             this.txtNombre.Size = new System.Drawing.Size(334, 20);
             this.txtNombre.TabIndex = 5;
+            this.txtNombre.TabStop = false;
             // 
             // label3
             // 
@@ -165,6 +174,7 @@
             // 
             // dtpFecha
             // 
+            this.dtpFecha.Enabled = false;
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFecha.Location = new System.Drawing.Point(455, 9);
             this.dtpFecha.Name = "dtpFecha";
@@ -173,6 +183,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.txtExistencias);
             this.groupBox2.Controls.Add(this.dgvArticulos);
             this.groupBox2.Controls.Add(this.txtCantidad);
             this.groupBox2.Controls.Add(this.btnBuscarProducto);
@@ -187,10 +199,27 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Location = new System.Drawing.Point(15, 90);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(543, 295);
+            this.groupBox2.Size = new System.Drawing.Size(583, 295);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
-           
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(390, 15);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(48, 13);
+            this.label10.TabIndex = 14;
+            this.label10.Text = "Actuales";
+            // 
+            // txtExistencias
+            // 
+            this.txtExistencias.Enabled = false;
+            this.txtExistencias.Location = new System.Drawing.Point(393, 32);
+            this.txtExistencias.Name = "txtExistencias";
+            this.txtExistencias.ReadOnly = true;
+            this.txtExistencias.Size = new System.Drawing.Size(40, 20);
+            this.txtExistencias.TabIndex = 13;
             // 
             // dgvArticulos
             // 
@@ -208,60 +237,21 @@
             this.precioDataGridViewTextBoxColumn,
             this.valorDataGridViewTextBoxColumn});
             this.dgvArticulos.DataSource = this.bsDevolver;
+            this.dgvArticulos.Enabled = false;
             this.dgvArticulos.Location = new System.Drawing.Point(16, 67);
             this.dgvArticulos.MultiSelect = false;
             this.dgvArticulos.Name = "dgvArticulos";
+            this.dgvArticulos.ReadOnly = true;
             this.dgvArticulos.RowHeadersVisible = false;
             this.dgvArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvArticulos.Size = new System.Drawing.Size(512, 222);
+            this.dgvArticulos.Size = new System.Drawing.Size(549, 222);
             this.dgvArticulos.TabIndex = 12;
-            // 
-            // numeroDataGridViewTextBoxColumn
-            // 
-            this.numeroDataGridViewTextBoxColumn.DataPropertyName = "Numero";
-            this.numeroDataGridViewTextBoxColumn.HeaderText = "No.";
-            this.numeroDataGridViewTextBoxColumn.Name = "numeroDataGridViewTextBoxColumn";
-            this.numeroDataGridViewTextBoxColumn.Width = 40;
-            // 
-            // codigoDataGridViewTextBoxColumn
-            // 
-            this.codigoDataGridViewTextBoxColumn.DataPropertyName = "Codigo";
-            this.codigoDataGridViewTextBoxColumn.HeaderText = "Codigo";
-            this.codigoDataGridViewTextBoxColumn.Name = "codigoDataGridViewTextBoxColumn";
-            this.codigoDataGridViewTextBoxColumn.Width = 70;
-            // 
-            // descripcionDataGridViewTextBoxColumn
-            // 
-            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
-            this.descripcionDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // cantidadDataGridViewTextBoxColumn
-            // 
-            this.cantidadDataGridViewTextBoxColumn.DataPropertyName = "Cantidad";
-            this.cantidadDataGridViewTextBoxColumn.HeaderText = "Cantidad";
-            this.cantidadDataGridViewTextBoxColumn.Name = "cantidadDataGridViewTextBoxColumn";
-            this.cantidadDataGridViewTextBoxColumn.Width = 70;
-            // 
-            // precioDataGridViewTextBoxColumn
-            // 
-            this.precioDataGridViewTextBoxColumn.DataPropertyName = "Precio";
-            this.precioDataGridViewTextBoxColumn.HeaderText = "Precio";
-            this.precioDataGridViewTextBoxColumn.Name = "precioDataGridViewTextBoxColumn";
-            this.precioDataGridViewTextBoxColumn.Width = 70;
-            // 
-            // valorDataGridViewTextBoxColumn
-            // 
-            this.valorDataGridViewTextBoxColumn.DataPropertyName = "Valor";
-            this.valorDataGridViewTextBoxColumn.HeaderText = "Valor";
-            this.valorDataGridViewTextBoxColumn.Name = "valorDataGridViewTextBoxColumn";
-            this.valorDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dgvArticulos.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvArticulos_KeyDown);
             // 
             // bsDevolver
             // 
             this.bsDevolver.DataMember = "detalles_devoluciones";
-            this.bsDevolver.DataSource = this.dsSistemaTarjetas;
+            this.bsDevolver.DataSource = this.dsDespachos;
             // 
             // dsSistemaTarjetas
             // 
@@ -270,10 +260,13 @@
             // 
             // txtCantidad
             // 
-            this.txtCantidad.Location = new System.Drawing.Point(407, 31);
+            this.txtCantidad.Enabled = false;
+            this.txtCantidad.Location = new System.Drawing.Point(451, 31);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(50, 20);
             this.txtCantidad.TabIndex = 2;
+            this.txtCantidad.ValueChanged += new System.EventHandler(this.txtCantidad_ValueChanged);
+            this.txtCantidad.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCantidad_KeyDown);
             // 
             // btnBuscarProducto
             // 
@@ -284,6 +277,7 @@
             this.btnBuscarProducto.Size = new System.Drawing.Size(29, 23);
             this.btnBuscarProducto.TabIndex = 10;
             this.btnBuscarProducto.UseVisualStyleBackColor = true;
+            this.btnBuscarProducto.Click += new System.EventHandler(this.btnBuscarProducto_Click);
             // 
             // txtDescripcion
             // 
@@ -298,12 +292,12 @@
             this.txtPrecio.Location = new System.Drawing.Point(335, 31);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.ReadOnly = true;
-            this.txtPrecio.Size = new System.Drawing.Size(66, 20);
+            this.txtPrecio.Size = new System.Drawing.Size(51, 20);
             this.txtPrecio.TabIndex = 8;
             // 
             // txtImporte
             // 
-            this.txtImporte.Location = new System.Drawing.Point(463, 32);
+            this.txtImporte.Location = new System.Drawing.Point(505, 32);
             this.txtImporte.Name = "txtImporte";
             this.txtImporte.ReadOnly = true;
             this.txtImporte.Size = new System.Drawing.Size(60, 20);
@@ -316,11 +310,12 @@
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(75, 20);
             this.txtCodigo.TabIndex = 1;
+            this.txtCodigo.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(407, 15);
+            this.label7.Location = new System.Drawing.Point(449, 15);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(49, 13);
             this.label7.TabIndex = 4;
@@ -329,7 +324,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(460, 15);
+            this.label6.Location = new System.Drawing.Point(502, 15);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(42, 13);
             this.label6.TabIndex = 3;
@@ -403,6 +398,7 @@
             this.btnNuevo.TabIndex = 0;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnModificar
             // 
@@ -413,6 +409,7 @@
             this.btnModificar.TabIndex = 1;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnCancelar
             // 
@@ -423,6 +420,7 @@
             this.btnCancelar.TabIndex = 2;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnGuardar
             // 
@@ -433,6 +431,7 @@
             this.btnGuardar.TabIndex = 3;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnEliminar
             // 
@@ -477,7 +476,26 @@
             this.txtNumero.Location = new System.Drawing.Point(53, 6);
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(100, 20);
-            this.txtNumero.TabIndex = 8;
+            this.txtNumero.TabIndex = 0;
+            // 
+            // btnBuscarDevolucion
+            // 
+            this.btnBuscarDevolucion.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscarDevolucion.Image")));
+            this.btnBuscarDevolucion.Location = new System.Drawing.Point(162, 4);
+            this.btnBuscarDevolucion.Name = "btnBuscarDevolucion";
+            this.btnBuscarDevolucion.Size = new System.Drawing.Size(34, 23);
+            this.btnBuscarDevolucion.TabIndex = 9;
+            this.btnBuscarDevolucion.UseVisualStyleBackColor = true;
+            // 
+            // bsInventario
+            // 
+            this.bsInventario.DataMember = "v_inventario_vendedor";
+            this.bsInventario.DataSource = this.dsDespachos;
+            // 
+            // dsDespachos
+            // 
+            this.dsDespachos.DataSetName = "dsDespachos";
+            this.dsDespachos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // v_inventario_vendedorTableAdapter
             // 
@@ -487,21 +505,59 @@
             // 
             this.detalles_devolucionesTableAdapter.ClearBeforeFill = true;
             // 
-            // btnBuscarDevolucion
+            // numeroDataGridViewTextBoxColumn
             // 
-            this.btnBuscarDevolucion.Enabled = false;
-            this.btnBuscarDevolucion.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscarDevolucion.Image")));
-            this.btnBuscarDevolucion.Location = new System.Drawing.Point(162, 4);
-            this.btnBuscarDevolucion.Name = "btnBuscarDevolucion";
-            this.btnBuscarDevolucion.Size = new System.Drawing.Size(34, 23);
-            this.btnBuscarDevolucion.TabIndex = 9;
-            this.btnBuscarDevolucion.UseVisualStyleBackColor = true;
+            this.numeroDataGridViewTextBoxColumn.DataPropertyName = "Numero";
+            this.numeroDataGridViewTextBoxColumn.HeaderText = "Numero";
+            this.numeroDataGridViewTextBoxColumn.Name = "numeroDataGridViewTextBoxColumn";
+            this.numeroDataGridViewTextBoxColumn.ReadOnly = true;
+            this.numeroDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // codigoDataGridViewTextBoxColumn
+            // 
+            this.codigoDataGridViewTextBoxColumn.DataPropertyName = "Codigo";
+            this.codigoDataGridViewTextBoxColumn.HeaderText = "Codigo";
+            this.codigoDataGridViewTextBoxColumn.Name = "codigoDataGridViewTextBoxColumn";
+            this.codigoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.codigoDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // descripcionDataGridViewTextBoxColumn
+            // 
+            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
+            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.descripcionDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // cantidadDataGridViewTextBoxColumn
+            // 
+            this.cantidadDataGridViewTextBoxColumn.DataPropertyName = "Cantidad";
+            this.cantidadDataGridViewTextBoxColumn.HeaderText = "Cantidad";
+            this.cantidadDataGridViewTextBoxColumn.Name = "cantidadDataGridViewTextBoxColumn";
+            this.cantidadDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cantidadDataGridViewTextBoxColumn.Width = 80;
+            // 
+            // precioDataGridViewTextBoxColumn
+            // 
+            this.precioDataGridViewTextBoxColumn.DataPropertyName = "Precio";
+            this.precioDataGridViewTextBoxColumn.HeaderText = "Precio";
+            this.precioDataGridViewTextBoxColumn.Name = "precioDataGridViewTextBoxColumn";
+            this.precioDataGridViewTextBoxColumn.ReadOnly = true;
+            this.precioDataGridViewTextBoxColumn.Width = 80;
+            // 
+            // valorDataGridViewTextBoxColumn
+            // 
+            this.valorDataGridViewTextBoxColumn.DataPropertyName = "Valor";
+            this.valorDataGridViewTextBoxColumn.HeaderText = "Valor";
+            this.valorDataGridViewTextBoxColumn.Name = "valorDataGridViewTextBoxColumn";
+            this.valorDataGridViewTextBoxColumn.ReadOnly = true;
+            this.valorDataGridViewTextBoxColumn.Width = 80;
             // 
             // FDevolucionVendedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(577, 512);
+            this.ClientSize = new System.Drawing.Size(610, 512);
             this.Controls.Add(this.btnBuscarDevolucion);
             this.Controls.Add(this.txtNumero);
             this.Controls.Add(this.label9);
@@ -524,6 +580,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dsSistemaTarjetas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidad)).EndInit();
             this.flowLayoutPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bsInventario)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsDespachos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -563,19 +621,24 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.Button btnSalir;
-        private dsSistemaTarjetasTableAdapters.v_inventario_vendedorTableAdapter v_inventario_vendedorTableAdapter;
         private dsSistemaTarjetas dsSistemaTarjetas;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtNumero;
         private System.Windows.Forms.BindingSource bsDevolver;
+        private dsSistemaTarjetasTableAdapters.Querys querys;
+        private System.Windows.Forms.Button btnBuscarDevolucion;
+        private dsDespachosTableAdapters.queries queries;
+        private System.Windows.Forms.BindingSource bsInventario;
+        private dsDespachos dsDespachos;
+        private dsDespachosTableAdapters.v_inventario_vendedorTableAdapter v_inventario_vendedorTableAdapter;
+        private System.Windows.Forms.TextBox txtExistencias;
+        private System.Windows.Forms.Label label10;
+        private dsDespachosTableAdapters.detalles_devolucionesTableAdapter detalles_devolucionesTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn numeroDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidadDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn precioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn valorDataGridViewTextBoxColumn;
-        private dsSistemaTarjetasTableAdapters.detalles_devolucionesTableAdapter detalles_devolucionesTableAdapter;
-        private dsSistemaTarjetasTableAdapters.Querys querys;
-        private System.Windows.Forms.Button btnBuscarDevolucion;
     }
 }

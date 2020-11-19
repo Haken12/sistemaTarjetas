@@ -297,6 +297,7 @@ namespace sistemaTarjetas
             asignar();
             actualizar();
             detalles_despachoTableAdapter.Fill(dsDespachos.detalles_despacho, Despacho.Numero);
+            txtTotal.Text = calcularTotal().ToString();
             txtCodigo.Clear();
             txtCodigo.Focus();
         }
@@ -329,9 +330,11 @@ namespace sistemaTarjetas
                         int ct = (int)dgvDetalles.SelectedRows[0].Cells[3].Value;
                         queries.eliminarDetalleDespacho(Despacho.Numero, dt, cp, Despacho.IdVendedor, ct);
                         detalles_despachoTableAdapter.Fill(dsDespachos.detalles_despacho, Despacho.Numero);
+                        txtTotal.Text = calcularTotal().ToString();
                         asignar();
-                        actualizar();
 
+                        actualizar();
+                        
                     }
                 }
             }

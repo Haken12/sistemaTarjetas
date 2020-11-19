@@ -18,7 +18,7 @@ namespace sistemaTarjetas
             InitializeComponent();
         }
 
-        Modo modo;
+        Modo modo = Modo.Ver;
         Tarjeta tarjeta;
 
         private void iniciar() {
@@ -124,10 +124,10 @@ namespace sistemaTarjetas
         private void actualizar() {
 
             querys.actualizar_tarjeta(
-                Convert.ToInt32(txtCredito.Text),
+                Convert.ToInt32(txtCodigo.Text),
                 txtNombre.Text,
                 txtReferencia.Text,
-                txtCredito.Text,
+                txtCedula.Text,
                 txtTelefono.Text,
                 dtpFecha.Value,
                 (int)cbxVendedor.SelectedValue,
@@ -304,6 +304,8 @@ namespace sistemaTarjetas
                         opToggle();
                         btnGuardar.Enabled = false;
                         btnCancelar.Enabled = false;
+                        btnNueva.Enabled = true;
+
                         txtCodigo.Enabled = true;
                         btnBuscar.Enabled = true;
                         break;
@@ -394,6 +396,7 @@ namespace sistemaTarjetas
                     txtCodigo.Enabled = true;
                     btnGuardar.Enabled = false;
                     btnCancelar.Enabled = false;
+                    btnNueva.Enabled = true;
                     mToggle();
 
                     txtCodigo.Focus();
@@ -410,6 +413,7 @@ namespace sistemaTarjetas
                     btnBuscar.Enabled = true;
                     btnGuardar.Enabled = false;
                     btnCancelar.Enabled = false;
+                    btnNueva.Enabled = true;
                     txtCodigo.Focus();
                     break;
             }

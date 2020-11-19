@@ -64,6 +64,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dsDespachos.cs">
+      <DependentUpon>dsDespachos.xsd</DependentUpon>
+    </Compile>
     <Compile Include="dsDespachos.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
