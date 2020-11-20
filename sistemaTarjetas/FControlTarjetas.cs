@@ -292,9 +292,11 @@ namespace sistemaTarjetas
                         cbxZona.Enabled = false;
                         cbxFormaPago.Enabled = false;
                         dtpFecha.Enabled = false;
-                        
+                        btnGuardar.Enabled = false;
+                        btnCancelar.Enabled = false;
                         txtValor.Enabled = true;
                         btnAsentar.Enabled = true;
+                        mToggle();
                         cbxTipo.Focus();
                         break;
 
@@ -366,6 +368,7 @@ namespace sistemaTarjetas
             this.modo = Modo.Editar;
             txtCodigo.Enabled = false;
             btnBuscar.Enabled = false;
+            btnModificar.Enabled = false;
             btnNueva.Enabled = false;
             btnGuardar.Enabled = true;
             btnCancelar.Enabled = true;

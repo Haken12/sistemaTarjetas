@@ -33,6 +33,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_BD913671D5D34312A7E4B448710EEDBF"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_D3353A14F4DC402F00E7597535B00A97"
         "OwnerKey" = "8:_5AA9D3797D9740D7B08FF4412BBB7E00"
         "MsmSig" = "8:_UNDEFINED"
@@ -201,6 +207,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_BD913671D5D34312A7E4B448710EEDBF"
+            {
+            "SourcePath" = "8:..\\..\\..\\..\\Downloads\\icontexto-webdev-info-032x032.ico"
+            "TargetName" = "8:icontexto-webdev-info-032x032.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_B83268DFED38468986A63C71CA611C54"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_D3353A14F4DC402F00E7597535B00A97"
             {
             "AssemblyRegister" = "3:1"
@@ -298,9 +324,9 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:Sistema de Tarjetas Setup"
+        "ProductName" = "8:Sistema de Tarjetas"
         "ProductCode" = "8:{B993A197-FD30-422F-AC02-EFDA490705ED}"
-        "PackageCode" = "8:{27D5433A-3F9D-4970-9AAC-D9FD346D7182}"
+        "PackageCode" = "8:{EEEE4985-9DF0-4CB4-815C-4428F72A26EC}"
         "UpgradeCode" = "8:{2817EEDE-06CF-4EC9-A704-FB7E920D36CD}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -308,12 +334,12 @@
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
         "ProductVersion" = "8:1.0.1"
-        "Manufacturer" = "8:Default Company Name"
+        "Manufacturer" = "8:Haken Tech"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
         "Title" = "8:Sistema de Tarjetas Setup"
         "Subject" = "8:"
-        "ARPCONTACT" = "8:Default Company Name"
+        "ARPCONTACT" = "8:Haken"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
         "ARPURLINFOABOUT" = "8:"
@@ -431,7 +457,7 @@
             "Target" = "8:_5AA9D3797D9740D7B08FF4412BBB7E00"
             "Folder" = "8:_7566F9254BA546D58C5AB220601F4600"
             "WorkingFolder" = "8:_B83268DFED38468986A63C71CA611C54"
-            "Icon" = "8:"
+            "Icon" = "8:_BD913671D5D34312A7E4B448710EEDBF"
             "Feature" = "8:"
             }
         }

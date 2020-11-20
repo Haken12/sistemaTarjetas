@@ -144,6 +144,12 @@ namespace sistemaTarjetas
             txtCodigoVendedor.SelectAll();
         }
 
+        private void soloNumeros(object sender , KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar)) return;
+            if (Char.IsControl(e.KeyChar)) return;
+            e.Handled = true;
+        }
         private void crear()
         {
             queries.nuevo_despacho(ref Despacho.Numero, Despacho.IdVendedor, "", Despacho.CantidadArticulos, Despacho.Total, Despacho.Fecha);

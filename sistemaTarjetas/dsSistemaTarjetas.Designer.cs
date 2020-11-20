@@ -1717,9 +1717,9 @@ namespace sistemaTarjetas {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public v_zonaRow FindByid_vendedor(int id_vendedor) {
+            public v_zonaRow FindById(int Id) {
                 return ((v_zonaRow)(this.Rows.Find(new object[] {
-                            id_vendedor})));
+                            Id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1757,10 +1757,11 @@ namespace sistemaTarjetas {
                 this.columnVendedor = new global::System.Data.DataColumn("Vendedor", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnVendedor);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnid_vendedor}, true));
+                                this.columnId}, true));
+                this.columnId.AllowDBNull = false;
+                this.columnId.Unique = true;
                 this.columnDescripcion.MaxLength = 70;
                 this.columnid_vendedor.AllowDBNull = false;
-                this.columnid_vendedor.Unique = true;
                 this.columnVendedor.AllowDBNull = false;
                 this.columnVendedor.MaxLength = 50;
             }
@@ -6412,12 +6413,7 @@ namespace sistemaTarjetas {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int Id {
                 get {
-                    try {
-                        return ((int)(this[this.tablev_zona.IdColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Id\' de la tabla \'v_zona\' es DBNull.", e);
-                    }
+                    return ((int)(this[this.tablev_zona.IdColumn]));
                 }
                 set {
                     this[this.tablev_zona.IdColumn] = value;
@@ -6460,18 +6456,6 @@ namespace sistemaTarjetas {
                 set {
                     this[this.tablev_zona.VendedorColumn] = value;
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsIdNull() {
-                return this.IsNull(this.tablev_zona.IdColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetIdNull() {
-                this[this.tablev_zona.IdColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

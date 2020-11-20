@@ -53,6 +53,13 @@ namespace sistemaTarjetas
             dgvArticulos.Enabled = false;
         }
 
+        private void soloNumeros(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar)) return;
+            if (Char.IsControl(e.KeyChar)) return;
+            e.Handled = true;
+        }
+
         private void btnBuscarVendedor_Click(object sender, EventArgs e)
         {
             using (FBuscarVendedor fBuscar = new FBuscarVendedor())
@@ -188,7 +195,7 @@ namespace sistemaTarjetas
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            modo = Modo.Insertar;
+            modo = Modo.Editar;
             v_inventario_vendedorTableAdapter.Fill(dsDespachos.v_inventario_vendedor, idVendedor);
             btnNuevo.Enabled = false;
             btnModificar.Enabled = false;
