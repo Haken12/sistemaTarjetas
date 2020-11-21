@@ -210,7 +210,7 @@ namespace sistemaTarjetas
         {
             if (articuloSi & txtPrecio.Text.Length > 0)
             {
-                txtImporte.Text = (Convert.ToInt32(txtCantidad.Value) + Convert.ToInt32(txtPrecio.Text)).ToString();
+                txtImporte.Text = (Convert.ToInt32(txtCantidad.Value) * Convert.ToInt32(txtPrecio.Text)).ToString();
             }
         }
 

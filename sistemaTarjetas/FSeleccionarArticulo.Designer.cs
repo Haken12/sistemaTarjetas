@@ -33,15 +33,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dgvBuscar = new System.Windows.Forms.DataGridView();
-            this.bsBuscar = new System.Windows.Forms.BindingSource(this.components);
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.dsSistemaTarjetas = new sistemaTarjetas.dsSistemaTarjetas();
-            this.v_inventario_vendedorTableAdapter = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.v_inventario_vendedorTableAdapter();
             this.codigoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.existenciasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsBuscar = new System.Windows.Forms.BindingSource(this.components);
+            this.dsSistemaTarjetas = new sistemaTarjetas.dsSistemaTarjetas();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.v_inventario_vendedorTableAdapter = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.v_inventario_vendedorTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBuscar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsBuscar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSistemaTarjetas)).BeginInit();
@@ -81,15 +81,52 @@
             this.dgvBuscar.Location = new System.Drawing.Point(15, 34);
             this.dgvBuscar.MultiSelect = false;
             this.dgvBuscar.Name = "dgvBuscar";
+            this.dgvBuscar.ReadOnly = true;
             this.dgvBuscar.RowHeadersVisible = false;
             this.dgvBuscar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBuscar.Size = new System.Drawing.Size(564, 296);
             this.dgvBuscar.TabIndex = 2;
             // 
+            // codigoDataGridViewTextBoxColumn
+            // 
+            this.codigoDataGridViewTextBoxColumn.DataPropertyName = "Codigo";
+            this.codigoDataGridViewTextBoxColumn.HeaderText = "Codigo";
+            this.codigoDataGridViewTextBoxColumn.Name = "codigoDataGridViewTextBoxColumn";
+            this.codigoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descripcionDataGridViewTextBoxColumn
+            // 
+            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
+            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.descripcionDataGridViewTextBoxColumn.Width = 300;
+            // 
+            // precioDataGridViewTextBoxColumn
+            // 
+            this.precioDataGridViewTextBoxColumn.DataPropertyName = "Precio";
+            this.precioDataGridViewTextBoxColumn.HeaderText = "Precio";
+            this.precioDataGridViewTextBoxColumn.Name = "precioDataGridViewTextBoxColumn";
+            this.precioDataGridViewTextBoxColumn.ReadOnly = true;
+            this.precioDataGridViewTextBoxColumn.Width = 80;
+            // 
+            // existenciasDataGridViewTextBoxColumn
+            // 
+            this.existenciasDataGridViewTextBoxColumn.DataPropertyName = "Existencias";
+            this.existenciasDataGridViewTextBoxColumn.HeaderText = "Existencias";
+            this.existenciasDataGridViewTextBoxColumn.Name = "existenciasDataGridViewTextBoxColumn";
+            this.existenciasDataGridViewTextBoxColumn.ReadOnly = true;
+            this.existenciasDataGridViewTextBoxColumn.Width = 80;
+            // 
             // bsBuscar
             // 
             this.bsBuscar.DataMember = "v_inventario_vendedor";
             this.bsBuscar.DataSource = this.dsSistemaTarjetas;
+            // 
+            // dsSistemaTarjetas
+            // 
+            this.dsSistemaTarjetas.DataSetName = "dsSistemaTarjetas";
+            this.dsSistemaTarjetas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // button1
             // 
@@ -117,42 +154,9 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // dsSistemaTarjetas
-            // 
-            this.dsSistemaTarjetas.DataSetName = "dsSistemaTarjetas";
-            this.dsSistemaTarjetas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // v_inventario_vendedorTableAdapter
             // 
             this.v_inventario_vendedorTableAdapter.ClearBeforeFill = true;
-            // 
-            // codigoDataGridViewTextBoxColumn
-            // 
-            this.codigoDataGridViewTextBoxColumn.DataPropertyName = "Codigo";
-            this.codigoDataGridViewTextBoxColumn.HeaderText = "Codigo";
-            this.codigoDataGridViewTextBoxColumn.Name = "codigoDataGridViewTextBoxColumn";
-            this.codigoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // descripcionDataGridViewTextBoxColumn
-            // 
-            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
-            this.descripcionDataGridViewTextBoxColumn.Width = 300;
-            // 
-            // precioDataGridViewTextBoxColumn
-            // 
-            this.precioDataGridViewTextBoxColumn.DataPropertyName = "Precio";
-            this.precioDataGridViewTextBoxColumn.HeaderText = "Precio";
-            this.precioDataGridViewTextBoxColumn.Name = "precioDataGridViewTextBoxColumn";
-            this.precioDataGridViewTextBoxColumn.Width = 80;
-            // 
-            // existenciasDataGridViewTextBoxColumn
-            // 
-            this.existenciasDataGridViewTextBoxColumn.DataPropertyName = "Existencias";
-            this.existenciasDataGridViewTextBoxColumn.HeaderText = "Existencias";
-            this.existenciasDataGridViewTextBoxColumn.Name = "existenciasDataGridViewTextBoxColumn";
-            this.existenciasDataGridViewTextBoxColumn.Width = 80;
             // 
             // FSeleccionarArticulo
             // 

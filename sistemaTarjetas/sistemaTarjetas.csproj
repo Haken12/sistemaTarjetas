@@ -116,6 +116,12 @@
     <Compile Include="FBuscarDespachos.Designer.cs">
       <DependentUpon>FBuscarDespachos.cs</DependentUpon>
     </Compile>
+    <Compile Include="FBuscarTarjeta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FBuscarTarjeta.Designer.cs">
+      <DependentUpon>FBuscarTarjeta.cs</DependentUpon>
+    </Compile>
     <Compile Include="FBuscarVendedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -243,6 +249,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FBuscarDespachos.resx">
       <DependentUpon>FBuscarDespachos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FBuscarTarjeta.resx">
+      <DependentUpon>FBuscarTarjeta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FBuscarVendedor.resx">
       <DependentUpon>FBuscarVendedor.cs</DependentUpon>

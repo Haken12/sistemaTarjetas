@@ -83,7 +83,6 @@
             // 
             this.dgvArticulos.AllowUserToAddRows = false;
             this.dgvArticulos.AllowUserToDeleteRows = false;
-            this.dgvArticulos.AllowUserToOrderColumns = true;
             this.dgvArticulos.AllowUserToResizeColumns = false;
             this.dgvArticulos.AllowUserToResizeRows = false;
             this.dgvArticulos.AutoGenerateColumns = false;
@@ -99,6 +98,7 @@
             this.dgvArticulos.Location = new System.Drawing.Point(15, 37);
             this.dgvArticulos.MultiSelect = false;
             this.dgvArticulos.Name = "dgvArticulos";
+            this.dgvArticulos.ReadOnly = true;
             this.dgvArticulos.RowHeadersVisible = false;
             this.dgvArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvArticulos.Size = new System.Drawing.Size(651, 309);
@@ -117,6 +117,7 @@
             this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
             this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
             this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
+            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
             this.descripcionDataGridViewTextBoxColumn.Width = 220;
             // 
             // unidadDataGridViewTextBoxColumn
@@ -124,6 +125,7 @@
             this.unidadDataGridViewTextBoxColumn.DataPropertyName = "Unidad";
             this.unidadDataGridViewTextBoxColumn.HeaderText = "Unidad";
             this.unidadDataGridViewTextBoxColumn.Name = "unidadDataGridViewTextBoxColumn";
+            this.unidadDataGridViewTextBoxColumn.ReadOnly = true;
             this.unidadDataGridViewTextBoxColumn.Width = 80;
             // 
             // costoDataGridViewTextBoxColumn
@@ -131,6 +133,7 @@
             this.costoDataGridViewTextBoxColumn.DataPropertyName = "Costo";
             this.costoDataGridViewTextBoxColumn.HeaderText = "Costo";
             this.costoDataGridViewTextBoxColumn.Name = "costoDataGridViewTextBoxColumn";
+            this.costoDataGridViewTextBoxColumn.ReadOnly = true;
             this.costoDataGridViewTextBoxColumn.Width = 70;
             // 
             // precioDataGridViewTextBoxColumn
@@ -138,6 +141,7 @@
             this.precioDataGridViewTextBoxColumn.DataPropertyName = "Precio";
             this.precioDataGridViewTextBoxColumn.HeaderText = "Precio";
             this.precioDataGridViewTextBoxColumn.Name = "precioDataGridViewTextBoxColumn";
+            this.precioDataGridViewTextBoxColumn.ReadOnly = true;
             this.precioDataGridViewTextBoxColumn.Width = 70;
             // 
             // existenciasDataGridViewTextBoxColumn
@@ -145,6 +149,7 @@
             this.existenciasDataGridViewTextBoxColumn.DataPropertyName = "Existencias";
             this.existenciasDataGridViewTextBoxColumn.HeaderText = "Existencias";
             this.existenciasDataGridViewTextBoxColumn.Name = "existenciasDataGridViewTextBoxColumn";
+            this.existenciasDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // bsBuscar
             // 

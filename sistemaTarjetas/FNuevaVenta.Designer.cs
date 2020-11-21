@@ -202,6 +202,7 @@
             this.dgvVenta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvVenta.Size = new System.Drawing.Size(553, 186);
             this.dgvVenta.TabIndex = 12;
+            this.dgvVenta.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvVenta_KeyDown);
             // 
             // codigoDataGridViewTextBoxColumn
             // 

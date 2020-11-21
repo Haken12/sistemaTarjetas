@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.dtpFechaT = new System.Windows.Forms.DateTimePicker();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.cbxZona = new System.Windows.Forms.ComboBox();
@@ -95,6 +97,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label15);
+            this.groupBox1.Controls.Add(this.dtpFechaT);
             this.groupBox1.Controls.Add(this.btnGuardar);
             this.groupBox1.Controls.Add(this.btnCancelar);
             this.groupBox1.Controls.Add(this.cbxZona);
@@ -122,6 +126,23 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Seleccione o Cree la Tarjeta";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(137, 94);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(37, 13);
+            this.label15.TabIndex = 17;
+            this.label15.Text = "Fecha";
+            // 
+            // dtpFechaT
+            // 
+            this.dtpFechaT.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaT.Location = new System.Drawing.Point(207, 89);
+            this.dtpFechaT.Name = "dtpFechaT";
+            this.dtpFechaT.Size = new System.Drawing.Size(82, 20);
+            this.dtpFechaT.TabIndex = 16;
             // 
             // btnGuardar
             // 
@@ -232,11 +253,11 @@
             // 
             // btnBuscar
             // 
+            this.btnBuscar.Image = global::sistemaTarjetas.Recursos._49;
             this.btnBuscar.Location = new System.Drawing.Point(80, 30);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(25, 23);
             this.btnBuscar.TabIndex = 15;
-            this.btnBuscar.Text = "B";
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
@@ -393,6 +414,7 @@
             this.dgvDetalles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDetalles.Size = new System.Drawing.Size(776, 298);
             this.dgvDetalles.TabIndex = 1;
+            this.dgvDetalles.DoubleClick += new System.EventHandler(this.dgvDetalles_DoubleClick);
             this.dgvDetalles.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvDetalles_KeyDown);
             // 
             // noDataGridViewTextBoxColumn
@@ -724,5 +746,7 @@
         private System.Windows.Forms.BindingSource bsDetalles;
         private dsSistemaTarjetasTableAdapters.v_detalles_tarjetaTableAdapter v_detalles_tarjetaTableAdapter;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.DateTimePicker dtpFechaT;
     }
 }

@@ -230,7 +230,7 @@ namespace sistemaTarjetas
             btnModificar.Enabled = false;
             btnEliminar.Enabled = false;
             btnGuardar.Enabled = true;
-            btnCancelar.Enabled = true;
+            
             asignar();
             dgvDetalles.Enabled = true;
             txtCodigo.Enabled = true;
@@ -358,7 +358,7 @@ namespace sistemaTarjetas
         {
             if (txtPrecio.Text.Length > 0)
             {
-                int importe = Convert.ToInt32(txtPrecio.Text) + Convert.ToInt32(txtCantidad.Value);
+                int importe = Convert.ToInt32(txtPrecio.Text) * Convert.ToInt32(txtCantidad.Value);
                 txtImporte.Text = importe.ToString();
             }
         }

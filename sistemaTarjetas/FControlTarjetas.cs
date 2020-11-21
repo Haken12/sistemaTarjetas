@@ -62,13 +62,15 @@ namespace sistemaTarjetas
 
         private void mToggle() 
         {
-            foreach  (Control ctr in groupBox1.Controls)
-            {
-                if (ctr.Name != "txtCodigo" & !(ctr is Button) & !(ctr is Label)) 
-                {
-                    ctr.Enabled = ctr.Enabled ? false : true;
-                }
-            }
+            txtNombre.Enabled = txtNombre.Enabled ? false : true;
+            txtReferencia.Enabled = txtNombre.Enabled;
+            txtTelefono.Enabled = txtNombre.Enabled; 
+            txtCedula.Enabled = txtNombre.Enabled;
+            dtpFechaT.Enabled = txtNombre.Enabled;
+            cbxFormaPago.Enabled = txtNombre.Enabled;
+            cbxVendedor.Enabled =  txtNombre.Enabled;
+            cbxZona.Enabled = txtNombre.Enabled;
+
         }
         private void opToggle() 
         {
@@ -79,11 +81,17 @@ namespace sistemaTarjetas
         }
         private void despejar() 
         {
+            txtCredito.Text = "0";
+            txtDebito.Text = "0";
+            txtBalance.Text = "0";
             txtNombre.Clear();
             txtCedula.Clear();
+            txtValor.Clear();
+            cbxTipo.SelectedIndex = 0;
             txtReferencia.Clear();
             txtTelefono.Clear();
-            dtpFecha.Value = DateTime.Today;     
+            dtpFecha.Value = DateTime.Today;
+            if (dgvDetalles.Rows.Count > 0) dsSistemaTarjetas.v_detalles_tarjeta.Rows.Clear();
         }
 
         private void FControlTarjetas_Load(object sender, EventArgs e)
@@ -114,7 +122,7 @@ namespace sistemaTarjetas
                 txtReferencia.Text,
                 txtCedula.Text,
                 txtTelefono.Text,
-                dtpFecha.Value,
+                dtpFechaT.Value,
                 (int)cbxVendedor.SelectedValue,
                 (int)cbxZona.SelectedValue,
                 cbxFormaPago.Text,ref codigo);
@@ -129,7 +137,7 @@ namespace sistemaTarjetas
                 txtReferencia.Text,
                 txtCedula.Text,
                 txtTelefono.Text,
-                dtpFecha.Value,
+                dtpFechaT.Value,
                 (int)cbxVendedor.SelectedValue,
                 (int)cbxZona.SelectedValue,
                 cbxFormaPago.Text,
@@ -251,17 +259,19 @@ namespace sistemaTarjetas
             foreach (DataRow row in dsSistemaTarjetas.v_detalles_tarjeta)
             {
                 creditos += (int)row[4];
-                debitos += (int)row[3];
-                balance = creditos - debitos;
-                txtCredito.Text = creditos.ToString();
-                txtDebito.Text = debitos.ToString();
-                txtBalance.Text = balance.ToString();
+                debitos += (int)row[3];               
             }
+            txtCredito.Text = creditos.ToString();
+            txtDebito.Text = debitos.ToString();
+            balance = creditos - debitos;
+            txtBalance.Text = balance.ToString();
+
         }
         private void btnNueva_Click(object sender, EventArgs e)
         {
             if (!txtNombre.Enabled) mToggle();
             despejar();
+            dgvDetalles.Enabled = false;
             txtCodigo.Enabled = false;
             btnBuscar.Enabled = false;
             btnNueva.Enabled = false;
@@ -271,7 +281,6 @@ namespace sistemaTarjetas
             // foreach (Control ctr in pnlOp.Controls) ctr.Enabled = false;
             if (txtValor.Enabled) opToggle();
             this.modo = Modo.Insertar;
-            dsSistemaTarjetas.v_detalles_tarjeta.Clear();
             txtNombre.Focus();
             
         }
@@ -280,55 +289,39 @@ namespace sistemaTarjetas
         {
             if (verificar()) 
             {
+                if (txtNombre.Enabled) mToggle();
+                if (!txtValor.Enabled) opToggle();
+                btnCancelar.Enabled = false;
+                btnGuardar.Enabled = false;
+                btnNueva.Enabled = true;
+                btnModificar.Enabled = true;
+                btnBuscar.Enabled = true;
                 switch (this.modo) 
                 {
                     case Modo.Insertar:
                         crear();
-                        txtNombre.Enabled = false;
-                        txtReferencia.Enabled = false;
-                        txtCodigo.Enabled = true;
-                        txtTelefono.Enabled = false;
-                        cbxVendedor.Enabled = false;
-                        cbxZona.Enabled = false;
-                        cbxFormaPago.Enabled = false;
-                        dtpFecha.Enabled = false;
-                        btnGuardar.Enabled = false;
-                        btnCancelar.Enabled = false;
-                        txtValor.Enabled = true;
-                        btnAsentar.Enabled = true;
-                        mToggle();
-                        cbxTipo.Focus();
                         break;
-
                     case Modo.Editar:
-                        actualizar();
-                        mToggle();
-                        opToggle();
-                        btnGuardar.Enabled = false;
-                        btnCancelar.Enabled = false;
-                        btnNueva.Enabled = true;
-
-                        txtCodigo.Enabled = true;
-                        btnBuscar.Enabled = true;
+                        actualizar();                   
                         break;
                 }
-                    
+                txtCodigo.Enabled = true;
+                asignar();
+                modo = Modo.Ver;
             }
         }
 
         private void txtCodigo_TextChanged(object sender, EventArgs e)
         {
-            txtNombre.Clear();
-            txtCedula.Clear();
-            txtReferencia.Clear();
-            txtTelefono.Clear();
-            dsSistemaTarjetas.v_detalles_tarjeta.Rows.Clear();
-            if (txtValor.Enabled) opToggle();
-            
-            if (txtCodigo.Text.Length > 0 /*& querys.tarjeta_existe(Convert.ToInt32(txtCodigo.Text)) != 0*/) 
-            {
+            if (modo == Modo.Ver) 
+            { 
+             despejar();
+             if (txtValor.Enabled) opToggle();
+
+             if (txtCodigo.Text.Length > 0 /*& querys.tarjeta_existe(Convert.ToInt32(txtCodigo.Text)) != 0*/)
+             {
                 int? c = querys.tarjeta_existe(Convert.ToInt32(txtCodigo.Text));
-                querys.unica_tarjeta(Convert.ToInt32(txtCodigo.Text),
+                querys.unica_tarjeta(c,
                     ref tarjeta.nombre,
                     ref tarjeta.referencia,
                     ref tarjeta.cedula,
@@ -337,32 +330,49 @@ namespace sistemaTarjetas
                     ref tarjeta.idVendedor,
                     ref tarjeta.idZona,
                     ref tarjeta.tipoPago);
-                if (c != 0) 
+                if (c != 0)
                 {
-                    txtNombre.Text = tarjeta.nombre;
-                    txtReferencia.Text = tarjeta.referencia;
-                    txtTelefono.Text = tarjeta.telefono;
-                    txtCedula.Text = tarjeta.cedula;
-                    dtpFecha.Value = tarjeta.fehcaCreacion.Value;
-                    cbxVendedor.SelectedValue = tarjeta.idVendedor;
-                    cbxZona.SelectedValue = tarjeta.idZona;
+                    cargar();
                     btnModificar.Enabled = true;
+                    dgvDetalles.Enabled = true;
                     if (!txtValor.Enabled) opToggle();
                     cbxTipo.SelectedIndex = 0;
-                    
                     v_detalles_tarjetaTableAdapter.Fill(dsSistemaTarjetas.v_detalles_tarjeta, Convert.ToInt32(txtCodigo.Text));
-                    txtCredito.Text = "0";
-                    txtDebito.Text = "0";
-                    txtBalance.Text = "0";
-                    if (dgvDetalles.Rows.Count > 0) 
+
+                    if (dgvDetalles.Rows.Count > 0)
                     {
                         calcularBalance();
                     }
                 }
 
+             }
             }
         }
 
+        private void asignar()
+        {
+            tarjeta.nombre = txtNombre.Text;
+            tarjeta.referencia = txtReferencia.Text;
+            tarjeta.cedula = txtCedula.Text;
+            tarjeta.telefono = txtTelefono.Text;
+            tarjeta.fehcaCreacion = dtpFechaT.Value;
+            tarjeta.tipoPago = cbxFormaPago.Text;
+            tarjeta.idVendedor = (int)cbxVendedor.SelectedValue;
+            tarjeta.idZona = (int)cbxZona.SelectedValue;
+            tarjeta.codigo = Convert.ToInt32(txtCodigo.Text);
+        }
+
+        private void cargar()
+        {
+            txtNombre.Text = tarjeta.nombre;
+            txtReferencia.Text = tarjeta.referencia;
+            txtCedula.Text = tarjeta.cedula;
+            txtTelefono.Text = tarjeta.telefono;
+            cbxFormaPago.SelectedText = tarjeta.tipoPago;
+            cbxVendedor.SelectedValue = tarjeta.idVendedor;
+            cbxZona.SelectedValue = tarjeta.idZona;
+            dtpFechaT.Value = tarjeta.fehcaCreacion.Value;
+        }
         private void btnModificar_Click(object sender, EventArgs e)
         {
             this.modo = Modo.Editar;
@@ -372,7 +382,8 @@ namespace sistemaTarjetas
             btnNueva.Enabled = false;
             btnGuardar.Enabled = true;
             btnCancelar.Enabled = true;
-
+            dtpFechaT.Enabled = true;
+            asignar();
             mToggle();
             opToggle();
         }
@@ -387,39 +398,38 @@ namespace sistemaTarjetas
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-         
+            using(FBuscarTarjeta fBuscar = new FBuscarTarjeta())
+            {
+                if (fBuscar.ShowDialog() == DialogResult.OK)
+                {
+                    int cd = fBuscar.seleccion;
+                    txtCodigo.Text = cd.ToString();
+                }
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            btnGuardar.Enabled = false;
+            btnCancelar.Enabled = false;
+            btnNueva.Enabled = true;
+            txtCodigo.Enabled = true;
+            btnBuscar.Enabled = true;
+            if (txtNombre.Enabled) mToggle();
+
             switch (this.modo)
             {
                 case Modo.Insertar:
                     despejar();
-                    txtCodigo.Enabled = true;
-                    btnGuardar.Enabled = false;
-                    btnCancelar.Enabled = false;
-                    btnNueva.Enabled = true;
-                    mToggle();
-
-                    txtCodigo.Focus();
                     break;
                 case Modo.Editar:
-                    txtNombre.Text = tarjeta.nombre;
-                    txtReferencia.Text = tarjeta.referencia;
-                    txtTelefono.Text = tarjeta.telefono;
-                    txtCedula.Text = tarjeta.cedula;
-                    dtpFecha.Value = tarjeta.fehcaCreacion.Value;
-                    cbxVendedor.SelectedValue = tarjeta.idVendedor;
-                    cbxZona.SelectedValue = tarjeta.idZona;
-                    txtCodigo.Enabled = true;
-                    btnBuscar.Enabled = true;
-                    btnGuardar.Enabled = false;
-                    btnCancelar.Enabled = false;
-                    btnNueva.Enabled = true;
-                    txtCodigo.Focus();
+                    cargar();
+                    btnModificar.Enabled = true;
+                    if (!txtValor.Enabled) opToggle();
                     break;
             }
+            modo = Modo.Ver;
+            txtCodigo.Focus();
         }
 
         private void btnAsentar_Click(object sender, EventArgs e)
@@ -429,7 +439,11 @@ namespace sistemaTarjetas
 
         private void txtValor_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter) asentar();
+            if (e.KeyCode == Keys.Enter) 
+            {
+         
+                asentar();
+            } 
         }
 
         private void dgvDetalles_KeyDown(object sender, KeyEventArgs e)
@@ -486,6 +500,19 @@ namespace sistemaTarjetas
             {
                 this.DialogResult = DialogResult.None;
             }
+        }
+
+        private void dgvDetalles_DoubleClick(object sender, EventArgs e)
+        {
+            string tipo = (string)dgvDetalles.SelectedCells[1].Value;
+            if (tipo == "Venta")
+            {
+
+            }else if (tipo == "Devolucion")
+            {
+
+            }
+            
         }
     }
 }

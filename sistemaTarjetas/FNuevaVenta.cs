@@ -198,5 +198,16 @@ namespace sistemaTarjetas
         {
           
         }
+
+        private void dgvVenta_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (dgvVenta.SelectedRows.Count > 0 & e.KeyCode == Keys.Delete)
+            {
+                if (Metodos.Confirmar())
+                {
+                    dsSistemaTarjetas.venta.Rows.RemoveAt(dgvVenta.SelectedRows[0].Index);
+                }
+            }
+        }
     }
 }
