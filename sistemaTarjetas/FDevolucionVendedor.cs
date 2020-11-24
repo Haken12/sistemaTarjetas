@@ -51,6 +51,8 @@ namespace sistemaTarjetas
             txtCodigoVendedor.Enabled = true;
             btnBuscarVendedor.Enabled = true;
             dgvArticulos.Enabled = false;
+            btnGuardar.Enabled = true;
+            btnCancelar.Enabled = true;
         }
 
         private void soloNumeros(object sender, KeyPressEventArgs e)
@@ -299,6 +301,11 @@ namespace sistemaTarjetas
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             cancelar();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

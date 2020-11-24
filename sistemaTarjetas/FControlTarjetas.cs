@@ -269,9 +269,13 @@ namespace sistemaTarjetas
         }
         private void btnNueva_Click(object sender, EventArgs e)
         {
+            this.modo = Modo.Insertar;
             if (!txtNombre.Enabled) mToggle();
+            dtpFechaT.Enabled = true;
+            txtCodigo.Clear();
             despejar();
             dgvDetalles.Enabled = false;
+            dtpFechaT.Enabled = false;
             txtCodigo.Enabled = false;
             btnBuscar.Enabled = false;
             btnNueva.Enabled = false;
@@ -280,7 +284,7 @@ namespace sistemaTarjetas
             btnCancelar.Enabled = true;
             // foreach (Control ctr in pnlOp.Controls) ctr.Enabled = false;
             if (txtValor.Enabled) opToggle();
-            this.modo = Modo.Insertar;
+           
             txtNombre.Focus();
             
         }
@@ -316,12 +320,15 @@ namespace sistemaTarjetas
             if (modo == Modo.Ver) 
             { 
              despejar();
+                btnModificar.Enabled = false; ;
              if (txtValor.Enabled) opToggle();
 
              if (txtCodigo.Text.Length > 0 /*& querys.tarjeta_existe(Convert.ToInt32(txtCodigo.Text)) != 0*/)
              {
+                
                 int? c = querys.tarjeta_existe(Convert.ToInt32(txtCodigo.Text));
-                querys.unica_tarjeta(c,
+                    tarjeta.codigo = Convert.ToInt32(txtCodigo.Text);
+                        querys.unica_tarjeta(tarjeta.codigo,
                     ref tarjeta.nombre,
                     ref tarjeta.referencia,
                     ref tarjeta.cedula,
@@ -337,7 +344,7 @@ namespace sistemaTarjetas
                     dgvDetalles.Enabled = true;
                     if (!txtValor.Enabled) opToggle();
                     cbxTipo.SelectedIndex = 0;
-                    v_detalles_tarjetaTableAdapter.Fill(dsSistemaTarjetas.v_detalles_tarjeta, Convert.ToInt32(txtCodigo.Text));
+                    v_detalles_tarjetaTableAdapter.Fill(dsSistemaTarjetas.v_detalles_tarjeta, tarjeta.codigo);
 
                     if (dgvDetalles.Rows.Count > 0)
                     {
@@ -504,13 +511,23 @@ namespace sistemaTarjetas
 
         private void dgvDetalles_DoubleClick(object sender, EventArgs e)
         {
-            string tipo = (string)dgvDetalles.SelectedCells[1].Value;
+            string tipo = (string)dgvDetalles.SelectedCells[2].Value;
             if (tipo == "Venta")
             {
-
+                using (FVerVenta fVer = new FVerVenta())
+                {
+                    fVer.numeroVenta = (int)dgvDetalles.SelectedCells[0].Value;
+                    fVer.codigoTarjeta = Convert.ToInt32(tarjeta.codigo);
+                    fVer.ShowDialog();
+                }
             }else if (tipo == "Devolucion")
             {
-
+                using (FVerDevolucionTarjeta fVer = new FVerDevolucionTarjeta())
+                {
+                    fVer.numeroDevolucion = (int)dgvDetalles.SelectedCells[0].Value;
+                    fVer.codigoTarjeta = Convert.ToInt32(tarjeta.codigo);
+                    fVer.ShowDialog();
+                }
             }
             
         }
