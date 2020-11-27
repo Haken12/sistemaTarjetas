@@ -129,5 +129,11 @@ namespace sistemaTarjetas
                 e.Cancel = true;
             }
         }
+
+        private void btnGastosV_Click(object sender, EventArgs e)
+        {
+            FGastos fGastos = new FGastos();
+            fGastos.ShowDialog();
+        }
     }
 }

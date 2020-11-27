@@ -154,8 +154,9 @@ namespace sistemaTarjetas
 
         private void btnBuscarProducto_Click(object sender, EventArgs e)
         {
-            using (FBuscarArticulo fBuscar = new FBuscarArticulo())
+            using (FSeleccionarArticulo fBuscar = new FSeleccionarArticulo())
             {
+                fBuscar.vendedor = Convert.ToInt32(txtCodigoVendedor.Text);
                 if (fBuscar.ShowDialog() == DialogResult.OK)
                 {
                     int res = fBuscar.articulo;
@@ -306,6 +307,17 @@ namespace sistemaTarjetas
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnBuscarDevolucion_Click(object sender, EventArgs e)
+        {
+            using (FBuscarDevolucion fBuscar = new FBuscarDevolucion()) { 
+                if (fBuscar.ShowDialog() == DialogResult.OK)
+                {
+                    int res = fBuscar.seleccion;
+                    txtNumero.Text = res.ToString();
+                }
+            }
         }
     }
 }

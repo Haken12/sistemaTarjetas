@@ -64,6 +64,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dsCuadre.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsCuadre.xsd</DependentUpon>
+    </Compile>
     <Compile Include="dsDespachos.cs">
       <DependentUpon>dsDespachos.xsd</DependentUpon>
     </Compile>
@@ -115,6 +120,18 @@
     </Compile>
     <Compile Include="FBuscarDespachos.Designer.cs">
       <DependentUpon>FBuscarDespachos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FBuscarDevolucion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FBuscarDevolucion.Designer.cs">
+      <DependentUpon>FBuscarDevolucion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FBuscarGasto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FBuscarGasto.Designer.cs">
+      <DependentUpon>FBuscarGasto.cs</DependentUpon>
     </Compile>
     <Compile Include="FBuscarTarjeta.cs">
       <SubType>Form</SubType>
@@ -169,6 +186,12 @@
     </Compile>
     <Compile Include="FDevolucionVendedor.Designer.cs">
       <DependentUpon>FDevolucionVendedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FGastos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FGastos.Designer.cs">
+      <DependentUpon>FGastos.cs</DependentUpon>
     </Compile>
     <Compile Include="FMain.cs">
       <SubType>Form</SubType>
@@ -262,6 +285,12 @@
     <EmbeddedResource Include="FBuscarDespachos.resx">
       <DependentUpon>FBuscarDespachos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FBuscarDevolucion.resx">
+      <DependentUpon>FBuscarDevolucion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FBuscarGasto.resx">
+      <DependentUpon>FBuscarGasto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FBuscarTarjeta.resx">
       <DependentUpon>FBuscarTarjeta.cs</DependentUpon>
     </EmbeddedResource>
@@ -288,6 +317,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FDevolucionVendedor.resx">
       <DependentUpon>FDevolucionVendedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FGastos.resx">
+      <DependentUpon>FGastos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FMain.resx">
       <DependentUpon>FMain.cs</DependentUpon>
@@ -335,6 +367,17 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Recursos.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="dsCuadre.xsc">
+      <DependentUpon>dsCuadre.xsd</DependentUpon>
+    </None>
+    <None Include="dsCuadre.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsCuadre.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsCuadre.xss">
+      <DependentUpon>dsCuadre.xsd</DependentUpon>
+    </None>
     <None Include="dsDespachos.xsc">
       <DependentUpon>dsDespachos.xsd</DependentUpon>
     </None>
@@ -396,6 +439,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="BD\script.sql" />
+    <None Include="Resources\Copy_24x24.png" />
     <None Include="Resources\Remove_16x16.png" />
     <None Include="Resources\Remove_24x24.png" />
   </ItemGroup>

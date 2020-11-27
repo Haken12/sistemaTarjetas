@@ -2,9 +2,10 @@
 <xs:schema id="dsDespachos" targetNamespace="http://tempuri.org/dsDespachos.xsd" xmlns:mstns="http://tempuri.org/dsDespachos.xsd" xmlns="http://tempuri.org/dsDespachos.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="queries" GeneratorFunctionsComponentClassName="queries" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" UserFunctionsComponentName="queries" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="queries" GeneratorFunctionsComponentClassName="queries" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" UserFunctionsComponentName="queries" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="sistemaTarjetasConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="sistemaTarjetasConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.sistemaTarjetas.Properties.Settings.GlobalReference.Default.sistemaTarjetasConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="sistemaTarjetasConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="sistemaTarjetasConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.sistemaTarjetas.Properties.Settings.GlobalReference.Default.sistemaTarjetasConnectionString1" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vProductosTableAdapter" GeneratorDataComponentClassName="vProductosTableAdapter" Name="vProductos" UserDataComponentName="vProductosTableAdapter">
@@ -119,9 +120,29 @@
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="verDevolucionesTableAdapter" GeneratorDataComponentClassName="verDevolucionesTableAdapter" Name="verDevoluciones" UserDataComponentName="verDevolucionesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="sistemaTarjetasConnectionString1 (Settings)" DbObjectName="sistemaTarjetas.dbo.verDevoluciones" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Numero, Fecha, id_vendedor, Vendedor, Valor FROM dbo.verDevoluciones</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Numero" DataSetColumn="Numero" />
+              <Mapping SourceColumn="Fecha" DataSetColumn="Fecha" />
+              <Mapping SourceColumn="id_vendedor" DataSetColumn="id_vendedor" />
+              <Mapping SourceColumn="Vendedor" DataSetColumn="Vendedor" />
+              <Mapping SourceColumn="Valor" DataSetColumn="Valor" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources>
-          <DbSource ConnectionRef="sistemaTarjetasConnectionString (Settings)" DbObjectName="sistemaTarjetas.dbo.despacho_existe" DbObjectType="Function" GenerateShortCommands="true" GeneratorSourceName="despacho_existe" MethodsParameterType="CLR" Modifier="Public" Name="despacho_existe" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="despacho_existe">
+          <DbSource ConnectionRef="sistemaTarjetasConnectionString (Settings)" DbObjectName="sistemaTarjetas.dbo.despacho_existe" DbObjectType="Function" GenerateShortCommands="true" GeneratorSourceName="despacho_existe" MethodsParameterType="CLR" Modifier="Public" Name="despacho_existe" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="despacho_existe">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.despacho_existe</CommandText>
@@ -132,7 +153,7 @@
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="sistemaTarjetasConnectionString (Settings)" DbObjectName="sistemaTarjetas.dbo.conseguir_despacho" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="conseguir_despacho" MethodsParameterType="CLR" Modifier="Public" Name="conseguir_despacho" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="conseguir_despacho">
+          <DbSource ConnectionRef="sistemaTarjetasConnectionString (Settings)" DbObjectName="sistemaTarjetas.dbo.conseguir_despacho" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="conseguir_despacho" MethodsParameterType="CLR" Modifier="Public" Name="conseguir_despacho" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="conseguir_despacho">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.conseguir_despacho</CommandText>
@@ -149,7 +170,7 @@
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="sistemaTarjetasConnectionString (Settings)" DbObjectName="sistemaTarjetas.dbo.actualizar_despacho" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="actualizar_despacho" MethodsParameterType="CLR" Modifier="Public" Name="actualizar_despacho" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="actualizar_despacho">
+          <DbSource ConnectionRef="sistemaTarjetasConnectionString (Settings)" DbObjectName="sistemaTarjetas.dbo.actualizar_despacho" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="actualizar_despacho" MethodsParameterType="CLR" Modifier="Public" Name="actualizar_despacho" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="actualizar_despacho">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.actualizar_despacho</CommandText>
@@ -165,7 +186,7 @@
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="sistemaTarjetasConnectionString (Settings)" DbObjectName="sistemaTarjetas.dbo.nuevo_despacho" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="nuevo_despacho" MethodsParameterType="CLR" Modifier="Public" Name="nuevo_despacho" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="nuevo_despacho">
+          <DbSource ConnectionRef="sistemaTarjetasConnectionString (Settings)" DbObjectName="sistemaTarjetas.dbo.nuevo_despacho" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="nuevo_despacho" MethodsParameterType="CLR" Modifier="Public" Name="nuevo_despacho" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="nuevo_despacho">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.nuevo_despacho</CommandText>
@@ -181,7 +202,7 @@
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="sistemaTarjetasConnectionString (Settings)" DbObjectName="sistemaTarjetas.dbo.devolucion_existe" DbObjectType="Function" GenerateShortCommands="true" GeneratorSourceName="devolucion_existe" MethodsParameterType="CLR" Modifier="Public" Name="devolucion_existe" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="devolucion_existe">
+          <DbSource ConnectionRef="sistemaTarjetasConnectionString (Settings)" DbObjectName="sistemaTarjetas.dbo.devolucion_existe" DbObjectType="Function" GenerateShortCommands="true" GeneratorSourceName="devolucion_existe" MethodsParameterType="CLR" Modifier="Public" Name="devolucion_existe" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="devolucion_existe">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.devolucion_existe</CommandText>
@@ -192,7 +213,7 @@
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="sistemaTarjetasConnectionString (Settings)" DbObjectName="sistemaTarjetas.dbo.conseguir_devolucion" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="conseguir_devolucion" MethodsParameterType="CLR" Modifier="Public" Name="conseguir_devolucion" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy7" UserSourceName="conseguir_devolucion">
+          <DbSource ConnectionRef="sistemaTarjetasConnectionString (Settings)" DbObjectName="sistemaTarjetas.dbo.conseguir_devolucion" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="conseguir_devolucion" MethodsParameterType="CLR" Modifier="Public" Name="conseguir_devolucion" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="conseguir_devolucion">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.conseguir_devolucion</CommandText>
@@ -207,7 +228,7 @@
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="sistemaTarjetasConnectionString (Settings)" DbObjectName="sistemaTarjetas.dbo.nueva_devolucion" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="nueva_devolucion" MethodsParameterType="CLR" Modifier="Public" Name="nueva_devolucion" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy8" UserSourceName="nueva_devolucion">
+          <DbSource ConnectionRef="sistemaTarjetasConnectionString (Settings)" DbObjectName="sistemaTarjetas.dbo.nueva_devolucion" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="nueva_devolucion" MethodsParameterType="CLR" Modifier="Public" Name="nueva_devolucion" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="nueva_devolucion">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.nueva_devolucion</CommandText>
@@ -220,7 +241,7 @@
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="sistemaTarjetasConnectionString (Settings)" DbObjectName="sistemaTarjetas.dbo.eliminarDetalleDespacho" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="eliminarDetalleDespacho" MethodsParameterType="CLR" Modifier="Public" Name="eliminarDetalleDespacho" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="eliminarDetalleDespacho">
+          <DbSource ConnectionRef="sistemaTarjetasConnectionString (Settings)" DbObjectName="sistemaTarjetas.dbo.eliminarDetalleDespacho" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="eliminarDetalleDespacho" MethodsParameterType="CLR" Modifier="Public" Name="eliminarDetalleDespacho" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy7" UserSourceName="eliminarDetalleDespacho">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.eliminarDetalleDespacho</CommandText>
@@ -235,7 +256,7 @@
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="sistemaTarjetasConnectionString (Settings)" DbObjectName="sistemaTarjetas.dbo.nuevo_detalle_despacho" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="nuevo_detalle_despacho" MethodsParameterType="CLR" Modifier="Public" Name="nuevo_detalle_despacho" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="nuevo_detalle_despacho">
+          <DbSource ConnectionRef="sistemaTarjetasConnectionString (Settings)" DbObjectName="sistemaTarjetas.dbo.nuevo_detalle_despacho" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="nuevo_detalle_despacho" MethodsParameterType="CLR" Modifier="Public" Name="nuevo_detalle_despacho" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy8" UserSourceName="nuevo_detalle_despacho">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.nuevo_detalle_despacho</CommandText>
@@ -295,7 +316,7 @@
   <xs:element name="dsDespachos" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsDespachos" msprop:Generator_UserDSName="dsDespachos">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="vProductos" msprop:Generator_TableClassName="vProductosDataTable" msprop:Generator_TableVarName="tablevProductos" msprop:Generator_RowChangedName="vProductosRowChanged" msprop:Generator_TablePropName="vProductos" msprop:Generator_RowDeletingName="vProductosRowDeleting" msprop:Generator_RowChangingName="vProductosRowChanging" msprop:Generator_RowEvHandlerName="vProductosRowChangeEventHandler" msprop:Generator_RowDeletedName="vProductosRowDeleted" msprop:Generator_RowClassName="vProductosRow" msprop:Generator_UserTableName="vProductos" msprop:Generator_RowEvArgName="vProductosRowChangeEvent">
+        <xs:element name="vProductos" msprop:Generator_TableClassName="vProductosDataTable" msprop:Generator_TableVarName="tablevProductos" msprop:Generator_TablePropName="vProductos" msprop:Generator_RowDeletingName="vProductosRowDeleting" msprop:Generator_RowChangingName="vProductosRowChanging" msprop:Generator_RowEvHandlerName="vProductosRowChangeEventHandler" msprop:Generator_RowDeletedName="vProductosRowDeleted" msprop:Generator_UserTableName="vProductos" msprop:Generator_RowChangedName="vProductosRowChanged" msprop:Generator_RowEvArgName="vProductosRowChangeEvent" msprop:Generator_RowClassName="vProductosRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Codigo" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnCodigo" msprop:Generator_ColumnPropNameInRow="Codigo" msprop:Generator_ColumnPropNameInTable="CodigoColumn" msprop:Generator_UserColumnName="Codigo" type="xs:int" />
@@ -312,7 +333,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="detalles_despacho" msprop:Generator_TableClassName="detalles_despachoDataTable" msprop:Generator_TableVarName="tabledetalles_despacho" msprop:Generator_TablePropName="detalles_despacho" msprop:Generator_RowDeletingName="detalles_despachoRowDeleting" msprop:Generator_RowChangingName="detalles_despachoRowChanging" msprop:Generator_RowEvHandlerName="detalles_despachoRowChangeEventHandler" msprop:Generator_RowDeletedName="detalles_despachoRowDeleted" msprop:Generator_UserTableName="detalles_despacho" msprop:Generator_RowChangedName="detalles_despachoRowChanged" msprop:Generator_RowEvArgName="detalles_despachoRowChangeEvent" msprop:Generator_RowClassName="detalles_despachoRow">
+        <xs:element name="detalles_despacho" msprop:Generator_TableClassName="detalles_despachoDataTable" msprop:Generator_TableVarName="tabledetalles_despacho" msprop:Generator_RowChangedName="detalles_despachoRowChanged" msprop:Generator_TablePropName="detalles_despacho" msprop:Generator_RowDeletingName="detalles_despachoRowDeleting" msprop:Generator_RowChangingName="detalles_despachoRowChanging" msprop:Generator_RowEvHandlerName="detalles_despachoRowChangeEventHandler" msprop:Generator_RowDeletedName="detalles_despachoRowDeleted" msprop:Generator_RowClassName="detalles_despachoRow" msprop:Generator_UserTableName="detalles_despacho" msprop:Generator_RowEvArgName="detalles_despachoRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Despacho" msprop:Generator_ColumnVarNameInTable="columnDespacho" msprop:Generator_ColumnPropNameInRow="Despacho" msprop:Generator_ColumnPropNameInTable="DespachoColumn" msprop:Generator_UserColumnName="Despacho" type="xs:int" minOccurs="0" />
@@ -331,7 +352,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="verDespachos" msprop:Generator_TableClassName="verDespachosDataTable" msprop:Generator_TableVarName="tableverDespachos" msprop:Generator_TablePropName="verDespachos" msprop:Generator_RowDeletingName="verDespachosRowDeleting" msprop:Generator_RowChangingName="verDespachosRowChanging" msprop:Generator_RowEvHandlerName="verDespachosRowChangeEventHandler" msprop:Generator_RowDeletedName="verDespachosRowDeleted" msprop:Generator_UserTableName="verDespachos" msprop:Generator_RowChangedName="verDespachosRowChanged" msprop:Generator_RowEvArgName="verDespachosRowChangeEvent" msprop:Generator_RowClassName="verDespachosRow">
+        <xs:element name="verDespachos" msprop:Generator_TableClassName="verDespachosDataTable" msprop:Generator_TableVarName="tableverDespachos" msprop:Generator_RowChangedName="verDespachosRowChanged" msprop:Generator_TablePropName="verDespachos" msprop:Generator_RowDeletingName="verDespachosRowDeleting" msprop:Generator_RowChangingName="verDespachosRowChanging" msprop:Generator_RowEvHandlerName="verDespachosRowChangeEventHandler" msprop:Generator_RowDeletedName="verDespachosRowDeleted" msprop:Generator_RowClassName="verDespachosRow" msprop:Generator_UserTableName="verDespachos" msprop:Generator_RowEvArgName="verDespachosRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Numero" msprop:Generator_ColumnVarNameInTable="columnNumero" msprop:Generator_ColumnPropNameInRow="Numero" msprop:Generator_ColumnPropNameInTable="NumeroColumn" msprop:Generator_UserColumnName="Numero" type="xs:int" />
@@ -349,7 +370,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="detalles_devoluciones" msprop:Generator_TableClassName="detalles_devolucionesDataTable" msprop:Generator_TableVarName="tabledetalles_devoluciones" msprop:Generator_TablePropName="detalles_devoluciones" msprop:Generator_RowDeletingName="detalles_devolucionesRowDeleting" msprop:Generator_RowChangingName="detalles_devolucionesRowChanging" msprop:Generator_RowEvHandlerName="detalles_devolucionesRowChangeEventHandler" msprop:Generator_RowDeletedName="detalles_devolucionesRowDeleted" msprop:Generator_UserTableName="detalles_devoluciones" msprop:Generator_RowChangedName="detalles_devolucionesRowChanged" msprop:Generator_RowEvArgName="detalles_devolucionesRowChangeEvent" msprop:Generator_RowClassName="detalles_devolucionesRow">
+        <xs:element name="detalles_devoluciones" msprop:Generator_TableClassName="detalles_devolucionesDataTable" msprop:Generator_TableVarName="tabledetalles_devoluciones" msprop:Generator_RowChangedName="detalles_devolucionesRowChanged" msprop:Generator_TablePropName="detalles_devoluciones" msprop:Generator_RowDeletingName="detalles_devolucionesRowDeleting" msprop:Generator_RowChangingName="detalles_devolucionesRowChanging" msprop:Generator_RowEvHandlerName="detalles_devolucionesRowChangeEventHandler" msprop:Generator_RowDeletedName="detalles_devolucionesRowDeleted" msprop:Generator_RowClassName="detalles_devolucionesRow" msprop:Generator_UserTableName="detalles_devoluciones" msprop:Generator_RowEvArgName="detalles_devolucionesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Numero" msprop:Generator_ColumnVarNameInTable="columnNumero" msprop:Generator_ColumnPropNameInRow="Numero" msprop:Generator_ColumnPropNameInTable="NumeroColumn" msprop:Generator_UserColumnName="Numero" type="xs:int" minOccurs="0" />
@@ -367,7 +388,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="v_inventario_vendedor" msprop:Generator_TableClassName="v_inventario_vendedorDataTable" msprop:Generator_TableVarName="tablev_inventario_vendedor" msprop:Generator_TablePropName="v_inventario_vendedor" msprop:Generator_RowDeletingName="v_inventario_vendedorRowDeleting" msprop:Generator_RowChangingName="v_inventario_vendedorRowChanging" msprop:Generator_RowEvHandlerName="v_inventario_vendedorRowChangeEventHandler" msprop:Generator_RowDeletedName="v_inventario_vendedorRowDeleted" msprop:Generator_UserTableName="v_inventario_vendedor" msprop:Generator_RowChangedName="v_inventario_vendedorRowChanged" msprop:Generator_RowEvArgName="v_inventario_vendedorRowChangeEvent" msprop:Generator_RowClassName="v_inventario_vendedorRow">
+        <xs:element name="v_inventario_vendedor" msprop:Generator_TableClassName="v_inventario_vendedorDataTable" msprop:Generator_TableVarName="tablev_inventario_vendedor" msprop:Generator_RowChangedName="v_inventario_vendedorRowChanged" msprop:Generator_TablePropName="v_inventario_vendedor" msprop:Generator_RowDeletingName="v_inventario_vendedorRowDeleting" msprop:Generator_RowChangingName="v_inventario_vendedorRowChanging" msprop:Generator_RowEvHandlerName="v_inventario_vendedorRowChangeEventHandler" msprop:Generator_RowDeletedName="v_inventario_vendedorRowDeleted" msprop:Generator_RowClassName="v_inventario_vendedorRow" msprop:Generator_UserTableName="v_inventario_vendedor" msprop:Generator_RowEvArgName="v_inventario_vendedorRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Codigo" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnCodigo" msprop:Generator_ColumnPropNameInRow="Codigo" msprop:Generator_ColumnPropNameInTable="CodigoColumn" msprop:Generator_UserColumnName="Codigo" type="xs:int" />
@@ -380,6 +401,23 @@
               </xs:element>
               <xs:element name="Precio" msprop:Generator_ColumnVarNameInTable="columnPrecio" msprop:Generator_ColumnPropNameInRow="Precio" msprop:Generator_ColumnPropNameInTable="PrecioColumn" msprop:Generator_UserColumnName="Precio" type="xs:int" minOccurs="0" />
               <xs:element name="Existencias" msprop:Generator_ColumnVarNameInTable="columnExistencias" msprop:Generator_ColumnPropNameInRow="Existencias" msprop:Generator_ColumnPropNameInTable="ExistenciasColumn" msprop:Generator_UserColumnName="Existencias" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="verDevoluciones" msprop:Generator_TableClassName="verDevolucionesDataTable" msprop:Generator_TableVarName="tableverDevoluciones" msprop:Generator_TablePropName="verDevoluciones" msprop:Generator_RowDeletingName="verDevolucionesRowDeleting" msprop:Generator_RowChangingName="verDevolucionesRowChanging" msprop:Generator_RowEvHandlerName="verDevolucionesRowChangeEventHandler" msprop:Generator_RowDeletedName="verDevolucionesRowDeleted" msprop:Generator_UserTableName="verDevoluciones" msprop:Generator_RowChangedName="verDevolucionesRowChanged" msprop:Generator_RowEvArgName="verDevolucionesRowChangeEvent" msprop:Generator_RowClassName="verDevolucionesRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Numero" msprop:Generator_ColumnVarNameInTable="columnNumero" msprop:Generator_ColumnPropNameInRow="Numero" msprop:Generator_ColumnPropNameInTable="NumeroColumn" msprop:Generator_UserColumnName="Numero" type="xs:int" />
+              <xs:element name="Fecha" msprop:Generator_ColumnVarNameInTable="columnFecha" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_UserColumnName="Fecha" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="id_vendedor" msprop:Generator_ColumnVarNameInTable="columnid_vendedor" msprop:Generator_ColumnPropNameInRow="id_vendedor" msprop:Generator_ColumnPropNameInTable="id_vendedorColumn" msprop:Generator_UserColumnName="id_vendedor" type="xs:int" minOccurs="0" />
+              <xs:element name="Vendedor" msprop:Generator_ColumnVarNameInTable="columnVendedor" msprop:Generator_ColumnPropNameInRow="Vendedor" msprop:Generator_ColumnPropNameInTable="VendedorColumn" msprop:Generator_UserColumnName="Vendedor">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Valor" msprop:Generator_ColumnVarNameInTable="columnValor" msprop:Generator_ColumnPropNameInRow="Valor" msprop:Generator_ColumnPropNameInTable="ValorColumn" msprop:Generator_UserColumnName="Valor" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -396,6 +434,10 @@
     <xs:unique name="v_inventario_vendedor_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:v_inventario_vendedor" />
       <xs:field xpath="mstns:Codigo" />
+    </xs:unique>
+    <xs:unique name="verDevoluciones_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:verDevoluciones" />
+      <xs:field xpath="mstns:Numero" />
     </xs:unique>
   </xs:element>
 </xs:schema>

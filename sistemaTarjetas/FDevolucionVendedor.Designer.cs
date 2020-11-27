@@ -34,7 +34,6 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.txtCodigoVendedor = new System.Windows.Forms.TextBox();
-            this.btnBuscarVendedor = new System.Windows.Forms.Button();
             this.lblNombre = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,16 +42,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txtExistencias = new System.Windows.Forms.TextBox();
             this.dgvArticulos = new System.Windows.Forms.DataGridView();
-            this.numeroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bsDevolver = new System.Windows.Forms.BindingSource(this.components);
-            this.dsDespachos = new sistemaTarjetas.dsDespachos();
             this.txtCantidad = new System.Windows.Forms.NumericUpDown();
-            this.btnBuscarProducto = new System.Windows.Forms.Button();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.txtImporte = new System.Windows.Forms.TextBox();
@@ -77,6 +67,16 @@
             this.txtNumero = new System.Windows.Forms.TextBox();
             this.querys = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.Querys();
             this.btnBuscarDevolucion = new System.Windows.Forms.Button();
+            this.btnBuscarProducto = new System.Windows.Forms.Button();
+            this.btnBuscarVendedor = new System.Windows.Forms.Button();
+            this.numeroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsDevolver = new System.Windows.Forms.BindingSource(this.components);
+            this.dsDespachos = new sistemaTarjetas.dsDespachos();
             this.queries = new sistemaTarjetas.dsDespachosTableAdapters.queries();
             this.bsInventario = new System.Windows.Forms.BindingSource(this.components);
             this.v_inventario_vendedorTableAdapter = new sistemaTarjetas.dsDespachosTableAdapters.v_inventario_vendedorTableAdapter();
@@ -85,11 +85,11 @@
             this.flowLayoutPanel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsDevolver)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsDespachos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSistemaTarjetas)).BeginInit();
             this.flowLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bsDevolver)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsDespachos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsInventario)).BeginInit();
             this.SuspendLayout();
             // 
@@ -134,17 +134,6 @@
             this.txtCodigoVendedor.TabIndex = 0;
             this.txtCodigoVendedor.TextChanged += new System.EventHandler(this.txtCodigoVendedor_TextChanged);
             this.txtCodigoVendedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.soloNumeros);
-            // 
-            // btnBuscarVendedor
-            // 
-            this.btnBuscarVendedor.Enabled = false;
-            this.btnBuscarVendedor.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscarVendedor.Image")));
-            this.btnBuscarVendedor.Location = new System.Drawing.Point(104, 3);
-            this.btnBuscarVendedor.Name = "btnBuscarVendedor";
-            this.btnBuscarVendedor.Size = new System.Drawing.Size(34, 23);
-            this.btnBuscarVendedor.TabIndex = 2;
-            this.btnBuscarVendedor.UseVisualStyleBackColor = true;
-            this.btnBuscarVendedor.Click += new System.EventHandler(this.btnBuscarVendedor_Click);
             // 
             // lblNombre
             // 
@@ -249,64 +238,6 @@
             this.dgvArticulos.TabIndex = 12;
             this.dgvArticulos.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvArticulos_KeyDown);
             // 
-            // numeroDataGridViewTextBoxColumn
-            // 
-            this.numeroDataGridViewTextBoxColumn.DataPropertyName = "Numero";
-            this.numeroDataGridViewTextBoxColumn.HeaderText = "Numero";
-            this.numeroDataGridViewTextBoxColumn.Name = "numeroDataGridViewTextBoxColumn";
-            this.numeroDataGridViewTextBoxColumn.ReadOnly = true;
-            this.numeroDataGridViewTextBoxColumn.Width = 50;
-            // 
-            // codigoDataGridViewTextBoxColumn
-            // 
-            this.codigoDataGridViewTextBoxColumn.DataPropertyName = "Codigo";
-            this.codigoDataGridViewTextBoxColumn.HeaderText = "Codigo";
-            this.codigoDataGridViewTextBoxColumn.Name = "codigoDataGridViewTextBoxColumn";
-            this.codigoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.codigoDataGridViewTextBoxColumn.Width = 50;
-            // 
-            // descripcionDataGridViewTextBoxColumn
-            // 
-            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
-            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.descripcionDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // cantidadDataGridViewTextBoxColumn
-            // 
-            this.cantidadDataGridViewTextBoxColumn.DataPropertyName = "Cantidad";
-            this.cantidadDataGridViewTextBoxColumn.HeaderText = "Cantidad";
-            this.cantidadDataGridViewTextBoxColumn.Name = "cantidadDataGridViewTextBoxColumn";
-            this.cantidadDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cantidadDataGridViewTextBoxColumn.Width = 80;
-            // 
-            // precioDataGridViewTextBoxColumn
-            // 
-            this.precioDataGridViewTextBoxColumn.DataPropertyName = "Precio";
-            this.precioDataGridViewTextBoxColumn.HeaderText = "Precio";
-            this.precioDataGridViewTextBoxColumn.Name = "precioDataGridViewTextBoxColumn";
-            this.precioDataGridViewTextBoxColumn.ReadOnly = true;
-            this.precioDataGridViewTextBoxColumn.Width = 80;
-            // 
-            // valorDataGridViewTextBoxColumn
-            // 
-            this.valorDataGridViewTextBoxColumn.DataPropertyName = "Valor";
-            this.valorDataGridViewTextBoxColumn.HeaderText = "Valor";
-            this.valorDataGridViewTextBoxColumn.Name = "valorDataGridViewTextBoxColumn";
-            this.valorDataGridViewTextBoxColumn.ReadOnly = true;
-            this.valorDataGridViewTextBoxColumn.Width = 80;
-            // 
-            // bsDevolver
-            // 
-            this.bsDevolver.DataMember = "detalles_devoluciones";
-            this.bsDevolver.DataSource = this.dsDespachos;
-            // 
-            // dsDespachos
-            // 
-            this.dsDespachos.DataSetName = "dsDespachos";
-            this.dsDespachos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // txtCantidad
             // 
             this.txtCantidad.Enabled = false;
@@ -316,17 +247,6 @@
             this.txtCantidad.TabIndex = 2;
             this.txtCantidad.ValueChanged += new System.EventHandler(this.txtCantidad_ValueChanged);
             this.txtCantidad.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCantidad_KeyDown);
-            // 
-            // btnBuscarProducto
-            // 
-            this.btnBuscarProducto.Enabled = false;
-            this.btnBuscarProducto.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscarProducto.Image")));
-            this.btnBuscarProducto.Location = new System.Drawing.Point(97, 29);
-            this.btnBuscarProducto.Name = "btnBuscarProducto";
-            this.btnBuscarProducto.Size = new System.Drawing.Size(29, 23);
-            this.btnBuscarProducto.TabIndex = 10;
-            this.btnBuscarProducto.UseVisualStyleBackColor = true;
-            this.btnBuscarProducto.Click += new System.EventHandler(this.btnBuscarProducto_Click);
             // 
             // txtDescripcion
             // 
@@ -543,6 +463,87 @@
             this.btnBuscarDevolucion.Size = new System.Drawing.Size(34, 23);
             this.btnBuscarDevolucion.TabIndex = 9;
             this.btnBuscarDevolucion.UseVisualStyleBackColor = true;
+            this.btnBuscarDevolucion.Click += new System.EventHandler(this.btnBuscarDevolucion_Click);
+            // 
+            // btnBuscarProducto
+            // 
+            this.btnBuscarProducto.Enabled = false;
+            this.btnBuscarProducto.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscarProducto.Image")));
+            this.btnBuscarProducto.Location = new System.Drawing.Point(97, 29);
+            this.btnBuscarProducto.Name = "btnBuscarProducto";
+            this.btnBuscarProducto.Size = new System.Drawing.Size(29, 23);
+            this.btnBuscarProducto.TabIndex = 10;
+            this.btnBuscarProducto.UseVisualStyleBackColor = true;
+            this.btnBuscarProducto.Click += new System.EventHandler(this.btnBuscarProducto_Click);
+            // 
+            // btnBuscarVendedor
+            // 
+            this.btnBuscarVendedor.Enabled = false;
+            this.btnBuscarVendedor.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscarVendedor.Image")));
+            this.btnBuscarVendedor.Location = new System.Drawing.Point(104, 3);
+            this.btnBuscarVendedor.Name = "btnBuscarVendedor";
+            this.btnBuscarVendedor.Size = new System.Drawing.Size(34, 23);
+            this.btnBuscarVendedor.TabIndex = 2;
+            this.btnBuscarVendedor.UseVisualStyleBackColor = true;
+            this.btnBuscarVendedor.Click += new System.EventHandler(this.btnBuscarVendedor_Click);
+            // 
+            // numeroDataGridViewTextBoxColumn
+            // 
+            this.numeroDataGridViewTextBoxColumn.DataPropertyName = "Numero";
+            this.numeroDataGridViewTextBoxColumn.HeaderText = "Numero";
+            this.numeroDataGridViewTextBoxColumn.Name = "numeroDataGridViewTextBoxColumn";
+            this.numeroDataGridViewTextBoxColumn.ReadOnly = true;
+            this.numeroDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // codigoDataGridViewTextBoxColumn
+            // 
+            this.codigoDataGridViewTextBoxColumn.DataPropertyName = "Codigo";
+            this.codigoDataGridViewTextBoxColumn.HeaderText = "Codigo";
+            this.codigoDataGridViewTextBoxColumn.Name = "codigoDataGridViewTextBoxColumn";
+            this.codigoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.codigoDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // descripcionDataGridViewTextBoxColumn
+            // 
+            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
+            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.descripcionDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // cantidadDataGridViewTextBoxColumn
+            // 
+            this.cantidadDataGridViewTextBoxColumn.DataPropertyName = "Cantidad";
+            this.cantidadDataGridViewTextBoxColumn.HeaderText = "Cantidad";
+            this.cantidadDataGridViewTextBoxColumn.Name = "cantidadDataGridViewTextBoxColumn";
+            this.cantidadDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cantidadDataGridViewTextBoxColumn.Width = 80;
+            // 
+            // precioDataGridViewTextBoxColumn
+            // 
+            this.precioDataGridViewTextBoxColumn.DataPropertyName = "Precio";
+            this.precioDataGridViewTextBoxColumn.HeaderText = "Precio";
+            this.precioDataGridViewTextBoxColumn.Name = "precioDataGridViewTextBoxColumn";
+            this.precioDataGridViewTextBoxColumn.ReadOnly = true;
+            this.precioDataGridViewTextBoxColumn.Width = 80;
+            // 
+            // valorDataGridViewTextBoxColumn
+            // 
+            this.valorDataGridViewTextBoxColumn.DataPropertyName = "Valor";
+            this.valorDataGridViewTextBoxColumn.HeaderText = "Valor";
+            this.valorDataGridViewTextBoxColumn.Name = "valorDataGridViewTextBoxColumn";
+            this.valorDataGridViewTextBoxColumn.ReadOnly = true;
+            this.valorDataGridViewTextBoxColumn.Width = 80;
+            // 
+            // bsDevolver
+            // 
+            this.bsDevolver.DataMember = "detalles_devoluciones";
+            this.bsDevolver.DataSource = this.dsDespachos;
+            // 
+            // dsDespachos
+            // 
+            this.dsDespachos.DataSetName = "dsDespachos";
+            this.dsDespachos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bsInventario
             // 
@@ -580,11 +581,11 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsDevolver)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsDespachos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSistemaTarjetas)).EndInit();
             this.flowLayoutPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bsDevolver)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsDespachos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsInventario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
