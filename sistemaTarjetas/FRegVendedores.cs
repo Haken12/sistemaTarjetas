@@ -152,6 +152,11 @@ namespace sistemaTarjetas
             if (e.KeyChar == (char)8) return;
             e.Handled = true;
         }
+
+        private void asignar()
+        {
+
+        }
         private void cargar() 
         {
             querys.unico_vendedor(
@@ -205,7 +210,7 @@ namespace sistemaTarjetas
         private void btnModificar_Click(object sender, EventArgs e)
         {
             txtId.Enabled = false;
-            
+            btnEliminar.Enabled = true;
             btnBuscar.Enabled = false;            
             btnModificar.Enabled = false;
             btnNuevo.Enabled = false;
@@ -242,8 +247,11 @@ namespace sistemaTarjetas
                     desactivar();
                     break;
                 case Modo.Editar:
+                    int cd = Convert.ToInt32(txtId.Text);
                     despejar();
+                    txtId.Text = cd.ToString();
                     cargar();
+                    btnModificar.Enabled = true;
                     btnEliminar.Enabled = true;
                     desactivar();
                     break;
@@ -255,7 +263,7 @@ namespace sistemaTarjetas
             btnNuevo.Enabled = true;
             txtId.Enabled = true;
             btnBuscar.Enabled = true;
-            txtId.Clear();
+            
             txtId.Focus();
 
         }

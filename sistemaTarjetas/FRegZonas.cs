@@ -180,7 +180,7 @@ namespace sistemaTarjetas
                 limpiar();
                 btnModificar.Enabled = false;
                 btnEliminar.Enabled = false;
-                if (txtIdZona.TextLength > 0)
+                if (txtIdZona.TextLength > 0 & txtIdZona.Text !="1")
                 {
                     zona.id = Convert.ToInt32(txtIdZona.Text);
                     if (querys.zona_existe(zona.id) != 0)
@@ -217,6 +217,7 @@ namespace sistemaTarjetas
             btnNueva.Enabled = true;
             btnGuardar.Enabled = false;
             btnCancelar.Enabled = false;
+            btnBuscar.Enabled = true;
             txtIdZona.Focus();
             txtIdZona.SelectAll();
             modo = Modo.Ver;
@@ -297,7 +298,7 @@ namespace sistemaTarjetas
                 if (fBuscar.ShowDialog() == DialogResult.OK)
                 {
                     zona.id = fBuscar.Id;
-
+                    txtIdZona.Text = zona.id.ToString();
                 }
             }
         }

@@ -386,6 +386,7 @@ namespace sistemaTarjetas
             this.Controls.Add(this.txtNumero);
             this.Controls.Add(this.label1);
             this.Name = "FGastos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gastos";
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsVerDetalles)).EndInit();

@@ -202,6 +202,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvBuscar);
             this.Name = "FBuscarAyudante";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FBuscarAyudante_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBuscar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsBuscar)).EndInit();

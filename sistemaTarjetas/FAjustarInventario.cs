@@ -26,10 +26,24 @@ namespace sistemaTarjetas
 
         private void txtCodigo_TextChanged(object sender, EventArgs e)
         {
+            txtArticulo.Clear();
+            txtMedida.Clear();
+            txtActual.Clear();
+            txtPrecio.Clear();
+            txtCosto.Clear();
+            txtCantidad.Text = "0";
             if (txtCodigo.Text.Length > 0)
             {
                 int codigo = Convert.ToInt32(txtCodigo.Text);
-                bsArticulos.Position = bsArticulos.Find("Codigo", codigo);
+                DataRow articulo = dsSistemaTarjetas.v_articulos.FindByCodigo(codigo);
+                if(articulo != null)
+                {
+                    txtArticulo.Text = (string)articulo[1];
+                    txtMedida.Text = (string)articulo[5];
+                    txtCosto.Text = Convert.ToInt32(articulo[2]).ToString();
+                    txtPrecio.Text = Convert.ToInt32(articulo[3]).ToString();
+                    txtActual.Text = Convert.ToInt32(articulo[4]).ToString();
+                }
             }
         }
 
@@ -58,16 +72,9 @@ namespace sistemaTarjetas
                 else if (rbSumar.Checked)
                 {
                     querys.ajustar_producto_b(codigo, cantidad);
-                }
-
-                int posicion = bsArticulos.Position;
-                v_articulosTableAdapter.Fill(dsSistemaTarjetas.v_articulos);
-                bsArticulos.Position = posicion;
-
-                txtCodigo.Clear();
-                
-                txtCantidad.Text = "0";
-                
+                }               
+                v_articulosTableAdapter.Fill(dsSistemaTarjetas.v_articulos);                
+                txtCodigo.Clear();                
                 txtCodigo.Focus();
             }
         }

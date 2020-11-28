@@ -32,6 +32,9 @@ namespace sistemaTarjetas
                 txtId.Enabled = true;
                 txtVendedor.Enabled = false;
                 txtDescripcion.Enabled = false;
+                txtDescripcion.Clear();
+                txtId.Clear();
+                txtVendedor.Clear();
                 bsBuscar.Filter = "";
                 txtId.Focus();
             }
@@ -44,6 +47,9 @@ namespace sistemaTarjetas
                 txtId.Enabled = false;
                 txtVendedor.Enabled = true;
                 txtDescripcion.Enabled = false;
+                txtDescripcion.Clear();
+                txtId.Clear();
+                txtVendedor.Clear();
                 bsBuscar.Filter = "";
                 txtVendedor.Focus();
             }
@@ -51,14 +57,7 @@ namespace sistemaTarjetas
 
         private void rbDescripcion_TextChanged(object sender, EventArgs e)
         {
-            if (((RadioButton)sender).Checked)
-            {
-                txtId.Enabled = false;
-                txtVendedor.Enabled = false;
-                txtDescripcion.Enabled = true;
-                bsBuscar.Filter = "";
-                txtDescripcion.Focus();
-            }
+           
         }
 
         private void txtId_KeyPress(object sender, KeyPressEventArgs e)
@@ -72,6 +71,7 @@ namespace sistemaTarjetas
         {
             if (Char.IsLetter(e.KeyChar)) return;
             if (Char.IsControl(e.KeyChar)) return;
+            if (Char.IsWhiteSpace(e.KeyChar)) return;
             e.Handled = true;
         }
 
@@ -79,6 +79,7 @@ namespace sistemaTarjetas
         {
             if (Char.IsLetter(e.KeyChar)) return;
             if (Char.IsControl(e.KeyChar)) return;
+            if (Char.IsWhiteSpace(e.KeyChar)) return;
             e.Handled = true;
         }
 
@@ -108,7 +109,7 @@ namespace sistemaTarjetas
             if (txtDescripcion.TextLength != 0)
             {
                 string descripcion = txtDescripcion.Text;
-                bsBuscar.Filter = $"Vendedor LIKE '{descripcion}%'";
+                bsBuscar.Filter = $"Descripcion LIKE '{descripcion}%'";
             }
         }
 
@@ -120,6 +121,21 @@ namespace sistemaTarjetas
             }
             else this.DialogResult = DialogResult.None;
 
+        }
+
+        private void rbDescripcion_CheckedChanged(object sender, EventArgs e)
+        {
+            if (((RadioButton)sender).Checked)
+            {
+                txtId.Enabled = false;
+                txtVendedor.Enabled = false;
+                txtDescripcion.Enabled = true;
+                txtDescripcion.Clear();
+                txtId.Clear();
+                txtVendedor.Clear();
+                bsBuscar.Filter = "";
+                txtDescripcion.Focus();
+            }
         }
     }
 }

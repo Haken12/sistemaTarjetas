@@ -31,7 +31,6 @@ namespace sistemaTarjetas
         {
             this.components = new System.ComponentModel.Container();
             this.dgvVer = new System.Windows.Forms.DataGridView();
-            this.btnCerrar = new System.Windows.Forms.Button();
             this.noDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,6 +38,7 @@ namespace sistemaTarjetas
             this.importeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsVerVenta = new System.Windows.Forms.BindingSource(this.components);
             this.dsSistemaTarjetas = new sistemaTarjetas.dsSistemaTarjetas();
+            this.btnCerrar = new System.Windows.Forms.Button();
             this.verDetallesVentaTableAdapter = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.verDetallesVentaTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsVerVenta)).BeginInit();
@@ -68,16 +68,6 @@ namespace sistemaTarjetas
             this.dgvVer.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvVer.Size = new System.Drawing.Size(458, 227);
             this.dgvVer.TabIndex = 0;
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.Location = new System.Drawing.Point(375, 274);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(95, 53);
-            this.btnCerrar.TabIndex = 1;
-            this.btnCerrar.Text = "Cerrar";
-            this.btnCerrar.UseVisualStyleBackColor = true;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // noDataGridViewTextBoxColumn
             // 
@@ -129,6 +119,16 @@ namespace sistemaTarjetas
             this.dsSistemaTarjetas.DataSetName = "dsSistemaTarjetas";
             this.dsSistemaTarjetas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Location = new System.Drawing.Point(375, 274);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(95, 53);
+            this.btnCerrar.TabIndex = 1;
+            this.btnCerrar.Text = "Cerrar";
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
             // verDetallesVentaTableAdapter
             // 
             this.verDetallesVentaTableAdapter.ClearBeforeFill = true;
@@ -138,9 +138,11 @@ namespace sistemaTarjetas
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(502, 347);
+            this.ControlBox = false;
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.dgvVer);
             this.Name = "FVerVenta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Detalles Venta";
             this.Load += new System.EventHandler(this.FVerVenta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVer)).EndInit();

@@ -55,6 +55,7 @@ namespace sistemaTarjetas
                         return false;
                     }
                 }
+
             }
             if (txtDescripcion.Text == "")
             {
@@ -114,7 +115,7 @@ namespace sistemaTarjetas
                     querys.articulo_por_id(articulo.codigo, ref articulo.descripcion, ref articulo.costo, ref articulo.precio, ref articulo.unidad);
                     cargar();
                     btnModificar.Enabled = true;
-                    btnNuevo.Enabled = false;
+                   
                 }
                 
             }

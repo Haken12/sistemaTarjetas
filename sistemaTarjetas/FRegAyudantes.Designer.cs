@@ -369,7 +369,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FRegAyudantes";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de Ayudantes";
             this.Load += new System.EventHandler(this.FRegAyudantes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtComision)).EndInit();

@@ -249,6 +249,7 @@
             this.Font = new System.Drawing.Font("Meiryo UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FRegZonas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de Zonas";
             this.Load += new System.EventHandler(this.FRegZonas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bsVendedores)).EndInit();

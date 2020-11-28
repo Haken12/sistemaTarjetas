@@ -573,6 +573,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox1);
             this.Name = "FDespachoVendedor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Despacho de Mercancia";
             this.Load += new System.EventHandler(this.FDespachoVendedor_Load);
             this.groupBox1.ResumeLayout(false);

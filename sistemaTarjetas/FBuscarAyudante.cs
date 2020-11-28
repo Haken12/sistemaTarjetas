@@ -22,7 +22,7 @@ namespace sistemaTarjetas
         {
             // TODO: esta línea de código carga datos en la tabla 'dsSistemaTarjetas.v_ayudante' Puede moverla o quitarla según sea necesario.
             this.v_ayudanteTableAdapter.Fill(this.dsSistemaTarjetas.v_ayudante);
-
+           
         }
 
         private void rbId_CheckedChanged(object sender, EventArgs e)
@@ -31,6 +31,7 @@ namespace sistemaTarjetas
             {
                 txtId.Enabled = true;
                 txtNombre.Enabled = false;
+                bsBuscar.Filter = "";
                 txtId.Focus();
             }
         }
@@ -41,6 +42,7 @@ namespace sistemaTarjetas
             {
                 txtId.Enabled = false;
                 txtNombre.Enabled = true;
+                bsBuscar.Filter = "";
                 txtNombre.Focus();
             }
         }
@@ -86,6 +88,7 @@ namespace sistemaTarjetas
         {
             if (Char.IsLetter(e.KeyChar)) return;
             if (Char.IsControl(e.KeyChar)) return;
+            if (Char.IsWhiteSpace(e.KeyChar)) return;
             e.Handled = true;
         }
 

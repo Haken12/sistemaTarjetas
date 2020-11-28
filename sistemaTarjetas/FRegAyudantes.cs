@@ -221,18 +221,21 @@ namespace sistemaTarjetas
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            modo = Modo.Editar;
-            txtId.Enabled = false;
-            btnBuscar.Enabled = false;            
-            btnModificar.Enabled = false;
-            
-            btnNuevo.Enabled = false;
-            btnEliminar.Enabled = false;
-            btnGuardar.Enabled = true;
-            btnCancelar.Enabled = true;
-            asignar();
-            activar();
-            txtNombre.Focus();
+            if (txtId.Text != "1")
+            {
+                modo = Modo.Editar;
+                txtId.Enabled = false;
+                btnBuscar.Enabled = false;
+                btnModificar.Enabled = false;
+
+                btnNuevo.Enabled = false;
+                btnEliminar.Enabled = false;
+                btnGuardar.Enabled = true;
+                btnCancelar.Enabled = true;
+                asignar();
+                activar();
+                txtNombre.Focus();
+            }
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -299,37 +302,41 @@ namespace sistemaTarjetas
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(txtId.Text);
-            int? resultado = querys.ayudante_asignado(id);
-            if (resultado == 0) {
-                querys.eliminar_ayudante(id, 1);
-                despejar();
-                desactivar();
-                btnModificar.Enabled = false;
-                btnNuevo.Enabled = true;
-                btnGuardar.Enabled = false;
-                btnCancelar.Enabled = false;
-                btnEliminar.Enabled = false;
-                txtId.Enabled = true;
-                txtId.Focus();
-            }
-            else
+            if (txtId.Text != "1")
             {
-                using (FReasignarAyudante fReasignar = new FReasignarAyudante())
+                int id = Convert.ToInt32(txtId.Text);
+                int? resultado = querys.ayudante_asignado(id);
+                if (resultado == 0)
                 {
-                    if (fReasignar.ShowDialog() == DialogResult.OK)
+                    querys.eliminar_ayudante(id, 1);
+                    despejar();
+                    desactivar();
+                    btnModificar.Enabled = false;
+                    btnNuevo.Enabled = true;
+                    btnGuardar.Enabled = false;
+                    btnCancelar.Enabled = false;
+                    btnEliminar.Enabled = false;
+                    txtId.Enabled = true;
+                    txtId.Focus();
+                }
+                else
+                {
+                    using (FReasignarAyudante fReasignar = new FReasignarAyudante())
                     {
-                        int nuevoId = fReasignar.seleccion;
-                        querys.eliminar_ayudante(id, nuevoId);
-                        despejar();
-                        desactivar();
-                        btnModificar.Enabled = false;
-                        btnNuevo.Enabled = true;
-                        btnGuardar.Enabled = false;
-                        btnCancelar.Enabled = false;
-                        btnEliminar.Enabled = false;
-                        txtId.Enabled = true;
-                        txtId.Focus();
+                        if (fReasignar.ShowDialog() == DialogResult.OK)
+                        {
+                            int nuevoId = fReasignar.seleccion;
+                            querys.eliminar_ayudante(id, nuevoId);
+                            despejar();
+                            desactivar();
+                            btnModificar.Enabled = false;
+                            btnNuevo.Enabled = true;
+                            btnGuardar.Enabled = false;
+                            btnCancelar.Enabled = false;
+                            btnEliminar.Enabled = false;
+                            txtId.Enabled = true;
+                            txtId.Focus();
+                        }
                     }
                 }
             }

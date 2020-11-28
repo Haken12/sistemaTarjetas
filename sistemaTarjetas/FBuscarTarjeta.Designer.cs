@@ -29,8 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.dgvTarjetas = new System.Windows.Forms.DataGridView();
@@ -52,7 +51,7 @@
             // 
             this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancelar.Image = global::sistemaTarjetas.Recursos._50__3_;
-            this.btnCancelar.Location = new System.Drawing.Point(488, 342);
+            this.btnCancelar.Location = new System.Drawing.Point(145, 359);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(98, 46);
             this.btnCancelar.TabIndex = 0;
@@ -64,7 +63,7 @@
             // 
             this.btnAceptar.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnAceptar.Image = global::sistemaTarjetas.Recursos._02__3_;
-            this.btnAceptar.Location = new System.Drawing.Point(320, 342);
+            this.btnAceptar.Location = new System.Drawing.Point(12, 359);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(116, 46);
             this.btnAceptar.TabIndex = 1;
@@ -80,14 +79,14 @@
             this.dgvTarjetas.AllowUserToResizeColumns = false;
             this.dgvTarjetas.AllowUserToResizeRows = false;
             this.dgvTarjetas.AutoGenerateColumns = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Meiryo UI", 8F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTarjetas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Meiryo UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTarjetas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvTarjetas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTarjetas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codigoDataGridViewTextBoxColumn,
@@ -97,21 +96,13 @@
             this.vendedorDataGridViewTextBoxColumn,
             this.zonaDataGridViewTextBoxColumn});
             this.dgvTarjetas.DataSource = this.bsTarjetas;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Meiryo UI", 8F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTarjetas.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvTarjetas.Location = new System.Drawing.Point(12, 60);
             this.dgvTarjetas.MultiSelect = false;
             this.dgvTarjetas.Name = "dgvTarjetas";
             this.dgvTarjetas.ReadOnly = true;
             this.dgvTarjetas.RowHeadersVisible = false;
             this.dgvTarjetas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTarjetas.Size = new System.Drawing.Size(903, 276);
+            this.dgvTarjetas.Size = new System.Drawing.Size(1136, 276);
             this.dgvTarjetas.TabIndex = 2;
             // 
             // bsTarjetas
@@ -142,7 +133,7 @@
             this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
             this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
             this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nombreDataGridViewTextBoxColumn.Width = 180;
+            this.nombreDataGridViewTextBoxColumn.Width = 150;
             // 
             // referenciaDataGridViewTextBoxColumn
             // 
@@ -150,7 +141,7 @@
             this.referenciaDataGridViewTextBoxColumn.HeaderText = "Referencia";
             this.referenciaDataGridViewTextBoxColumn.Name = "referenciaDataGridViewTextBoxColumn";
             this.referenciaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.referenciaDataGridViewTextBoxColumn.Width = 200;
+            this.referenciaDataGridViewTextBoxColumn.Width = 300;
             // 
             // fechaDataGridViewTextBoxColumn
             // 
@@ -158,7 +149,7 @@
             this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
             this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
             this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.fechaDataGridViewTextBoxColumn.Width = 70;
+            this.fechaDataGridViewTextBoxColumn.Width = 120;
             // 
             // vendedorDataGridViewTextBoxColumn
             // 
@@ -174,7 +165,7 @@
             this.zonaDataGridViewTextBoxColumn.HeaderText = "Zona";
             this.zonaDataGridViewTextBoxColumn.Name = "zonaDataGridViewTextBoxColumn";
             this.zonaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.zonaDataGridViewTextBoxColumn.Width = 200;
+            this.zonaDataGridViewTextBoxColumn.Width = 300;
             // 
             // FBuscarTarjeta
             // 
@@ -182,7 +173,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(67)))), ((int)(((byte)(120)))));
-            this.ClientSize = new System.Drawing.Size(927, 437);
+            this.ClientSize = new System.Drawing.Size(1160, 437);
             this.ControlBox = false;
             this.Controls.Add(this.dgvTarjetas);
             this.Controls.Add(this.btnAceptar);

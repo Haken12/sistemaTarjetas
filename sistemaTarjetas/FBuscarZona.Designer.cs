@@ -105,6 +105,7 @@
             this.rbDescripcion.TabIndex = 2;
             this.rbDescripcion.Text = "Descripcion";
             this.rbDescripcion.UseVisualStyleBackColor = true;
+            this.rbDescripcion.CheckedChanged += new System.EventHandler(this.rbDescripcion_CheckedChanged);
             this.rbDescripcion.TextChanged += new System.EventHandler(this.rbDescripcion_TextChanged);
             // 
             // rbVendedor
@@ -226,7 +227,7 @@
             this.Controls.Add(this.dgvBuscar);
             this.Controls.Add(this.groupBox1);
             this.Name = "FBuscarZona";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FBuscarZona_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

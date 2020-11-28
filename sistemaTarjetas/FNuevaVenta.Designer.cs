@@ -373,6 +373,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FNuevaVenta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nueva Venta";
             this.Load += new System.EventHandler(this.FNuevaVenta_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FNuevaVenta_KeyDown);

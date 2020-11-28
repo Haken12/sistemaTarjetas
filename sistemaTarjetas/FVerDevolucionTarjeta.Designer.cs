@@ -150,6 +150,7 @@ namespace sistemaTarjetas
             this.Controls.Add(this.button2);
             this.Controls.Add(this.dgvVer);
             this.Name = "FVerDevolucionTarjeta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Detalles Devolucion";
             this.Load += new System.EventHandler(this.FVerDevolucionTarjeta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVer)).EndInit();

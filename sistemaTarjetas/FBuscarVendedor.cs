@@ -56,6 +56,7 @@ namespace sistemaTarjetas
         {
             if (Char.IsLetter(e.KeyChar)) return;
             if (Char.IsControl(e.KeyChar)) return;
+            if (Char.IsWhiteSpace(e.KeyChar)) return;
             e.Handled = true;
         }
 

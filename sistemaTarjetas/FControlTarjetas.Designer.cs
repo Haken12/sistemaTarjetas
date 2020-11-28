@@ -292,7 +292,7 @@
             this.txtNombre.Enabled = false;
             this.txtNombre.Location = new System.Drawing.Point(118, 30);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(236, 20);
+            this.txtNombre.Size = new System.Drawing.Size(189, 20);
             this.txtNombre.TabIndex = 1;
             this.txtNombre.Enter += new System.EventHandler(this.entrar);
             this.txtNombre.Leave += new System.EventHandler(this.salir);
@@ -300,9 +300,9 @@
             // txtReferencia
             // 
             this.txtReferencia.Enabled = false;
-            this.txtReferencia.Location = new System.Drawing.Point(372, 30);
+            this.txtReferencia.Location = new System.Drawing.Point(313, 30);
             this.txtReferencia.Name = "txtReferencia";
-            this.txtReferencia.Size = new System.Drawing.Size(176, 20);
+            this.txtReferencia.Size = new System.Drawing.Size(235, 20);
             this.txtReferencia.TabIndex = 2;
             this.txtReferencia.Enter += new System.EventHandler(this.entrar);
             this.txtReferencia.Leave += new System.EventHandler(this.salir);
@@ -316,6 +316,7 @@
             this.txtCodigo.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged);
             this.txtCodigo.Enter += new System.EventHandler(this.entrar);
             this.txtCodigo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCodigo_KeyDown);
+            this.txtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigo_KeyPress);
             this.txtCodigo.Leave += new System.EventHandler(this.salir);
             // 
             // label8
@@ -366,7 +367,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(369, 14);
+            this.label3.Location = new System.Drawing.Point(310, 16);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 13);
             this.label3.TabIndex = 2;
@@ -499,6 +500,7 @@
             this.txtValor.TabIndex = 5;
             this.txtValor.Enter += new System.EventHandler(this.entrar);
             this.txtValor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtValor_KeyDown);
+            this.txtValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValor_KeyPress);
             this.txtValor.Leave += new System.EventHandler(this.salir);
             // 
             // dtpFecha

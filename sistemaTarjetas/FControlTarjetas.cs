@@ -110,8 +110,8 @@ namespace sistemaTarjetas
         }
 
         private bool verificar() 
-        {
-            if (!regrexTest.Comprobar.esCedula(txtCedula.Text)) return false;
+        {            
+        
             return true;
         }
 
@@ -375,7 +375,7 @@ namespace sistemaTarjetas
             txtReferencia.Text = tarjeta.referencia;
             txtCedula.Text = tarjeta.cedula;
             txtTelefono.Text = tarjeta.telefono;
-            cbxFormaPago.SelectedText = tarjeta.tipoPago;
+            cbxFormaPago.SelectedItem = tarjeta.tipoPago;
             cbxVendedor.SelectedValue = tarjeta.idVendedor;
             cbxZona.SelectedValue = tarjeta.idZona;
             dtpFechaT.Value = tarjeta.fehcaCreacion.Value;
@@ -530,6 +530,20 @@ namespace sistemaTarjetas
                 }
             }
             
+        }
+
+        private void txtCodigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar)) return;
+            if (Char.IsControl(e.KeyChar)) return;
+            e.Handled = true;
+        }
+
+        private void txtValor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar)) return;
+            if (Char.IsControl(e.KeyChar)) return;
+            e.Handled = true;
         }
     }
 }

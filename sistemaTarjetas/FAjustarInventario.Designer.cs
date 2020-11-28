@@ -30,28 +30,28 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rbReemplazar = new System.Windows.Forms.RadioButton();
             this.rbSumar = new System.Windows.Forms.RadioButton();
+            this.rbReemplazar = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtCodigo = new System.Windows.Forms.TextBox();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtCantidad = new System.Windows.Forms.TextBox();
             this.btnAplicar = new System.Windows.Forms.Button();
+            this.txtCantidad = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.txtArticulo = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtMedida = new System.Windows.Forms.TextBox();
-            this.txtCosto = new System.Windows.Forms.TextBox();
-            this.txtPrecio = new System.Windows.Forms.TextBox();
             this.txtActual = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
             this.bsArticulos = new System.Windows.Forms.BindingSource(this.components);
             this.dsSistemaTarjetas = new sistemaTarjetas.dsSistemaTarjetas();
+            this.txtPrecio = new System.Windows.Forms.TextBox();
+            this.txtCosto = new System.Windows.Forms.TextBox();
+            this.txtMedida = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtArticulo = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.querys = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.Querys();
             this.v_articulosTableAdapter = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.v_articulosTableAdapter();
             this.groupBox1.SuspendLayout();
@@ -72,17 +72,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Forma de Ajuste";
             // 
-            // rbReemplazar
-            // 
-            this.rbReemplazar.AutoSize = true;
-            this.rbReemplazar.Location = new System.Drawing.Point(6, 23);
-            this.rbReemplazar.Name = "rbReemplazar";
-            this.rbReemplazar.Size = new System.Drawing.Size(243, 22);
-            this.rbReemplazar.TabIndex = 0;
-            this.rbReemplazar.TabStop = true;
-            this.rbReemplazar.Text = "Reemplazar la existencia actual";
-            this.rbReemplazar.UseVisualStyleBackColor = true;
-            // 
             // rbSumar
             // 
             this.rbSumar.AutoSize = true;
@@ -93,6 +82,17 @@
             this.rbSumar.TabStop = true;
             this.rbSumar.Text = "Sumar a la existencia actual";
             this.rbSumar.UseVisualStyleBackColor = true;
+            // 
+            // rbReemplazar
+            // 
+            this.rbReemplazar.AutoSize = true;
+            this.rbReemplazar.Location = new System.Drawing.Point(6, 23);
+            this.rbReemplazar.Name = "rbReemplazar";
+            this.rbReemplazar.Size = new System.Drawing.Size(243, 22);
+            this.rbReemplazar.TabIndex = 0;
+            this.rbReemplazar.TabStop = true;
+            this.rbReemplazar.Text = "Reemplazar la existencia actual";
+            this.rbReemplazar.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -108,42 +108,15 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
-            // label1
+            // btnAplicar
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 18);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Codigo";
-            // 
-            // txtCodigo
-            // 
-            this.txtCodigo.Location = new System.Drawing.Point(63, 17);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(77, 24);
-            this.txtCodigo.TabIndex = 1;
-            this.txtCodigo.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged);
-            this.txtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.soloNumeros);
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Image = global::sistemaTarjetas.Recursos._49;
-            this.btnBuscar.Location = new System.Drawing.Point(146, 16);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(24, 24);
-            this.btnBuscar.TabIndex = 2;
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(190, 20);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 18);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Cantidad";
+            this.btnAplicar.Location = new System.Drawing.Point(414, 13);
+            this.btnAplicar.Name = "btnAplicar";
+            this.btnAplicar.Size = new System.Drawing.Size(75, 31);
+            this.btnAplicar.TabIndex = 5;
+            this.btnAplicar.Text = "Aplicar";
+            this.btnAplicar.UseVisualStyleBackColor = true;
+            this.btnAplicar.Click += new System.EventHandler(this.btnAplicar_Click);
             // 
             // txtCantidad
             // 
@@ -155,15 +128,42 @@
             this.txtCantidad.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCantidad_KeyDown);
             this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.soloNumeros);
             // 
-            // btnAplicar
+            // label2
             // 
-            this.btnAplicar.Location = new System.Drawing.Point(414, 13);
-            this.btnAplicar.Name = "btnAplicar";
-            this.btnAplicar.Size = new System.Drawing.Size(75, 31);
-            this.btnAplicar.TabIndex = 5;
-            this.btnAplicar.Text = "Aplicar";
-            this.btnAplicar.UseVisualStyleBackColor = true;
-            this.btnAplicar.Click += new System.EventHandler(this.btnAplicar_Click);
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(190, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(69, 18);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Cantidad";
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Image = global::sistemaTarjetas.Recursos._49;
+            this.btnBuscar.Location = new System.Drawing.Point(146, 16);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(24, 24);
+            this.btnBuscar.TabIndex = 2;
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // txtCodigo
+            // 
+            this.txtCodigo.Location = new System.Drawing.Point(63, 17);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(77, 24);
+            this.txtCodigo.TabIndex = 1;
+            this.txtCodigo.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged);
+            this.txtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.soloNumeros);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(54, 18);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Codigo";
             // 
             // groupBox3
             // 
@@ -183,42 +183,51 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Datos del Articulo";
             // 
-            // txtArticulo
+            // txtActual
             // 
-            this.txtArticulo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsArticulos, "Descripcion", true));
-            this.txtArticulo.Location = new System.Drawing.Point(18, 23);
-            this.txtArticulo.Name = "txtArticulo";
-            this.txtArticulo.ReadOnly = true;
-            this.txtArticulo.Size = new System.Drawing.Size(457, 24);
-            this.txtArticulo.TabIndex = 0;
-            this.txtArticulo.TabStop = false;
+            this.txtActual.Location = new System.Drawing.Point(340, 81);
+            this.txtActual.Name = "txtActual";
+            this.txtActual.ReadOnly = true;
+            this.txtActual.Size = new System.Drawing.Size(121, 24);
+            this.txtActual.TabIndex = 8;
+            this.txtActual.TabStop = false;
             // 
-            // label3
+            // bsArticulos
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 60);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 18);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Medida";
+            this.bsArticulos.DataMember = "v_articulos";
+            this.bsArticulos.DataSource = this.dsSistemaTarjetas;
             // 
-            // label4
+            // dsSistemaTarjetas
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(337, 60);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(124, 18);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Existencia Actual";
+            this.dsSistemaTarjetas.DataSetName = "dsSistemaTarjetas";
+            this.dsSistemaTarjetas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // label5
+            // txtPrecio
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(232, 60);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 18);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Precio";
+            this.txtPrecio.Location = new System.Drawing.Point(220, 81);
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.ReadOnly = true;
+            this.txtPrecio.Size = new System.Drawing.Size(77, 24);
+            this.txtPrecio.TabIndex = 7;
+            this.txtPrecio.TabStop = false;
+            // 
+            // txtCosto
+            // 
+            this.txtCosto.Location = new System.Drawing.Point(109, 81);
+            this.txtCosto.Name = "txtCosto";
+            this.txtCosto.ReadOnly = true;
+            this.txtCosto.Size = new System.Drawing.Size(77, 24);
+            this.txtCosto.TabIndex = 6;
+            this.txtCosto.TabStop = false;
+            // 
+            // txtMedida
+            // 
+            this.txtMedida.Location = new System.Drawing.Point(6, 81);
+            this.txtMedida.Name = "txtMedida";
+            this.txtMedida.ReadOnly = true;
+            this.txtMedida.Size = new System.Drawing.Size(77, 24);
+            this.txtMedida.TabIndex = 5;
+            this.txtMedida.TabStop = false;
             // 
             // label6
             // 
@@ -229,45 +238,41 @@
             this.label6.TabIndex = 4;
             this.label6.Text = "Costo";
             // 
-            // txtMedida
+            // label5
             // 
-            this.txtMedida.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsArticulos, "Unidad", true));
-            this.txtMedida.Location = new System.Drawing.Point(6, 81);
-            this.txtMedida.Name = "txtMedida";
-            this.txtMedida.ReadOnly = true;
-            this.txtMedida.Size = new System.Drawing.Size(77, 24);
-            this.txtMedida.TabIndex = 5;
-            this.txtMedida.TabStop = false;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(232, 60);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(49, 18);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Precio";
             // 
-            // txtCosto
+            // label4
             // 
-            this.txtCosto.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsArticulos, "Costo", true));
-            this.txtCosto.Location = new System.Drawing.Point(109, 81);
-            this.txtCosto.Name = "txtCosto";
-            this.txtCosto.ReadOnly = true;
-            this.txtCosto.Size = new System.Drawing.Size(77, 24);
-            this.txtCosto.TabIndex = 6;
-            this.txtCosto.TabStop = false;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(337, 60);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(124, 18);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Existencia Actual";
             // 
-            // txtPrecio
+            // label3
             // 
-            this.txtPrecio.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsArticulos, "Precio", true));
-            this.txtPrecio.Location = new System.Drawing.Point(220, 81);
-            this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.ReadOnly = true;
-            this.txtPrecio.Size = new System.Drawing.Size(77, 24);
-            this.txtPrecio.TabIndex = 7;
-            this.txtPrecio.TabStop = false;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(15, 60);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(58, 18);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Medida";
             // 
-            // txtActual
+            // txtArticulo
             // 
-            this.txtActual.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsArticulos, "Existencias", true));
-            this.txtActual.Location = new System.Drawing.Point(340, 81);
-            this.txtActual.Name = "txtActual";
-            this.txtActual.ReadOnly = true;
-            this.txtActual.Size = new System.Drawing.Size(121, 24);
-            this.txtActual.TabIndex = 8;
-            this.txtActual.TabStop = false;
+            this.txtArticulo.Location = new System.Drawing.Point(18, 23);
+            this.txtArticulo.Name = "txtArticulo";
+            this.txtArticulo.ReadOnly = true;
+            this.txtArticulo.Size = new System.Drawing.Size(457, 24);
+            this.txtArticulo.TabIndex = 0;
+            this.txtArticulo.TabStop = false;
             // 
             // button3
             // 
@@ -280,16 +285,6 @@
             this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // bsArticulos
-            // 
-            this.bsArticulos.DataMember = "v_articulos";
-            this.bsArticulos.DataSource = this.dsSistemaTarjetas;
-            // 
-            // dsSistemaTarjetas
-            // 
-            this.dsSistemaTarjetas.DataSetName = "dsSistemaTarjetas";
-            this.dsSistemaTarjetas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // v_articulosTableAdapter
             // 
