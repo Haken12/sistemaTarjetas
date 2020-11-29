@@ -27,7 +27,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_A43240D3535946E5890725D8483DD9FF"
+        "MsmKey" = "8:_953C21A7A7324851B381AAA27F23C2C8"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -187,7 +187,7 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A43240D3535946E5890725D8483DD9FF"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_953C21A7A7324851B381AAA27F23C2C8"
             {
             "SourcePath" = "8:..\\..\\..\\..\\Documents\\script.sql"
             "TargetName" = "8:script.sql"
@@ -326,7 +326,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Sistema de Tarjetas"
         "ProductCode" = "8:{B993A197-FD30-422F-AC02-EFDA490705ED}"
-        "PackageCode" = "8:{F17DE9BF-122E-4E45-87C1-606935A172DE}"
+        "PackageCode" = "8:{81717DDC-FF84-45C2-A20A-932DD71EFFED}"
         "UpgradeCode" = "8:{2817EEDE-06CF-4EC9-A704-FB7E920D36CD}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"

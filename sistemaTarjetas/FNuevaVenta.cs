@@ -162,6 +162,7 @@ namespace sistemaTarjetas
                 {
                     int articulo = fSeleccionar.articulo;
                     txtCodigo.Text = articulo.ToString();
+                    txtCantidad.Focus();
                 }
             }
         }

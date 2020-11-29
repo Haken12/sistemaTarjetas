@@ -249,6 +249,13 @@ namespace sistemaTarjetas
 
                 }
             }
+            else
+            {
+                MessageBox.Show("El valor esta vacio", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtCodigo.Focus();
+                
+                txtCodigo.SelectAll();
+            }
         }
 
         private void calcularBalance()

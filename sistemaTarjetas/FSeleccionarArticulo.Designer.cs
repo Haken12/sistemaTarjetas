@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FSeleccionarArticulo));
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.dgvBuscar = new System.Windows.Forms.DataGridView();
             this.codigoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,12 +57,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Descripcion:";
             // 
-            // textBox1
+            // txtDescripcion
             // 
-            this.textBox1.Location = new System.Drawing.Point(116, 8);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(463, 20);
-            this.textBox1.TabIndex = 1;
+            this.txtDescripcion.Location = new System.Drawing.Point(116, 8);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(463, 20);
+            this.txtDescripcion.TabIndex = 1;
+            this.txtDescripcion.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // dgvBuscar
             // 
@@ -167,7 +168,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dgvBuscar);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.label1);
             this.Name = "FSeleccionarArticulo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -183,7 +184,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.BindingSource bsBuscar;
         private System.Windows.Forms.DataGridView dgvBuscar;
         private System.Windows.Forms.Button button1;
