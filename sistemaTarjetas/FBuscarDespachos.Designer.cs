@@ -41,11 +41,11 @@
             this.dsDespachos = new sistemaTarjetas.dsDespachos();
             this.verDespachosTableAdapter = new sistemaTarjetas.dsDespachosTableAdapters.verDespachosTableAdapter();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rbVendedor = new System.Windows.Forms.RadioButton();
-            this.rbFecha = new System.Windows.Forms.RadioButton();
-            this.txtVendedor = new System.Windows.Forms.TextBox();
-            this.dtpFecha1 = new System.Windows.Forms.DateTimePicker();
             this.dtpFecha2 = new System.Windows.Forms.DateTimePicker();
+            this.dtpFecha1 = new System.Windows.Forms.DateTimePicker();
+            this.txtVendedor = new System.Windows.Forms.TextBox();
+            this.rbFecha = new System.Windows.Forms.RadioButton();
+            this.rbVendedor = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBuscar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsBuscar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsDespachos)).BeginInit();
@@ -60,7 +60,7 @@
             this.btnSel.Name = "btnSel";
             this.btnSel.Size = new System.Drawing.Size(118, 38);
             this.btnSel.TabIndex = 0;
-            this.btnSel.Text = "Seleccionar";
+            this.btnSel.Text = "&Seleccionar";
             this.btnSel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSel.UseVisualStyleBackColor = true;
             this.btnSel.Click += new System.EventHandler(this.btnSel_Click);
@@ -73,7 +73,7 @@
             this.btnCan.Name = "btnCan";
             this.btnCan.Size = new System.Drawing.Size(108, 38);
             this.btnCan.TabIndex = 1;
-            this.btnCan.Text = "Cancelar";
+            this.btnCan.Text = "&Cancelar";
             this.btnCan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCan.UseVisualStyleBackColor = true;
             // 
@@ -168,17 +168,33 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar";
             // 
-            // rbVendedor
+            // dtpFecha2
             // 
-            this.rbVendedor.AutoSize = true;
-            this.rbVendedor.Location = new System.Drawing.Point(6, 23);
-            this.rbVendedor.Name = "rbVendedor";
-            this.rbVendedor.Size = new System.Drawing.Size(125, 22);
-            this.rbVendedor.TabIndex = 4;
-            this.rbVendedor.TabStop = true;
-            this.rbVendedor.Text = "Por Vendedor:";
-            this.rbVendedor.UseVisualStyleBackColor = true;
-            this.rbVendedor.CheckedChanged += new System.EventHandler(this.rbVendedor_CheckedChanged);
+            this.dtpFecha2.CustomFormat = "";
+            this.dtpFecha2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFecha2.Location = new System.Drawing.Point(255, 53);
+            this.dtpFecha2.Name = "dtpFecha2";
+            this.dtpFecha2.Size = new System.Drawing.Size(112, 24);
+            this.dtpFecha2.TabIndex = 8;
+            this.dtpFecha2.ValueChanged += new System.EventHandler(this.dtpFecha2_ValueChanged);
+            // 
+            // dtpFecha1
+            // 
+            this.dtpFecha1.CustomFormat = "";
+            this.dtpFecha1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFecha1.Location = new System.Drawing.Point(137, 53);
+            this.dtpFecha1.Name = "dtpFecha1";
+            this.dtpFecha1.Size = new System.Drawing.Size(112, 24);
+            this.dtpFecha1.TabIndex = 7;
+            this.dtpFecha1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            // 
+            // txtVendedor
+            // 
+            this.txtVendedor.Location = new System.Drawing.Point(137, 23);
+            this.txtVendedor.Name = "txtVendedor";
+            this.txtVendedor.Size = new System.Drawing.Size(256, 24);
+            this.txtVendedor.TabIndex = 6;
+            this.txtVendedor.TextChanged += new System.EventHandler(this.txtVendedor_TextChanged);
             // 
             // rbFecha
             // 
@@ -192,33 +208,17 @@
             this.rbFecha.UseVisualStyleBackColor = true;
             this.rbFecha.CheckedChanged += new System.EventHandler(this.rbFecha_CheckedChanged);
             // 
-            // txtVendedor
+            // rbVendedor
             // 
-            this.txtVendedor.Location = new System.Drawing.Point(137, 23);
-            this.txtVendedor.Name = "txtVendedor";
-            this.txtVendedor.Size = new System.Drawing.Size(256, 24);
-            this.txtVendedor.TabIndex = 6;
-            this.txtVendedor.TextChanged += new System.EventHandler(this.txtVendedor_TextChanged);
-            // 
-            // dtpFecha1
-            // 
-            this.dtpFecha1.CustomFormat = "";
-            this.dtpFecha1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha1.Location = new System.Drawing.Point(137, 53);
-            this.dtpFecha1.Name = "dtpFecha1";
-            this.dtpFecha1.Size = new System.Drawing.Size(112, 24);
-            this.dtpFecha1.TabIndex = 7;
-            this.dtpFecha1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
-            // 
-            // dtpFecha2
-            // 
-            this.dtpFecha2.CustomFormat = "";
-            this.dtpFecha2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha2.Location = new System.Drawing.Point(255, 53);
-            this.dtpFecha2.Name = "dtpFecha2";
-            this.dtpFecha2.Size = new System.Drawing.Size(112, 24);
-            this.dtpFecha2.TabIndex = 8;
-            this.dtpFecha2.ValueChanged += new System.EventHandler(this.dtpFecha2_ValueChanged);
+            this.rbVendedor.AutoSize = true;
+            this.rbVendedor.Location = new System.Drawing.Point(6, 23);
+            this.rbVendedor.Name = "rbVendedor";
+            this.rbVendedor.Size = new System.Drawing.Size(125, 22);
+            this.rbVendedor.TabIndex = 4;
+            this.rbVendedor.TabStop = true;
+            this.rbVendedor.Text = "Por Vendedor:";
+            this.rbVendedor.UseVisualStyleBackColor = true;
+            this.rbVendedor.CheckedChanged += new System.EventHandler(this.rbVendedor_CheckedChanged);
             // 
             // FBuscarDespachos
             // 

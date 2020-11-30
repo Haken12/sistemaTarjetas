@@ -40,6 +40,7 @@ namespace sistemaTarjetas
             this.bsBuscar = new System.Windows.Forms.BindingSource(this.components);
             this.dsSistemaTarjetas = new sistemaTarjetas.dsSistemaTarjetas();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ckbVendedor = new System.Windows.Forms.CheckBox();
             this.cbxVendedor = new System.Windows.Forms.ComboBox();
             this.bsVendedor = new System.Windows.Forms.BindingSource(this.components);
             this.dtpFinal = new System.Windows.Forms.DateTimePicker();
@@ -48,7 +49,6 @@ namespace sistemaTarjetas
             this.verGastosTableAdapter = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.verGastosTableAdapter();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.TextBox();
-            this.ckbVendedor = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBuscar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsBuscar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSistemaTarjetas)).BeginInit();
@@ -63,7 +63,7 @@ namespace sistemaTarjetas
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.Size = new System.Drawing.Size(82, 33);
             this.btnSeleccionar.TabIndex = 0;
-            this.btnSeleccionar.Text = "Seleccionar";
+            this.btnSeleccionar.Text = "&Seleccionar";
             this.btnSeleccionar.UseVisualStyleBackColor = true;
             this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);
             // 
@@ -74,7 +74,7 @@ namespace sistemaTarjetas
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(83, 33);
             this.btnCancelar.TabIndex = 1;
-            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.Text = "&Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
             // dgvBuscar
@@ -157,6 +157,17 @@ namespace sistemaTarjetas
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtrar";
             // 
+            // ckbVendedor
+            // 
+            this.ckbVendedor.AutoSize = true;
+            this.ckbVendedor.Location = new System.Drawing.Point(194, 34);
+            this.ckbVendedor.Name = "ckbVendedor";
+            this.ckbVendedor.Size = new System.Drawing.Size(72, 17);
+            this.ckbVendedor.TabIndex = 5;
+            this.ckbVendedor.Text = "Vendedor";
+            this.ckbVendedor.UseVisualStyleBackColor = true;
+            this.ckbVendedor.CheckedChanged += new System.EventHandler(this.ckbVendedor_CheckedChanged);
+            // 
             // cbxVendedor
             // 
             this.cbxVendedor.DataSource = this.bsVendedor;
@@ -220,17 +231,6 @@ namespace sistemaTarjetas
             this.txtTotal.Size = new System.Drawing.Size(100, 20);
             this.txtTotal.TabIndex = 5;
             this.txtTotal.Text = "0";
-            // 
-            // ckbVendedor
-            // 
-            this.ckbVendedor.AutoSize = true;
-            this.ckbVendedor.Location = new System.Drawing.Point(194, 34);
-            this.ckbVendedor.Name = "ckbVendedor";
-            this.ckbVendedor.Size = new System.Drawing.Size(72, 17);
-            this.ckbVendedor.TabIndex = 5;
-            this.ckbVendedor.Text = "Vendedor";
-            this.ckbVendedor.UseVisualStyleBackColor = true;
-            this.ckbVendedor.CheckedChanged += new System.EventHandler(this.ckbVendedor_CheckedChanged);
             // 
             // FBuscarGasto
             // 

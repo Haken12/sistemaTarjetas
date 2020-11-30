@@ -114,6 +114,7 @@ namespace sistemaTarjetas
                 valorT += (int)rw[4];
             }
             int? numDevolucion = 0;
+            if (valorT > valorMaximo) valorT = valorMaximo;
             querys.nueva_devolucion_tarjeta(numeroTarjeta, fecha, valorT, numeroVenta, ref numDevolucion);
             int c = 1;
             foreach (DataRow row in dsSistemaTarjetas.devolver.Rows) 

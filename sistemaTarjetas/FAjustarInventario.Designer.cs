@@ -41,8 +41,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtActual = new System.Windows.Forms.TextBox();
-            this.bsArticulos = new System.Windows.Forms.BindingSource(this.components);
-            this.dsSistemaTarjetas = new sistemaTarjetas.dsSistemaTarjetas();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.txtCosto = new System.Windows.Forms.TextBox();
             this.txtMedida = new System.Windows.Forms.TextBox();
@@ -51,6 +49,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtArticulo = new System.Windows.Forms.TextBox();
+            this.bsArticulos = new System.Windows.Forms.BindingSource(this.components);
+            this.dsSistemaTarjetas = new sistemaTarjetas.dsSistemaTarjetas();
             this.button3 = new System.Windows.Forms.Button();
             this.querys = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.Querys();
             this.v_articulosTableAdapter = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.v_articulosTableAdapter();
@@ -192,16 +192,6 @@
             this.txtActual.TabIndex = 8;
             this.txtActual.TabStop = false;
             // 
-            // bsArticulos
-            // 
-            this.bsArticulos.DataMember = "v_articulos";
-            this.bsArticulos.DataSource = this.dsSistemaTarjetas;
-            // 
-            // dsSistemaTarjetas
-            // 
-            this.dsSistemaTarjetas.DataSetName = "dsSistemaTarjetas";
-            this.dsSistemaTarjetas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // txtPrecio
             // 
             this.txtPrecio.Location = new System.Drawing.Point(220, 81);
@@ -274,6 +264,16 @@
             this.txtArticulo.TabIndex = 0;
             this.txtArticulo.TabStop = false;
             // 
+            // bsArticulos
+            // 
+            this.bsArticulos.DataMember = "v_articulos";
+            this.bsArticulos.DataSource = this.dsSistemaTarjetas;
+            // 
+            // dsSistemaTarjetas
+            // 
+            this.dsSistemaTarjetas.DataSetName = "dsSistemaTarjetas";
+            this.dsSistemaTarjetas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // button3
             // 
             this.button3.Image = global::sistemaTarjetas.Recursos._18__3_;
@@ -281,7 +281,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(77, 35);
             this.button3.TabIndex = 3;
-            this.button3.Text = "Salir";
+            this.button3.Text = "&Salir";
             this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);

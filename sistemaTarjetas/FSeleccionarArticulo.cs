@@ -27,8 +27,7 @@ namespace sistemaTarjetas
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (dgvBuscar.SelectedRows.Count > 0) articulo = (int)dgvBuscar.SelectedCells[0].Value;
-            else this.DialogResult = DialogResult.None;
+            seleccionar();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -36,10 +35,26 @@ namespace sistemaTarjetas
 
         }
 
+        private void seleccionar()
+        {
+            if (dgvBuscar.SelectedRows.Count > 0) articulo = (int)dgvBuscar.SelectedCells[0].Value;
+            else this.DialogResult = DialogResult.None;
+        }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             bsBuscar.Filter = "";
             bsBuscar.Filter = $"Descripcion LIKE '{txtDescripcion.Text}'";
+        }
+
+        private void dgvBuscar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (dgvBuscar.Rows.Count > 0)
+                {
+                    seleccionar();
+                }
+            }
         }
     }
 }

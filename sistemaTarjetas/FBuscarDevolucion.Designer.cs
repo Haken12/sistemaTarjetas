@@ -33,13 +33,13 @@ namespace sistemaTarjetas
             this.btnSeleccionar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.dgvBuscar = new System.Windows.Forms.DataGridView();
-            this.bsBuscar = new System.Windows.Forms.BindingSource(this.components);
-            this.dsDespachos = new sistemaTarjetas.dsDespachos();
-            this.verDevolucionesTableAdapter = new sistemaTarjetas.dsDespachosTableAdapters.verDevolucionesTableAdapter();
             this.numeroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vendedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsBuscar = new System.Windows.Forms.BindingSource(this.components);
+            this.dsDespachos = new sistemaTarjetas.dsDespachos();
+            this.verDevolucionesTableAdapter = new sistemaTarjetas.dsDespachosTableAdapters.verDevolucionesTableAdapter();
             this.label2 = new System.Windows.Forms.Label();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.txtVendedor = new System.Windows.Forms.TextBox();
@@ -56,7 +56,7 @@ namespace sistemaTarjetas
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.Size = new System.Drawing.Size(100, 47);
             this.btnSeleccionar.TabIndex = 0;
-            this.btnSeleccionar.Text = "Seleccionar";
+            this.btnSeleccionar.Text = "&Seleccionar";
             this.btnSeleccionar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSeleccionar.UseVisualStyleBackColor = true;
             this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);
@@ -68,7 +68,7 @@ namespace sistemaTarjetas
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(94, 47);
             this.btnCancelar.TabIndex = 1;
-            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.Text = "&Cancelar";
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
@@ -95,20 +95,6 @@ namespace sistemaTarjetas
             this.dgvBuscar.Size = new System.Drawing.Size(505, 239);
             this.dgvBuscar.TabIndex = 2;
             this.dgvBuscar.TabStop = false;
-            // 
-            // bsBuscar
-            // 
-            this.bsBuscar.DataMember = "verDevoluciones";
-            this.bsBuscar.DataSource = this.dsDespachos;
-            // 
-            // dsDespachos
-            // 
-            this.dsDespachos.DataSetName = "dsDespachos";
-            this.dsDespachos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // verDevolucionesTableAdapter
-            // 
-            this.verDevolucionesTableAdapter.ClearBeforeFill = true;
             // 
             // numeroDataGridViewTextBoxColumn
             // 
@@ -138,6 +124,20 @@ namespace sistemaTarjetas
             this.valorDataGridViewTextBoxColumn.HeaderText = "Valor";
             this.valorDataGridViewTextBoxColumn.Name = "valorDataGridViewTextBoxColumn";
             this.valorDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // bsBuscar
+            // 
+            this.bsBuscar.DataMember = "verDevoluciones";
+            this.bsBuscar.DataSource = this.dsDespachos;
+            // 
+            // dsDespachos
+            // 
+            this.dsDespachos.DataSetName = "dsDespachos";
+            this.dsDespachos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // verDevolucionesTableAdapter
+            // 
+            this.verDevolucionesTableAdapter.ClearBeforeFill = true;
             // 
             // label2
             // 

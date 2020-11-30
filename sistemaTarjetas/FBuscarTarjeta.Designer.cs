@@ -33,15 +33,15 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.dgvTarjetas = new System.Windows.Forms.DataGridView();
-            this.bsTarjetas = new System.Windows.Forms.BindingSource(this.components);
-            this.dsSistemaTarjetas = new sistemaTarjetas.dsSistemaTarjetas();
-            this.v_tarjetasTableAdapter = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.v_tarjetasTableAdapter();
             this.codigoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.referenciaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vendedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.zonaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsTarjetas = new System.Windows.Forms.BindingSource(this.components);
+            this.dsSistemaTarjetas = new sistemaTarjetas.dsSistemaTarjetas();
+            this.v_tarjetasTableAdapter = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.v_tarjetasTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTarjetas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsTarjetas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSistemaTarjetas)).BeginInit();
@@ -55,7 +55,7 @@
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(98, 46);
             this.btnCancelar.TabIndex = 0;
-            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.Text = "&Cancelar";
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
@@ -67,7 +67,7 @@
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(116, 46);
             this.btnAceptar.TabIndex = 1;
-            this.btnAceptar.Text = "Seleccionar";
+            this.btnAceptar.Text = "&Seleccionar";
             this.btnAceptar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
@@ -104,20 +104,6 @@
             this.dgvTarjetas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTarjetas.Size = new System.Drawing.Size(1136, 276);
             this.dgvTarjetas.TabIndex = 2;
-            // 
-            // bsTarjetas
-            // 
-            this.bsTarjetas.DataMember = "v_tarjetas";
-            this.bsTarjetas.DataSource = this.dsSistemaTarjetas;
-            // 
-            // dsSistemaTarjetas
-            // 
-            this.dsSistemaTarjetas.DataSetName = "dsSistemaTarjetas";
-            this.dsSistemaTarjetas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // v_tarjetasTableAdapter
-            // 
-            this.v_tarjetasTableAdapter.ClearBeforeFill = true;
             // 
             // codigoDataGridViewTextBoxColumn
             // 
@@ -166,6 +152,20 @@
             this.zonaDataGridViewTextBoxColumn.Name = "zonaDataGridViewTextBoxColumn";
             this.zonaDataGridViewTextBoxColumn.ReadOnly = true;
             this.zonaDataGridViewTextBoxColumn.Width = 300;
+            // 
+            // bsTarjetas
+            // 
+            this.bsTarjetas.DataMember = "v_tarjetas";
+            this.bsTarjetas.DataSource = this.dsSistemaTarjetas;
+            // 
+            // dsSistemaTarjetas
+            // 
+            this.dsSistemaTarjetas.DataSetName = "dsSistemaTarjetas";
+            this.dsSistemaTarjetas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // v_tarjetasTableAdapter
+            // 
+            this.v_tarjetasTableAdapter.ClearBeforeFill = true;
             // 
             // FBuscarTarjeta
             // 

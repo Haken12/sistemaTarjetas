@@ -138,6 +138,7 @@
             // 
             // dtpFechaT
             // 
+            this.dtpFechaT.Enabled = false;
             this.dtpFechaT.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaT.Location = new System.Drawing.Point(207, 89);
             this.dtpFechaT.Name = "dtpFechaT";
@@ -151,7 +152,7 @@
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(53, 23);
             this.btnGuardar.TabIndex = 10;
-            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.Text = "&Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
@@ -162,7 +163,7 @@
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(63, 23);
             this.btnCancelar.TabIndex = 11;
-            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.Text = "&Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
@@ -236,7 +237,7 @@
             this.btnNueva.Name = "btnNueva";
             this.btnNueva.Size = new System.Drawing.Size(53, 23);
             this.btnNueva.TabIndex = 8;
-            this.btnNueva.Text = "Nueva";
+            this.btnNueva.Text = "&Nueva";
             this.btnNueva.UseVisualStyleBackColor = true;
             this.btnNueva.Click += new System.EventHandler(this.btnNueva_Click);
             // 
@@ -247,7 +248,7 @@
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(63, 23);
             this.btnModificar.TabIndex = 9;
-            this.btnModificar.Text = "Modificar";
+            this.btnModificar.Text = "&Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
@@ -292,7 +293,7 @@
             this.txtNombre.Enabled = false;
             this.txtNombre.Location = new System.Drawing.Point(118, 30);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(189, 20);
+            this.txtNombre.Size = new System.Drawing.Size(133, 20);
             this.txtNombre.TabIndex = 1;
             this.txtNombre.Enter += new System.EventHandler(this.entrar);
             this.txtNombre.Leave += new System.EventHandler(this.salir);
@@ -300,9 +301,9 @@
             // txtReferencia
             // 
             this.txtReferencia.Enabled = false;
-            this.txtReferencia.Location = new System.Drawing.Point(313, 30);
+            this.txtReferencia.Location = new System.Drawing.Point(260, 30);
             this.txtReferencia.Name = "txtReferencia";
-            this.txtReferencia.Size = new System.Drawing.Size(235, 20);
+            this.txtReferencia.Size = new System.Drawing.Size(288, 20);
             this.txtReferencia.TabIndex = 2;
             this.txtReferencia.Enter += new System.EventHandler(this.entrar);
             this.txtReferencia.Leave += new System.EventHandler(this.salir);
@@ -367,7 +368,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(310, 16);
+            this.label3.Location = new System.Drawing.Point(257, 16);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 13);
             this.label3.TabIndex = 2;
@@ -487,7 +488,7 @@
             this.btnAsentar.Name = "btnAsentar";
             this.btnAsentar.Size = new System.Drawing.Size(75, 23);
             this.btnAsentar.TabIndex = 6;
-            this.btnAsentar.Text = "Asentar";
+            this.btnAsentar.Text = "&Asentar";
             this.btnAsentar.UseVisualStyleBackColor = true;
             this.btnAsentar.Click += new System.EventHandler(this.btnAsentar_Click);
             // 
@@ -565,7 +566,7 @@
             this.btnImprimir.Size = new System.Drawing.Size(75, 23);
             this.btnImprimir.TabIndex = 3;
             this.btnImprimir.TabStop = false;
-            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.Text = "&Imprimir";
             this.btnImprimir.UseVisualStyleBackColor = true;
             // 
             // panel2
@@ -658,7 +659,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 5;
-            this.button1.Text = "Salir";
+            this.button1.Text = "&Salir";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -675,6 +676,7 @@
             this.Controls.Add(this.dgvDetalles);
             this.Controls.Add(this.groupBox1);
             this.Name = "FControlTarjetas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Control de Tarjetas";
             this.Load += new System.EventHandler(this.FControlTarjetas_Load);
             this.groupBox1.ResumeLayout(false);

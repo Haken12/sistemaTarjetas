@@ -38,45 +38,45 @@
             this.label4 = new System.Windows.Forms.Label();
             this.dtpDia = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtVendido = new System.Windows.Forms.TextBox();
-            this.txtCobrado = new System.Windows.Forms.TextBox();
-            this.txtDescontado = new System.Windows.Forms.TextBox();
-            this.txtGastos = new System.Windows.Forms.TextBox();
-            this.txtDiferencia = new System.Windows.Forms.TextBox();
+            this.btnGastos = new System.Windows.Forms.Button();
             this.txtRecibido = new System.Windows.Forms.TextBox();
+            this.txtDiferencia = new System.Windows.Forms.TextBox();
+            this.txtGastos = new System.Windows.Forms.TextBox();
+            this.txtDescontado = new System.Windows.Forms.TextBox();
+            this.txtCobrado = new System.Windows.Forms.TextBox();
+            this.txtVendido = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtDescontadoD = new System.Windows.Forms.TextBox();
+            this.txtCobradoD = new System.Windows.Forms.TextBox();
+            this.txtVendidoD = new System.Windows.Forms.TextBox();
             this.txtDescontadoT = new System.Windows.Forms.TextBox();
             this.txtCobradoT = new System.Windows.Forms.TextBox();
             this.txtVendidoT = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.txtDescontadoD = new System.Windows.Forms.TextBox();
-            this.txtCobradoD = new System.Windows.Forms.TextBox();
-            this.txtVendidoD = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.txtNuevas = new System.Windows.Forms.TextBox();
-            this.txtTrabajadas = new System.Windows.Forms.TextBox();
             this.txtNoTrabajadas = new System.Windows.Forms.TextBox();
+            this.txtTrabajadas = new System.Windows.Forms.TextBox();
+            this.txtNuevas = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.btnListaCobros = new System.Windows.Forms.Button();
             this.btnProductosVendidos = new System.Windows.Forms.Button();
+            this.btnListaCobros = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.btnGastos = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -178,6 +178,111 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Segun Vendedor";
             // 
+            // btnGastos
+            // 
+            this.btnGastos.Image = global::sistemaTarjetas.Recursos.Copy_24x24;
+            this.btnGastos.Location = new System.Drawing.Point(214, 102);
+            this.btnGastos.Name = "btnGastos";
+            this.btnGastos.Size = new System.Drawing.Size(26, 32);
+            this.btnGastos.TabIndex = 13;
+            this.btnGastos.UseVisualStyleBackColor = true;
+            // 
+            // txtRecibido
+            // 
+            this.txtRecibido.Location = new System.Drawing.Point(89, 137);
+            this.txtRecibido.Name = "txtRecibido";
+            this.txtRecibido.Size = new System.Drawing.Size(117, 20);
+            this.txtRecibido.TabIndex = 12;
+            // 
+            // txtDiferencia
+            // 
+            this.txtDiferencia.Location = new System.Drawing.Point(89, 165);
+            this.txtDiferencia.Name = "txtDiferencia";
+            this.txtDiferencia.Size = new System.Drawing.Size(117, 20);
+            this.txtDiferencia.TabIndex = 11;
+            // 
+            // txtGastos
+            // 
+            this.txtGastos.Location = new System.Drawing.Point(89, 109);
+            this.txtGastos.Name = "txtGastos";
+            this.txtGastos.Size = new System.Drawing.Size(117, 20);
+            this.txtGastos.TabIndex = 10;
+            // 
+            // txtDescontado
+            // 
+            this.txtDescontado.Location = new System.Drawing.Point(89, 81);
+            this.txtDescontado.Name = "txtDescontado";
+            this.txtDescontado.Size = new System.Drawing.Size(117, 20);
+            this.txtDescontado.TabIndex = 9;
+            // 
+            // txtCobrado
+            // 
+            this.txtCobrado.Location = new System.Drawing.Point(89, 53);
+            this.txtCobrado.Name = "txtCobrado";
+            this.txtCobrado.Size = new System.Drawing.Size(117, 20);
+            this.txtCobrado.TabIndex = 8;
+            // 
+            // txtVendido
+            // 
+            this.txtVendido.Location = new System.Drawing.Point(89, 25);
+            this.txtVendido.Name = "txtVendido";
+            this.txtVendido.Size = new System.Drawing.Size(117, 20);
+            this.txtVendido.TabIndex = 6;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(6, 168);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(55, 13);
+            this.label10.TabIndex = 5;
+            this.label10.Text = "Diferencia";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(6, 140);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(76, 13);
+            this.label9.TabIndex = 4;
+            this.label9.Text = "Valor Recibido";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 112);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(40, 13);
+            this.label8.TabIndex = 3;
+            this.label8.Text = "Gastos";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 84);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(65, 13);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Descontado";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 56);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(47, 13);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Cobrado";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 28);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(46, 13);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Vendido";
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label14);
@@ -197,101 +302,36 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos Segun Tarjetas";
             // 
-            // label5
+            // label14
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 28);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(46, 13);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Vendido";
+            this.label14.AutoSize = true;
+            this.label14.ForeColor = System.Drawing.Color.Red;
+            this.label14.Location = new System.Drawing.Point(147, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(55, 13);
+            this.label14.TabIndex = 11;
+            this.label14.Text = "Diferencia";
             // 
-            // label6
+            // txtDescontadoD
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 56);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(47, 13);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Cobrado";
+            this.txtDescontadoD.Location = new System.Drawing.Point(150, 81);
+            this.txtDescontadoD.Name = "txtDescontadoD";
+            this.txtDescontadoD.Size = new System.Drawing.Size(71, 20);
+            this.txtDescontadoD.TabIndex = 18;
             // 
-            // label7
+            // txtCobradoD
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 84);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(65, 13);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "Descontado";
+            this.txtCobradoD.Location = new System.Drawing.Point(150, 53);
+            this.txtCobradoD.Name = "txtCobradoD";
+            this.txtCobradoD.Size = new System.Drawing.Size(71, 20);
+            this.txtCobradoD.TabIndex = 17;
             // 
-            // label8
+            // txtVendidoD
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 112);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(40, 13);
-            this.label8.TabIndex = 3;
-            this.label8.Text = "Gastos";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 140);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(76, 13);
-            this.label9.TabIndex = 4;
-            this.label9.Text = "Valor Recibido";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 168);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(55, 13);
-            this.label10.TabIndex = 5;
-            this.label10.Text = "Diferencia";
-            // 
-            // txtVendido
-            // 
-            this.txtVendido.Location = new System.Drawing.Point(89, 25);
-            this.txtVendido.Name = "txtVendido";
-            this.txtVendido.Size = new System.Drawing.Size(117, 20);
-            this.txtVendido.TabIndex = 6;
-            // 
-            // txtCobrado
-            // 
-            this.txtCobrado.Location = new System.Drawing.Point(89, 53);
-            this.txtCobrado.Name = "txtCobrado";
-            this.txtCobrado.Size = new System.Drawing.Size(117, 20);
-            this.txtCobrado.TabIndex = 8;
-            // 
-            // txtDescontado
-            // 
-            this.txtDescontado.Location = new System.Drawing.Point(89, 81);
-            this.txtDescontado.Name = "txtDescontado";
-            this.txtDescontado.Size = new System.Drawing.Size(117, 20);
-            this.txtDescontado.TabIndex = 9;
-            // 
-            // txtGastos
-            // 
-            this.txtGastos.Location = new System.Drawing.Point(89, 109);
-            this.txtGastos.Name = "txtGastos";
-            this.txtGastos.Size = new System.Drawing.Size(117, 20);
-            this.txtGastos.TabIndex = 10;
-            // 
-            // txtDiferencia
-            // 
-            this.txtDiferencia.Location = new System.Drawing.Point(89, 165);
-            this.txtDiferencia.Name = "txtDiferencia";
-            this.txtDiferencia.Size = new System.Drawing.Size(117, 20);
-            this.txtDiferencia.TabIndex = 11;
-            // 
-            // txtRecibido
-            // 
-            this.txtRecibido.Location = new System.Drawing.Point(89, 137);
-            this.txtRecibido.Name = "txtRecibido";
-            this.txtRecibido.Size = new System.Drawing.Size(117, 20);
-            this.txtRecibido.TabIndex = 12;
+            this.txtVendidoD.Location = new System.Drawing.Point(150, 25);
+            this.txtVendidoD.Name = "txtVendidoD";
+            this.txtVendidoD.Size = new System.Drawing.Size(71, 20);
+            this.txtVendidoD.TabIndex = 16;
             // 
             // txtDescontadoT
             // 
@@ -341,37 +381,6 @@
             this.label13.TabIndex = 10;
             this.label13.Text = "Vendido";
             // 
-            // txtDescontadoD
-            // 
-            this.txtDescontadoD.Location = new System.Drawing.Point(150, 81);
-            this.txtDescontadoD.Name = "txtDescontadoD";
-            this.txtDescontadoD.Size = new System.Drawing.Size(71, 20);
-            this.txtDescontadoD.TabIndex = 18;
-            // 
-            // txtCobradoD
-            // 
-            this.txtCobradoD.Location = new System.Drawing.Point(150, 53);
-            this.txtCobradoD.Name = "txtCobradoD";
-            this.txtCobradoD.Size = new System.Drawing.Size(71, 20);
-            this.txtCobradoD.TabIndex = 17;
-            // 
-            // txtVendidoD
-            // 
-            this.txtVendidoD.Location = new System.Drawing.Point(150, 25);
-            this.txtVendidoD.Name = "txtVendidoD";
-            this.txtVendidoD.Size = new System.Drawing.Size(71, 20);
-            this.txtVendidoD.TabIndex = 16;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.ForeColor = System.Drawing.Color.Red;
-            this.label14.Location = new System.Drawing.Point(147, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(55, 13);
-            this.label14.TabIndex = 11;
-            this.label14.Text = "Diferencia";
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.txtNoTrabajadas);
@@ -387,23 +396,26 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Rotacion de Tarjetas";
             // 
-            // label15
+            // txtNoTrabajadas
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(6, 27);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(44, 13);
-            this.label15.TabIndex = 0;
-            this.label15.Text = "Nuevas";
+            this.txtNoTrabajadas.Location = new System.Drawing.Point(169, 43);
+            this.txtNoTrabajadas.Name = "txtNoTrabajadas";
+            this.txtNoTrabajadas.Size = new System.Drawing.Size(71, 20);
+            this.txtNoTrabajadas.TabIndex = 16;
             // 
-            // label16
+            // txtTrabajadas
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(169, 27);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(77, 13);
-            this.label16.TabIndex = 1;
-            this.label16.Text = "No Trabajadas";
+            this.txtTrabajadas.Location = new System.Drawing.Point(87, 43);
+            this.txtTrabajadas.Name = "txtTrabajadas";
+            this.txtTrabajadas.Size = new System.Drawing.Size(71, 20);
+            this.txtTrabajadas.TabIndex = 15;
+            // 
+            // txtNuevas
+            // 
+            this.txtNuevas.Location = new System.Drawing.Point(6, 43);
+            this.txtNuevas.Name = "txtNuevas";
+            this.txtNuevas.Size = new System.Drawing.Size(71, 20);
+            this.txtNuevas.TabIndex = 14;
             // 
             // label17
             // 
@@ -414,26 +426,23 @@
             this.label17.TabIndex = 2;
             this.label17.Text = "Trabajadas";
             // 
-            // txtNuevas
+            // label16
             // 
-            this.txtNuevas.Location = new System.Drawing.Point(6, 43);
-            this.txtNuevas.Name = "txtNuevas";
-            this.txtNuevas.Size = new System.Drawing.Size(71, 20);
-            this.txtNuevas.TabIndex = 14;
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(169, 27);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(77, 13);
+            this.label16.TabIndex = 1;
+            this.label16.Text = "No Trabajadas";
             // 
-            // txtTrabajadas
+            // label15
             // 
-            this.txtTrabajadas.Location = new System.Drawing.Point(87, 43);
-            this.txtTrabajadas.Name = "txtTrabajadas";
-            this.txtTrabajadas.Size = new System.Drawing.Size(71, 20);
-            this.txtTrabajadas.TabIndex = 15;
-            // 
-            // txtNoTrabajadas
-            // 
-            this.txtNoTrabajadas.Location = new System.Drawing.Point(169, 43);
-            this.txtNoTrabajadas.Name = "txtNoTrabajadas";
-            this.txtNoTrabajadas.Size = new System.Drawing.Size(71, 20);
-            this.txtNoTrabajadas.TabIndex = 16;
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(6, 27);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(44, 13);
+            this.label15.TabIndex = 0;
+            this.label15.Text = "Nuevas";
             // 
             // groupBox4
             // 
@@ -445,23 +454,23 @@
             this.groupBox4.TabIndex = 12;
             this.groupBox4.TabStop = false;
             // 
-            // btnListaCobros
-            // 
-            this.btnListaCobros.Location = new System.Drawing.Point(6, 11);
-            this.btnListaCobros.Name = "btnListaCobros";
-            this.btnListaCobros.Size = new System.Drawing.Size(117, 23);
-            this.btnListaCobros.TabIndex = 0;
-            this.btnListaCobros.Text = "Listado de Cobros";
-            this.btnListaCobros.UseVisualStyleBackColor = true;
-            // 
             // btnProductosVendidos
             // 
             this.btnProductosVendidos.Location = new System.Drawing.Point(129, 11);
             this.btnProductosVendidos.Name = "btnProductosVendidos";
             this.btnProductosVendidos.Size = new System.Drawing.Size(117, 23);
             this.btnProductosVendidos.TabIndex = 1;
-            this.btnProductosVendidos.Text = "Productos Vendidos";
+            this.btnProductosVendidos.Text = "Productos &Vendidos";
             this.btnProductosVendidos.UseVisualStyleBackColor = true;
+            // 
+            // btnListaCobros
+            // 
+            this.btnListaCobros.Location = new System.Drawing.Point(6, 11);
+            this.btnListaCobros.Name = "btnListaCobros";
+            this.btnListaCobros.Size = new System.Drawing.Size(117, 23);
+            this.btnListaCobros.TabIndex = 0;
+            this.btnListaCobros.Text = "Listado de &Cobros";
+            this.btnListaCobros.UseVisualStyleBackColor = true;
             // 
             // btnNuevo
             // 
@@ -469,7 +478,7 @@
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(75, 23);
             this.btnNuevo.TabIndex = 13;
-            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.Text = "&Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
             // 
             // btnCancelar
@@ -478,7 +487,7 @@
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 14;
-            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.Text = "&Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
             // btnGuardar
@@ -487,7 +496,7 @@
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 15;
-            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.Text = "&Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             // 
             // btnModificar
@@ -496,7 +505,7 @@
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 16;
-            this.btnModificar.Text = "Modificar";
+            this.btnModificar.Text = "&Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
             // 
             // btnSalir
@@ -505,18 +514,9 @@
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
             this.btnSalir.TabIndex = 17;
-            this.btnSalir.Text = "Salir";
+            this.btnSalir.Text = "&Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // btnGastos
-            // 
-            this.btnGastos.Image = global::sistemaTarjetas.Recursos.Copy_24x24;
-            this.btnGastos.Location = new System.Drawing.Point(214, 102);
-            this.btnGastos.Name = "btnGastos";
-            this.btnGastos.Size = new System.Drawing.Size(26, 32);
-            this.btnGastos.TabIndex = 13;
-            this.btnGastos.UseVisualStyleBackColor = true;
             // 
             // FCuadreVendedor
             // 

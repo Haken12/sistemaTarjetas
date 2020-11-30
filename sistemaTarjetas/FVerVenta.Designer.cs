@@ -125,7 +125,7 @@ namespace sistemaTarjetas
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(95, 53);
             this.btnCerrar.TabIndex = 1;
-            this.btnCerrar.Text = "Cerrar";
+            this.btnCerrar.Text = "&Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 

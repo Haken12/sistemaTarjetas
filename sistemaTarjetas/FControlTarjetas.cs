@@ -90,7 +90,7 @@ namespace sistemaTarjetas
             cbxTipo.SelectedIndex = 0;
             txtReferencia.Clear();
             txtTelefono.Clear();
-            dtpFecha.Value = DateTime.Today;
+            dtpFechaT.Value = DateTime.Today;
             if (dgvDetalles.Rows.Count > 0) dsSistemaTarjetas.v_detalles_tarjeta.Rows.Clear();
         }
 
@@ -216,6 +216,7 @@ namespace sistemaTarjetas
                 fDevolucion.fecha = dtpFecha.Value;
                 fDevolucion.valorMaximo = Convert.ToInt32(txtBalance.Text);
                 fDevolucion.numeroTarjeta = Convert.ToInt32(txtCodigo.Text);
+            
                 
                 if (fDevolucion.ShowDialog() == DialogResult.OK) v_detalles_tarjetaTableAdapter.Fill(dsSistemaTarjetas.v_detalles_tarjeta, Convert.ToInt32(txtCodigo.Text));
                 calcularBalance();
@@ -311,6 +312,7 @@ namespace sistemaTarjetas
                 {
                     case Modo.Insertar:
                         crear();
+                        txtValor.Focus();
                         break;
                     case Modo.Editar:
                         actualizar();                   
@@ -319,7 +321,9 @@ namespace sistemaTarjetas
                 txtCodigo.Enabled = true;
                 asignar();
                 modo = Modo.Ver;
+                
             }
+            dgvDetalles.Enabled = true;
         }
 
         private void txtCodigo_TextChanged(object sender, EventArgs e)
@@ -518,24 +522,28 @@ namespace sistemaTarjetas
 
         private void dgvDetalles_DoubleClick(object sender, EventArgs e)
         {
-            string tipo = (string)dgvDetalles.SelectedCells[2].Value;
-            if (tipo == "Venta")
-            {
-                using (FVerVenta fVer = new FVerVenta())
+            if (dgvDetalles.Rows.Count > 0) {
+                string tipo = (string)dgvDetalles.SelectedCells[2].Value;
+                if (tipo == "Venta")
                 {
-                    fVer.numeroVenta = (int)dgvDetalles.SelectedCells[0].Value;
-                    fVer.codigoTarjeta = Convert.ToInt32(tarjeta.codigo);
-                    fVer.ShowDialog();
+                    using (FVerVenta fVer = new FVerVenta())
+                    {
+                        fVer.numeroVenta = (int)dgvDetalles.SelectedCells[0].Value;
+                        fVer.codigoTarjeta = Convert.ToInt32(tarjeta.codigo);
+                        fVer.ShowDialog();
+                    }
                 }
-            }else if (tipo == "Devolucion")
-            {
-                using (FVerDevolucionTarjeta fVer = new FVerDevolucionTarjeta())
+                else if (tipo == "Devolucion")
                 {
-                    fVer.numeroDevolucion = (int)dgvDetalles.SelectedCells[0].Value;
-                    fVer.codigoTarjeta = Convert.ToInt32(tarjeta.codigo);
-                    fVer.ShowDialog();
+                    using (FVerDevolucionTarjeta fVer = new FVerDevolucionTarjeta())
+                    {
+                        fVer.numeroDevolucion = (int)dgvDetalles.SelectedCells[0].Value;
+                        fVer.codigoTarjeta = Convert.ToInt32(tarjeta.codigo);
+                        fVer.ShowDialog();
+                    }
                 }
             }
+         
             
         }
 
