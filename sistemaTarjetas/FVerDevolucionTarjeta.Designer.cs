@@ -149,6 +149,7 @@ namespace sistemaTarjetas
             this.ControlBox = false;
             this.Controls.Add(this.button2);
             this.Controls.Add(this.dgvVer);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "FVerDevolucionTarjeta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Detalles Devolucion";

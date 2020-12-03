@@ -62,5 +62,16 @@ namespace sistemaTarjetas.Properties {
                 return ((string)(this["sistemaTarjetasConnectionString1"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=sistemaTarjetas;Persist Security Info=True;User ID=" +
+            "sa;Password=0123456")]
+        public string sistemaTarjetasConnectionString2 {
+            get {
+                return ((string)(this["sistemaTarjetasConnectionString2"]));
+            }
+        }
     }
 }

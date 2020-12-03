@@ -244,6 +244,7 @@ namespace sistemaTarjetas
             this.Controls.Add(this.dgvBuscar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSeleccionar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "FBuscarGasto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Buscar Gasto";

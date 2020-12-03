@@ -71,6 +71,7 @@
             this.dgvBuscar.Size = new System.Drawing.Size(356, 253);
             this.dgvBuscar.TabIndex = 0;
             this.dgvBuscar.SelectionChanged += new System.EventHandler(this.dgvBuscar_SelectionChanged);
+            this.dgvBuscar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvBuscar_KeyDown);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -201,6 +202,7 @@
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvBuscar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "FBuscarAyudante";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FBuscarAyudante_Load);

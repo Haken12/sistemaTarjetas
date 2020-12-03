@@ -172,11 +172,8 @@ namespace sistemaTarjetas
                 querys.nuevo_cobro_tarjeta(Convert.ToInt32(txtCodigo.Text), dtpFecha.Value, monto, 0);
                 v_detalles_tarjetaTableAdapter.Fill(dsSistemaTarjetas.v_detalles_tarjeta, Convert.ToInt32(txtCodigo.Text));
                 calcularBalance();
-                txtValor.Clear();
-                
-                txtCodigo.Focus();
-                txtCodigo.SelectAll();
-                
+                txtValor.Focus();
+                txtValor.SelectAll();
 
             }
             else
@@ -414,16 +411,21 @@ namespace sistemaTarjetas
             }
         }
 
-        private void btnBuscar_Click(object sender, EventArgs e)
+        private void buscar()
         {
-            using(FBuscarTarjeta fBuscar = new FBuscarTarjeta())
+            using (FBuscarTarjeta fBuscar = new FBuscarTarjeta())
             {
                 if (fBuscar.ShowDialog() == DialogResult.OK)
                 {
                     int cd = fBuscar.seleccion;
                     txtCodigo.Text = cd.ToString();
+                    txtValor.Focus();
                 }
             }
+        }
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            buscar();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -501,10 +503,17 @@ namespace sistemaTarjetas
 
         private void txtCodigo_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter &(txtNombre.Text != ""))
+            if (e.KeyCode == Keys.Enter) 
             {
-                txtValor.Focus();
+                if (txtNombre.Text != "")
+                {
+                    txtValor.Focus();
+                }
+                else{
+                    buscar();
+                }
             }
+            
         }
 
         private void cbxTipo_KeyPress(object sender, KeyPressEventArgs e)

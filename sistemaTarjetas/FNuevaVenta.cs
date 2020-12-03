@@ -153,7 +153,7 @@ namespace sistemaTarjetas
             guardar();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buscar()
         {
             using (FSeleccionarArticulo fSeleccionar = new FSeleccionarArticulo())
             {
@@ -166,16 +166,13 @@ namespace sistemaTarjetas
                 }
             }
         }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            buscar();
+        }
 
         private void txtCodigo_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.G & e.Control)
-            {
-                guardar();
-            }
-            else
-            if (txtCodigo.Text.Length > 0)
-            {
                 if (e.KeyCode == Keys.Enter)
                 {
                     if (txtDescripcion.Text != "")
@@ -184,10 +181,9 @@ namespace sistemaTarjetas
                     }
                     else
                     {
-                        MessageBox.Show("Articulo no disponible en inventario", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        buscar();
                     }
-                }
-            }
+                }        
         }
 
         private void FNuevaVenta_KeyPress(object sender, KeyPressEventArgs e)

@@ -107,6 +107,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.cbxZona);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "FReasignarZona";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Load += new System.EventHandler(this.FReasignarZona_Load);

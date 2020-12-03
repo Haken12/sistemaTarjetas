@@ -77,6 +77,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsDespachos.xsd</DependentUpon>
     </Compile>
+    <Compile Include="dsDevoluciones.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsDevoluciones.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsNuevos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsNuevos.xsd</DependentUpon>
+    </Compile>
     <Compile Include="dsSistemaTarjetas.cs">
       <DependentUpon>dsSistemaTarjetas.xsd</DependentUpon>
     </Compile>
@@ -102,6 +112,12 @@
     </Compile>
     <Compile Include="FArticulos.Designer.cs">
       <DependentUpon>FArticulos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FArticulosVentaT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FArticulosVentaT.Designer.cs">
+      <DependentUpon>FArticulosVentaT.cs</DependentUpon>
     </Compile>
     <Compile Include="FBuscarArticulo.cs">
       <SubType>Form</SubType>
@@ -169,6 +185,12 @@
     <Compile Include="FCuadreVendedor.Designer.cs">
       <DependentUpon>FCuadreVendedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="FDespachoVendedorB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FDespachoVendedorB.Designer.cs">
+      <DependentUpon>FDespachoVendedorB.cs</DependentUpon>
+    </Compile>
     <Compile Include="FDevolucionTarjeta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,6 +202,12 @@
     </Compile>
     <Compile Include="FDespachoVendedor.Designer.cs">
       <DependentUpon>FDespachoVendedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FDevolucionTarjetaB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FDevolucionTarjetaB.Designer.cs">
+      <DependentUpon>FDevolucionTarjetaB.cs</DependentUpon>
     </Compile>
     <Compile Include="FDevolucionVendedor.cs">
       <SubType>Form</SubType>
@@ -259,6 +287,12 @@
     <Compile Include="FVerVenta.Designer.cs">
       <DependentUpon>FVerVenta.cs</DependentUpon>
     </Compile>
+    <Compile Include="LabelEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LabelEdit.Designer.cs">
+      <DependentUpon>LabelEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Metodos.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -275,6 +309,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FArticulos.resx">
       <DependentUpon>FArticulos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FArticulosVentaT.resx">
+      <DependentUpon>FArticulosVentaT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FBuscarArticulo.resx">
       <DependentUpon>FBuscarArticulo.cs</DependentUpon>
@@ -309,11 +346,17 @@
     <EmbeddedResource Include="FCuadreVendedor.resx">
       <DependentUpon>FCuadreVendedor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FDespachoVendedorB.resx">
+      <DependentUpon>FDespachoVendedorB.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FDevolucionTarjeta.resx">
       <DependentUpon>FDevolucionTarjeta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FDespachoVendedor.resx">
       <DependentUpon>FDespachoVendedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FDevolucionTarjetaB.resx">
+      <DependentUpon>FDevolucionTarjetaB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FDevolucionVendedor.resx">
       <DependentUpon>FDevolucionVendedor.cs</DependentUpon>
@@ -354,6 +397,9 @@
     <EmbeddedResource Include="FVerVenta.resx">
       <DependentUpon>FVerVenta.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LabelEdit.resx">
+      <DependentUpon>LabelEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -388,6 +434,28 @@
     </None>
     <None Include="dsDespachos.xss">
       <DependentUpon>dsDespachos.xsd</DependentUpon>
+    </None>
+    <None Include="dsDevoluciones.xsc">
+      <DependentUpon>dsDevoluciones.xsd</DependentUpon>
+    </None>
+    <None Include="dsDevoluciones.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsDevoluciones.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsDevoluciones.xss">
+      <DependentUpon>dsDevoluciones.xsd</DependentUpon>
+    </None>
+    <None Include="dsNuevos.xsc">
+      <DependentUpon>dsNuevos.xsd</DependentUpon>
+    </None>
+    <None Include="dsNuevos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsNuevos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsNuevos.xss">
+      <DependentUpon>dsNuevos.xsd</DependentUpon>
     </None>
     <None Include="dsSistemaTarjetas.xsc">
       <DependentUpon>dsSistemaTarjetas.xsd</DependentUpon>

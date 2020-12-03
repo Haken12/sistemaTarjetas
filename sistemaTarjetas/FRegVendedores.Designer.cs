@@ -145,6 +145,7 @@
             this.txtId.TabIndex = 0;
             this.txtId.TextChanged += new System.EventHandler(this.txtId_TextChanged);
             this.txtId.Enter += new System.EventHandler(this.entrar);
+            this.txtId.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtId_KeyDown);
             this.txtId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtId_KeyPress);
             this.txtId.Leave += new System.EventHandler(this.salir);
             // 
@@ -408,6 +409,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "FRegVendedores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de Vendedores";

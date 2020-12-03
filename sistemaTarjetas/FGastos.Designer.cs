@@ -385,6 +385,7 @@ namespace sistemaTarjetas
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtNumero);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "FGastos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gastos";

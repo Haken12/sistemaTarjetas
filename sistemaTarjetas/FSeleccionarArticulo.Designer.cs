@@ -171,6 +171,7 @@
             this.Controls.Add(this.dgvBuscar);
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "FSeleccionarArticulo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Load += new System.EventHandler(this.FSeleccionarArticulo_Load);

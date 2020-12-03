@@ -41,6 +41,7 @@
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlLateral = new System.Windows.Forms.Panel();
             this.pnlVendedores = new System.Windows.Forms.Panel();
+            this.btnGastosV = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnDevolucion = new System.Windows.Forms.Button();
@@ -55,7 +56,6 @@
             this.btnAjusteInventario = new System.Windows.Forms.Button();
             this.btnArticulos = new System.Windows.Forms.Button();
             this.btnInventario = new System.Windows.Forms.Button();
-            this.btnGastosV = new System.Windows.Forms.Button();
             this.panelTop.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.pnlLateral.SuspendLayout();
@@ -189,6 +189,23 @@
             this.pnlVendedores.Size = new System.Drawing.Size(284, 350);
             this.pnlVendedores.TabIndex = 3;
             this.pnlVendedores.Visible = false;
+            // 
+            // btnGastosV
+            // 
+            this.btnGastosV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnGastosV.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnGastosV.FlatAppearance.BorderSize = 0;
+            this.btnGastosV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGastosV.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnGastosV.Location = new System.Drawing.Point(0, 284);
+            this.btnGastosV.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnGastosV.Name = "btnGastosV";
+            this.btnGastosV.Size = new System.Drawing.Size(284, 38);
+            this.btnGastosV.TabIndex = 10;
+            this.btnGastosV.Text = "   Gastos de Vendedor";
+            this.btnGastosV.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGastosV.UseVisualStyleBackColor = false;
+            this.btnGastosV.Click += new System.EventHandler(this.btnGastosV_Click);
             // 
             // button3
             // 
@@ -423,23 +440,6 @@
             this.btnInventario.UseVisualStyleBackColor = false;
             this.btnInventario.Click += new System.EventHandler(this.btnInventario_Click);
             // 
-            // btnGastosV
-            // 
-            this.btnGastosV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnGastosV.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnGastosV.FlatAppearance.BorderSize = 0;
-            this.btnGastosV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGastosV.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnGastosV.Location = new System.Drawing.Point(0, 284);
-            this.btnGastosV.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnGastosV.Name = "btnGastosV";
-            this.btnGastosV.Size = new System.Drawing.Size(284, 38);
-            this.btnGastosV.TabIndex = 10;
-            this.btnGastosV.Text = "   Gastos de Vendedor";
-            this.btnGastosV.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGastosV.UseVisualStyleBackColor = false;
-            this.btnGastosV.Click += new System.EventHandler(this.btnGastosV_Click);
-            // 
             // FMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -450,6 +450,7 @@
             this.Controls.Add(this.panelTop);
             this.Controls.Add(this.statusStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

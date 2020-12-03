@@ -190,6 +190,7 @@ namespace sistemaTarjetas
             this.Controls.Add(this.dgvBuscar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSeleccionar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "FBuscarDevolucion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FBuscarDevolucion_Load);

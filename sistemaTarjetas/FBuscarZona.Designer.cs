@@ -226,6 +226,7 @@
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.dgvBuscar);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "FBuscarZona";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FBuscarZona_Load);

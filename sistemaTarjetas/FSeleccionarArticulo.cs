@@ -43,7 +43,7 @@ namespace sistemaTarjetas
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             bsBuscar.Filter = "";
-            bsBuscar.Filter = $"Descripcion LIKE '{txtDescripcion.Text}'";
+            bsBuscar.Filter = $"Descripcion LIKE '{txtDescripcion.Text}%'";
         }
 
         private void dgvBuscar_KeyDown(object sender, KeyEventArgs e)

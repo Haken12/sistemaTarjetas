@@ -29,6 +29,7 @@ namespace sistemaTarjetas
         {
             if (((RadioButton)sender).Checked) 
             {
+                txtNombre.Clear();
                 txtId.Enabled = true;
                 txtNombre.Enabled = false;
                 bsBuscar.Filter = "";
@@ -40,6 +41,7 @@ namespace sistemaTarjetas
         {
             if (((RadioButton)sender).Checked)
             {
+                txtId.Clear();
                 txtId.Enabled = false;
                 txtNombre.Enabled = true;
                 bsBuscar.Filter = "";
@@ -74,14 +76,19 @@ namespace sistemaTarjetas
             
         }
 
-        private void btnOk_Click(object sender, EventArgs e)
+        private void seleccionar()
         {
             if (dgvBuscar.SelectedRows.Count != 0)
             {
                 this.Id = (int)dgvBuscar.SelectedCells[0].Value;
+                this.DialogResult = DialogResult.OK;
             }
             else this.DialogResult = DialogResult.None;
+        }
+        private void btnOk_Click(object sender, EventArgs e)
+        {
 
+            seleccionar();
         }
 
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
@@ -97,6 +104,14 @@ namespace sistemaTarjetas
             if (Char.IsDigit(e.KeyChar)) return;
             if (Char.IsControl(e.KeyChar)) return;
             e.Handled = true;
+        }
+
+        private void dgvBuscar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                seleccionar();
+            }
         }
     }
 }

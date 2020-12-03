@@ -22,10 +22,31 @@ namespace sistemaTarjetas
         {
             // TODO: esta línea de código carga datos en la tabla 'dsSistemaTarjetas.v_tarjetas' Puede moverla o quitarla según sea necesario.
             this.v_tarjetasTableAdapter.Fill(this.dsSistemaTarjetas.v_tarjetas);
-
+            txtNombre.Focus();
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            aceptar();
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            bsTarjetas.Filter = $"Nombre LIKE '{txtNombre.Text}%'";
+        }
+
+        private void txtNombre_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if(dgvTarjetas.Rows.Count > 0)
+                {
+                    dgvTarjetas.Focus();
+                }
+            }
+        }
+
+        private void aceptar()
         {
             if (dgvTarjetas.Rows.Count == 0)
             {
@@ -42,7 +63,15 @@ namespace sistemaTarjetas
                 else
                 {
                     seleccion = (int)dgvTarjetas.SelectedCells[0].Value;
+                    this.DialogResult = DialogResult.OK;
                 }
+            }
+        }
+        private void dgvTarjetas_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                aceptar();
             }
         }
     }

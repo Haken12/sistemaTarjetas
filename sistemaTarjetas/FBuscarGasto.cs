@@ -74,6 +74,7 @@ namespace sistemaTarjetas
             {
                 cbxVendedor.Enabled = true;
                 cbxVendedor.SelectedIndex = 0;
+                bsBuscar.Filter = string.Format("Fecha >= #{0:yyyy-MM-dd}# And Fecha <= #{1:yyyy-MM-dd}# And IdVendedor ={2}", dtpInicial.Value, dtpFinal.Value, cbxVendedor.SelectedValue);
             }
             else
             {

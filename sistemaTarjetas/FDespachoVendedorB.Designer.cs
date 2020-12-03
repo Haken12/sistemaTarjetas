@@ -1,6 +1,6 @@
 ﻿namespace sistemaTarjetas
 {
-    partial class FDespachoVendedor
+    partial class FDespachoVendedorB
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FDespachoVendedor));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FDespachoVendedorB));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
@@ -80,6 +80,7 @@
             this.queries = new sistemaTarjetas.dsDespachosTableAdapters.queries();
             this.querys = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.Querys();
             this.detalles_despachoTableAdapter = new sistemaTarjetas.dsDespachosTableAdapters.detalles_despachoTableAdapter();
+            this.queriesNuevo = new sistemaTarjetas.dsNuevosTableAdapters.queriesNuevo();
             this.groupBox1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -557,7 +558,7 @@
             // 
             this.detalles_despachoTableAdapter.ClearBeforeFill = true;
             // 
-            // FDespachoVendedor
+            // FDespachoVendedorB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -574,7 +575,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "FDespachoVendedor";
+            this.Name = "FDespachoVendedorB";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Despacho de Mercancia";
             this.Load += new System.EventHandler(this.FDespachoVendedor_Load);
@@ -646,5 +647,6 @@
         private dsDespachosTableAdapters.queries queries;
         private dsSistemaTarjetasTableAdapters.Querys querys;
         private dsDespachosTableAdapters.detalles_despachoTableAdapter detalles_despachoTableAdapter;
+        private dsNuevosTableAdapters.queriesNuevo queriesNuevo;
     }
 }

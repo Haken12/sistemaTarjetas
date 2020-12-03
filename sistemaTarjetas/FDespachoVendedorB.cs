@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace sistemaTarjetas
 {
-    public partial class FDespachoVendedor : Form
+    public partial class FDespachoVendedorB : Form
     {
         private  class Despacho
         {
@@ -26,9 +26,11 @@ namespace sistemaTarjetas
 
         private Modo modo = Modo.Ver;
         private bool vendedorSi = false;
+        private bool productoSi = false;
         private Despacho despacho = new Despacho();
         private bool articuloSi = false;
-        public FDespachoVendedor()
+        DataRow rw;
+        public FDespachoVendedorB()
         {
             InitializeComponent();
         }
@@ -136,6 +138,9 @@ namespace sistemaTarjetas
             btnGuardar.Enabled = true;
             dtpFecha.Enabled = true;
             btnCancelar.Enabled = true;
+            int? a = 0;
+            txtNumero.Text = queriesNuevo.siguienteDespacho(ref a, dtpFecha.Value).ToString();
+            Despacho.Numero = Convert.ToInt32(txtNumero.Text);
             txtNumero.Enabled = false;
             btnBuscarDevolucion.Enabled = false;
             txtCodigoVendedor.Enabled = true;
@@ -161,6 +166,11 @@ namespace sistemaTarjetas
                 MessageBox.Show("Elija un vendedor");
                 return false;
             }
+            if (modo == Modo.Insertar && dgvDetalles.Rows.Count == 0) 
+            {
+                MessageBox.Show("Debe agregar por lo menos un producto");
+                return false;
+            }
             return true;
         }
         private void guardar()
@@ -169,28 +179,34 @@ namespace sistemaTarjetas
                 switch (modo)
                 {
                     case Modo.Insertar:
-                        asignar();
-                        crear();
-                        txtNumero.Text = Despacho.Numero.ToString();
-                        txtCodigoVendedor.Enabled = false;
-                        btnBuscarVendedor.Enabled = false;
+                        queriesNuevo.guardarDespacho(Despacho.Numero, Convert.ToInt32(txtCodigoVendedor.Text), 0, dgvDetalles.Rows.Count, Convert.ToInt32(txtTotal.Text));                       
                         break;
                     case Modo.Editar:
-                        dgvDetalles.Enabled = false;
-                        txtCodigo.Enabled = false;
-                        btnGuardar.Text = "Guardar";
+                        queriesNuevo.guardarDespacho(Despacho.Numero, Convert.ToInt32(txtCodigoVendedor.Text), 0, dgvDetalles.Rows.Count, Convert.ToInt32(txtTotal.Text));
                         break;
                     case Modo.Ver:
                         break;
                     default:
                         break;
                 }
+                foreach (DataRow row in dsDespachos.detalles_despacho.Rows)
+                {
+                    queries.eliminarDetalleDespacho(Despacho.Numero, (int)row[0], (int)row[1], Convert.ToInt32(txtCodigoVendedor.Text), (int)row[3]);
+                    queries.nuevo_detalle_despacho(Despacho.Numero, (int)row[1], (int)row[4], (int)row[3], (int)row[5]);
+                }
+                dgvDetalles.Enabled = true;
                 modo = Modo.Ver;
                 btnNuevo.Enabled = true;
                 btnModificar.Enabled = true;
                 btnEliminar.Enabled = true;
                 btnGuardar.Enabled = false;
                 btnCancelar.Enabled = false;
+                dtpFecha.Enabled = false;
+                txtCodigo.Enabled = false;
+                txtCodigoVendedor.Clear();
+                txtCodigoVendedor.Enabled = false;
+                btnBuscarProducto.Enabled = false;
+                btnBuscarVendedor.Enabled = false;
                 btnBuscarDevolucion.Enabled = true;
                 txtNumero.Focus(); 
             }
@@ -202,16 +218,19 @@ namespace sistemaTarjetas
             {
                 case Modo.Insertar:
                     txtNombre.Clear();
-                    vendedorSi = false;
+                    txtCodigo.Enabled = false;
+                    btnBuscarProducto.Enabled = false;
+                    txtCodigo.Clear();
+                    vendedorSi = false;                    
                     if(txtCodigoVendedor.TextLength > 0)
                     {
                         int vendedor = Convert.ToInt32(txtCodigoVendedor.Text);
                        if (querys.vendedor_existe(vendedor) != 0)
                         {
-                            txtNombre.Text = (string)querys.nombreVendedor(vendedor);
-                            
+                            txtNombre.Text = (string)querys.nombreVendedor(vendedor);                            
                             vendedorSi = true;
-                            
+                            txtCodigo.Enabled = true;
+                            btnBuscarProducto.Enabled = true;
                         }
                     }
                     break;
@@ -231,8 +250,7 @@ namespace sistemaTarjetas
             btnModificar.Enabled = false;
             btnEliminar.Enabled = false;
             btnGuardar.Enabled = true;
-            btnGuardar.Text = "Terminar";
-            asignar();
+            btnCancelar.Enabled = true;            
             dgvDetalles.Enabled = true;
             txtCodigo.Enabled = true;
             btnBuscarProducto.Enabled = true;
@@ -241,8 +259,7 @@ namespace sistemaTarjetas
 
         private void txtCodigo_TextChanged(object sender, EventArgs e)
         {
-            if (modo == Modo.Editar)
-            {
+            articuloSi = false;
                 txtDescripcion.Clear();
                 txtCantidad.Value = 0;
                 txtCantidad.Enabled = false;
@@ -252,7 +269,7 @@ namespace sistemaTarjetas
                 if(txtCodigo.Text.Length > 0)
                 {
                     int cod = Convert.ToInt32(txtCodigo.Text);
-                    DataRow rw = dsDespachos.vProductos.FindByCodigo(cod);
+                    rw = dsDespachos.vProductos.FindByCodigo(cod);
                     if (rw != null)
                     {
                         txtDescripcion.Text = (string)rw[1];
@@ -263,7 +280,7 @@ namespace sistemaTarjetas
                         txtCantidad.Enabled = true;
                     }
                 }
-            }
+            
         }
 
         private void FDespachoVendedor_Load(object sender, EventArgs e)
@@ -300,17 +317,33 @@ namespace sistemaTarjetas
         
         private void agregar()
         {
-            queries.nuevo_detalle_despacho(Despacho.Numero, Convert.ToInt32(txtCodigo.Text), Convert.ToInt32(txtPrecio.Text), Convert.ToInt32(txtCantidad.Value), Convert.ToInt32(txtImporte.Text));
-            asignar();
-            actualizar();
-            detalles_despachoTableAdapter.Fill(dsDespachos.detalles_despacho, Despacho.Numero);
+            int codigo = Convert.ToInt32(txtCodigo.Text);
+            var fila = dsDespachos.detalles_despacho.Rows.Find(codigo);
+            if (fila != null)
+            {
+                fila["Cantidad"] = (int)fila["Cantidad"] + Convert.ToInt32(txtCantidad.Value);
+                fila["Importe"] = (int)fila["Cantidad"] * (int)fila["Precio"];
+             }
+            else
+            {
+                var nueva = dsDespachos.detalles_despacho.Newdetalles_despachoRow();
+                nueva.Despacho = Convert.ToInt32(Despacho.Numero);
+                nueva._No_ = dsDespachos.detalles_despacho.Rows.Count + 1;
+                nueva.Codigo = Convert.ToInt32(txtCodigo.Text);
+                nueva.Cantidad = Convert.ToInt32(txtCantidad.Value);
+                nueva.Importe = Convert.ToInt32(txtImporte.Text);
+                nueva.Descripcion = txtDescripcion.Text;
+                dsDespachos.detalles_despacho.Adddetalles_despachoRow(nueva);
+            }
+            dgvDetalles.Enabled = true;
+            dsDespachos.vProductos.FindByCodigo(codigo).Existencias -= Convert.ToInt32(txtCantidad.Value);
             txtTotal.Text = calcularTotal().ToString();
             txtCodigo.Clear();
             txtCodigo.Focus();
         }
         private void txtCantidad_KeyDown(object sender, KeyEventArgs e)
         {
-            if (articuloSi & txtCantidad.Value > 0 & e.KeyCode == Keys.Enter)
+            if (articuloSi && txtCantidad.Value > 0 && e.KeyCode == Keys.Enter)
             {
                 if (comprobar())
                 {
@@ -332,16 +365,11 @@ namespace sistemaTarjetas
                 {
                   if (Metodos.Confirmar())
                     {
-                        int dt = (int)dgvDetalles.SelectedRows[0].Cells[0].Value;
-                        int cp = (int)dgvDetalles.SelectedRows[0].Cells[1].Value;
-                        int ct = (int)dgvDetalles.SelectedRows[0].Cells[3].Value;
-                        queries.eliminarDetalleDespacho(Despacho.Numero, dt, cp, Despacho.IdVendedor, ct);
-                        detalles_despachoTableAdapter.Fill(dsDespachos.detalles_despacho, Despacho.Numero);
-                        txtTotal.Text = calcularTotal().ToString();
-                        asignar();
-
-                        actualizar();
-                        
+                        int c = (int)dgvDetalles.SelectedCells[0].Value;
+                        var f = dsDespachos.detalles_despacho.FindByCodigo(c);
+                        dsDespachos.vProductos.FindByCodigo(c).Existencias += f.Cantidad;
+                        dsDespachos.detalles_despacho.Removedetalles_despachoRow(f);
+                        txtTotal.Text = calcularTotal().ToString();                        
                     }
                 }
             }
@@ -425,20 +453,17 @@ namespace sistemaTarjetas
             switch (modo)
             {
                 case Modo.Insertar:
-                    txtNombre.Clear();
-                    txtCodigoVendedor.Clear();
-                    btnBuscarVendedor.Enabled = false;
-                    btnBuscarDevolucion.Enabled = true;
-                    txtNumero.Enabled = true;
+                    queriesNuevo.cancelarDespacho(Despacho.Numero);
+                    if (dgvDetalles.Rows.Count > 0)  dsDespachos.detalles_despacho.Rows.Clear();                
                     txtNumero.Clear();
-                    btnGuardar.Enabled = false;
-                    btnCancelar.Enabled = false;
-                    btnNuevo.Enabled = true;
+                    Despacho.Numero = 0;                   
                     dtpFecha.Enabled = false;
-                    txtCodigoVendedor.Enabled = false;
-                    txtNumero.Focus();
+                    txtTotal.Text = "0";
                     break;
                 case Modo.Editar:
+                    detalles_despachoTableAdapter.Fill(dsDespachos.detalles_despacho, Despacho.Numero);
+                    btnEliminar.Enabled = true;
+                    txtTotal.Text = calcularTotal().ToString();
                     break;
                 case Modo.Ver:
                     break;
@@ -446,7 +471,19 @@ namespace sistemaTarjetas
                     break;
             }
             modo = Modo.Ver;
-           
+            txtNumero.Enabled = true;
+            btnBuscarDevolucion.Enabled = true;
+            this.vProductosTableAdapter.Fill(this.dsDespachos.vProductos);
+            txtCodigoVendedor.Clear();
+            txtNombre.Clear();
+            txtCodigo.Clear();
+            txtCodigo.Enabled = false;
+            txtCodigoVendedor.Enabled = false;
+            btnBuscarProducto.Enabled = false;
+            btnBuscarVendedor.Enabled = false;
+            btnGuardar.Enabled = false;
+            btnCancelar.Enabled = false;
+            btnNuevo.Enabled = true;
 
         }
     }

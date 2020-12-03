@@ -125,6 +125,8 @@
             this.dgvBuscar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBuscar.Size = new System.Drawing.Size(368, 202);
             this.dgvBuscar.TabIndex = 1;
+            this.dgvBuscar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBuscar_CellContentClick);
+            this.dgvBuscar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvBuscar_KeyDown);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -199,6 +201,7 @@
             this.Controls.Add(this.btnSeleccionar);
             this.Controls.Add(this.dgvBuscar);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "FBuscarVendedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FBuscarVendedor_Load);

@@ -117,40 +117,68 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="bsZonas.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>234, 17</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnBuscarVendedor.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29m
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAF5SURBVDhPhZIxa8JQFIXff3LqVjq3c8nW6Q1ScCgZ
+        CoKiUCGTUBwyOQVq6WTJUIqIDuIQ6FKHQhxaEJzcRB3q6T0viU1iaANfcnPOvSd5yVOu6yZYgi8ghjU1
+        4wMoRHU6HdLo9XoIw1C06GBNjR57RCpEtdtty/M8bDYbTL72cANAu8DtE4xGjz1Fw0Q5juPPZjNMPr/x
+        OhcpPrqjKIQee0QqDmg2m9hut+bJ9ecIvkHyFvTYkx9MUNVqFev12gSkqfWBuxcYjz35wQRl27Y/nU4x
+        mu/w+A4EiwjvDRh87ECPPUXDRFUqFavVamG5XGIURkshrKnRY492A1WEKpfLpMF1jsdjrFYrA+t47WZf
+        8Gl5TIDWOsESfAExrKkhCAITUtLu8CggLeS5up+YK0Nq/YVBQkT69TMDeS6dgbmqkh6ey29hAL9PEkL/
+        aCjNRb1/qCVE9kaQCTm98f4OOLMfMvdFIZmGPCfX3SMtHfJvgDQckFMamoKu/wB6wMJ3YqYHtgAAAABJ
+        RU5ErkJggg==
+</value>
+  </data>
+  <metadata name="bsTrans.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
   </metadata>
-  <metadata name="bsVendedores.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>105, 17</value>
+  <metadata name="dsDespachos.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>389, 56</value>
   </metadata>
-  <metadata name="bsZonas.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>234, 17</value>
+  <data name="btnBuscarProducto.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29m
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAF5SURBVDhPhZIxa8JQFIXff3LqVjq3c8nW6Q1ScCgZ
+        CoKiUCGTUBwyOQVq6WTJUIqIDuIQ6FKHQhxaEJzcRB3q6T0viU1iaANfcnPOvSd5yVOu6yZYgi8ghjU1
+        4wMoRHU6HdLo9XoIw1C06GBNjR57RCpEtdtty/M8bDYbTL72cANAu8DtE4xGjz1Fw0Q5juPPZjNMPr/x
+        OhcpPrqjKIQee0QqDmg2m9hut+bJ9ecIvkHyFvTYkx9MUNVqFev12gSkqfWBuxcYjz35wQRl27Y/nU4x
+        mu/w+A4EiwjvDRh87ECPPUXDRFUqFavVamG5XGIURkshrKnRY492A1WEKpfLpMF1jsdjrFYrA+t47WZf
+        8Gl5TIDWOsESfAExrKkhCAITUtLu8CggLeS5up+YK0Nq/YVBQkT69TMDeS6dgbmqkh6ey29hAL9PEkL/
+        aCjNRb1/qCVE9kaQCTm98f4OOLMfMvdFIZmGPCfX3SMtHfJvgDQckFMamoKu/wB6wMJ3YqYHtgAAAABJ
+        RU5ErkJggg==
+</value>
+  </data>
+  <data name="btnBuscarDevolucion.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29m
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAF5SURBVDhPhZIxa8JQFIXff3LqVjq3c8nW6Q1ScCgZ
+        CoKiUCGTUBwyOQVq6WTJUIqIDuIQ6FKHQhxaEJzcRB3q6T0viU1iaANfcnPOvSd5yVOu6yZYgi8ghjU1
+        4wMoRHU6HdLo9XoIw1C06GBNjR57RCpEtdtty/M8bDYbTL72cANAu8DtE4xGjz1Fw0Q5juPPZjNMPr/x
+        OhcpPrqjKIQee0QqDmg2m9hut+bJ9ecIvkHyFvTYkx9MUNVqFev12gSkqfWBuxcYjz35wQRl27Y/nU4x
+        mu/w+A4EiwjvDRh87ECPPUXDRFUqFavVamG5XGIURkshrKnRY492A1WEKpfLpMF1jsdjrFYrA+t47WZf
+        8Gl5TIDWOsESfAExrKkhCAITUtLu8CggLeS5up+YK0Nq/YVBQkT69TMDeS6dgbmqkh6ey29hAL9PEkL/
+        aCjNRb1/qCVE9kaQCTm98f4OOLMfMvdFIZmGPCfX3SMtHfJvgDQckFMamoKu/wB6wMJ3YqYHtgAAAABJ
+        RU5ErkJggg==
+</value>
+  </data>
+  <metadata name="bsProductos.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>579, 17</value>
   </metadata>
-  <metadata name="dsSistemaTarjetas.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>331, 17</value>
-  </metadata>
-  <metadata name="dsSistemaTarjetas.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>331, 17</value>
-  </metadata>
-  <metadata name="bsVendedores.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>105, 17</value>
-  </metadata>
-  <metadata name="bsDetalles.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="vProductosTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 56</value>
   </metadata>
-  <metadata name="bsDetalles.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 56</value>
+  <metadata name="queries.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>203, 56</value>
   </metadata>
   <metadata name="querys.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>146, 17</value>
+    <value>301, 56</value>
   </metadata>
-  <metadata name="v_vendedorTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>480, 17</value>
+  <metadata name="detalles_despachoTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>512, 56</value>
   </metadata>
-  <metadata name="v_zonaTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>668, 17</value>
-  </metadata>
-  <metadata name="v_detalles_tarjetaTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>124, 56</value>
+  <metadata name="queriesNuevo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 58</value>
   </metadata>
 </root>

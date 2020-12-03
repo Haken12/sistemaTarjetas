@@ -44,7 +44,18 @@ namespace sistemaTarjetas
         }
         private bool verificar()
         {
-            
+            if (txtNombre.Text == String.Empty)
+            {
+                MessageBox.Show("Debe un nombre", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtNombre.Focus(); 
+                return false;
+            }
+            if(txtAyudante.SelectedIndex < 0)
+            {
+                MessageBox.Show("Debe elegir un ayudante", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtAyudante.Focus();
+                return false;
+            }
             return true;
         }
         private void activar()
@@ -223,19 +234,7 @@ namespace sistemaTarjetas
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            using (FBuscarVendedor fBuscar = new FBuscarVendedor())
-            {
-                if (fBuscar.ShowDialog() == DialogResult.OK) 
-                {
-                    int id = fBuscar.Id;
-                    txtId.Text = id.ToString();
-                    vendedor.id = id;
-                    despejar();
-                    cargar();
-                    btnModificar.Enabled = true;
-                }
-
-            }
+            buscar();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -327,6 +326,31 @@ namespace sistemaTarjetas
         private void txtAyudante_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
+        }
+
+        private void buscar()
+        {
+            using (FBuscarVendedor fBuscar = new FBuscarVendedor())
+            {
+                if (fBuscar.ShowDialog() == DialogResult.OK)
+                {
+                    int id = fBuscar.Id;
+                    txtId.Text = id.ToString();
+                    vendedor.id = id;
+                    despejar();
+                    cargar();
+                    btnModificar.Enabled = true;
+                    btnEliminar.Enabled = true;
+                }
+
+            }
+        }
+        private void txtId_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && txtId.Text == String.Empty)
+            {
+                buscar();
+            }
         }
     }   
 }

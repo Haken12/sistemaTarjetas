@@ -143,7 +143,7 @@
             this.dtpFechaT.Location = new System.Drawing.Point(207, 89);
             this.dtpFechaT.Name = "dtpFechaT";
             this.dtpFechaT.Size = new System.Drawing.Size(82, 20);
-            this.dtpFechaT.TabIndex = 16;
+            this.dtpFechaT.TabIndex = 9;
             // 
             // btnGuardar
             // 
@@ -176,7 +176,7 @@
             this.cbxZona.Location = new System.Drawing.Point(601, 62);
             this.cbxZona.Name = "cbxZona";
             this.cbxZona.Size = new System.Drawing.Size(161, 21);
-            this.cbxZona.TabIndex = 7;
+            this.cbxZona.TabIndex = 8;
             this.cbxZona.ValueMember = "Id";
             this.cbxZona.Enter += new System.EventHandler(this.entrar);
             this.cbxZona.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbxTipo_KeyPress);
@@ -201,7 +201,7 @@
             this.cbxVendedor.Location = new System.Drawing.Point(351, 62);
             this.cbxVendedor.Name = "cbxVendedor";
             this.cbxVendedor.Size = new System.Drawing.Size(206, 21);
-            this.cbxVendedor.TabIndex = 6;
+            this.cbxVendedor.TabIndex = 7;
             this.cbxVendedor.ValueMember = "Id";
             this.cbxVendedor.SelectedIndexChanged += new System.EventHandler(this.cbxVendedor_SelectedIndexChanged);
             this.cbxVendedor.Enter += new System.EventHandler(this.entrar);
@@ -226,7 +226,7 @@
             this.cbxFormaPago.MaxDropDownItems = 3;
             this.cbxFormaPago.Name = "cbxFormaPago";
             this.cbxFormaPago.Size = new System.Drawing.Size(82, 21);
-            this.cbxFormaPago.TabIndex = 5;
+            this.cbxFormaPago.TabIndex = 6;
             this.cbxFormaPago.Enter += new System.EventHandler(this.entrar);
             this.cbxFormaPago.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbxTipo_KeyPress);
             this.cbxFormaPago.Leave += new System.EventHandler(this.salir);
@@ -236,7 +236,7 @@
             this.btnNueva.Location = new System.Drawing.Point(9, 60);
             this.btnNueva.Name = "btnNueva";
             this.btnNueva.Size = new System.Drawing.Size(53, 23);
-            this.btnNueva.TabIndex = 8;
+            this.btnNueva.TabIndex = 12;
             this.btnNueva.Text = "&Nueva";
             this.btnNueva.UseVisualStyleBackColor = true;
             this.btnNueva.Click += new System.EventHandler(this.btnNueva_Click);
@@ -247,7 +247,7 @@
             this.btnModificar.Location = new System.Drawing.Point(68, 60);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(63, 23);
-            this.btnModificar.TabIndex = 9;
+            this.btnModificar.TabIndex = 13;
             this.btnModificar.Text = "&Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
@@ -258,7 +258,7 @@
             this.btnBuscar.Location = new System.Drawing.Point(80, 30);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(25, 23);
-            this.btnBuscar.TabIndex = 15;
+            this.btnBuscar.TabIndex = 1;
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
@@ -270,7 +270,7 @@
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.PromptChar = ' ';
             this.txtTelefono.Size = new System.Drawing.Size(99, 20);
-            this.txtTelefono.TabIndex = 4;
+            this.txtTelefono.TabIndex = 5;
             this.txtTelefono.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             this.txtTelefono.Enter += new System.EventHandler(this.entrar);
             this.txtTelefono.Leave += new System.EventHandler(this.salir);
@@ -283,7 +283,7 @@
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.PromptChar = ' ';
             this.txtCedula.Size = new System.Drawing.Size(100, 20);
-            this.txtCedula.TabIndex = 3;
+            this.txtCedula.TabIndex = 4;
             this.txtCedula.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             this.txtCedula.Enter += new System.EventHandler(this.entrar);
             this.txtCedula.Leave += new System.EventHandler(this.salir);
@@ -294,7 +294,7 @@
             this.txtNombre.Location = new System.Drawing.Point(118, 30);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(133, 20);
-            this.txtNombre.TabIndex = 1;
+            this.txtNombre.TabIndex = 2;
             this.txtNombre.Enter += new System.EventHandler(this.entrar);
             this.txtNombre.Leave += new System.EventHandler(this.salir);
             // 
@@ -304,7 +304,7 @@
             this.txtReferencia.Location = new System.Drawing.Point(260, 30);
             this.txtReferencia.Name = "txtReferencia";
             this.txtReferencia.Size = new System.Drawing.Size(288, 20);
-            this.txtReferencia.TabIndex = 2;
+            this.txtReferencia.TabIndex = 3;
             this.txtReferencia.Enter += new System.EventHandler(this.entrar);
             this.txtReferencia.Leave += new System.EventHandler(this.salir);
             // 
@@ -390,7 +390,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Codigo";
+            this.label1.Text = "&Codigo";
             // 
             // dgvDetalles
             // 
@@ -675,6 +675,7 @@
             this.Controls.Add(this.pnlOp);
             this.Controls.Add(this.dgvDetalles);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "FControlTarjetas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Control de Tarjetas";

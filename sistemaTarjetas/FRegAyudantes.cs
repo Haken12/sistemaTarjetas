@@ -172,7 +172,7 @@ namespace sistemaTarjetas
                 btnBuscar.Enabled = true;
                 btnEliminar.Enabled = true;
                 desactivar();
-               
+                txtId.Enabled = true;
                 txtId.Focus();
             }
         }
@@ -240,17 +240,7 @@ namespace sistemaTarjetas
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-          
-            using (FBuscarAyudante fBuscar = new FBuscarAyudante()) 
-            {
-                if (fBuscar.ShowDialog() == DialogResult.OK)
-                {
-                    ayudante.id = fBuscar.Id;
-                    txtId.Text = ayudante.id.ToString();
-                    cargar();
-
-                }
-            }
+            buscar();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -391,11 +381,33 @@ namespace sistemaTarjetas
             }
         }
 
+        private void buscar()
+        {
+            using (FBuscarAyudante fBuscar = new FBuscarAyudante())
+            {
+                if (fBuscar.ShowDialog() == DialogResult.OK)
+                {
+                    ayudante.id = fBuscar.Id;
+                    txtId.Text = ayudante.id.ToString();
+                    cargar();
+
+                }
+            }
+        }
+
         private void txtCelular_KeyDown(object sender, KeyEventArgs e)
         {
             if (txtCelular.MaskCompleted & e.KeyCode == Keys.Enter)
             {
                 guardar();
+            }
+        }
+
+        private void txtId_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && txtId.Text == String.Empty)
+            {
+                buscar();
             }
         }
     }   

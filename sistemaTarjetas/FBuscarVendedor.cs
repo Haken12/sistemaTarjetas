@@ -22,13 +22,14 @@ namespace sistemaTarjetas
         {
             // TODO: esta línea de código carga datos en la tabla 'dsSistemaTarjetas.v_vendedor' Puede moverla o quitarla según sea necesario.
             this.v_vendedorTableAdapter.Fill(this.dsSistemaTarjetas.v_vendedor);
-
+            dgvBuscar.Focus();
         }
 
         private void rbId_CheckedChanged(object sender, EventArgs e)
         {
             if (((RadioButton)sender).Checked) 
             {
+                txtNombre.Clear();
                 txtId.Enabled = true;
                 txtNombre.Enabled = false;
                 bsBuscar.Filter = "";
@@ -39,6 +40,7 @@ namespace sistemaTarjetas
         {
             if (((RadioButton)sender).Checked)
             {
+                txtId.Clear();
                 txtId.Enabled = false;
                 txtNombre.Enabled = true;
                 bsBuscar.Filter = "";
@@ -80,13 +82,31 @@ namespace sistemaTarjetas
             }
         }
 
-        private void btnSeleccionar_Click(object sender, EventArgs e)
+        private void seleccionar()
         {
             if (dgvBuscar.SelectedRows.Count != 0)
             {
                 this.Id = (int)dgvBuscar.SelectedCells[0].Value;
+                this.DialogResult = DialogResult.OK;
             }
             else this.DialogResult = DialogResult.None;
+        }
+        private void btnSeleccionar_Click(object sender, EventArgs e)
+        {
+            seleccionar();
+        }
+
+        private void dgvBuscar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) 
+            {
+                seleccionar(); 
+            }
+        }
+
+        private void dgvBuscar_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

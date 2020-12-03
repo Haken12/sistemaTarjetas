@@ -315,6 +315,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvDevolver);
             this.Controls.Add(this.dgvActuales);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FDevolucionTarjeta";

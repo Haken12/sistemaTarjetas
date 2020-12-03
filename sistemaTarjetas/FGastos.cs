@@ -24,9 +24,7 @@ namespace sistemaTarjetas
         {
             txtVendedor.Clear();
             txtNombre.Clear();
-            dtpFecha.Value = DateTime.Today;
-
-
+            if (dsSistemaTarjetas.verDetallesGasto.Rows.Count > 0) dsSistemaTarjetas.verDetallesGasto.Rows.Clear();
         }
         private void btnNuevo_Click(object sender, EventArgs e)
         {
@@ -81,11 +79,11 @@ namespace sistemaTarjetas
                         btnNuevo.Enabled = true;
                         btnGuardar.Enabled = false;
                         btnCancelar.Enabled = false;
-                        btnModificar.Enabled = false;
-                        cbxTipo.Enabled = true;
+                        btnModificar.Enabled = true;
+                        cbxTipo.Enabled = false;
                         cbxTipo.SelectedIndex = 0;
-                        txtDescripcion.Enabled = true;
-                        txtValor.Enabled = true;
+                        txtDescripcion.Enabled = false;
+                        txtValor.Enabled = false;
                         dtpFecha.Enabled = false;
                         txtTotal.Text = "0";
                         txtNumero.Enabled = true;
@@ -183,7 +181,7 @@ namespace sistemaTarjetas
             txtTotal.Text = "0";
             if (dgvDetalles.Rows.Count > 0)
             {
-                dgvDetalles.Rows.Clear();
+                dsSistemaTarjetas.verDetallesGasto.Clear();
             }
             txtDescripcion.Clear();
             txtValor.Clear();
