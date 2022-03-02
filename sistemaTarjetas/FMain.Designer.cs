@@ -133,7 +133,7 @@
             this.verToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.articulosToolStripMenuItem1});
             this.verToolStripMenuItem.Name = "verToolStripMenuItem";
-            this.verToolStripMenuItem.Size = new System.Drawing.Size(91, 22);
+            this.verToolStripMenuItem.Size = new System.Drawing.Size(90, 22);
             this.verToolStripMenuItem.Text = "Ver";
             this.verToolStripMenuItem.Click += new System.EventHandler(this.verToolStripMenuItem_Click);
             // 
@@ -147,7 +147,7 @@
             // ventanasToolStripMenuItem
             // 
             this.ventanasToolStripMenuItem.Name = "ventanasToolStripMenuItem";
-            this.ventanasToolStripMenuItem.Size = new System.Drawing.Size(67, 19);
+            this.ventanasToolStripMenuItem.Size = new System.Drawing.Size(66, 19);
             this.ventanasToolStripMenuItem.Text = "Ventanas";
             // 
             // ayudaToolStripMenuItem
@@ -238,6 +238,7 @@
             this.button2.Text = "   Cuadre de Vendedores";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnDevolucion
             // 

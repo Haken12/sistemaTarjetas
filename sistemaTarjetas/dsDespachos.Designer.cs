@@ -36,6 +36,10 @@ namespace sistemaTarjetas {
         
         private verDevolucionesDataTable tableverDevoluciones;
         
+        private detalles_despachoEDataTable tabledetalles_despachoE;
+        
+        private detalles_devolucionesEDataTable tabledetalles_devolucionesE;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -81,6 +85,12 @@ namespace sistemaTarjetas {
                 }
                 if ((ds.Tables["verDevoluciones"] != null)) {
                     base.Tables.Add(new verDevolucionesDataTable(ds.Tables["verDevoluciones"]));
+                }
+                if ((ds.Tables["detalles_despachoE"] != null)) {
+                    base.Tables.Add(new detalles_despachoEDataTable(ds.Tables["detalles_despachoE"]));
+                }
+                if ((ds.Tables["detalles_devolucionesE"] != null)) {
+                    base.Tables.Add(new detalles_devolucionesEDataTable(ds.Tables["detalles_devolucionesE"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -157,6 +167,26 @@ namespace sistemaTarjetas {
         public verDevolucionesDataTable verDevoluciones {
             get {
                 return this.tableverDevoluciones;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public detalles_despachoEDataTable detalles_despachoE {
+            get {
+                return this.tabledetalles_despachoE;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public detalles_devolucionesEDataTable detalles_devolucionesE {
+            get {
+                return this.tabledetalles_devolucionesE;
             }
         }
         
@@ -245,6 +275,12 @@ namespace sistemaTarjetas {
                 if ((ds.Tables["verDevoluciones"] != null)) {
                     base.Tables.Add(new verDevolucionesDataTable(ds.Tables["verDevoluciones"]));
                 }
+                if ((ds.Tables["detalles_despachoE"] != null)) {
+                    base.Tables.Add(new detalles_despachoEDataTable(ds.Tables["detalles_despachoE"]));
+                }
+                if ((ds.Tables["detalles_devolucionesE"] != null)) {
+                    base.Tables.Add(new detalles_devolucionesEDataTable(ds.Tables["detalles_devolucionesE"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -314,6 +350,18 @@ namespace sistemaTarjetas {
                     this.tableverDevoluciones.InitVars();
                 }
             }
+            this.tabledetalles_despachoE = ((detalles_despachoEDataTable)(base.Tables["detalles_despachoE"]));
+            if ((initTable == true)) {
+                if ((this.tabledetalles_despachoE != null)) {
+                    this.tabledetalles_despachoE.InitVars();
+                }
+            }
+            this.tabledetalles_devolucionesE = ((detalles_devolucionesEDataTable)(base.Tables["detalles_devolucionesE"]));
+            if ((initTable == true)) {
+                if ((this.tabledetalles_devolucionesE != null)) {
+                    this.tabledetalles_devolucionesE.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -336,6 +384,10 @@ namespace sistemaTarjetas {
             base.Tables.Add(this.tablev_inventario_vendedor);
             this.tableverDevoluciones = new verDevolucionesDataTable();
             base.Tables.Add(this.tableverDevoluciones);
+            this.tabledetalles_despachoE = new detalles_despachoEDataTable();
+            base.Tables.Add(this.tabledetalles_despachoE);
+            this.tabledetalles_devolucionesE = new detalles_devolucionesEDataTable();
+            base.Tables.Add(this.tabledetalles_devolucionesE);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -371,6 +423,18 @@ namespace sistemaTarjetas {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private bool ShouldSerializeverDevoluciones() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializedetalles_despachoE() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializedetalles_devolucionesE() {
             return false;
         }
         
@@ -446,6 +510,12 @@ namespace sistemaTarjetas {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void verDevolucionesRowChangeEventHandler(object sender, verDevolucionesRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void detalles_despachoERowChangeEventHandler(object sender, detalles_despachoERowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void detalles_devolucionesERowChangeEventHandler(object sender, detalles_devolucionesERowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -1594,6 +1664,13 @@ namespace sistemaTarjetas {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public detalles_devolucionesRow FindByCodigo(int Codigo) {
+                return ((detalles_devolucionesRow)(this.Rows.Find(new object[] {
+                            Codigo})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
                 detalles_devolucionesDataTable cln = ((detalles_devolucionesDataTable)(base.Clone()));
                 cln.InitVars();
@@ -1632,6 +1709,10 @@ namespace sistemaTarjetas {
                 base.Columns.Add(this.columnPrecio);
                 this.columnValor = new global::System.Data.DataColumn("Valor", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnValor);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnCodigo}, true));
+                this.columnCodigo.AllowDBNull = false;
+                this.columnCodigo.Unique = true;
                 this.columnDescripcion.MaxLength = 50;
                 this.columnValor.ReadOnly = true;
             }
@@ -2380,6 +2461,681 @@ namespace sistemaTarjetas {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class detalles_despachoEDataTable : global::System.Data.TypedTableBase<detalles_despachoERow> {
+            
+            private global::System.Data.DataColumn columnDespacho;
+            
+            private global::System.Data.DataColumn _columnNo_;
+            
+            private global::System.Data.DataColumn columnCodigo;
+            
+            private global::System.Data.DataColumn columnDescripcion;
+            
+            private global::System.Data.DataColumn columnCantidad;
+            
+            private global::System.Data.DataColumn columnPrecio;
+            
+            private global::System.Data.DataColumn columnImporte;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public detalles_despachoEDataTable() {
+                this.TableName = "detalles_despachoE";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal detalles_despachoEDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected detalles_despachoEDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DespachoColumn {
+                get {
+                    return this.columnDespacho;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn _No_Column {
+                get {
+                    return this._columnNo_;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn CodigoColumn {
+                get {
+                    return this.columnCodigo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DescripcionColumn {
+                get {
+                    return this.columnDescripcion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn CantidadColumn {
+                get {
+                    return this.columnCantidad;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn PrecioColumn {
+                get {
+                    return this.columnPrecio;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ImporteColumn {
+                get {
+                    return this.columnImporte;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public detalles_despachoERow this[int index] {
+                get {
+                    return ((detalles_despachoERow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event detalles_despachoERowChangeEventHandler detalles_despachoERowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event detalles_despachoERowChangeEventHandler detalles_despachoERowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event detalles_despachoERowChangeEventHandler detalles_despachoERowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event detalles_despachoERowChangeEventHandler detalles_despachoERowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Adddetalles_despachoERow(detalles_despachoERow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public detalles_despachoERow Adddetalles_despachoERow(int Despacho, int _No_, int Codigo, string Descripcion, int Cantidad, int Precio, int Importe) {
+                detalles_despachoERow rowdetalles_despachoERow = ((detalles_despachoERow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        Despacho,
+                        _No_,
+                        Codigo,
+                        Descripcion,
+                        Cantidad,
+                        Precio,
+                        Importe};
+                rowdetalles_despachoERow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowdetalles_despachoERow);
+                return rowdetalles_despachoERow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public detalles_despachoERow FindByCodigo(int Codigo) {
+                return ((detalles_despachoERow)(this.Rows.Find(new object[] {
+                            Codigo})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                detalles_despachoEDataTable cln = ((detalles_despachoEDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new detalles_despachoEDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnDespacho = base.Columns["Despacho"];
+                this._columnNo_ = base.Columns["No."];
+                this.columnCodigo = base.Columns["Codigo"];
+                this.columnDescripcion = base.Columns["Descripcion"];
+                this.columnCantidad = base.Columns["Cantidad"];
+                this.columnPrecio = base.Columns["Precio"];
+                this.columnImporte = base.Columns["Importe"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnDespacho = new global::System.Data.DataColumn("Despacho", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDespacho);
+                this._columnNo_ = new global::System.Data.DataColumn("No.", typeof(int), null, global::System.Data.MappingType.Element);
+                this._columnNo_.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnNo_");
+                this._columnNo_.ExtendedProperties.Add("Generator_UserColumnName", "No.");
+                base.Columns.Add(this._columnNo_);
+                this.columnCodigo = new global::System.Data.DataColumn("Codigo", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCodigo);
+                this.columnDescripcion = new global::System.Data.DataColumn("Descripcion", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDescripcion);
+                this.columnCantidad = new global::System.Data.DataColumn("Cantidad", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCantidad);
+                this.columnPrecio = new global::System.Data.DataColumn("Precio", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPrecio);
+                this.columnImporte = new global::System.Data.DataColumn("Importe", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnImporte);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnCodigo}, true));
+                this.columnCodigo.AllowDBNull = false;
+                this.columnCodigo.Unique = true;
+                this.columnDescripcion.MaxLength = 50;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public detalles_despachoERow Newdetalles_despachoERow() {
+                return ((detalles_despachoERow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new detalles_despachoERow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(detalles_despachoERow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.detalles_despachoERowChanged != null)) {
+                    this.detalles_despachoERowChanged(this, new detalles_despachoERowChangeEvent(((detalles_despachoERow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.detalles_despachoERowChanging != null)) {
+                    this.detalles_despachoERowChanging(this, new detalles_despachoERowChangeEvent(((detalles_despachoERow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.detalles_despachoERowDeleted != null)) {
+                    this.detalles_despachoERowDeleted(this, new detalles_despachoERowChangeEvent(((detalles_despachoERow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.detalles_despachoERowDeleting != null)) {
+                    this.detalles_despachoERowDeleting(this, new detalles_despachoERowChangeEvent(((detalles_despachoERow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Removedetalles_despachoERow(detalles_despachoERow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                dsDespachos ds = new dsDespachos();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "detalles_despachoEDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class detalles_devolucionesEDataTable : global::System.Data.TypedTableBase<detalles_devolucionesERow> {
+            
+            private global::System.Data.DataColumn columnNumero;
+            
+            private global::System.Data.DataColumn columnCodigo;
+            
+            private global::System.Data.DataColumn columnDescripcion;
+            
+            private global::System.Data.DataColumn columnCantidad;
+            
+            private global::System.Data.DataColumn columnPrecio;
+            
+            private global::System.Data.DataColumn columnValor;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public detalles_devolucionesEDataTable() {
+                this.TableName = "detalles_devolucionesE";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal detalles_devolucionesEDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected detalles_devolucionesEDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NumeroColumn {
+                get {
+                    return this.columnNumero;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn CodigoColumn {
+                get {
+                    return this.columnCodigo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DescripcionColumn {
+                get {
+                    return this.columnDescripcion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn CantidadColumn {
+                get {
+                    return this.columnCantidad;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn PrecioColumn {
+                get {
+                    return this.columnPrecio;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ValorColumn {
+                get {
+                    return this.columnValor;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public detalles_devolucionesERow this[int index] {
+                get {
+                    return ((detalles_devolucionesERow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event detalles_devolucionesERowChangeEventHandler detalles_devolucionesERowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event detalles_devolucionesERowChangeEventHandler detalles_devolucionesERowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event detalles_devolucionesERowChangeEventHandler detalles_devolucionesERowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event detalles_devolucionesERowChangeEventHandler detalles_devolucionesERowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Adddetalles_devolucionesERow(detalles_devolucionesERow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public detalles_devolucionesERow Adddetalles_devolucionesERow(int Numero, int Codigo, string Descripcion, int Cantidad, int Precio, int Valor) {
+                detalles_devolucionesERow rowdetalles_devolucionesERow = ((detalles_devolucionesERow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        Numero,
+                        Codigo,
+                        Descripcion,
+                        Cantidad,
+                        Precio,
+                        Valor};
+                rowdetalles_devolucionesERow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowdetalles_devolucionesERow);
+                return rowdetalles_devolucionesERow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public detalles_devolucionesERow FindByCodigo(int Codigo) {
+                return ((detalles_devolucionesERow)(this.Rows.Find(new object[] {
+                            Codigo})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                detalles_devolucionesEDataTable cln = ((detalles_devolucionesEDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new detalles_devolucionesEDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnNumero = base.Columns["Numero"];
+                this.columnCodigo = base.Columns["Codigo"];
+                this.columnDescripcion = base.Columns["Descripcion"];
+                this.columnCantidad = base.Columns["Cantidad"];
+                this.columnPrecio = base.Columns["Precio"];
+                this.columnValor = base.Columns["Valor"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnNumero = new global::System.Data.DataColumn("Numero", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNumero);
+                this.columnCodigo = new global::System.Data.DataColumn("Codigo", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCodigo);
+                this.columnDescripcion = new global::System.Data.DataColumn("Descripcion", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDescripcion);
+                this.columnCantidad = new global::System.Data.DataColumn("Cantidad", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCantidad);
+                this.columnPrecio = new global::System.Data.DataColumn("Precio", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPrecio);
+                this.columnValor = new global::System.Data.DataColumn("Valor", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnValor);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnCodigo}, true));
+                this.columnCodigo.AllowDBNull = false;
+                this.columnCodigo.Unique = true;
+                this.columnDescripcion.MaxLength = 50;
+                this.columnValor.ReadOnly = true;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public detalles_devolucionesERow Newdetalles_devolucionesERow() {
+                return ((detalles_devolucionesERow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new detalles_devolucionesERow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(detalles_devolucionesERow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.detalles_devolucionesERowChanged != null)) {
+                    this.detalles_devolucionesERowChanged(this, new detalles_devolucionesERowChangeEvent(((detalles_devolucionesERow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.detalles_devolucionesERowChanging != null)) {
+                    this.detalles_devolucionesERowChanging(this, new detalles_devolucionesERowChangeEvent(((detalles_devolucionesERow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.detalles_devolucionesERowDeleted != null)) {
+                    this.detalles_devolucionesERowDeleted(this, new detalles_devolucionesERowChangeEvent(((detalles_devolucionesERow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.detalles_devolucionesERowDeleting != null)) {
+                    this.detalles_devolucionesERowDeleting(this, new detalles_devolucionesERowChangeEvent(((detalles_devolucionesERow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Removedetalles_devolucionesERow(detalles_devolucionesERow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                dsDespachos ds = new dsDespachos();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "detalles_devolucionesEDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class vProductosRow : global::System.Data.DataRow {
@@ -2894,12 +3650,7 @@ namespace sistemaTarjetas {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int Codigo {
                 get {
-                    try {
-                        return ((int)(this[this.tabledetalles_devoluciones.CodigoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Codigo\' de la tabla \'detalles_devoluciones\' es DBNull.", e);
-                    }
+                    return ((int)(this[this.tabledetalles_devoluciones.CodigoColumn]));
                 }
                 set {
                     this[this.tabledetalles_devoluciones.CodigoColumn] = value;
@@ -2981,18 +3732,6 @@ namespace sistemaTarjetas {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetNumeroNull() {
                 this[this.tabledetalles_devoluciones.NumeroColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsCodigoNull() {
-                return this.IsNull(this.tabledetalles_devoluciones.CodigoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetCodigoNull() {
-                this[this.tabledetalles_devoluciones.CodigoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3278,6 +4017,368 @@ namespace sistemaTarjetas {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class detalles_despachoERow : global::System.Data.DataRow {
+            
+            private detalles_despachoEDataTable tabledetalles_despachoE;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal detalles_despachoERow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tabledetalles_despachoE = ((detalles_despachoEDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Despacho {
+                get {
+                    try {
+                        return ((int)(this[this.tabledetalles_despachoE.DespachoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Despacho\' de la tabla \'detalles_despachoE\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalles_despachoE.DespachoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int _No_ {
+                get {
+                    try {
+                        return ((int)(this[this.tabledetalles_despachoE._No_Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'No.\' de la tabla \'detalles_despachoE\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalles_despachoE._No_Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Codigo {
+                get {
+                    return ((int)(this[this.tabledetalles_despachoE.CodigoColumn]));
+                }
+                set {
+                    this[this.tabledetalles_despachoE.CodigoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Descripcion {
+                get {
+                    try {
+                        return ((string)(this[this.tabledetalles_despachoE.DescripcionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Descripcion\' de la tabla \'detalles_despachoE\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalles_despachoE.DescripcionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Cantidad {
+                get {
+                    try {
+                        return ((int)(this[this.tabledetalles_despachoE.CantidadColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Cantidad\' de la tabla \'detalles_despachoE\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalles_despachoE.CantidadColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Precio {
+                get {
+                    try {
+                        return ((int)(this[this.tabledetalles_despachoE.PrecioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Precio\' de la tabla \'detalles_despachoE\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalles_despachoE.PrecioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Importe {
+                get {
+                    try {
+                        return ((int)(this[this.tabledetalles_despachoE.ImporteColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Importe\' de la tabla \'detalles_despachoE\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalles_despachoE.ImporteColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDespachoNull() {
+                return this.IsNull(this.tabledetalles_despachoE.DespachoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDespachoNull() {
+                this[this.tabledetalles_despachoE.DespachoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is_No_Null() {
+                return this.IsNull(this.tabledetalles_despachoE._No_Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set_No_Null() {
+                this[this.tabledetalles_despachoE._No_Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDescripcionNull() {
+                return this.IsNull(this.tabledetalles_despachoE.DescripcionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDescripcionNull() {
+                this[this.tabledetalles_despachoE.DescripcionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsCantidadNull() {
+                return this.IsNull(this.tabledetalles_despachoE.CantidadColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetCantidadNull() {
+                this[this.tabledetalles_despachoE.CantidadColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsPrecioNull() {
+                return this.IsNull(this.tabledetalles_despachoE.PrecioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetPrecioNull() {
+                this[this.tabledetalles_despachoE.PrecioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsImporteNull() {
+                return this.IsNull(this.tabledetalles_despachoE.ImporteColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetImporteNull() {
+                this[this.tabledetalles_despachoE.ImporteColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class detalles_devolucionesERow : global::System.Data.DataRow {
+            
+            private detalles_devolucionesEDataTable tabledetalles_devolucionesE;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal detalles_devolucionesERow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tabledetalles_devolucionesE = ((detalles_devolucionesEDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Numero {
+                get {
+                    try {
+                        return ((int)(this[this.tabledetalles_devolucionesE.NumeroColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Numero\' de la tabla \'detalles_devolucionesE\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalles_devolucionesE.NumeroColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Codigo {
+                get {
+                    return ((int)(this[this.tabledetalles_devolucionesE.CodigoColumn]));
+                }
+                set {
+                    this[this.tabledetalles_devolucionesE.CodigoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Descripcion {
+                get {
+                    try {
+                        return ((string)(this[this.tabledetalles_devolucionesE.DescripcionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Descripcion\' de la tabla \'detalles_devolucionesE\' es DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalles_devolucionesE.DescripcionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Cantidad {
+                get {
+                    try {
+                        return ((int)(this[this.tabledetalles_devolucionesE.CantidadColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Cantidad\' de la tabla \'detalles_devolucionesE\' es DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalles_devolucionesE.CantidadColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Precio {
+                get {
+                    try {
+                        return ((int)(this[this.tabledetalles_devolucionesE.PrecioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Precio\' de la tabla \'detalles_devolucionesE\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalles_devolucionesE.PrecioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Valor {
+                get {
+                    try {
+                        return ((int)(this[this.tabledetalles_devolucionesE.ValorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Valor\' de la tabla \'detalles_devolucionesE\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalles_devolucionesE.ValorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsNumeroNull() {
+                return this.IsNull(this.tabledetalles_devolucionesE.NumeroColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetNumeroNull() {
+                this[this.tabledetalles_devolucionesE.NumeroColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDescripcionNull() {
+                return this.IsNull(this.tabledetalles_devolucionesE.DescripcionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDescripcionNull() {
+                this[this.tabledetalles_devolucionesE.DescripcionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsCantidadNull() {
+                return this.IsNull(this.tabledetalles_devolucionesE.CantidadColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetCantidadNull() {
+                this[this.tabledetalles_devolucionesE.CantidadColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsPrecioNull() {
+                return this.IsNull(this.tabledetalles_devolucionesE.PrecioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetPrecioNull() {
+                this[this.tabledetalles_devolucionesE.PrecioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsValorNull() {
+                return this.IsNull(this.tabledetalles_devolucionesE.ValorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetValorNull() {
+                this[this.tabledetalles_devolucionesE.ValorColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -3467,6 +4568,74 @@ namespace sistemaTarjetas {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public verDevolucionesRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class detalles_despachoERowChangeEvent : global::System.EventArgs {
+            
+            private detalles_despachoERow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public detalles_despachoERowChangeEvent(detalles_despachoERow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public detalles_despachoERow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class detalles_devolucionesERowChangeEvent : global::System.EventArgs {
+            
+            private detalles_devolucionesERow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public detalles_devolucionesERowChangeEvent(detalles_devolucionesERow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public detalles_devolucionesERow Row {
                 get {
                     return this.eventRow;
                 }
@@ -4686,12 +5855,12 @@ namespace sistemaTarjetas.dsDespachosTableAdapters {
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[10])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@precio", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[10])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@valor", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[11] = new global::System.Data.SqlClient.SqlCommand();
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[11])).Connection = new global::System.Data.SqlClient.SqlConnection(global::sistemaTarjetas.Properties.Settings.Default.sistemaTarjetasConnectionString);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[11])).Connection = new global::System.Data.SqlClient.SqlConnection(global::sistemaTarjetas.Properties.Settings.Default.sistemaTarjetasConnectionString2);
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[11])).CommandText = "dbo.eliminarDetalleDevolucion";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[11])).CommandType = global::System.Data.CommandType.StoredProcedure;
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[11])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[11])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@numeroDevolucion", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[11])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@numeroDetalle", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[11])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@producto", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5296,7 +6465,7 @@ namespace sistemaTarjetas.dsDespachosTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int eliminarDetalleDevolucion(global::System.Nullable<int> numeroDevolucion, global::System.Nullable<int> numeroDetalle) {
+        public virtual int eliminarDetalleDevolucion(global::System.Nullable<int> numeroDevolucion, global::System.Nullable<int> producto) {
             global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[11]));
             if ((numeroDevolucion.HasValue == true)) {
                 command.Parameters[1].Value = ((int)(numeroDevolucion.Value));
@@ -5304,8 +6473,8 @@ namespace sistemaTarjetas.dsDespachosTableAdapters {
             else {
                 command.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((numeroDetalle.HasValue == true)) {
-                command.Parameters[2].Value = ((int)(numeroDetalle.Value));
+            if ((producto.HasValue == true)) {
+                command.Parameters[2].Value = ((int)(producto.Value));
             }
             else {
                 command.Parameters[2].Value = global::System.DBNull.Value;

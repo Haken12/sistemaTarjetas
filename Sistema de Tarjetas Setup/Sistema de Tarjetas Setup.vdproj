@@ -27,13 +27,13 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_953C21A7A7324851B381AAA27F23C2C8"
+        "MsmKey" = "8:_BD913671D5D34312A7E4B448710EEDBF"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_BD913671D5D34312A7E4B448710EEDBF"
+        "MsmKey" = "8:_BECF588A0E3A4BEAA86BCB389880A33A"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -187,12 +187,12 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_953C21A7A7324851B381AAA27F23C2C8"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_BD913671D5D34312A7E4B448710EEDBF"
             {
-            "SourcePath" = "8:..\\..\\..\\..\\Documents\\script.sql"
-            "TargetName" = "8:script.sql"
+            "SourcePath" = "8:..\\..\\..\\..\\Downloads\\icontexto-webdev-info-032x032.ico"
+            "TargetName" = "8:icontexto-webdev-info-032x032.ico"
             "Tag" = "8:"
-            "Folder" = "8:_134549640E064A8A85BA77CDA681F5CC"
+            "Folder" = "8:_B83268DFED38468986A63C71CA611C54"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -207,12 +207,12 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_BD913671D5D34312A7E4B448710EEDBF"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_BECF588A0E3A4BEAA86BCB389880A33A"
             {
-            "SourcePath" = "8:..\\..\\..\\..\\Downloads\\icontexto-webdev-info-032x032.ico"
-            "TargetName" = "8:icontexto-webdev-info-032x032.ico"
+            "SourcePath" = "8:..\\..\\..\\..\\Documents\\script.sql"
+            "TargetName" = "8:script.sql"
             "Tag" = "8:"
-            "Folder" = "8:_B83268DFED38468986A63C71CA611C54"
+            "Folder" = "8:_134549640E064A8A85BA77CDA681F5CC"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"

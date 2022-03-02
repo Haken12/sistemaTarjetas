@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace sistemaTarjetas
 {
-    public partial class FGastos : Form
+    public partial class FGastosB : Form
     {
         Modo modo = Modo.Ver;
         private bool gastoSi = false;
         private bool vendedorSi = false;
-        public FGastos()
+        public FGastosB()
         {
             InitializeComponent();
         }
@@ -23,7 +23,10 @@ namespace sistemaTarjetas
         private void despejar()
         {
             txtVendedor.Clear();
-            txtNombre.Clear();
+            
+            txtDescripcion.Clear();
+            txtValor.Text = "0";
+            txtTotal.Text = "0";
             if (dsSistemaTarjetas.verDetallesGasto.Rows.Count > 0) dsSistemaTarjetas.verDetallesGasto.Rows.Clear();
         }
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -35,10 +38,17 @@ namespace sistemaTarjetas
             txtVendedor.Enabled = true;
             btnBuscarVendedor.Enabled = true;
             dtpFecha.Enabled = true;
+            cbxTipo.Enabled = true;
+            txtValor.Enabled = true;
+            txtDescripcion.Enabled = true;
             btnNuevo.Enabled = false;
             btnModificar.Enabled = false;
             btnGuardar.Enabled = true;            
             btnCancelar.Enabled = true;
+            int? n = 0;
+            queriesNuevo.iniciarGasto(dtpFecha.Value, ref n);
+            txtNumero.Text = n.ToString();
+            dgvDetalles.Enabled = true;
             txtVendedor.Focus();
         }
 
@@ -60,55 +70,78 @@ namespace sistemaTarjetas
 
         private void crear()
         {
-            int? nm = -1;
-            querys.nuevoGasto(Convert.ToInt32(txtVendedor.Text), dtpFecha.Value, ref nm);
-            txtNumero.Text = nm.ToString();
+            int numero = Convert.ToInt32(txtNumero.Text);
+            int vendedor = Convert.ToInt32(txtVendedor.Text);
+            int total = Convert.ToInt32(txtTotal.Text);
+            queriesNuevo.actualizarGasto(numero, vendedor, dtpFecha.Value, total);
         }
         private bool verificar()
         {
+            if (txtVendedor.Text.Length == 0)
+            {
+                MessageBox.Show("Debe elegir un vendedor");
+                txtVendedor.Focus();
+                return false;
+            }
+            if (dgvDetalles.Rows.Count == 0)
+            {
+                MessageBox.Show("Debe haber por lo menos un gasto");
+                cbxTipo.Focus();
+                return false;
+            }
             return true;
         }
         private void guardar()
         {
             if (verificar())
             {
+                int numero = Convert.ToInt32(txtNumero.Text);
+                crear();
+                foreach (DataRow fila in dsSistemaTarjetas.verDetallesGasto)
+                {
+                    int detalle = (int)fila["No."];
+                    queriesNuevo.eliminarDetalleGasto(numero, detalle);
+                }
+                foreach (DataRow fila in dsSistemaTarjetas.verDetallesGastoE)
+                {
+                    int detalle = (int)fila["No."];
+                    queriesNuevo.eliminarDetalleGasto(numero, detalle);
+                }
+                foreach (DataRow fila in dsSistemaTarjetas.verDetallesGasto)
+                {
+                    int detalle = dsSistemaTarjetas.verDetallesGasto.Rows.IndexOf(fila);
+                    queriesNuevo.nuevoDetalleGasto(numero, detalle, (string)fila["Tipo"], (string) fila["Descripcion"],(int) fila["Valor"]);
+                    if (dsSistemaTarjetas.verDetallesGastoE.Rows.Count > 0) dsSistemaTarjetas.verDetallesGastoE.Rows.Clear();
+                }
                 switch (modo)
                 {
                     case Modo.Insertar:
-                        crear();
-                        btnNuevo.Enabled = true;
-                        btnGuardar.Enabled = false;
-                        btnCancelar.Enabled = false;
-                        btnModificar.Enabled = true;
-                        cbxTipo.Enabled = false;
-                        cbxTipo.SelectedIndex = 0;
-                        txtDescripcion.Enabled = false;
-                        txtValor.Enabled = false;
-                        dtpFecha.Enabled = false;
-                        txtTotal.Text = "0";
-                        txtNumero.Enabled = true;
-                        btnBuscar.Enabled = true;
-                        txtVendedor.Enabled = false;
-                        gastoSi = true;
-                        modo = Modo.Ver;
-                        cbxTipo.Focus();
+                        despejar();                                               
                         break;
                     case Modo.Editar:
-                        dgvDetalles.Enabled = false;
-                        btnGuardar.Enabled = false;
-                        btnCancelar.Enabled = false;
-                        btnNuevo.Enabled = true;
-                        btnGuardar.Text = "Guardar";
-                        btnModificar.Enabled = true;
-                        txtNumero.Enabled = true;
-                        btnBuscar.Enabled = true;
-                        modo = Modo.Ver;
+                       
                         break;
                     case Modo.Ver:
                         break;
                     default:
                         break;
                 }
+                btnNuevo.Enabled = true;
+                btnGuardar.Enabled = false;
+                btnCancelar.Enabled = false;
+                btnModificar.Enabled = true;
+                cbxTipo.Enabled = false;
+                cbxTipo.SelectedIndex = 0;
+                txtDescripcion.Enabled = false;
+                txtValor.Enabled = false;
+                dtpFecha.Enabled = false;
+                txtNumero.Enabled = true;
+                btnBuscar.Enabled = true;
+                txtVendedor.Enabled = false;
+                btnBuscarVendedor.Enabled = false;
+                modo = Modo.Ver;
+                txtNumero.Focus();
+
             }
         }
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -139,10 +172,18 @@ namespace sistemaTarjetas
 
         private void txtValor_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter & modo == Modo.Editar)
+            if (e.KeyCode == Keys.Enter )
             {
-                querys.nuevoDetalleGasto(Convert.ToInt32(txtNumero.Text), cbxTipo.Text, txtDescripcion.Text, Convert.ToInt32(txtValor.Text));
-                verDetallesGastoTableAdapter.Fill(dsSistemaTarjetas.verDetallesGasto, Convert.ToInt32(txtNumero.Text));
+                DataRow nuevo = dsSistemaTarjetas.verDetallesGasto.NewverDetallesGastoRow();
+                int numero = dsSistemaTarjetas.verDetallesGasto.Rows.Count + 1;
+                string tipo = cbxTipo.Text;               
+                string descripcion = txtDescripcion.Text;
+                int valor = Convert.ToInt32(txtValor.Text);
+                nuevo["No."] = numero;
+                nuevo["Tipo"] = tipo;
+                nuevo["Descripcion"] = descripcion;
+                nuevo["Valor"] = valor;
+                dsSistemaTarjetas.verDetallesGasto.Rows.Add(nuevo);
                 txtTotal.Text = calcularBalance().ToString();
                 txtDescripcion.Clear();
                 txtValor.Text = "0";
@@ -172,39 +213,42 @@ namespace sistemaTarjetas
 
         private void txtNumero_TextChanged(object sender, EventArgs e)
         {
-            txtVendedor.Clear();
-            txtNombre.Clear();
-            btnGuardar.Enabled = false;
-            btnModificar.Enabled = false;
-            btnCancelar.Enabled = false;
-            gastoSi = false;
-            txtTotal.Text = "0";
-            if (dgvDetalles.Rows.Count > 0)
+            if (modo == Modo.Ver)
             {
-                dsSistemaTarjetas.verDetallesGasto.Clear();
-            }
-            txtDescripcion.Clear();
-            txtValor.Clear();
-            dgvDetalles.Enabled = false;
-            if (txtNumero.Text.Length > 0)
-            {
-                int num = Convert.ToInt32(txtNumero.Text);
-                if (querys.gastoExiste(num) != 0)
+                txtVendedor.Clear();
+                txtNombre.Clear();
+                btnGuardar.Enabled = false;
+                btnModificar.Enabled = false;
+                btnCancelar.Enabled = false;
+                gastoSi = false;
+                txtTotal.Text = "0";
+                if (dgvDetalles.Rows.Count > 0)
                 {
-                    gastoSi = true;
-                    int? id = 0;
-                    string nombre = "";
-                    DateTime? fecha = DateTime.Now;
-                    int? total = 0;
-                    querys.datosGasto(num, ref id, ref nombre, ref fecha, ref total);
-                    txtVendedor.Text = id.ToString();
-                    verDetallesGastoTableAdapter.Fill(dsSistemaTarjetas.verDetallesGasto, Convert.ToInt32(txtNumero.Text));
-                    txtTotal.Text = calcularBalance().ToString();
+                    dsSistemaTarjetas.verDetallesGasto.Clear();
+                }
+                txtDescripcion.Clear();
+                txtValor.Clear();
+                dgvDetalles.Enabled = false;
+                if (txtNumero.Text.Length > 0)
+                {
+                    int num = Convert.ToInt32(txtNumero.Text);
+                    if (querys.gastoExiste(num) != 0)
+                    {
+                        gastoSi = true;
+                        int? id = 0;
+                        string nombre = "";
+                        DateTime? fecha = DateTime.Now;
+                        int? total = 0;
+                        querys.datosGasto(num, ref id, ref nombre, ref fecha, ref total);
+                        txtVendedor.Text = id.ToString();
+                        verDetallesGastoTableAdapter.Fill(dsSistemaTarjetas.verDetallesGasto, Convert.ToInt32(txtNumero.Text));
+                        txtTotal.Text = calcularBalance().ToString();
 
-                    dtpFecha.Value = fecha.Value;
-                    btnModificar.Enabled = true;
-                    
+                        dtpFecha.Value = fecha.Value;
+                        btnModificar.Enabled = true;
 
+
+                    }
                 }
             }
         }
@@ -216,12 +260,12 @@ namespace sistemaTarjetas
             btnModificar.Enabled = false;
             txtValor.Enabled = true;
             cbxTipo.SelectedIndex = 0;
-            btnGuardar.Text = "Terminar";
+            
             modo = Modo.Editar;
             txtNumero.Enabled = false;
             btnBuscar.Enabled = false;
             btnGuardar.Enabled = true;
-            
+            btnCancelar.Enabled = true;
             btnNuevo.Enabled = false;
             dgvDetalles.Enabled = true;
             cbxTipo.Focus();
@@ -249,8 +293,11 @@ namespace sistemaTarjetas
                 {
                     if (Metodos.Confirmar())
                     {
-                        querys.eliminarDetalleGasto(Convert.ToInt32(txtNumero.Text), (int)dgvDetalles.SelectedCells[0].Value);
-                        verDetallesGastoTableAdapter.Fill(dsSistemaTarjetas.verDetallesGasto, Convert.ToInt32(txtNumero.Text));
+                        int numero = (int) dgvDetalles.SelectedCells[0].Value;
+                        DataRow row = dsSistemaTarjetas.verDetallesGasto.Rows.Find(numero);
+                        dsSistemaTarjetas.verDetallesGastoE.ImportRow(row);
+                        
+                        dsSistemaTarjetas.verDetallesGasto.Rows.Remove(row);
                         txtTotal.Text = calcularBalance().ToString();
                     }
                 }
@@ -262,34 +309,36 @@ namespace sistemaTarjetas
             switch (modo)
             {
                 case Modo.Insertar:
-                    dtpFecha.Value = DateTime.Today;
-                    txtVendedor.Clear();
-                    txtNumero.Enabled = true;
-                    btnBuscar.Enabled = true;
-                    txtVendedor.Enabled = false;
-                    btnBuscarVendedor.Enabled = false;
-                    modo = Modo.Ver;
-                    btnNuevo.Enabled = true;
-                    btnGuardar.Enabled = false;
-                    btnCancelar.Enabled = false;
-                    dtpFecha.Enabled = false;
-                    txtNumero.Focus();
-                    break;
-                case Modo.Editar:
+                    despejar();
                     dgvDetalles.Enabled = false;
-                    btnGuardar.Enabled = false;
-                    btnCancelar.Enabled = false;
-                    btnNuevo.Enabled = true;
+                    queriesNuevo.cancelarGasto(Convert.ToInt32(txtNumero.Text));
+                    txtNumero.Text = "";                    
+                    break;
+                case Modo.Editar:                   
                     btnModificar.Enabled = true;
-                    txtNumero.Enabled = true;
-                    btnBuscar.Enabled = true;
-                    modo = Modo.Ver;
+                    verDetallesGastoTableAdapter.Fill(dsSistemaTarjetas.verDetallesGasto, Convert.ToInt32(txtNumero.Text));
+
                     break;
                 case Modo.Ver:
                     break;
                 default:
                     break;
             }
+            if (dsSistemaTarjetas.verDetallesGastoE.Rows.Count > 0) dsSistemaTarjetas.verDetallesGastoE.Rows.Clear();
+            cbxTipo.Enabled = false;
+            txtDescripcion.Enabled = false;
+            txtValor.Enabled = false;
+            txtNumero.Enabled = true;
+            btnBuscar.Enabled = true;
+            txtVendedor.Enabled = false;
+            btnBuscarVendedor.Enabled = false;
+            btnNuevo.Enabled = true;
+            btnGuardar.Enabled = false;
+            btnCancelar.Enabled = false;
+            dtpFecha.Enabled = false;
+            modo = Modo.Ver;
+            txtNumero.Focus();
+
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -318,19 +367,15 @@ namespace sistemaTarjetas
 
         private void txtVendedor_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter & txtNombre.TextLength > 0)
+            if (e.KeyCode == Keys.Enter & txtNombre.TextLength != 0)
             {
-               
                 cbxTipo.Focus();
             }
         }
 
         private void cbxTipo_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            if (cbxTipo.SelectedIndex != -1)
-            {
-                txtDescripcion.Focus();
-            }
+
         }
     }
 }

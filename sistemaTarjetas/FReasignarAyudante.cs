@@ -13,6 +13,7 @@ namespace sistemaTarjetas
     public partial class FReasignarAyudante : Form
     {
         public int seleccion = -1;
+        public int actual =0;
         public FReasignarAyudante()
         {
             InitializeComponent();
@@ -22,6 +23,7 @@ namespace sistemaTarjetas
         {
             // TODO: esta línea de código carga datos en la tabla 'dsSistemaTarjetas.v_ayudante' Puede moverla o quitarla según sea necesario.
             this.v_ayudanteTableAdapter.Fill(this.dsSistemaTarjetas.v_ayudante);
+            bindingSource1.Filter = $"Id <> {actual}";
             cbxAyudantes.SelectedIndex = 0;
         }
 

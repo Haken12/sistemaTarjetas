@@ -1645,7 +1645,7 @@
         <xs:element name="verDetallesGasto" msprop:Generator_TableClassName="verDetallesGastoDataTable" msprop:Generator_TableVarName="tableverDetallesGasto" msprop:Generator_RowChangedName="verDetallesGastoRowChanged" msprop:Generator_TablePropName="verDetallesGasto" msprop:Generator_RowDeletingName="verDetallesGastoRowDeleting" msprop:Generator_RowChangingName="verDetallesGastoRowChanging" msprop:Generator_RowEvHandlerName="verDetallesGastoRowChangeEventHandler" msprop:Generator_RowDeletedName="verDetallesGastoRowDeleted" msprop:Generator_RowClassName="verDetallesGastoRow" msprop:Generator_UserTableName="verDetallesGasto" msprop:Generator_RowEvArgName="verDetallesGastoRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="No." msprop:Generator_ColumnVarNameInTable="_columnNo_" msprop:Generator_ColumnPropNameInRow="_No_" msprop:Generator_ColumnPropNameInTable="_No_Column" msprop:Generator_UserColumnName="No." type="xs:int" minOccurs="0" />
+              <xs:element name="No." msprop:Generator_ColumnVarNameInTable="_columnNo_" msprop:Generator_ColumnPropNameInRow="_No_" msprop:Generator_ColumnPropNameInTable="_No_Column" msprop:Generator_UserColumnName="No." type="xs:int" />
               <xs:element name="Tipo" msprop:Generator_ColumnVarNameInTable="columnTipo" msprop:Generator_ColumnPropNameInRow="Tipo" msprop:Generator_ColumnPropNameInTable="TipoColumn" msprop:Generator_UserColumnName="Tipo" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -1678,6 +1678,28 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="verDetallesGastoE" msprop:Generator_TableClassName="verDetallesGastoEDataTable" msprop:Generator_TableVarName="tableverDetallesGastoE" msprop:Generator_RowChangedName="verDetallesGastoERowChanged" msprop:Generator_TablePropName="verDetallesGastoE" msprop:Generator_RowDeletingName="verDetallesGastoERowDeleting" msprop:Generator_RowChangingName="verDetallesGastoERowChanging" msprop:Generator_RowEvHandlerName="verDetallesGastoERowChangeEventHandler" msprop:Generator_RowDeletedName="verDetallesGastoERowDeleted" msprop:Generator_RowClassName="verDetallesGastoERow" msprop:Generator_UserTableName="verDetallesGastoE" msprop:Generator_RowEvArgName="verDetallesGastoERowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="No." msprop:Generator_ColumnVarNameInTable="_columnNo_" msprop:Generator_ColumnPropNameInRow="_No_" msprop:Generator_ColumnPropNameInTable="_No_Column" msprop:Generator_UserColumnName="No." type="xs:int" />
+              <xs:element name="Tipo" msprop:Generator_ColumnVarNameInTable="columnTipo" msprop:Generator_ColumnPropNameInRow="Tipo" msprop:Generator_ColumnPropNameInTable="TipoColumn" msprop:Generator_UserColumnName="Tipo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" msprop:Generator_UserColumnName="Descripcion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Valor" msprop:Generator_ColumnVarNameInTable="columnValor" msprop:Generator_ColumnPropNameInRow="Valor" msprop:Generator_ColumnPropNameInTable="ValorColumn" msprop:Generator_UserColumnName="Valor" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -1734,9 +1756,17 @@
       <xs:field xpath="mstns:Id_x0020_Vendedor" />
       <xs:field xpath="mstns:Id_x0020_Zona" />
     </xs:unique>
+    <xs:unique name="verDetallesGasto_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:verDetallesGasto" />
+      <xs:field xpath="mstns:No." />
+    </xs:unique>
     <xs:unique name="verGastos_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:verGastos" />
       <xs:field xpath="mstns:Numero" />
+    </xs:unique>
+    <xs:unique name="verDetallesGastoE_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:verDetallesGastoE" />
+      <xs:field xpath="mstns:No." />
     </xs:unique>
   </xs:element>
 </xs:schema>

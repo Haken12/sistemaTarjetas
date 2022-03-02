@@ -313,8 +313,10 @@ namespace sistemaTarjetas
                 {
                     using (FReasignarAyudante fReasignar = new FReasignarAyudante())
                     {
+                        fReasignar.actual = id;
                         if (fReasignar.ShowDialog() == DialogResult.OK)
                         {
+
                             int nuevoId = fReasignar.seleccion;
                             querys.eliminar_ayudante(id, nuevoId);
                             despejar();

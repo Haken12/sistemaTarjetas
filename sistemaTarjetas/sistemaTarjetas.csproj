@@ -209,11 +209,23 @@
     <Compile Include="FDevolucionTarjetaB.Designer.cs">
       <DependentUpon>FDevolucionTarjetaB.cs</DependentUpon>
     </Compile>
+    <Compile Include="FDevolucionVendedorB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FDevolucionVendedorB.Designer.cs">
+      <DependentUpon>FDevolucionVendedorB.cs</DependentUpon>
+    </Compile>
     <Compile Include="FDevolucionVendedor.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FDevolucionVendedor.Designer.cs">
       <DependentUpon>FDevolucionVendedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FGastosB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FGastosB.Designer.cs">
+      <DependentUpon>FGastosB.cs</DependentUpon>
     </Compile>
     <Compile Include="FGastos.cs">
       <SubType>Form</SubType>
@@ -358,8 +370,14 @@
     <EmbeddedResource Include="FDevolucionTarjetaB.resx">
       <DependentUpon>FDevolucionTarjetaB.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FDevolucionVendedorB.resx">
+      <DependentUpon>FDevolucionVendedorB.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FDevolucionVendedor.resx">
       <DependentUpon>FDevolucionVendedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FGastosB.resx">
+      <DependentUpon>FGastosB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FGastos.resx">
       <DependentUpon>FGastos.cs</DependentUpon>
@@ -506,10 +524,12 @@
     <None Include="Resources\03 %283%29.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="BD\script.sql" />
     <None Include="Resources\Copy_24x24.png" />
     <None Include="Resources\Remove_16x16.png" />
     <None Include="Resources\Remove_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BD\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -87,7 +87,7 @@ namespace sistemaTarjetas
             txtNombre.Clear();
             txtCedula.Clear();
             txtValor.Clear();
-            cbxTipo.SelectedIndex = 0;
+           if (cbxTipo.SelectedIndex == -1) cbxTipo.SelectedIndex = 0;
             txtReferencia.Clear();
             txtTelefono.Clear();
             dtpFechaT.Value = DateTime.Today;
@@ -110,8 +110,7 @@ namespace sistemaTarjetas
         }
 
         private bool verificar() 
-        {            
-        
+        {                    
             return true;
         }
 
@@ -172,9 +171,9 @@ namespace sistemaTarjetas
                 querys.nuevo_cobro_tarjeta(Convert.ToInt32(txtCodigo.Text), dtpFecha.Value, monto, 0);
                 v_detalles_tarjetaTableAdapter.Fill(dsSistemaTarjetas.v_detalles_tarjeta, Convert.ToInt32(txtCodigo.Text));
                 calcularBalance();
-                txtValor.Focus();
-                txtValor.SelectAll();
-
+                txtValor.Clear();
+                txtCodigo.Focus();
+                txtCodigo.SelectAll();
             }
             else
             {
@@ -351,7 +350,7 @@ namespace sistemaTarjetas
                     btnModificar.Enabled = true;
                     dgvDetalles.Enabled = true;
                     if (!txtValor.Enabled) opToggle();
-                    cbxTipo.SelectedIndex = 0;
+                    // cbxTipo.SelectedIndex = 0;
                     v_detalles_tarjetaTableAdapter.Fill(dsSistemaTarjetas.v_detalles_tarjeta, tarjeta.codigo);
 
                     if (dgvDetalles.Rows.Count > 0)

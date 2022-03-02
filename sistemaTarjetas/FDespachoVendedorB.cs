@@ -26,7 +26,7 @@ namespace sistemaTarjetas
 
         private Modo modo = Modo.Ver;
         private bool vendedorSi = false;
-        private bool productoSi = false;
+       
         private Despacho despacho = new Despacho();
         private bool articuloSi = false;
         DataRow rw;
@@ -139,8 +139,9 @@ namespace sistemaTarjetas
             dtpFecha.Enabled = true;
             btnCancelar.Enabled = true;
             int? a = 0;
-            txtNumero.Text = queriesNuevo.siguienteDespacho(ref a, dtpFecha.Value).ToString();
-            Despacho.Numero = Convert.ToInt32(txtNumero.Text);
+            queriesNuevo.siguienteDespacho(ref a, dtpFecha.Value).ToString();
+            txtNumero.Text = a.ToString();
+            Despacho.Numero = a;
             txtNumero.Enabled = false;
             btnBuscarDevolucion.Enabled = false;
             txtCodigoVendedor.Enabled = true;
@@ -151,6 +152,7 @@ namespace sistemaTarjetas
 
         private void soloNumeros(object sender , KeyPressEventArgs e)
         {
+         
             if (Char.IsDigit(e.KeyChar)) return;
             if (Char.IsControl(e.KeyChar)) return;
             e.Handled = true;
@@ -191,10 +193,31 @@ namespace sistemaTarjetas
                 }
                 foreach (DataRow row in dsDespachos.detalles_despacho.Rows)
                 {
-                    queries.eliminarDetalleDespacho(Despacho.Numero, (int)row[0], (int)row[1], Convert.ToInt32(txtCodigoVendedor.Text), (int)row[3]);
-                    queries.nuevo_detalle_despacho(Despacho.Numero, (int)row[1], (int)row[4], (int)row[3], (int)row[5]);
+                
+                    queries.eliminarDetalleDespacho(
+                        Despacho.Numero, 
+                        (int)row[0], 
+                        (int)row[1],
+                        Convert.ToInt32(txtCodigoVendedor.Text), 
+                        (int)row[4]);
+                    queries.nuevo_detalle_despacho(
+                        Despacho.Numero, 
+                        (int)row[2],
+                        (int)row[5], 
+                        (int)row[4], 
+                        (int)row[6]);
                 }
-                dgvDetalles.Enabled = true;
+                foreach (DataRow row in dsDespachos.detalles_despachoE.Rows)
+                {
+                    queries.eliminarDetalleDespacho(
+                        Despacho.Numero,
+                        (int)row[0],
+                        (int)row[1],
+                        Convert.ToInt32(txtCodigoVendedor.Text),
+                        (int)row[4]);                  
+                }
+
+                dgvDetalles.Enabled = false ;
                 modo = Modo.Ver;
                 btnNuevo.Enabled = true;
                 btnModificar.Enabled = true;
@@ -208,6 +231,7 @@ namespace sistemaTarjetas
                 btnBuscarProducto.Enabled = false;
                 btnBuscarVendedor.Enabled = false;
                 btnBuscarDevolucion.Enabled = true;
+                txtNumero.Enabled = true;
                 txtNumero.Focus(); 
             }
         
@@ -246,6 +270,8 @@ namespace sistemaTarjetas
         private void btnModificar_Click(object sender, EventArgs e)
         {
             modo = Modo.Editar;
+            txtNumero.Enabled = false;
+            btnBuscarDevolucion.Enabled = false;
             btnNuevo.Enabled = false;
             btnModificar.Enabled = false;
             btnEliminar.Enabled = false;
@@ -331,6 +357,7 @@ namespace sistemaTarjetas
                 nueva._No_ = dsDespachos.detalles_despacho.Rows.Count + 1;
                 nueva.Codigo = Convert.ToInt32(txtCodigo.Text);
                 nueva.Cantidad = Convert.ToInt32(txtCantidad.Value);
+                nueva.Precio = Convert.ToInt32(txtPrecio.Text);
                 nueva.Importe = Convert.ToInt32(txtImporte.Text);
                 nueva.Descripcion = txtDescripcion.Text;
                 dsDespachos.detalles_despacho.Adddetalles_despachoRow(nueva);
@@ -368,6 +395,7 @@ namespace sistemaTarjetas
                         int c = (int)dgvDetalles.SelectedCells[0].Value;
                         var f = dsDespachos.detalles_despacho.FindByCodigo(c);
                         dsDespachos.vProductos.FindByCodigo(c).Existencias += f.Cantidad;
+                        dsDespachos.detalles_despachoE.ImportRow(f);
                         dsDespachos.detalles_despacho.Removedetalles_despachoRow(f);
                         txtTotal.Text = calcularTotal().ToString();                        
                     }
@@ -377,6 +405,7 @@ namespace sistemaTarjetas
 
         private void txtCodigoVendedor_KeyDown(object sender, KeyEventArgs e)
         {
+
             if (vendedorSi & e.KeyCode == Keys.Enter)
             {
                 txtCodigo.Focus();
@@ -459,10 +488,13 @@ namespace sistemaTarjetas
                     Despacho.Numero = 0;                   
                     dtpFecha.Enabled = false;
                     txtTotal.Text = "0";
+                    txtCodigoVendedor.Clear();
+                    txtNombre.Clear();
                     break;
                 case Modo.Editar:
                     detalles_despachoTableAdapter.Fill(dsDespachos.detalles_despacho, Despacho.Numero);
                     btnEliminar.Enabled = true;
+                    btnModificar.Enabled = true;
                     txtTotal.Text = calcularTotal().ToString();
                     break;
                 case Modo.Ver:
@@ -473,9 +505,7 @@ namespace sistemaTarjetas
             modo = Modo.Ver;
             txtNumero.Enabled = true;
             btnBuscarDevolucion.Enabled = true;
-            this.vProductosTableAdapter.Fill(this.dsDespachos.vProductos);
-            txtCodigoVendedor.Clear();
-            txtNombre.Clear();
+            this.vProductosTableAdapter.Fill(this.dsDespachos.vProductos);            
             txtCodigo.Clear();
             txtCodigo.Enabled = false;
             txtCodigoVendedor.Enabled = false;
@@ -485,6 +515,11 @@ namespace sistemaTarjetas
             btnCancelar.Enabled = false;
             btnNuevo.Enabled = true;
 
+        }
+
+        private void txtCantidad_Enter(object sender, EventArgs e)
+        {
+            txtCantidad.Select(0, txtCantidad.Value.ToString().Length - 1);
         }
     }
 }

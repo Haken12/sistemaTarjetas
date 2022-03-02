@@ -30,11 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvActuales = new System.Windows.Forms.DataGridView();
-            this.numeroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsActual = new System.Windows.Forms.BindingSource(this.components);
             this.dsSistemaTarjetas = new sistemaTarjetas.dsSistemaTarjetas();
             this.dgvDevolver = new System.Windows.Forms.DataGridView();
@@ -56,6 +51,11 @@
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.articulos_devolverTableAdapter = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.articulos_devolverTableAdapter();
+            this.numeroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvActuales)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsActual)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSistemaTarjetas)).BeginInit();
@@ -87,41 +87,6 @@
             this.dgvActuales.Size = new System.Drawing.Size(313, 232);
             this.dgvActuales.TabIndex = 0;
             this.dgvActuales.SelectionChanged += new System.EventHandler(this.dgvActuales_SelectionChanged);
-            // 
-            // numeroDataGridViewTextBoxColumn
-            // 
-            this.numeroDataGridViewTextBoxColumn.DataPropertyName = "Numero";
-            this.numeroDataGridViewTextBoxColumn.HeaderText = "Numero";
-            this.numeroDataGridViewTextBoxColumn.Name = "numeroDataGridViewTextBoxColumn";
-            this.numeroDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // codigoDataGridViewTextBoxColumn
-            // 
-            this.codigoDataGridViewTextBoxColumn.DataPropertyName = "Codigo";
-            this.codigoDataGridViewTextBoxColumn.HeaderText = "Codigo";
-            this.codigoDataGridViewTextBoxColumn.Name = "codigoDataGridViewTextBoxColumn";
-            this.codigoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // descripcionDataGridViewTextBoxColumn
-            // 
-            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
-            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cantidadDataGridViewTextBoxColumn
-            // 
-            this.cantidadDataGridViewTextBoxColumn.DataPropertyName = "Cantidad";
-            this.cantidadDataGridViewTextBoxColumn.HeaderText = "Cantidad";
-            this.cantidadDataGridViewTextBoxColumn.Name = "cantidadDataGridViewTextBoxColumn";
-            this.cantidadDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // precioDataGridViewTextBoxColumn
-            // 
-            this.precioDataGridViewTextBoxColumn.DataPropertyName = "Precio";
-            this.precioDataGridViewTextBoxColumn.HeaderText = "Precio";
-            this.precioDataGridViewTextBoxColumn.Name = "precioDataGridViewTextBoxColumn";
-            this.precioDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // bsActual
             // 
@@ -296,6 +261,43 @@
             // articulos_devolverTableAdapter
             // 
             this.articulos_devolverTableAdapter.ClearBeforeFill = true;
+            // 
+            // numeroDataGridViewTextBoxColumn
+            // 
+            this.numeroDataGridViewTextBoxColumn.DataPropertyName = "Numero";
+            this.numeroDataGridViewTextBoxColumn.HeaderText = "No.";
+            this.numeroDataGridViewTextBoxColumn.Name = "numeroDataGridViewTextBoxColumn";
+            this.numeroDataGridViewTextBoxColumn.ReadOnly = true;
+            this.numeroDataGridViewTextBoxColumn.Width = 30;
+            // 
+            // codigoDataGridViewTextBoxColumn
+            // 
+            this.codigoDataGridViewTextBoxColumn.DataPropertyName = "Codigo";
+            this.codigoDataGridViewTextBoxColumn.HeaderText = "Codigo";
+            this.codigoDataGridViewTextBoxColumn.Name = "codigoDataGridViewTextBoxColumn";
+            this.codigoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.codigoDataGridViewTextBoxColumn.Width = 60;
+            // 
+            // descripcionDataGridViewTextBoxColumn
+            // 
+            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
+            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cantidadDataGridViewTextBoxColumn
+            // 
+            this.cantidadDataGridViewTextBoxColumn.DataPropertyName = "Cantidad";
+            this.cantidadDataGridViewTextBoxColumn.HeaderText = "Cantidad";
+            this.cantidadDataGridViewTextBoxColumn.Name = "cantidadDataGridViewTextBoxColumn";
+            this.cantidadDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // precioDataGridViewTextBoxColumn
+            // 
+            this.precioDataGridViewTextBoxColumn.DataPropertyName = "Precio";
+            this.precioDataGridViewTextBoxColumn.HeaderText = "Precio";
+            this.precioDataGridViewTextBoxColumn.Name = "precioDataGridViewTextBoxColumn";
+            this.precioDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // FDevolucionTarjeta
             // 

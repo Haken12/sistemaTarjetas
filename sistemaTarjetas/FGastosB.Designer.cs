@@ -1,7 +1,7 @@
 ﻿
 namespace sistemaTarjetas
 {
-    partial class FGastos
+    partial class FGastosB
     {
         /// <summary>
         /// Required designer variable.
@@ -61,6 +61,7 @@ namespace sistemaTarjetas
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.querys = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.Querys();
             this.verDetallesGastoTableAdapter = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.verDetallesGastoTableAdapter();
+            this.queriesNuevo = new sistemaTarjetas.dsNuevosTableAdapters.queriesNuevo();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsVerDetalles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSistemaTarjetas)).BeginInit();
@@ -201,7 +202,7 @@ namespace sistemaTarjetas
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(330, 85);
+            this.label4.Location = new System.Drawing.Point(360, 85);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(31, 13);
             this.label4.TabIndex = 8;
@@ -218,7 +219,7 @@ namespace sistemaTarjetas
             "Otros"});
             this.cbxTipo.Location = new System.Drawing.Point(13, 109);
             this.cbxTipo.Name = "cbxTipo";
-            this.cbxTipo.Size = new System.Drawing.Size(121, 21);
+            this.cbxTipo.Size = new System.Drawing.Size(159, 21);
             this.cbxTipo.TabIndex = 9;
             this.cbxTipo.SelectedIndexChanged += new System.EventHandler(this.cbxTipo_SelectedIndexChanged_1);
             this.cbxTipo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbxTipo_KeyDown);
@@ -227,7 +228,7 @@ namespace sistemaTarjetas
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(145, 85);
+            this.label5.Location = new System.Drawing.Point(175, 85);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(114, 13);
             this.label5.TabIndex = 10;
@@ -236,7 +237,7 @@ namespace sistemaTarjetas
             // txtDescripcion
             // 
             this.txtDescripcion.Enabled = false;
-            this.txtDescripcion.Location = new System.Drawing.Point(148, 109);
+            this.txtDescripcion.Location = new System.Drawing.Point(178, 109);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(179, 20);
             this.txtDescripcion.TabIndex = 11;
@@ -245,7 +246,7 @@ namespace sistemaTarjetas
             // txtValor
             // 
             this.txtValor.Enabled = false;
-            this.txtValor.Location = new System.Drawing.Point(333, 109);
+            this.txtValor.Location = new System.Drawing.Point(363, 109);
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(104, 20);
             this.txtValor.TabIndex = 12;
@@ -353,12 +354,13 @@ namespace sistemaTarjetas
             this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(100, 20);
             this.txtTotal.TabIndex = 22;
+            this.txtTotal.TabStop = false;
             // 
             // verDetallesGastoTableAdapter
             // 
             this.verDetallesGastoTableAdapter.ClearBeforeFill = true;
             // 
-            // FGastos
+            // FGastosB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -388,7 +390,7 @@ namespace sistemaTarjetas
             this.Controls.Add(this.txtNumero);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Name = "FGastos";
+            this.Name = "FGastosB";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gastos";
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalles)).EndInit();
@@ -432,5 +434,6 @@ namespace sistemaTarjetas
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn valorDataGridViewTextBoxColumn;
         private dsSistemaTarjetasTableAdapters.verDetallesGastoTableAdapter verDetallesGastoTableAdapter;
+        private dsNuevosTableAdapters.queriesNuevo queriesNuevo;
     }
 }

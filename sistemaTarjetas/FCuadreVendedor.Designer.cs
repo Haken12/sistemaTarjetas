@@ -77,6 +77,9 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.qryCuadres = new sistemaTarjetas.dsCuadreTableAdapters.qryCuadres();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -96,7 +99,7 @@
             // 
             this.txtNumero.Location = new System.Drawing.Point(69, 6);
             this.txtNumero.Name = "txtNumero";
-            this.txtNumero.Size = new System.Drawing.Size(100, 20);
+            this.txtNumero.Size = new System.Drawing.Size(67, 20);
             this.txtNumero.TabIndex = 1;
             // 
             // txtVendedor
@@ -117,7 +120,7 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(142, 33);
+            this.txtNombre.Location = new System.Drawing.Point(184, 33);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(291, 20);
             this.txtNombre.TabIndex = 4;
@@ -186,6 +189,7 @@
             this.btnGastos.Size = new System.Drawing.Size(26, 32);
             this.btnGastos.TabIndex = 13;
             this.btnGastos.UseVisualStyleBackColor = true;
+            this.btnGastos.Click += new System.EventHandler(this.btnGastos_Click);
             // 
             // txtRecibido
             // 
@@ -214,6 +218,7 @@
             this.txtDescontado.Name = "txtDescontado";
             this.txtDescontado.Size = new System.Drawing.Size(117, 20);
             this.txtDescontado.TabIndex = 9;
+            this.txtDescontado.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDescontado_KeyDown);
             // 
             // txtCobrado
             // 
@@ -221,6 +226,7 @@
             this.txtCobrado.Name = "txtCobrado";
             this.txtCobrado.Size = new System.Drawing.Size(117, 20);
             this.txtCobrado.TabIndex = 8;
+            this.txtCobrado.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCobrado_KeyDown);
             // 
             // txtVendido
             // 
@@ -228,6 +234,7 @@
             this.txtVendido.Name = "txtVendido";
             this.txtVendido.Size = new System.Drawing.Size(117, 20);
             this.txtVendido.TabIndex = 6;
+            this.txtVendido.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtVendido_KeyDown);
             // 
             // label10
             // 
@@ -469,7 +476,7 @@
             this.btnListaCobros.Name = "btnListaCobros";
             this.btnListaCobros.Size = new System.Drawing.Size(117, 23);
             this.btnListaCobros.TabIndex = 0;
-            this.btnListaCobros.Text = "Listado de &Cobros";
+            this.btnListaCobros.Text = "&Listado de Cobros";
             this.btnListaCobros.UseVisualStyleBackColor = true;
             // 
             // btnNuevo
@@ -518,12 +525,32 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.button7_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(142, 4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(35, 23);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "B";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(142, 31);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(35, 23);
+            this.button2.TabIndex = 19;
+            this.button2.Text = "B";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // FCuadreVendedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(581, 454);
             this.ControlBox = false;
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnGuardar);
@@ -609,5 +636,8 @@
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnGastos;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private dsCuadreTableAdapters.qryCuadres qryCuadres;
     }
 }

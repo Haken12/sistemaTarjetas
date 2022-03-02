@@ -63,6 +63,7 @@ namespace sistemaTarjetas
             // 
             // btnCancelar
             // 
+            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancelar.Image = global::sistemaTarjetas.Recursos._50__3_;
             this.btnCancelar.Location = new System.Drawing.Point(157, 337);
             this.btnCancelar.Name = "btnCancelar";

@@ -120,12 +120,6 @@
   <metadata name="bsVerDetalles.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>105, 17</value>
   </metadata>
-  <metadata name="bsVerDetalles.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>105, 17</value>
-  </metadata>
-  <metadata name="dsSistemaTarjetas.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>231, 17</value>
-  </metadata>
   <metadata name="dsSistemaTarjetas.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>231, 17</value>
   </metadata>
@@ -134,5 +128,8 @@
   </metadata>
   <metadata name="verDetallesGastoTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>380, 17</value>
+  </metadata>
+  <metadata name="queriesNuevo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>596, 17</value>
   </metadata>
 </root>
