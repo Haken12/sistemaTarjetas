@@ -64,6 +64,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dsCuadre.cs">
+      <DependentUpon>dsCuadre.xsd</DependentUpon>
+    </Compile>
     <Compile Include="dsCuadre.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
