@@ -8,10 +8,26 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>sistemaTarjetas</RootNamespace>
     <AssemblyName>sistemaTarjetas</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,8 +49,49 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ExpresionesRegulares">
+      <HintPath>..\..\regrexTest\regrexTest\ExpresionesRegulares.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Drawing.Common, Version=4.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Drawing.Common.4.7.0\lib\net461\System.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.AccessControl, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.4.5.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Xml, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Xml.4.5.0\lib\net461\System.Security.Cryptography.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Permissions, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Permissions.4.5.0\lib\net461\System.Security.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.4.5.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,46 +103,179 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dsCuadre.cs">
+      <DependentUpon>dsCuadre.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsCuadre.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsCuadre.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsDespachos.cs">
+      <DependentUpon>dsDespachos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsDespachos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsDespachos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsDevoluciones.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsDevoluciones.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsInventario.cs">
+      <DependentUpon>dsInventario.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsInventario.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsInventario.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsNuevos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsNuevos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsSistemaTarjetas.cs">
+      <DependentUpon>dsSistemaTarjetas.xsd</DependentUpon>
+    </Compile>
     <Compile Include="dsSistemaTarjetas.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsSistemaTarjetas.xsd</DependentUpon>
     </Compile>
-    <Compile Include="FAyudantes.cs">
+    <Compile Include="FAjustarInventario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FAyudantes.Designer.cs">
-      <DependentUpon>FAyudantes.cs</DependentUpon>
+    <Compile Include="FAjustarInventario.Designer.cs">
+      <DependentUpon>FAjustarInventario.cs</DependentUpon>
     </Compile>
-    <Compile Include="FClientes.cs">
+    <Compile Include="FAjusteInventarioVendedor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FClientes.Designer.cs">
-      <DependentUpon>FClientes.cs</DependentUpon>
+    <Compile Include="FAjusteInventarioVendedor.Designer.cs">
+      <DependentUpon>FAjusteInventarioVendedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="FListaAyudantes.cs">
+    <Compile Include="FArticulos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FListaAyudantes.Designer.cs">
-      <DependentUpon>FListaAyudantes.cs</DependentUpon>
+    <Compile Include="FArticulos.Designer.cs">
+      <DependentUpon>FArticulos.cs</DependentUpon>
     </Compile>
-    <Compile Include="FListaClientes.cs">
+    <Compile Include="FArticulosVentaT.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FListaClientes.Designer.cs">
-      <DependentUpon>FListaClientes.cs</DependentUpon>
+    <Compile Include="FArticulosVentaT.Designer.cs">
+      <DependentUpon>FArticulosVentaT.cs</DependentUpon>
     </Compile>
-    <Compile Include="FListaVendedores.cs">
+    <Compile Include="FBuscarArticulo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FListaVendedores.Designer.cs">
-      <DependentUpon>FListaVendedores.cs</DependentUpon>
+    <Compile Include="FBuscarArticulo.Designer.cs">
+      <DependentUpon>FBuscarArticulo.cs</DependentUpon>
     </Compile>
-    <Compile Include="FListaZona.cs">
+    <Compile Include="FBuscarAyudante.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FListaZona.Designer.cs">
-      <DependentUpon>FListaZona.cs</DependentUpon>
+    <Compile Include="FBuscarAyudante.Designer.cs">
+      <DependentUpon>FBuscarAyudante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FBuscarDespachos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FBuscarDespachos.Designer.cs">
+      <DependentUpon>FBuscarDespachos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FBuscarDevolucion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FBuscarDevolucion.Designer.cs">
+      <DependentUpon>FBuscarDevolucion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FBuscarGasto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FBuscarGasto.Designer.cs">
+      <DependentUpon>FBuscarGasto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FBuscarTarjeta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FBuscarTarjeta.Designer.cs">
+      <DependentUpon>FBuscarTarjeta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FBuscarVendedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FBuscarVendedor.Designer.cs">
+      <DependentUpon>FBuscarVendedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FBuscarZona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FBuscarZona.Designer.cs">
+      <DependentUpon>FBuscarZona.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FCompras.Designer.cs">
+      <DependentUpon>FCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FControlTarjetas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FControlTarjetas.Designer.cs">
+      <DependentUpon>FControlTarjetas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FCuadreVendedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FCuadreVendedor.Designer.cs">
+      <DependentUpon>FCuadreVendedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FDevolucionTarjeta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FDevolucionTarjeta.Designer.cs">
+      <DependentUpon>FDevolucionTarjeta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FDespachoVendedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FDespachoVendedor.Designer.cs">
+      <DependentUpon>FDespachoVendedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FDevolucionTarjetaB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FDevolucionTarjetaB.Designer.cs">
+      <DependentUpon>FDevolucionTarjetaB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FDevolucionVendedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FDevolucionVendedor.Designer.cs">
+      <DependentUpon>FDevolucionVendedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FGastosB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FGastosB.Designer.cs">
+      <DependentUpon>FGastosB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FGastos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FGastos.Designer.cs">
+      <DependentUpon>FGastos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FInventarioVendedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FInventarioVendedor.Designer.cs">
+      <DependentUpon>FInventarioVendedor.cs</DependentUpon>
     </Compile>
     <Compile Include="FMain.cs">
       <SubType>Form</SubType>
@@ -93,47 +283,188 @@
     <Compile Include="FMain.Designer.cs">
       <DependentUpon>FMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="FVendedores.cs">
+    <Compile Include="FNuevaVenta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FVendedores.Designer.cs">
-      <DependentUpon>FVendedores.cs</DependentUpon>
+    <Compile Include="FNuevaVenta.Designer.cs">
+      <DependentUpon>FNuevaVenta.cs</DependentUpon>
     </Compile>
-    <Compile Include="FZona.cs">
+    <Compile Include="FReasignarAyudante.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FZona.Designer.cs">
-      <DependentUpon>FZona.cs</DependentUpon>
+    <Compile Include="FReasignarAyudante.Designer.cs">
+      <DependentUpon>FReasignarAyudante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FReasignarZona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FReasignarZona.Designer.cs">
+      <DependentUpon>FReasignarZona.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRegistroArticulos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRegistroArticulos.Designer.cs">
+      <DependentUpon>FRegistroArticulos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRegVendedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRegVendedores.Designer.cs">
+      <DependentUpon>FRegVendedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRegAyudantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRegAyudantes.Designer.cs">
+      <DependentUpon>FRegAyudantes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRegZonas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRegZonas.Designer.cs">
+      <DependentUpon>FRegZonas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FSeleccionarArticulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FSeleccionarArticulo.Designer.cs">
+      <DependentUpon>FSeleccionarArticulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FVerDevolucionTarjeta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FVerDevolucionTarjeta.Designer.cs">
+      <DependentUpon>FVerDevolucionTarjeta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FVerVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FVerVenta.Designer.cs">
+      <DependentUpon>FVerVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LabelEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LabelEdit.Designer.cs">
+      <DependentUpon>LabelEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="Metodos.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FAyudantes.resx">
-      <DependentUpon>FAyudantes.cs</DependentUpon>
+    <Compile Include="Recursos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Recursos.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\FRInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FRInventario.Designer.cs">
+      <DependentUpon>FRInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="FAjustarInventario.resx">
+      <DependentUpon>FAjustarInventario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FClientes.resx">
-      <DependentUpon>FClientes.cs</DependentUpon>
+    <EmbeddedResource Include="FAjusteInventarioVendedor.resx">
+      <DependentUpon>FAjusteInventarioVendedor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FListaAyudantes.resx">
-      <DependentUpon>FListaAyudantes.cs</DependentUpon>
+    <EmbeddedResource Include="FArticulos.resx">
+      <DependentUpon>FArticulos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FListaClientes.resx">
-      <DependentUpon>FListaClientes.cs</DependentUpon>
+    <EmbeddedResource Include="FArticulosVentaT.resx">
+      <DependentUpon>FArticulosVentaT.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FListaVendedores.resx">
-      <DependentUpon>FListaVendedores.cs</DependentUpon>
+    <EmbeddedResource Include="FBuscarArticulo.resx">
+      <DependentUpon>FBuscarArticulo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FListaZona.resx">
-      <DependentUpon>FListaZona.cs</DependentUpon>
+    <EmbeddedResource Include="FBuscarAyudante.resx">
+      <DependentUpon>FBuscarAyudante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FBuscarDespachos.resx">
+      <DependentUpon>FBuscarDespachos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FBuscarDevolucion.resx">
+      <DependentUpon>FBuscarDevolucion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FBuscarGasto.resx">
+      <DependentUpon>FBuscarGasto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FBuscarTarjeta.resx">
+      <DependentUpon>FBuscarTarjeta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FBuscarVendedor.resx">
+      <DependentUpon>FBuscarVendedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FBuscarZona.resx">
+      <DependentUpon>FBuscarZona.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FCompras.resx">
+      <DependentUpon>FCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FControlTarjetas.resx">
+      <DependentUpon>FControlTarjetas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FCuadreVendedor.resx">
+      <DependentUpon>FCuadreVendedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FDevolucionTarjeta.resx">
+      <DependentUpon>FDevolucionTarjeta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FDespachoVendedor.resx">
+      <DependentUpon>FDespachoVendedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FDevolucionTarjetaB.resx">
+      <DependentUpon>FDevolucionTarjetaB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FDevolucionVendedor.resx">
+      <DependentUpon>FDevolucionVendedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FGastosB.resx">
+      <DependentUpon>FGastosB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FGastos.resx">
+      <DependentUpon>FGastos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FInventarioVendedor.resx">
+      <DependentUpon>FInventarioVendedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FMain.resx">
       <DependentUpon>FMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FVendedores.resx">
-      <DependentUpon>FVendedores.cs</DependentUpon>
+    <EmbeddedResource Include="FNuevaVenta.resx">
+      <DependentUpon>FNuevaVenta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FZona.resx">
-      <DependentUpon>FZona.cs</DependentUpon>
+    <EmbeddedResource Include="FReasignarAyudante.resx">
+      <DependentUpon>FReasignarAyudante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FReasignarZona.resx">
+      <DependentUpon>FReasignarZona.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRegistroArticulos.resx">
+      <DependentUpon>FRegistroArticulos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRegVendedores.resx">
+      <DependentUpon>FRegVendedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRegAyudantes.resx">
+      <DependentUpon>FRegAyudantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRegZonas.resx">
+      <DependentUpon>FRegZonas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FSeleccionarArticulo.resx">
+      <DependentUpon>FSeleccionarArticulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FVerDevolucionTarjeta.resx">
+      <DependentUpon>FVerDevolucionTarjeta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FVerVenta.resx">
+      <DependentUpon>FVerVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LabelEdit.resx">
+      <DependentUpon>LabelEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -143,7 +474,71 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Recursos.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Recursos.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FRInventario.resx">
+      <DependentUpon>FRInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RInventario.rdlc" />
+    <None Include="dsCuadre.xsc">
+      <DependentUpon>dsCuadre.xsd</DependentUpon>
+    </None>
+    <None Include="dsCuadre.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsCuadre.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsCuadre.xss">
+      <DependentUpon>dsCuadre.xsd</DependentUpon>
+    </None>
+    <None Include="dsDespachos.xsc">
+      <DependentUpon>dsDespachos.xsd</DependentUpon>
+    </None>
+    <None Include="dsDespachos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsDespachos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsDespachos.xss">
+      <DependentUpon>dsDespachos.xsd</DependentUpon>
+    </None>
+    <None Include="dsDevoluciones.xsc">
+      <DependentUpon>dsDevoluciones.xsd</DependentUpon>
+    </None>
+    <None Include="dsDevoluciones.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsDevoluciones.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsDevoluciones.xss">
+      <DependentUpon>dsDevoluciones.xsd</DependentUpon>
+    </None>
+    <None Include="dsInventario.xsc">
+      <DependentUpon>dsInventario.xsd</DependentUpon>
+    </None>
+    <None Include="dsInventario.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsInventario.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsInventario.xss">
+      <DependentUpon>dsInventario.xsd</DependentUpon>
+    </None>
+    <None Include="dsNuevos.xsc">
+      <DependentUpon>dsNuevos.xsd</DependentUpon>
+    </None>
+    <None Include="dsNuevos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsNuevos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsNuevos.xss">
+      <DependentUpon>dsNuevos.xsd</DependentUpon>
+    </None>
     <None Include="dsSistemaTarjetas.xsc">
       <DependentUpon>dsSistemaTarjetas.xsd</DependentUpon>
     </None>
@@ -155,6 +550,9 @@
     <None Include="dsSistemaTarjetas.xss">
       <DependentUpon>dsSistemaTarjetas.xsd</DependentUpon>
     </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\FDespachoVendedor.DetalleMovimiento.datasource" />
+    <None Include="Properties\DataSources\Metodos.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -169,7 +567,50 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Properties\DataSources\" />
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\18 %283%29.png" />
+    <None Include="Resources\02 %283%29.png" />
+    <None Include="Resources\50 %283%29.png" />
+    <None Include="Resources\49.png" />
+    <None Include="Resources\46 %282%29.png" />
+    <None Include="Resources\18.png" />
+    <None Include="Resources\12 %282%29.png" />
+    <None Include="Resources\04 %282%29.png" />
+    <None Include="Resources\03 %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Copy_24x24.png" />
+    <None Include="Resources\Remove_16x16.png" />
+    <None Include="Resources\Remove_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BD\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
