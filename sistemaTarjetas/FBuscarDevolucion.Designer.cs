@@ -39,7 +39,7 @@ namespace sistemaTarjetas
             this.valorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsBuscar = new System.Windows.Forms.BindingSource(this.components);
             this.dsDespachos = new sistemaTarjetas.dsDespachos();
-            this.verDevolucionesTableAdapter = new sistemaTarjetas.dsDespachosTableAdapters.verDevolucionesTableAdapter();
+            
             this.label2 = new System.Windows.Forms.Label();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.txtVendedor = new System.Windows.Forms.TextBox();
@@ -138,7 +138,7 @@ namespace sistemaTarjetas
             // 
             // verDevolucionesTableAdapter
             // 
-            this.verDevolucionesTableAdapter.ClearBeforeFill = true;
+            
             // 
             // label2
             // 
@@ -210,7 +210,7 @@ namespace sistemaTarjetas
         private System.Windows.Forms.DataGridView dgvBuscar;
         private System.Windows.Forms.BindingSource bsBuscar;
         private dsDespachos dsDespachos;
-        private dsDespachosTableAdapters.verDevolucionesTableAdapter verDevolucionesTableAdapter;
+        
         private System.Windows.Forms.DataGridViewTextBoxColumn numeroDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn vendedorDataGridViewTextBoxColumn;

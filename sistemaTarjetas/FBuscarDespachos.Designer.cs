@@ -39,7 +39,7 @@
             this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsBuscar = new System.Windows.Forms.BindingSource(this.components);
             this.dsDespachos = new sistemaTarjetas.dsDespachos();
-            this.verDespachosTableAdapter = new sistemaTarjetas.dsDespachosTableAdapters.verDespachosTableAdapter();
+            
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dtpFecha2 = new System.Windows.Forms.DateTimePicker();
             this.dtpFecha1 = new System.Windows.Forms.DateTimePicker();
@@ -152,7 +152,7 @@
             // 
             // verDespachosTableAdapter
             // 
-            this.verDespachosTableAdapter.ClearBeforeFill = true;
+            
             // 
             // groupBox1
             // 
@@ -255,7 +255,7 @@
         private System.Windows.Forms.DataGridView dgvBuscar;
         private System.Windows.Forms.BindingSource bsBuscar;
         private dsDespachos dsDespachos;
-        private dsDespachosTableAdapters.verDespachosTableAdapter verDespachosTableAdapter;
+        
         private System.Windows.Forms.DataGridViewTextBoxColumn numeroDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn vendedorDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;

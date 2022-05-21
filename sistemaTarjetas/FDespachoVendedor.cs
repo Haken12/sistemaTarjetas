@@ -12,22 +12,42 @@ namespace sistemaTarjetas
 {
     public partial class FDespachoVendedor : Form
     {
+        
         private  class Despacho
         {
-            public static int? Numero = -1;
-            public static int? IdVendedor =-1;
-            public static string Nombre = "";
-            public static DateTime? Fecha = DateTime.Today;
-            public static int? Total = 0;
-            public static int? CantidadArticulos = 0;
-            public static string Observacion;
+            public  int? Numero = -1;
+            public  int? IdVendedor =-1;
+            public  string Nombre = "";
+            public  DateTime? Fecha = DateTime.Today;
+            public  int? Total = 0;
+            public  int? CantidadArticulos = 0;
+            public  string Observacion;
+            public  BindingList<DetalleMovimiento> Detalles = new BindingList<DetalleMovimiento>();
         }
 
+        public class DetalleMovimiento
+        {
+            public int? Numero { get; set; } = 0;
+            public string Producto { get; set; } = "";
+            public int Valor { get; set;} = 0;
+            public int Cantidad { get; set; } = 0;
+            public int Importe { get; set; } = 0;
 
+        }
+
+        private bool vendedorExiste(int id)
+        {
+            var a = dsDespachos1.vendedoresNombre.Rows.Find(id);
+            if (a != null) return true;
+            else return false;
+
+        }
         private Modo modo = Modo.Ver;
         private bool vendedorSi = false;
+        private bool contenidoSi = false;
         private Despacho despacho = new Despacho();
         private bool articuloSi = false;
+        
         public FDespachoVendedor()
         {
             InitializeComponent();
@@ -49,20 +69,20 @@ namespace sistemaTarjetas
         }
         public void cargar()
         {
-            txtCodigoVendedor.Text = Despacho.IdVendedor.ToString();
-            txtNombre.Text = Despacho.Nombre;
-            txtTotal.Text = Despacho.Total.ToString();
-            dtpFecha.Value = Despacho.Fecha.Value;
+            txtCodigoVendedor.Text = despacho.IdVendedor.ToString();
+            txtNombre.Text = despacho.Nombre;
+            txtTotal.Text = despacho.Total.ToString();
+            dtpFecha.Value = despacho.Fecha.Value;
             
         }
 
         public void asignar()
         {
-            Despacho.IdVendedor = Convert.ToInt32(txtCodigoVendedor.Text);
-            Despacho.Nombre = txtNombre.Text;
-            Despacho.Fecha = dtpFecha.Value;
-            Despacho.Total = Convert.ToInt32(txtTotal.Text);
-            Despacho.CantidadArticulos = dgvDetalles.Rows.Count;
+            despacho.IdVendedor = Convert.ToInt32(txtCodigoVendedor.Text);
+            despacho.Nombre = txtNombre.Text;
+            despacho.Fecha = dtpFecha.Value;
+            despacho.Total = Convert.ToInt32(txtTotal.Text);
+            despacho.CantidadArticulos = dgvDetalles.Rows.Count;
         }
 
         public bool existe()
@@ -73,75 +93,35 @@ namespace sistemaTarjetas
 
         public void conseguir()
         {
-            queries.conseguir_despacho(Despacho.Numero,
-                    ref Despacho.IdVendedor, 
-                    ref Despacho.Nombre, 
-                    ref Despacho.Observacion, 
-                    ref Despacho.CantidadArticulos, 
-                    ref Despacho.Total, 
-                    ref Despacho.Fecha);
+          
         }
 
         private void despejar()
         {
+            txtNumero.Clear();
             txtCodigoVendedor.Clear();
-            txtNombre.Clear();
             txtCodigo.Clear();
-            txtDescripcion.Clear();
-            txtPrecio.Text = "0";
-            txtCantidad.Value = 0;
-            txtImporte.Text = "0";
-            txtTotal.Text = "0";
-            if (dsDespachos.detalles_despacho.Rows.Count > 0) dsDespachos.detalles_despacho.Rows.Clear();
+            if (dgvDetalles.Rows.Count > 0) dgvDetalles.Rows.Clear();
         }
 
         private void txtNumero_TextChanged(object sender, EventArgs e)
         {
-            switch (modo)
-            {
-                case Modo.Insertar:
-                    break;
-                case Modo.Editar:
-                    break;
-                case Modo.Ver:
-                    despejar();
-                    btnModificar.Enabled = false;
-                    btnEliminar.Enabled = false;
-                    if (txtNumero.TextLength > 0)
-                    {
-                        Despacho.Numero = Convert.ToInt32(txtNumero.Text);
-                        if (queries.despacho_existe(Despacho.Numero) !=0)
-                        {
-                            conseguir();
-                            cargar();
-                            btnModificar.Enabled = true;
-                            btnEliminar.Enabled = true;
-                            detalles_despachoTableAdapter.Fill(dsDespachos.detalles_despacho, Despacho.Numero);
-                        }
-                    }
-
-                    break;
-                default:
-                    break;
-            }
+          
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            modo = Modo.Insertar;
-            despejar();
             btnNuevo.Enabled = false;
             btnModificar.Enabled = false;
-            btnEliminar.Enabled = false;
-            btnGuardar.Enabled = true;
-            dtpFecha.Enabled = true;
             btnCancelar.Enabled = true;
-            txtNumero.Enabled = false;
-            btnBuscarDevolucion.Enabled = false;
-            txtCodigoVendedor.Enabled = true;
+            modo = Modo.Insertar;
+            contenidoSi = false;
             btnBuscarVendedor.Enabled = true;
+            btnBuscarDevolucion.Enabled = false;
+            btnSalir.Enabled = false;
+            txtCodigoVendedor.Enabled = true;
             txtCodigoVendedor.Focus();
-            txtCodigoVendedor.SelectAll();
+            
         }
 
         private void soloNumeros(object sender , KeyPressEventArgs e)
@@ -152,7 +132,7 @@ namespace sistemaTarjetas
         }
         private void crear()
         {
-            queries.nuevo_despacho(ref Despacho.Numero, Despacho.IdVendedor, "", Despacho.CantidadArticulos, Despacho.Total, Despacho.Fecha);
+           
         }
         private bool verificar()
         {
@@ -165,54 +145,12 @@ namespace sistemaTarjetas
         }
         private void guardar()
         {
-            if ( verificar()){
-                switch (modo)
-                {
-                    case Modo.Insertar:
-                        asignar();
-                        crear();
-                        txtNumero.Text = Despacho.Numero.ToString();
-                        txtCodigoVendedor.Enabled = false;
-                        btnBuscarVendedor.Enabled = false;
-                        break;
-                    case Modo.Editar:
-                        dgvDetalles.Enabled = false;
-                        txtCodigo.Enabled = false;
-                        btnGuardar.Text = "Guardar";
-                        break;
-                    case Modo.Ver:
-                        break;
-                    default:
-                        break;
-                }
-                modo = Modo.Ver;
-                btnNuevo.Enabled = true;
-                btnModificar.Enabled = true;
-                btnEliminar.Enabled = true;
-                btnGuardar.Enabled = false;
-                btnCancelar.Enabled = false;
-                btnBuscarDevolucion.Enabled = true;
-                txtNumero.Focus(); 
-            }
-        
-        }
-        private void txtCodigoVendedor_TextChanged(object sender, EventArgs e)
-        {
             switch (modo)
             {
                 case Modo.Insertar:
-                    txtNombre.Clear();
-                    vendedorSi = false;
-                    if(txtCodigoVendedor.TextLength > 0)
-                    {
-                        int vendedor = Convert.ToInt32(txtCodigoVendedor.Text);
-                       if (querys.vendedor_existe(vendedor) != 0)
-                        {
-                            txtNombre.Text = (string)querys.nombreVendedor(vendedor);
-                            
-                            vendedorSi = true;
-                            
-                        }
+                    if (!contenidoSi)
+                    { MessageBox.Show("No hay registros que guardar");
+                        break;
                     }
                     break;
                 case Modo.Editar:
@@ -222,91 +160,129 @@ namespace sistemaTarjetas
                 default:
                     break;
             }
-        }
 
-        private void btnModificar_Click(object sender, EventArgs e)
-        {
-            modo = Modo.Editar;
-            btnNuevo.Enabled = false;
-            btnModificar.Enabled = false;
-            btnEliminar.Enabled = false;
-            btnGuardar.Enabled = true;
-            btnGuardar.Text = "Terminar";
-            asignar();
-            dgvDetalles.Enabled = true;
-            txtCodigo.Enabled = true;
-            btnBuscarProducto.Enabled = true;
-            txtCodigo.Focus();
-        }
 
-        private void txtCodigo_TextChanged(object sender, EventArgs e)
+
+        }
+        private void txtCodigoVendedor_TextChanged(object sender, EventArgs e)
         {
-            if (modo == Modo.Editar)
+            
+            if(txtCodigoVendedor.Text.Length > 0)
             {
-                txtDescripcion.Clear();
-                txtCantidad.Value = 0;
-                txtCantidad.Enabled = false;
-                txtPrecio.Text = "0";
-                txtImporte.Text = "0";
-                articuloSi = false;
-                if(txtCodigo.Text.Length > 0)
+                int codigo = Convert.ToInt32(txtCodigoVendedor.Text);
+                if (vendedorExiste(codigo))
                 {
-                    int cod = Convert.ToInt32(txtCodigo.Text);
-                    DataRow rw = dsDespachos.vProductos.FindByCodigo(cod);
-                    if (rw != null)
-                    {
-                        txtDescripcion.Text = (string)rw[1];
-                        txtPrecio.Text = ((int)rw[3]).ToString();
-                        txtInventario.Text = ((int)rw[4]).ToString();
-                        txtCantidad.Maximum = (int)rw[4];
-                        articuloSi = true;
-                        txtCantidad.Enabled = true;
-                    }
+                    string x = "";
+                    txtNombre.Text = dsDespachos1.vendedoresNombre.FindByid_vendedor(codigo)[1].ToString();
+                    btnBuscarProducto.Enabled = true;
+                    btnGuardar.Enabled = true;
+                    txtCodigo.Enabled = true;
+                    
+                    txtPrecio.Enabled = true;
+                    vendedorSi = true;
+                    dgvDetalles.Enabled = true;
+                    
+                }
+                else { 
+                    txtNombre.Clear(); 
+                    vendedorSi=false;
+                    btnGuardar.Enabled =false;
                 }
             }
         }
 
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+          
+        }
+
+        private bool articuloExiste(int codigo)
+        {
+            
+            return false;
+        }
+        private void txtCodigo_TextChanged(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(txtCodigo.Text))
+            {
+                txtDescripcion.Clear();
+                txtPrecio.Clear();
+                txtCantidad.Value = 0;
+                txtImporte.Clear();
+                articuloSi = false;
+                txtPrecio.Enabled = false;
+                txtCantidad.Enabled = false;
+                return;
+            }
+              
+            int codigo = Convert.ToInt32(txtCodigo.Text);
+            var a = dsDespachos1.vProductos.FindByCodigo(codigo);
+            if (a != null)
+            {
+                txtPrecio.Enabled=true;
+                txtCantidad.Enabled = true;
+                articuloSi = true;
+                txtDescripcion.Text = a.Descripcion;
+                txtPrecio.Text = a.Precio.ToString();
+            }
+            else
+            {
+                txtDescripcion.Clear();
+                txtPrecio.Clear();
+                txtCantidad.Value = 0;
+                txtImporte.Clear();
+                articuloSi=false;
+                txtPrecio.Enabled = false;
+                txtCantidad.Enabled = false;
+            }
+           
+            
+        }
+
         private void FDespachoVendedor_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'dsDespachos.vProductos' Puede moverla o quitarla según sea necesario.
-            this.vProductosTableAdapter.Fill(this.dsDespachos.vProductos);
-
+            vendedoresNombreTableAdapter1.Fill(dsDespachos1.vendedoresNombre);
+            vProductosTableAdapter1.Fill(dsDespachos1.vProductos);
         }
 
         private void txtCodigo_KeyDown(object sender, KeyEventArgs e)
         {
             if (articuloSi & e.KeyCode == Keys.Enter)
             {
-                txtCantidad.Focus();
+                txtPrecio.Focus();
             }
         }
 
         private bool comprobar()
         {
-            int tt = Convert.ToInt32(txtCantidad.Value);          
-            if (tt > txtCantidad.Maximum)
-            {
-                MessageBox.Show("Excede el numero de existencias");
-                return false;
-            }
             return true;
         }
 
         private void actualizar()
         {
-            queries.actualizar_despacho(Despacho.Numero,
-                Despacho.IdVendedor, Despacho.Observacion, Despacho.CantidadArticulos, Despacho.Total, Despacho.Fecha);
+          
         }
         
         private void agregar()
         {
-            queries.nuevo_detalle_despacho(Despacho.Numero, Convert.ToInt32(txtCodigo.Text), Convert.ToInt32(txtPrecio.Text), Convert.ToInt32(txtCantidad.Value), Convert.ToInt32(txtImporte.Text));
-            asignar();
-            actualizar();
-            detalles_despachoTableAdapter.Fill(dsDespachos.detalles_despacho, Despacho.Numero);
-            txtTotal.Text = calcularTotal().ToString();
-            txtCodigo.Clear();
-            txtCodigo.Focus();
+
+            //dsDespachos.DespachosRow nuevo = (dsDespachos.DespachosRow)dsDespachos1.Despachos.Rows.Find(txtCodigo.Text.ToInt());
+            dsDespachos.DespachosRow nuevo = dsDespachos1.Despachos.FindByCodigo(txtCodigo.Text.ToInt());
+            if (nuevo != null)
+            {
+                nuevo.Cantidad =+Convert.ToInt32(txtCantidad.Value);
+                
+            }
+            else { 
+            nuevo = dsDespachos1.Despachos.NewDespachosRow();
+            nuevo.Codigo = txtCodigo.Text.ToInt();
+            nuevo.Descripcion = txtDescripcion.Text;
+            nuevo.Precio = txtPrecio.Text.ToInt();
+            nuevo.Cantidad = Convert.ToInt32(txtCantidad.Value);
+            nuevo.Importe = txtImporte.Text.ToInt();
+            despacho.Total = +nuevo.Importe;
+            dsDespachos1.Despachos.AddDespachosRow(nuevo);
+            }
         }
         private void txtCantidad_KeyDown(object sender, KeyEventArgs e)
         {
@@ -326,30 +302,12 @@ namespace sistemaTarjetas
 
         private void dgvDetalles_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Delete)
-            {
-                if (dgvDetalles.Rows.Count > 0)
-                {
-                  if (Metodos.Confirmar())
-                    {
-                        int dt = (int)dgvDetalles.SelectedRows[0].Cells[0].Value;
-                        int cp = (int)dgvDetalles.SelectedRows[0].Cells[1].Value;
-                        int ct = (int)dgvDetalles.SelectedRows[0].Cells[3].Value;
-                        queries.eliminarDetalleDespacho(Despacho.Numero, dt, cp, Despacho.IdVendedor, ct);
-                        detalles_despachoTableAdapter.Fill(dsDespachos.detalles_despacho, Despacho.Numero);
-                        txtTotal.Text = calcularTotal().ToString();
-                        asignar();
-
-                        actualizar();
-                        
-                    }
-                }
-            }
+          
         }
 
         private void txtCodigoVendedor_KeyDown(object sender, KeyEventArgs e)
         {
-            if (vendedorSi & e.KeyCode == Keys.Enter)
+            if (vendedorSi && e.KeyCode == Keys.Enter)
             {
                 txtCodigo.Focus();
             }
@@ -357,11 +315,9 @@ namespace sistemaTarjetas
 
         private void txtCantidad_ValueChanged(object sender, EventArgs e)
         {
-            if (txtPrecio.Text.Length > 0)
-            {
-                int importe = Convert.ToInt32(txtPrecio.Text) * Convert.ToInt32(txtCantidad.Value);
-                txtImporte.Text = importe.ToString();
-            }
+            int precio = txtPrecio.Text.ToInt();
+            int cantidad = Convert.ToInt32(txtCantidad.Value);
+            txtImporte.Text = (precio * cantidad).ToString();
         }
 
         private void btnBuscarDevolucion_Click(object sender, EventArgs e)
@@ -371,7 +327,7 @@ namespace sistemaTarjetas
                 if (fBuscar.ShowDialog() == DialogResult.OK)
                 {
                     int res = fBuscar.seleccion;
-                    txtNumero.Text = res.ToString();
+                   
                 }
             }
         }
@@ -383,8 +339,7 @@ namespace sistemaTarjetas
                 if (fBuscar.ShowDialog() == DialogResult.OK)
                 {
                     int res = fBuscar.Id;
-                    txtCodigoVendedor.Text = res.ToString();
-                    txtCantidad.Focus();
+                    
                 }
             }
         }
@@ -396,7 +351,7 @@ namespace sistemaTarjetas
                 if (fBuscar.ShowDialog() == DialogResult.OK)
                 {
                     int res = fBuscar.articulo;
-                    txtCodigo.Text = res.ToString();
+                   
                 }
             }
         }
@@ -405,18 +360,7 @@ namespace sistemaTarjetas
         {
             if (Metodos.Confirmar())
             {
-                foreach (DataGridViewRow rw in dgvDetalles.Rows)
-                {
-                    int dt = (int)rw.Cells[0].Value;
-                    int cp = (int)rw.Cells[1].Value;
-                    int ct = (int)rw.Cells[3].Value;
-                    queries.eliminarDetalleDespacho(Despacho.Numero, dt, cp, Despacho.IdVendedor, ct);
-                }
-                queries.elimnarDespacho(Despacho.Numero);
-                btnModificar.Enabled = false;
-                btnEliminar.Enabled = false;
-                txtNumero.Clear();
-                despejar();
+               
             }
         }
 
@@ -425,18 +369,7 @@ namespace sistemaTarjetas
             switch (modo)
             {
                 case Modo.Insertar:
-                    txtNombre.Clear();
-                    txtCodigoVendedor.Clear();
-                    btnBuscarVendedor.Enabled = false;
-                    btnBuscarDevolucion.Enabled = true;
-                    txtNumero.Enabled = true;
-                    txtNumero.Clear();
-                    btnGuardar.Enabled = false;
-                    btnCancelar.Enabled = false;
-                    btnNuevo.Enabled = true;
-                    dtpFecha.Enabled = false;
-                    txtCodigoVendedor.Enabled = false;
-                    txtNumero.Focus();
+                   
                     break;
                 case Modo.Editar:
                     break;
@@ -448,6 +381,18 @@ namespace sistemaTarjetas
             modo = Modo.Ver;
            
 
+        }
+
+        private void txtPrecio_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)txtCantidad.Focus();
+        }
+
+        private void txtPrecio_TextChanged(object sender, EventArgs e)
+        {
+            int precio = txtPrecio.Text.ToInt();
+            int cantidad = Convert.ToInt32(txtCantidad.Value);
+            txtImporte.Text = (precio * cantidad).ToString();
         }
     }
 }

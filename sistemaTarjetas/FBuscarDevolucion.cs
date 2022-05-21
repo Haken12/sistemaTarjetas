@@ -21,7 +21,7 @@ namespace sistemaTarjetas
         private void FBuscarDevolucion_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'dsDespachos.verDevoluciones' Puede moverla o quitarla según sea necesario.
-            this.verDevolucionesTableAdapter.Fill(this.dsDespachos.verDevoluciones);
+            
 
         }
 

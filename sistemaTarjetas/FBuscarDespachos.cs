@@ -38,7 +38,7 @@ namespace sistemaTarjetas
         private void FBuscarDespachos_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'dsDespachos.verDespachos' Puede moverla o quitarla según sea necesario.
-            this.verDespachosTableAdapter.Fill(this.dsDespachos.verDespachos);
+            
 
         }
 

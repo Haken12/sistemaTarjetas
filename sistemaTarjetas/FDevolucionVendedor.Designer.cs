@@ -77,10 +77,7 @@
             this.txtNumero = new System.Windows.Forms.TextBox();
             this.querys = new sistemaTarjetas.dsSistemaTarjetasTableAdapters.Querys();
             this.btnBuscarDevolucion = new System.Windows.Forms.Button();
-            this.queries = new sistemaTarjetas.dsDespachosTableAdapters.queries();
             this.bsInventario = new System.Windows.Forms.BindingSource(this.components);
-            this.v_inventario_vendedorTableAdapter = new sistemaTarjetas.dsDespachosTableAdapters.v_inventario_vendedorTableAdapter();
-            this.detalles_devolucionesTableAdapter = new sistemaTarjetas.dsDespachosTableAdapters.detalles_devolucionesTableAdapter();
             this.groupBox1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -552,11 +549,9 @@
             // 
             // v_inventario_vendedorTableAdapter
             // 
-            this.v_inventario_vendedorTableAdapter.ClearBeforeFill = true;
             // 
             // detalles_devolucionesTableAdapter
             // 
-            this.detalles_devolucionesTableAdapter.ClearBeforeFill = true;
             // 
             // FDevolucionVendedor
             // 
@@ -635,13 +630,13 @@
         private System.Windows.Forms.BindingSource bsDevolver;
         private dsSistemaTarjetasTableAdapters.Querys querys;
         private System.Windows.Forms.Button btnBuscarDevolucion;
-        private dsDespachosTableAdapters.queries queries;
+        
         private System.Windows.Forms.BindingSource bsInventario;
         private dsDespachos dsDespachos;
-        private dsDespachosTableAdapters.v_inventario_vendedorTableAdapter v_inventario_vendedorTableAdapter;
+        
         private System.Windows.Forms.TextBox txtExistencias;
         private System.Windows.Forms.Label label10;
-        private dsDespachosTableAdapters.detalles_devolucionesTableAdapter detalles_devolucionesTableAdapter;
+        
         private System.Windows.Forms.DataGridViewTextBoxColumn numeroDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;

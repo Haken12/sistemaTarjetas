@@ -73,8 +73,7 @@ namespace sistemaTarjetas
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FDespachoVendedorB fDespacho = new FDespachoVendedorB();
-            fDespacho.ShowDialog();
+          
         }
 
         private void verToolStripMenuItem_Click(object sender, EventArgs e)
@@ -84,8 +83,7 @@ namespace sistemaTarjetas
 
         private void btnDevolucion_Click(object sender, EventArgs e)
         {
-            FDevolucionVendedorB fDevolucion = new FDevolucionVendedorB();
-            fDevolucion.ShowDialog();
+            
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -140,6 +138,12 @@ namespace sistemaTarjetas
         {
             FCuadreVendedor fCuadre = new FCuadreVendedor();
             fCuadre.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            FInventarioVendedor fInventarioVendedor = new FInventarioVendedor();
+            fInventarioVendedor.ShowDialog();
         }
     }
 }

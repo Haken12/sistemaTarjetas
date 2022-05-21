@@ -249,6 +249,7 @@ namespace sistemaTarjetas
             {
                 cargar();
                 btnEliminar.Enabled = true;
+                btnModificar.Enabled = true;
             }
             else if (this.modo == Modo.Insertar)
             {                
@@ -260,7 +261,6 @@ namespace sistemaTarjetas
             btnBuscar.Enabled = true;
             btnCancelar.Enabled = false;
             btnGuardar.Enabled = false;
-            btnModificar.Enabled = false;
             modo = Modo.Ver;
             txtId.Focus();
         }

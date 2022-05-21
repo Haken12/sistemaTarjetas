@@ -114,7 +114,7 @@ namespace sistemaTarjetas
         }
         private void crear()
         {
-            queries.nueva_devolucion(fecha, idVendedor, ref numeroDevolucion);
+            
         }
         private void guardar()
         {
@@ -169,37 +169,15 @@ namespace sistemaTarjetas
         {
             if (modo == Modo.Editar)
             {
-                txtDescripcion.Clear();
-                txtPrecio.Text = "0";
-                txtCantidad.Value = 0;
-                txtImporte.Text = "0";
-                articuloSi = false;
-                txtCantidad.Enabled = false;
-                if (txtCodigo.Text.Length > 0)
-                {
-                    int cod = Convert.ToInt32(txtCodigo.Text);
-                    DataRow rw = dsDespachos.v_inventario_vendedor.FindByCodigo(cod);
-                    if (rw == null)
-                    {
-
-                    }
-                    else
-                    {
-                        txtDescripcion.Text = (string)rw[1];
-                        txtPrecio.Text = ((int)rw[2]).ToString();
-                        txtExistencias.Text = ((int)rw[3]).ToString();
-                        txtCantidad.Maximum = (int)rw[3];
-                        articuloSi = true;
-                        txtCantidad.Enabled = true;
-                    }
-                }
+               
+             
             }
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
             modo = Modo.Editar;
-            v_inventario_vendedorTableAdapter.Fill(dsDespachos.v_inventario_vendedor, idVendedor);
+            
             btnNuevo.Enabled = false;
             btnModificar.Enabled = false;
             btnEliminar.Enabled = false;
@@ -237,8 +215,6 @@ namespace sistemaTarjetas
             int cantidad = Convert.ToInt32(txtCantidad.Value);
             int precio = Convert.ToInt32(txtPrecio.Text);
             int valor = cantidad * precio;
-            queries.nuevo_detalle_devolucion(numeroDevolucion, codigo, cantidad, precio, valor);
-            detalles_devolucionesTableAdapter.Fill(dsDespachos.detalles_devoluciones, numeroDevolucion);
             txtTotal.Text = calcularTotal().ToString();
             txtCodigo.Clear();
             txtCodigo.Focus();
@@ -255,13 +231,7 @@ namespace sistemaTarjetas
         {
             if(modo == Modo.Editar & e.KeyCode == Keys.Delete & dgvArticulos.SelectedRows.Count > 0)
             {
-               if (Metodos.Confirmar())
-                {
-                    queries.eliminarDetalleDevolucion(numeroDevolucion, (int)dgvArticulos.SelectedCells[0].Value);
-                    detalles_devolucionesTableAdapter.Fill(dsDespachos.detalles_devoluciones, numeroDevolucion);
-                    txtTotal.Text = calcularTotal().ToString();
-
-                }
+               
             }
         }
 

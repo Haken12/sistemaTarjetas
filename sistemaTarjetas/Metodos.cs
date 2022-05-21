@@ -94,7 +94,22 @@ namespace sistemaTarjetas
     }*/
     public static class Metodos
     {
-        
+        public static int ToInt(this string str)
+        {
+            return Convert.ToInt32(str);
+        }
+
+        public static int? Numero(this TextBox box)
+        {
+            try
+            {
+                return box.Text.ToInt();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
 
         public static bool Confirmar()
         {
